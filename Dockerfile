@@ -27,11 +27,21 @@ ENV DEBIAN_FRONTEND=noninteractive
 # (알려진 문제, httpx로 이미 대체됨) — ARM64에서 되면 덤, 안 되면 무시해도 됨.
 # cargo/rustc는 mitmproxy의 cryptography 의존성이 ARM64용 prebuilt wheel이 없을 때
 # 빌드 타임에 필요할 수 있어서 선제적으로 포함(문서 4번 경고) — wheel이 있으면 그냥 안 쓰임.
+# **nikto는 여기 없음** — 실제 Rock5/OMV8 빌드(2026-09-28)에서 Debian bookworm 기본
+# 저장소에 `nikto` 패키지 자체가 없는 것 확인(`E: Unable to locate package nikto`,
+# 나머지는 전부 정상 해석됨) — 문서 3번에 이미 있던 git clone 우회법으로 아래에서 따로
+# 설치. `libxml-writer-perl`(nikto의 XML::Writer 의존성, apt로 확실히 존재)만 여기서 챙김.
 RUN apt-get update && apt-get install -y --no-install-recommends \
-      nmap nikto sqlmap gobuster ffuf whatweb \
-      git curl wget perl python3 python3-venv python3-pip \
+      nmap sqlmap gobuster ffuf whatweb \
+      git curl wget perl python3 python3-venv python3-pip libxml-writer-perl \
       ca-certificates gnupg build-essential pkg-config libssl-dev cargo rustc \
     && rm -rf /var/lib/apt/lists/*
+
+# nikto — apt 저장소에 없어서 git clone(순수 Perl 스크립트라 아키텍처 무관, 문서 3번
+# 원안 그대로. cpanm 부트스트랩은 root 컨테이너에선 불필요 — libxml-writer-perl로 충분).
+RUN git clone --depth 1 https://github.com/sullo/nikto.git /opt/nikto \
+    && ln -s /opt/nikto/program/nikto.pl /usr/local/bin/nikto \
+    && chmod +x /opt/nikto/program/nikto.pl
 
 # Node.js LTS — Hermes 설치 스크립트 + Playwright(agent-browser)용
 RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
