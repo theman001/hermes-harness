@@ -1,0 +1,17 @@
+{
+  "_comment": "Radxa Rock5/OMV8 Docker 배포 1차 실전 테스트용 — 대상 자체는 이미 여러 번 검증된 testasp.vulnweb.com 재사용(신규 대상 리스크 배제), 목적은 (1) 컨테이너 안에서 전체 파이프라인(게이트웨이/RAG/Jev MCP/mitmproxy) 첫 실전 확인, (2) A가 phase_end.py를 스스로 호출하는 새 동작(2026-09-28 SOUL.md 추가) 검증. 라운드 예산을 작게 잡아 빨리 phase 종료 시퀀스까지 도달하게 함.",
+  "project_id": "testasp-vulnweb-docker-trial",
+  "category": "web",
+  "mode": "own_system",
+  "target": {
+    "program_name": "testasp.vulnweb.com (Acunetix public test site) — Docker 배포 검증용 신규 project",
+    "platform": "none",
+    "scope": {"in_scope_domains": ["testasp.vulnweb.com"], "out_of_scope_domains": []},
+    "rules_url": "http://testasp.vulnweb.com/",
+    "reward_table_url": "",
+    "automation_policy": {"prohibits_automation": false, "prohibits_third_party_ai_sharing": false, "notes": "공개적으로 보안 도구 테스트 용도로 운영되는 의도적 취약 사이트 — 스캐닝/자동화 명시적으로 허용됨"},
+    "vpn": {"required": false, "profile_name": null}
+  },
+  "max_rounds_per_phase": 6,
+  "status": "active"
+}
