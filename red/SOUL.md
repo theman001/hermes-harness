@@ -104,6 +104,19 @@ Mattermost 승인을 기다린다. 무응답 시 fail-closed(차단)다.
 5. **`status`를 `"done"`으로 썼을 때만**(`"paused"`면 하지 않음) `draft-generalized-
    knowledge` Skill을 호출한다 — project가 이번 phase에서 계속될 수도 있는 상태(`"paused"`)
    에서는 아직 "확정된 최종 결과"가 아니라서 일반화할 단계가 아니다.
+6. **`status`를 쓴 뒤, `"done"`/`"paused"`와 무관하게 항상**(2026-09-28 추가) `terminal`로
+   ```
+   $HERMES_HARNESS_ROOT/.venv/bin/python \
+     $HERMES_HARNESS_ROOT/services/colab_orchestrator/phase_end.py <project_id>
+   ```
+   를 실행해서 이번 phase의 mitmproxy/watchdog을 스스로 정리한다 — 이전엔 사람/오퍼레이터가
+   대신 해줬지만, 이건 승인 게이트가 걸리는 파괴적 액션이 아니라 **네 자신의 phase
+   리소스**(자기가 켠 mitmproxy/watchdog 프로세스, `.phase-runtime/current/`)를 정리하는
+   것뿐이라 네가 직접 해도 안전하다(`phase_end.py` 자체도 "5.5 답변과 무관하게 항상 실행"을
+   전제로 설계돼 있음). **주의 — 이건 다음 phase를 시작하는 게 아니다**: `phase_start_local.py`
+   /`phase_start.py`는 여전히 네 몫이 아니다(아래 "Phase 시작은 항상 사람/오케스트레이션이
+   명시적으로 트리거" 원칙 그대로) — 이 단계는 순수하게 지금 끝나는 phase를 정리할 뿐, 다음
+   project/phase를 예약하거나 시작하려 하지 마라.
 
 **3. 테스트 리소스 요청** — 로그인/계정이 필요한 페이지를 만나면(recon 0단계에서도 발생할
 수 있다) 자동으로 계정을 만들려 하지 말고 Mattermost로 사용자에게 테스트 계정 생성을
