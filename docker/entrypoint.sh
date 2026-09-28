@@ -69,28 +69,18 @@ TYPESAFE_API_KEY=${TYPESAFE_API_KEY:-}
 EOF
 chmod 600 "$PROFILE_DIR/.env"
 
-# 5. mitmproxy CA 인증서 — 영속 경로에 없으면 최초 1회만 짧게 띄워서 생성.
+# 5. mitmproxy CA 인증서 디렉터리만 영속 경로로 링크 — **mitmproxy 자체는 여기서 안
+#    띄운다**(2026-09-28 정정: 처음엔 "게이트웨이 살아있는 동안 항상 떠 있게" 상시
+#    기동시켰는데, 그러면 8080 포트를 이게 먼저 잡아버려서 나중에 `phase_start_local.py`
+#    가 같은 포트로 phase별 mitmdump를 또 띄우려 할 때 충돌함 — 기존 로컬 운영 방식
+#    (mitmproxy는 phase_start가 켜고 phase_end가 끔)과 안 맞는 불필요한 추가였음, 제거).
+#    CA 인증서는 그 phase별 mitmdump가 처음 뜰 때 이 영속 경로에 알아서 생성/재사용됨.
 mkdir -p "$DATA_ROOT/mitmproxy"
 ln -sfn "$DATA_ROOT/mitmproxy" /root/.mitmproxy
-if [ ! -f /root/.mitmproxy/mitmproxy-ca-cert.pem ]; then
-  echo "[entrypoint] mitmproxy CA 최초 생성"
-  "$HARNESS_ROOT/.venv/bin/mitmdump" -q &
-  MITM_BOOT_PID=$!
-  sleep 3
-  kill "$MITM_BOOT_PID" 2>/dev/null || true
-  wait "$MITM_BOOT_PID" 2>/dev/null || true
-fi
 
-# 6. mitmproxy 상시 기동(8080 고정 포트, capture_addon 로드) — phase별 기동/종료는
-#    여전히 phase_start_local.py/phase_end.py가 담당하지만(project별 watchdog 등),
-#    프록시 자체는 게이트웨이가 살아있는 동안 항상 떠 있어야 언제 Mattermost로 새
-#    project를 시작해도 바로 캡처가 됨.
-mkdir -p "$HARNESS_ROOT/.phase-runtime/current"
-"$HARNESS_ROOT/.venv/bin/mitmdump" -p 8080 -s "$HARNESS_ROOT/services/mitmproxy_addon/capture_addon.py" \
-  >> "$DATA_ROOT/hermes-harness/mitmdump.log" 2>&1 &
-
-echo "[entrypoint] mitmproxy 상시 기동 완료, hermes gateway 시작"
-echo "[entrypoint] 새 project 시작은 여전히 수동: docker exec <container> $HARNESS_ROOT/.venv/bin/python $HARNESS_ROOT/services/colab_orchestrator/phase_start_local.py <project_id>"
+echo "[entrypoint] 초기화 완료, hermes gateway 시작"
+echo "[entrypoint] 새 project 시작(mitmproxy/watchdog도 이때 같이 기동됨): docker exec <container> $HARNESS_ROOT/.venv/bin/python $HARNESS_ROOT/services/colab_orchestrator/phase_start_local.py <project_id>"
+echo "[entrypoint] project 종료 시: docker exec <container> $HARNESS_ROOT/.venv/bin/python $HARNESS_ROOT/services/colab_orchestrator/phase_end.py <project_id>"
 
 # 7. Hermes 게이트웨이 — 컨테이너 메인 프로세스(foreground, PID 1이 이걸 감독).
 exec hermes gateway run

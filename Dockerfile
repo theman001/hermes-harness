@@ -75,6 +75,12 @@ COPY requirements.txt .
 # 이미지가 이미 격리라 의미는 약하지만 관례 유지 + mcp<2 상한 등 requirements.txt의
 # 고정 버전을 그대로 존중).
 RUN python3 -m venv .venv && .venv/bin/pip install --no-cache-dir -r requirements.txt
+# venv/bin을 PATH에 추가 — 이게 없으면 `docker exec`로 phase_start_local.py를 돌릴 때
+# phase_start.py의 subprocess.Popen(["mitmdump", ...])가 bare 이름으로 mitmdump를
+# 찾다가 실패함(로컬 개발 중 이미 한 번 겪은 문제와 동일 원인 — venv는 activate하거나
+# PATH에 직접 넣어야 서브프로세스 lookup에도 걸림, `.venv/bin/python` 실행 자체는 PATH를
+# 안 건드림).
+ENV PATH="/opt/hermes-harness/.venv/bin:${PATH}"
 
 # Playwright Chromium — install-deps로 배포판/아키텍처에 맞는 패키지를 자동 판단하게 함
 # (DOCKER_DEPENDENCIES.md: "이 실행 결과를 신뢰할 것, 수동 목록 복붙하지 말 것").
