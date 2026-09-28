@@ -1,0 +1,35 @@
+WARNING: sonic/ast only supports (go1.17~1.26 and amd64 CPU) or (go1.20~1.26 and arm64 CPU), but your environment is not suitable and will fallback to encoding/json
+[0:00:05] | Templates: 2229 | Hosts: 1 | RPS: 105 | Matched: 0 | Errors: 0 | Requests: 554/4533 (12%)
+[[92mcookies-without-secure[0m] [[94mjavascript[0m] [[34minfo[0m] testasp.vulnweb.com [[96m"ASPSESSIONIDCCCTQDSA"[0m]
+[[92mcookies-without-httponly[0m] [[94mjavascript[0m] [[34minfo[0m] testasp.vulnweb.com [[96m"ASPSESSIONIDCCCTQDSA"[0m]
+[0:00:10] | Templates: 2229 | Hosts: 1 | RPS: 81 | Matched: 2 | Errors: 0 | Requests: 836/4533 (18%)
+[0:00:15] | Templates: 2229 | Hosts: 1 | RPS: 74 | Matched: 2 | Errors: 0 | Requests: 1131/4533 (24%)
+[[92mwaf-detect[0m:[1;92maspgeneric[0m] [[94mhttp[0m] [[34minfo[0m] http://testasp.vulnweb.com
+[0:00:20] | Templates: 2229 | Hosts: 1 | RPS: 67 | Matched: 3 | Errors: 0 | Requests: 1370/4533 (30%)
+[0:00:25] | Templates: 2229 | Hosts: 1 | RPS: 67 | Matched: 3 | Errors: 0 | Requests: 1700/4533 (37%)
+[0:00:30] | Templates: 2229 | Hosts: 1 | RPS: 64 | Matched: 3 | Errors: 0 | Requests: 1956/4533 (43%)
+[0:00:35] | Templates: 2229 | Hosts: 1 | RPS: 64 | Matched: 3 | Errors: 0 | Requests: 2260/4533 (49%)
+[[92mmicrosoft-iis-version[0m] [[94mhttp[0m] [[34minfo[0m] http://testasp.vulnweb.com [[96m"Microsoft-IIS/8.5"[0m]
+[0:00:40] | Templates: 2229 | Hosts: 1 | RPS: 64 | Matched: 4 | Errors: 11 | Requests: 2588/4533 (57%)
+[0:00:45] | Templates: 2229 | Hosts: 1 | RPS: 63 | Matched: 4 | Errors: 11 | Requests: 2871/4533 (63%)
+[0:00:50] | Templates: 2229 | Hosts: 1 | RPS: 61 | Matched: 4 | Errors: 13 | Requests: 3112/4533 (68%)
+[[92mhttp-missing-security-headers[0m:[1;92mstrict-transport-security[0m] [[94mhttp[0m] [[34minfo[0m] http://testasp.vulnweb.com
+[[92mhttp-missing-security-headers[0m:[1;92mcontent-security-policy[0m] [[94mhttp[0m] [[34minfo[0m] http://testasp.vulnweb.com
+[[92mhttp-missing-security-headers[0m:[1;92mpermissions-policy[0m] [[94mhttp[0m] [[34minfo[0m] http://testasp.vulnweb.com
+[[92mhttp-missing-security-headers[0m:[1;92mx-permitted-cross-domain-policies[0m] [[94mhttp[0m] [[34minfo[0m] http://testasp.vulnweb.com
+[[92mhttp-missing-security-headers[0m:[1;92mreferrer-policy[0m] [[94mhttp[0m] [[34minfo[0m] http://testasp.vulnweb.com
+[[92mhttp-missing-security-headers[0m:[1;92mcross-origin-resource-policy[0m] [[94mhttp[0m] [[34minfo[0m] http://testasp.vulnweb.com
+[[92mhttp-missing-security-headers[0m:[1;92mx-frame-options[0m] [[94mhttp[0m] [[34minfo[0m] http://testasp.vulnweb.com
+[[92mhttp-missing-security-headers[0m:[1;92mx-content-type-options[0m] [[94mhttp[0m] [[34minfo[0m] http://testasp.vulnweb.com
+[[92mhttp-missing-security-headers[0m:[1;92mcross-origin-embedder-policy[0m] [[94mhttp[0m] [[34minfo[0m] http://testasp.vulnweb.com
+[[92mhttp-missing-security-headers[0m:[1;92mcross-origin-opener-policy[0m] [[94mhttp[0m] [[34minfo[0m] http://testasp.vulnweb.com
+[0:00:55] | Templates: 2229 | Hosts: 1 | RPS: 61 | Matched: 14 | Errors: 15 | Requests: 3413/4533 (75%)
+[[92mmissing-cookie-samesite-strict[0m] [[94mhttp[0m] [[34minfo[0m] http://testasp.vulnweb.com [[96m"ASPSESSIONIDCCCTQDSA=AFAPLFKAIAAEPMJPENFNDJIB; path=/"[0m]
+[[92mtech-detect[0m:[1;92mdreamweaver[0m] [[94mhttp[0m] [[34minfo[0m] http://testasp.vulnweb.com
+[[92mtech-detect[0m:[1;92mms-iis[0m] [[94mhttp[0m] [[34minfo[0m] http://testasp.vulnweb.com
+[0:01:00] | Templates: 2229 | Hosts: 1 | RPS: 61 | Matched: 17 | Errors: 15 | Requests: 3711/4533 (81%)
+[0:01:05] | Templates: 2229 | Hosts: 1 | RPS: 61 | Matched: 17 | Errors: 19 | Requests: 4015/4533 (88%)
+[0:01:10] | Templates: 2229 | Hosts: 1 | RPS: 61 | Matched: 17 | Errors: 19 | Requests: 4316/4533 (95%)
+[0:01:15] | Templates: 2229 | Hosts: 1 | RPS: 60 | Matched: 17 | Errors: 19 | Requests: 4517/4533 (99%)
+[0:01:19] | Templates: 2229 | Hosts: 1 | RPS: 56 | Matched: 17 | Errors: 19 | Requests: 4517/4533 (99%)
+[0:01:19] | Templates: 2229 | Hosts: 1 | RPS: 56 | Matched: 17 | Errors: 19 | Requests: 4517/4533 (99%)

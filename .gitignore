@@ -1,0 +1,13 @@
+# 실제 비밀값 — .env.example 템플릿만 커밋
+**/.env
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# 런타임 전용 상태(실행 중에만 존재)
+.phase-runtime/
+
+# 배포 시 실제 시크릿을 채운 compose 산출물 — 절대 커밋하지 않음(DOCKER_DEPENDENCIES.md 8번)
+docker-compose.real.yml

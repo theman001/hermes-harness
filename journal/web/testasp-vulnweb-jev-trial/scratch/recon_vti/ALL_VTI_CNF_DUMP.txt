@@ -1,0 +1,165 @@
+
+===== http://testasp.vulnweb.com/_vti_cnf/Default.asp =====
+vti_encoding:SR|utf8-nl
+vti_timelastmodified:TR|05 Oct 2007 10:01:19 -0000
+vti_extenderversion:SR|4.0.2.8912
+vti_cacheddtm:TX|05 Oct 2007 10:01:19 -0000
+vti_filesize:IR|3663
+vti_cachedlinkinfo:VX|Q|styles.css H|http://www.acunetix.com/ S|Images/logo.gif H|Templatize.asp H|Default.asp H|Search.asp
+vti_cachedsvcrellinks:VX|FQUS|acuforum/styles.css NHHS|http://www.acunetix.com/ FSUS|acuforum/Images/logo.gif FHUS|acuforum/Templatize.asp FHUS|acuforum/Default.asp FHUS|acuforum/Search.asp
+vti_cachedtitle:SR|acuforum forums
+vti_title:SR|acuforum forums
+vti_cachedbodystyle:SR|<body>
+vti_cachedhasbots:BR|false
+vti_cachedhastheme:BR|false
+vti_cachedhasborder:BR|false
+vti_metatags:VR|HTTP-EQUIV=Content-Type text/html;\\ charset=iso-8859-1
+vti_backlinkinfo:VX|acuforum/login.asp acuforum/register.asp acuforum/search.asp acuforum/default.asp acuforum/showthread.asp acuforum/showforum.asp acuforum/templatize.asp
+
+
+===== http://testasp.vulnweb.com/_vti_cnf/Search.asp =====
+vti_encoding:SR|utf8-nl
+vti_timelastmodified:TR|05 Oct 2007 10:01:19 -0000
+vti_extenderversion:SR|4.0.2.8912
+vti_cacheddtm:TX|05 Oct 2007 10:01:19 -0000
+vti_filesize:IR|4303
+vti_cachedlinkinfo:VX|Q|styles.css H|http://www.acunetix.com/ S|Images/logo.gif H|Templatize.asp H|Default.asp H|Search.asp
+vti_cachedsvcrellinks:VX|FQUS|acuforum/styles.css NHHS|http://www.acunetix.com/ FSUS|acuforum/Images/logo.gif FHUS|acuforum/Templatize.asp FHUS|acuforum/Default.asp FHUS|acuforum/Search.asp
+vti_cachedtitle:SR|acuforum search
+vti_title:SR|acuforum search
+vti_cachedbodystyle:SR|<body>
+vti_cachedhasbots:BR|false
+vti_cachedhastheme:BR|false
+vti_cachedhasborder:BR|false
+vti_metatags:VR|HTTP-EQUIV=Content-Type text/html;\\ charset=iso-8859-1
+vti_backlinkinfo:VX|acuforum/login.asp acuforum/register.asp acuforum/search.asp acuforum/default.asp acuforum/showthread.asp acuforum/showforum.asp acuforum/templatize.asp
+
+
+===== http://testasp.vulnweb.com/_vti_cnf/Login.asp =====
+vti_encoding:SR|utf8-nl
+vti_timelastmodified:TR|05 Oct 2007 10:01:19 -0000
+vti_extenderversion:SR|4.0.2.8912
+vti_cacheddtm:TX|05 Oct 2007 10:01:19 -0000
+vti_filesize:IR|3681
+vti_cachedlinkinfo:VX|Q|styles.css H|http://www.acunetix.com/ S|Images/logo.gif H|Templatize.asp H|Default.asp H|Search.asp
+vti_cachedsvcrellinks:VX|FQUS|acuforum/styles.css NHHS|http://www.acunetix.com/ FSUS|acuforum/Images/logo.gif FHUS|acuforum/Templatize.asp FHUS|acuforum/Default.asp FHUS|acuforum/Search.asp
+vti_cachedtitle:SR|acuforum login
+vti_title:SR|acuforum login
+vti_cachedbodystyle:SR|<body>
+vti_cachedhasbots:BR|false
+vti_cachedhastheme:BR|false
+vti_cachedhasborder:BR|false
+vti_metatags:VR|HTTP-EQUIV=Content-Type text/html;\\ charset=iso-8859-1
+vti_backlinkinfo:VX|
+
+
+===== http://testasp.vulnweb.com/_vti_cnf/Register.asp =====
+vti_encoding:SR|utf8-nl
+vti_timelastmodified:TR|05 Oct 2007 10:01:19 -0000
+vti_extenderversion:SR|4.0.2.8912
+vti_cacheddtm:TX|05 Oct 2007 10:01:19 -0000
+vti_filesize:IR|3888
+vti_cachedlinkinfo:VX|Q|styles.css H|http://www.acunetix.com/ S|Images/logo.gif H|Templatize.asp H|Default.asp H|Search.asp
+vti_cachedsvcrellinks:VX|FQUS|acuforum/styles.css NHHS|http://www.acunetix.com/ FSUS|acuforum/Images/logo.gif FHUS|acuforum/Templatize.asp FHUS|acuforum/Default.asp FHUS|acuforum/Search.asp
+vti_cachedtitle:SR|acuforum register
+vti_title:SR|acuforum register
+vti_cachedbodystyle:SR|<body>
+vti_cachedhasbots:BR|false
+vti_cachedhastheme:BR|false
+vti_cachedhasborder:BR|false
+vti_metatags:VR|HTTP-EQUIV=Content-Type text/html;\\ charset=iso-8859-1
+vti_backlinkinfo:VX|
+
+
+===== http://testasp.vulnweb.com/_vti_cnf/showforum.asp =====
+vti_encoding:SR|utf8-nl
+vti_timelastmodified:TR|05 Oct 2007 10:01:19 -0000
+vti_extenderversion:SR|4.0.2.8912
+vti_cacheddtm:TX|05 Oct 2007 10:01:19 -0000
+vti_filesize:IR|6897
+vti_cachedlinkinfo:VX|Q|styles.css H|http://www.acunetix.com/ S|Images/logo.gif H|Templatize.asp H|Default.asp H|Search.asp S|./jscripts/tiny_mce/tiny_mce.js
+vti_cachedsvcrellinks:VX|FQUS|acuforum/styles.css NHHS|http://www.acunetix.com/ FSUS|acuforum/Images/logo.gif FHUS|acuforum/Templatize.asp FHUS|acuforum/Default.asp FHUS|acuforum/Search.asp FSUS|acuforum/jscripts/tiny_mce/tiny_mce.js
+vti_cachedtitle:SR|acuforum
+vti_title:SR|acuforum
+vti_cachedbodystyle:SR|<body>
+vti_cachedhasbots:BR|false
+vti_cachedhastheme:BR|false
+vti_cachedhasborder:BR|false
+vti_metatags:VR|HTTP-EQUIV=Content-Type text/html;\\ charset=iso-8859-1
+vti_backlinkinfo:VX|acuforum/showthread.asp
+
+
+===== http://testasp.vulnweb.com/_vti_cnf/showthread.asp =====
+vti_encoding:SR|utf8-nl
+vti_timelastmodified:TR|05 Oct 2007 10:01:19 -0000
+vti_extenderversion:SR|4.0.2.8912
+vti_cacheddtm:TX|05 Oct 2007 10:01:19 -0000
+vti_filesize:IR|6250
+vti_cachedlinkinfo:VX|Q|styles.css H|http://www.acunetix.com/ S|Images/logo.gif H|Templatize.asp H|Default.asp H|Search.asp H|showforum.asp S|./jscripts/tiny_mce/tiny_mce.js
+vti_cachedsvcrellinks:VX|FQUS|acuforum/styles.css NHHS|http://www.acunetix.com/ FSUS|acuforum/Images/logo.gif FHUS|acuforum/Templatize.asp FHUS|acuforum/Default.asp FHUS|acuforum/Search.asp FHUS|acuforum/showforum.asp FSUS|acuforum/jscripts/tiny_mce/tiny_mce.js
+vti_cachedtitle:SR|acuforum
+vti_title:SR|acuforum
+vti_cachedbodystyle:SR|<body>
+vti_cachedhasbots:BR|false
+vti_cachedhastheme:BR|false
+vti_cachedhasborder:BR|false
+vti_metatags:VR|HTTP-EQUIV=Content-Type text/html;\\ charset=iso-8859-1
+vti_backlinkinfo:VX|
+
+
+===== http://testasp.vulnweb.com/_vti_cnf/Templatize.asp =====
+vti_encoding:SR|utf8-nl
+vti_timelastmodified:TR|05 Oct 2007 10:01:19 -0000
+vti_extenderversion:SR|4.0.2.8912
+vti_cacheddtm:TX|05 Oct 2007 10:01:19 -0000
+vti_filesize:IR|2510
+vti_cachedlinkinfo:VX|Q|styles.css H|http://www.acunetix.com/ S|Images/logo.gif H|Templatize.asp H|Default.asp H|Search.asp
+vti_cachedsvcrellinks:VX|FQUS|acuforum/styles.css NHHS|http://www.acunetix.com/ FSUS|acuforum/Images/logo.gif FHUS|acuforum/Templatize.asp FHUS|acuforum/Default.asp FHUS|acuforum/Search.asp
+vti_cachedtitle:SR|Untitled Document
+vti_title:SR|Untitled Document
+vti_cachedbodystyle:SR|<body>
+vti_cachedhasbots:BR|false
+vti_cachedhastheme:BR|false
+vti_cachedhasborder:BR|false
+vti_metatags:VR|HTTP-EQUIV=Content-Type text/html;\\ charset=iso-8859-1
+vti_backlinkinfo:VX|acuforum/login.asp acuforum/register.asp acuforum/search.asp acuforum/default.asp acuforum/showthread.asp acuforum/showforum.asp acuforum/templatize.asp
+
+
+===== http://testasp.vulnweb.com/_vti_cnf/logout.asp =====
+vti_encoding:SR|utf8-nl
+vti_timelastmodified:TR|05 Oct 2007 10:01:19 -0000
+vti_extenderversion:SR|4.0.2.8912
+vti_cacheddtm:TX|05 Oct 2007 10:01:19 -0000
+vti_filesize:IR|225
+vti_cachedlinkinfo:VX|
+vti_cachedsvcrellinks:VX|
+vti_cachedhasbots:BR|false
+vti_cachedhastheme:BR|false
+vti_cachedhasborder:BR|false
+vti_backlinkinfo:VX|
+
+
+===== http://testasp.vulnweb.com/_vti_cnf/DB.asp =====
+vti_encoding:SR|utf8-nl
+vti_timelastmodified:TR|05 Oct 2007 10:01:19 -0000
+vti_extenderversion:SR|4.0.2.8912
+vti_cacheddtm:TX|05 Oct 2007 10:01:19 -0000
+vti_filesize:IR|284
+vti_cachedlinkinfo:VX|
+vti_cachedsvcrellinks:VX|
+vti_cachedhasbots:BR|false
+vti_cachedhastheme:BR|false
+vti_cachedhasborder:BR|false
+vti_backlinkinfo:VX|
+
+
+===== http://testasp.vulnweb.com/_vti_cnf/styles.css =====
+vti_encoding:SR|utf8-nl
+vti_timelastmodified:TR|05 Oct 2007 10:01:19 -0000
+vti_extenderversion:SR|4.0.2.8912
+vti_cacheddtm:TX|05 Oct 2007 10:01:19 -0000
+vti_filesize:IR|3390
+vti_cachedlinkinfo:VX|
+vti_cachedsvcrellinks:VX|
+vti_backlinkinfo:VX|acuforum/login.asp acuforum/register.asp acuforum/search.asp acuforum/default.asp acuforum/showthread.asp acuforum/showforum.asp acuforum/templatize.asp
+

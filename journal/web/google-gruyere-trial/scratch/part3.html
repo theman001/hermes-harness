@@ -1,0 +1,634 @@
+<HTML><HEAD><META http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<TITLE>Web Application Exploits and Defenses</TITLE>
+<LINK type="text/css" rel="stylesheet" href="../static/codelab.css">
+<!--MARK-Z-->
+<SCRIPT>
+function toggleBlock(heading, whichID) {
+  var image = heading.childNodes[0];
+  var block = document.getElementById(whichID);
+  if (block) {
+    if (getDisplay(block) == 'block') {
+      block.style.display = 'none';
+      image.src = 'static/closed.gif';
+    } else {    // "none" or ""
+      block.style.display = 'block';
+      image.src = 'static/open.gif';
+    }
+  }
+}
+
+function getDisplay(block) {
+  var value = block.style.display;
+  if (!value) {
+    if (document.defaultView) {
+      var computedStyle = document.defaultView.getComputedStyle(block, "");
+      value = computedStyle.getPropertyValue('display');
+    } else if (block.currentStyle) {
+      value = block.currentStyle.display;
+    }
+  }
+  return value;
+}
+</SCRIPT>
+</HEAD>
+<BODY bgcolor="#ffffff">
+
+<DIV class="banner"></DIV>
+<H1><FONT size="+2"><IMG src="/static/gruyere-78.png" style="vertical-align:middle">
+Web Application Exploits and Defenses  (Part 3)</FONT> </H1>
+<P>
+A Codelab by Bruce Leban, Mugdha Bendre, and Parisa Tabriz
+</P>
+<DIV class="printable">
+<DIV class="column1">
+Table of Contents
+<UL>
+<LI class="L1" style="padding-top:0pt"> <A href="/#0__hackers">Beat the hackers</A></LI>
+<LI class="L1" style="padding-top:0pt"> <A href="/#0__gruyere">Gruyere</A></LI>
+<LI class="L1"> <A href="/part1#1__setup">Set-up</A>
+  <UL>
+  <LI class="L2"> <A href="/part1#1__reset_button">Reset Button</A></LI>
+  <LI class="L2"> <A href="/part1#1__about_the_code">About the Code</A></LI>
+  <LI class="L2"> <A href="/part1#1__features_and_technologies">Features and Technologies</A></LI>
+  </UL></LI>
+<LI class="L1"> <A href="/part1#1__using_gruyere">Using Gruyere</A></LI>
+<LI class="L1"> <A href="/part2#2__cross_site_scripting">Cross-Site Scripting (XSS)</A>
+  <UL>
+  <LI class="L2"> <A href="/part2#2__xss_challenge">XSS Challenges</A></LI>
+  <LI class="L2"> <A href="/part2#2__file_upload_xss">File Upload XSS</A></LI>
+  <LI class="L2"> <A href="/part2#2__reflected_xss">Reflected XSS</A></LI>
+  <LI class="L2"> <A href="/part2#2__stored_xss">Stored XSS</A></LI>
+  <LI class="L2"> <A href="/part2#2__stored_xss_via_html_attribute">Stored XSS via HTML Attribute</A></LI>
+  <LI class="L2"> <A href="/part2#2__stored_xss_via_ajax">Stored XSS via AJAX</A></LI>
+  <LI class="L2"> <A href="/part2#2__reflected_xss_via_ajax">Reflected XSS via AJAX</A></LI>
+  <LI class="L2"> <A href="/part2#2__more_about_xss">More about XSS</A></LI>
+  </UL></LI>
+<LI class="L1"> <A href="/part3#3__client_state_manipulation">Client-State Manipulation</A>
+  <UL>
+  <LI class="L2"> <A href="/part3#3__elevation_of_privilege"> Elevation of Privilege </A></LI>
+  <LI class="L2"> <A href="/part3#3__cookie_manipulation"> Cookie Manipulation </A></LI>
+  </UL></LI>
+<LI class="L1"> <A href="/part3#3__cross_site_request_forgery">Cross-Site Request Forgery (XSRF)</A>
+  <UL>
+  <LI class="L2"> <A href="/part3#3__xsrf_challenge">XSRF Challenge</A></LI>
+  <LI class="L2"> <A href="/part3#3__more_about_preventing_xsrf">More about preventing XSRF</A></LI>
+  </UL></LI>
+<LI class="L1"> <A href="/part3#3__cross_site_script_inclusion">Cross Site Script Inclusion (XSSI)</A>
+  <UL>
+  <LI class="L2"> <A href="/part3#3__xssi_challenge">XSSI Challenge</A></LI>
+  </UL></LI>
+<LI class="L1"> <A href="/part4#4__path_traversal">Path Traversal</A>
+  <UL>
+  <LI class="L2"> <A href="/part4#4__information_disclosure_path_traversal">Information disclosure via path traversal </A></LI>
+  <LI class="L2"> <A href="/part4#4__data_tampering_path_traversal">Data tampering via path traversal </A></LI>
+  </UL></LI>
+<LI class="L1"> <A href="/part4#4__denial_of_service">Denial of Service</A>
+  <UL>
+  <LI class="L2"> <A href="/part4#4__dos_quit_server">DoS - Quit the Server</A></LI>
+  <LI class="L2"> <A href="/part4#4__dos_overload_server">DoS - Overloading the Server</A></LI>
+  <LI class="L2"> <A href="/part4#4__more_dos">More on Denial of Service</A></LI>
+  </UL></LI>
+<LI class="L1"> <A href="/part4#4__code_execution">Code Execution</A>
+  <UL>
+  <LI class="L2"> <A href="/part4#4__code_execution_challenge">Code Execution Challenge</A></LI>
+  <LI class="L2"> <A href="/part4#4__more_code_execution">More on Remote Code Execution</A></LI>
+  </UL></LI>
+<LI class="L1"> <A href="/part5#5__configuration_vulnerabilities">Configuration Vulnerabilities</A>
+  <UL>
+  <LI class="L2"> <A href="/part5#5__information_disclosure_config_1">Information disclosure #1</A></LI>
+  <LI class="L2"> <A href="/part5#5__information_disclosure_config_2">Information disclosure #2</A></LI>
+  <LI class="L2"> <A href="/part5#5__information_disclosure_bug_3">Information disclosure #3 </A></LI>
+  </UL></LI>
+<LI class="L1"> <A href="/part5#5__ajax_vulnerabilities">AJAX vulnerabilities</A>
+  <UL>
+  <LI class="L2"> <A href="/part5#5__dos_via_ajax">DoS via AJAX</A></LI>
+  <LI class="L2"> <A href="/part5#5__phishing_via_ajax">Phishing via AJAX</A></LI>
+  </UL></LI>
+<LI class="L1"> <A href="/part5#5__other_vulnerabilities"> Other Vulnerabilities </A> </H2>
+  <UL>
+  <LI class="L2"> <A href="/part5#5__buffer_and_integer_overflow">Buffer Overflow and Integer Overflow</A></LI>
+  <LI class="L2"> <A href="/part5#5__sql_injection"> SQL Injection </A></LI>
+  </UL></LI>
+<LI class="L1"> <A href="/part5#5__after_the_codelab">After the Codelab</A></LI>
+</UL>
+</DIV>
+<DIV class="column2">
+<P></P>
+<P></P>
+<P>
+<NOAUTOLINK>
+</NOAUTOLINK></P>
+
+<H2><A name="3__client_state_manipulation"> </A> Client-State Manipulation </H2>
+<P>
+When a user interacts with a web application, they do it indirectly
+through a browser. When the user clicks a button or submits a form,
+the browser sends a request back to the web server. Because the
+browser runs on a machine that can be controlled by an attacker, the
+application must not trust any data sent by the browser.
+</P><P> It might seem that not trusting any user data would make it
+impossible to write a web application but that's not the case. If the
+user submits a form that says they wish to purchase an item, it's OK
+to trust that data. But if the submitted form also includes the price
+of the item, that's something that cannot be trusted.
+
+</P>
+<P></P>
+<H3><A name="3__elevation_of_privilege"> </A> Elevation of Privilege </H3>
+<IMG src="/static/cheese_w.png" style="vertical-align:middle;
+padding-right: 5px;"> <B>Convert your account to an administrator account.</B>
+<P></P>
+<DIV style="margin-left:18pt">
+<H4 style="cursor: pointer" onclick="toggleBlock(this, 'elevation_hint');"><IMG src="/static/closed.gif"> Hint 1 </H4>
+<DIV id="elevation_hint" style="display:none">
+<P>
+Take a look at
+the <CODE><A href="/code/?resources/editprofile.gtl">editprofile.gtl</A></CODE>
+page that users and administrators use to edit profile settings. If you're not
+an administrator, the page looks a bit different. Can you figure out
+how to fool Gruyere into letting you use this page to update your account?
+</P>
+<P></P>
+</DIV>
+<H4 style="cursor: pointer" onclick="toggleBlock(this, 'elevation_hint2');"><IMG src="/static/closed.gif"> Hint 2 </H4>
+<DIV id="elevation_hint2" style="display:none">
+<P>
+Can you figure out how to fool Gruyere into <i>thinking</i> you used this
+page to update your account?
+</P>
+<P></P>
+</DIV>
+
+<H4 style="cursor: pointer" onclick="toggleBlock(this, 'clientstate');"><IMG src="/static/closed.gif"> Exploit and Fixes </H4>
+<DIV id="clientstate" style="display:none">
+<P>
+You can convert your account to being an administrator by issuing
+either of the following requests:
+</P><UL>
+<LI> <CODE>https://google-gruyere.appspot.com/123/saveprofile?action=update&amp;is_admin=True</CODE>
+</LI>
+<LI> <CODE>https://google-gruyere.appspot.com/123/saveprofile?action=update&amp;is_admin=True&amp;uid=username</CODE>
+(which will make any <CODE>username</CODE> into an an admin)
+</LI>
+</UL>
+<P>After visiting this URL, your account is now marked as an
+administrator but your cookie still says you're not. So sign out and
+back in to get a new cookie. After logging in, notice the
+'Manage this server' link on the top right.</P>
+<P>The bug here is that there is no validation on the server side that
+the request is authorized. The only part of the code that restricts
+the changes that a user is allowed to make are in the template, hiding
+parts of the UI that they shouldn't have access to. The correct thing
+to do is to check for authorization on the server, at the time that
+the request is received.
+</P>
+</DIV>
+</DIV>
+<P></P>
+<H3><A name="3__cookie_manipulation"> </A> Cookie Manipulation </H3>
+Because the HTTP protocol is stateless, there's no way a web server
+can automatically know that two requests are from the same user. For
+this
+reason, <A href="https://www.google.com/search?q=http+cookies">cookies</a>
+were invented. When a web site includes a cookie (an arbitrary string)
+in a HTTP response, the browser automatically sends the cookie back to
+the browser on the next request. Web sites can use the cookie to save
+session state. Gruyere uses cookies to remember the identity of the
+logged in user. Since the cookie is stored on the client side, it's
+vulnerable to manipulation. Gruyere protects the cookies from
+manipulation by adding a hash to it. Notwithstanding the fact that
+this hash isn't very good protection, you don't need to break the hash
+to execute an attack.
+</P><P>
+<IMG src="/static/cheese_bw.png" style="vertical-align:middle;
+padding-right: 5px;"> <B>Get Gruyere to issue you a cookie for someone else's account.</B>
+<DIV style="margin-left:18pt">
+<H4 style="cursor: pointer" onclick="toggleBlock(this, 'cookie_hint');"><IMG src="/static/closed.gif"> Hint 1 </H4>
+<DIV id="cookie_hint" style="display:none">
+<P>
+You don't need to look at the Gruyere cookie parsing code. You just need to know what the cookies look like. Gruyere's cookies use the format:
+<PRE>
+<i>hash</i>|<i>username</i>|admin|author
+</PRE>
+</P>
+<P></P>
+</DIV>
+<H4 style="cursor: pointer" onclick="toggleBlock(this, 'cookie_hint2');"><IMG src="/static/closed.gif"> Hint 2 </H4>
+<DIV id="cookie_hint2" style="display:none">
+<P>
+Gruyere issues a cookie when you log in. Can you trick it into
+issuing you a cookie that looks like another user's cookie?
+</P>
+<P></P>
+</DIV>
+<H4 style="cursor: pointer" onclick="toggleBlock(this, 'cookieparsing');"><IMG src="/static/closed.gif"> Exploit and Fix </H4>
+<DIV id="cookieparsing" style="display:none">
+<P>
+You can get Gruyere to issue you a cookie for someone else's account
+by creating a new account with
+username <CODE>"foo|admin|author"</CODE>. When you log into this
+account, it will issue you the
+cookie <CODE>"hash|foo|admin|author||author"</CODE> which actually
+logs you into <CODE>foo</CODE> as an administrator. (So this is also
+an elevation of privilege attack.)
+</P>
+<P>Having no restrictions on the characters allowed in usernames
+means that we have to be careful when we handle them. In this case,
+the cookie parsing code is tolerant of malformed cookies and it
+shouldn't be. It should escape the username when it constructs the
+cookie and it should reject a cookie if it doesn't match the exact
+pattern it is expecting.
+</P>
+<P>Even if we fix this, Python's hash function is not
+cryptographically secure. If you look at
+Python's <CODE>string_hash</CODE> function
+in <CODE><a href="https://svn.python.org/projects/python/trunk/Objects/stringobject.c">python/Objects/stringobject.cc</A></CODE>
+you'll see that it hashes the string strictly from left to right. That
+means that we don't need to know the cookie secret to generate our own
+hashes; all we need is another string that hashes to the same value,
+which we can find in a relatively short time on a typical PC. In
+contrast, with a cryptographic hash function, changing any bit of the
+string will change many bits of the hash value in an unpredictable
+way. At a minimum, you should use a secure hash function to protect
+your cookies. You should also consider encrypting the entire cookie as
+plain text cookies can expose information you might not want exposed.
+</P>
+<P>And these cookies are also vulnerable to a replay attack. Once a
+user is issued a cookie, it's good forever and there's no way to
+revoke it. So if a user is an administrator at one time, they can save
+the cookie and continue to act as an administrator even if their
+administrative rights are taken away. While it's convenient to not
+have to make a database query in order to check whether or not a user
+is an administrator, that might be too dangerous a detail to store in
+the cookie. If avoiding additional database access is important, the
+server could cache a list of recent admin users. Including a timestamp
+in a cookie and expiring it after some period of time also mitigates
+against a replay attack.</P>
+
+<P><B>Another challenge:</B> Since account names are limited to 16 characters, it seems that
+this trick would not work to log in to the
+actual <CODE>administrator</CODE> account
+since <CODE>"administrator|admin"</CODE> is 19 characters. Can you
+figure out how to bypass that restriction?
+</P>
+<H4 style="cursor: pointer" onclick="toggleBlock(this, 'cookie2');"><IMG src="/static/closed.gif"> Additional Exploit and Fix </H4>
+<DIV id="cookie2" style="display:none">
+The 16 character limit is implemented on the client side. Just issue
+your own request:
+<PRE>
+https://google-gruyere.appspot.com/123/saveprofile?action=new&uid=administrator|admin|author&pw=secret
+</PRE>
+<P>Again, this restriction should be implemented on the server side,
+not just the client side.</P>
+</DIV>
+</DIV>
+</DIV>
+<BR><BR>
+<H2><A name="3__cross_site_request_forgery"> </A> Cross-Site Request Forgery (XSRF) </H2>
+<P>
+The previous section said "If the user submits a form that says they
+wish to purchase an item, it's OK to trust that data." That's true as
+long as it really was the user that submitted the form. If your site
+is vulnerable to XSS, then the attacker can fake any request as if it
+came from the user. But even if you've protected against XSS, there's
+another attack that you need to protect against: cross-site request
+forgery.
+</P><P>
+When a browser makes requests to a site, it always sends along any
+cookies it has for that site, regardless of where the request comes
+from. Additionally, web servers generally cannot distinguish between a
+request initiated by a deliberate user action (e.g., user clicking on
+"Submit" button) versus a request made by the browser without user
+action (e.g., request for an embedded image in a page). Therefore, if
+a site receives a request to perform some action (like deleting a
+mail, changing contact address), it cannot know whether this action
+was knowingly initiated by the user &mdash; even if the request contains
+authentication cookies. An attacker can use this fact to fool the
+server into performing actions the user did not intend to perform.
+</P>
+<P></P>
+<DIV style="margin-left:18pt">
+<H4 style="cursor: pointer" onclick="toggleBlock(this, 'xsrf_desc');"><IMG src="/static/closed.gif"> More details </H4>
+<DIV id="xsrf_desc" style="display:none">
+<P>
+For example, suppose Blogger is vulnerable to XSRF attacks (it
+isn't). And let us say Blogger has a Delete Blog button on the
+dashboard that points to this URL:
+<PRE>
+https://www.blogger.com/deleteblog.do?blogId=BLOGID
+</PRE>
+Bob, the attacker, embeds the following HTML on his web page
+on <CODE>https://www.evil.example.com</CODE>:
+</P>
+<PRE>
+&lt;img src="https://www.blogger.com/deleteblog.do?blogId=alice's-blog-id"
+    style="display:none"&gt;
+</PRE>
+<P>
+If the victim, Alice, is logged in to <CODE>www.blogger.com</CODE> when
+she views the above page, here is what happens:
+</P>
+<P></P>
+<UL>
+<LI> Her browser loads the page
+from <CODE>https://www.evil.example.com</CODE>. The browser then tries to
+load all embedded objects in the page, including the <CODE>img</CODE>
+shown above.
+</LI>
+<LI> The browser makes a request
+to <CODE>https://www.blogger.com/deleteblog.do?blogId=alice's-blog-id</CODE>
+to load the image. Since Alice is logged into Blogger &mdash; that is,
+she has a Blogger cookie &mdash; the browser also sends that cookie in
+the request.
+</LI>
+<LI> Blogger verifies the cookie is a valid session cookie for
+Alice. It verifies that the blog referenced
+by <CODE>alice's-blog-id</CODE> is owned by Alice. It deletes Alice's
+blog.
+</LI>
+<LI> Alice has no idea what hit her.
+</LI>
+</UL>
+<P>
+In this sample attack, since each user has their own blog id, the
+attack has to be specifically targeted to a single person. In many
+cases, though, requests like these don't contain any user-specific
+data.
+</P></DIV>
+</DIV>
+<P></P>
+<H3><A name="3__xsrf_challenge"> </A> XSRF Challenge </H3>
+<P>
+The goal here is to find a way to perform an account changing action
+on behalf of a logged in Gruyere user without their
+knowledge. Assume you can get them to visit a web page under your
+control.
+</P>
+<P>
+<IMG src="/static/cheese_b.png" style="vertical-align:middle;
+padding-right: 5px;"> <B> Find a way to get someone to delete one
+of their Gruyere snippets.</B>
+</P>
+<P></P>
+<DIV style="margin-left:18pt">
+<H4 style="cursor: pointer" onclick="toggleBlock(this, 'xsrf_hint');"><IMG src="/static/closed.gif"> Hint </H4>
+<DIV id="xsrf_hint" style="display:none">
+<P>
+What is the URL used to delete a snippet? Look at the URL associated
+with the "X" next to a snippet.
+</P>
+<P></P>
+</DIV>
+<H4 style="cursor: pointer" onclick="toggleBlock(this, 'xsrf_soln');"><IMG src="/static/closed.gif"> Exploit and Fix </H4>
+<DIV id="xsrf_soln" style="display:none">
+<P>
+<B>To exploit,</B> lure a user to visit a page that makes
+the following request:
+</P>
+<P></P>
+<PRE>
+https://google-gruyere.appspot.com/123/deletesnippet?index=0
+</PRE>
+<P>
+To be especially sneaky, you could set your Gruyere icon to this URL
+and the victim would be exploited when they visited the main page.
+</P>
+<P>
+<B>To fix,</B> we should first change <CODE>/deletesnippet</CODE> to
+work via a <CODE>POST</CODE> request since this is a state changing
+action. In the HTML form, change <CODE>method='get'</CODE>
+to <CODE>method='post'</CODE>. On the server side, <CODE>GET</CODE>
+and <CODE>POST</CODE> requests look the same except that they usually
+call different handlers. For example, Gruyere uses Python's
+BaseHTTPServer which calls <CODE>do_GET</CODE> for <CODE>GET</CODE>
+requests and <CODE>do_POST</CODE> for <CODE>POST</CODE> requests.
+</P><P>
+<B>However</B>, note that changing to <CODE>POST</CODE> is not enough
+of a fix in itself! (Gruyere uses <CODE>GET</CODE> requests
+exclusively because it makes hacking it a bit
+easier. <CODE>POST</CODE> is not more secure than <CODE>GET</CODE> but
+it is more correct: browsers may re-issue <CODE>GET</CODE> requests
+which can result in an action getting executed more than once;
+browsers won't reissue <CODE>POST</CODE> requests without user
+consent.) Then we need to pass a unique, unpredictable authorization
+token to the user and require that it get sent back before performing
+the action. For this authorization token, <CODE>action_token</CODE>,
+we can use a hash of the value of the user's cookie appended to a
+current timestamp and include this token in all state-changing HTTP
+requests as an additional HTTP parameter. The reason we
+use <CODE>POST</CODE> over <CODE>GET</CODE> requests is that if we
+pass <CODE>action_token</CODE> as a URL parameter, it might leak via
+HTTP Referer headers. The reason we include the timestamp in our hash
+is so that we can expire old tokens, which mitigates the risk if it
+leaks.
+</P>
+<P> When a request is processed, Gruyere should regenerate the token
+and compare it with the value supplied with the request. If the values
+are equal, then it should perform the action. Otherwise, it should
+reject it. The functions that generate and verify the tokens look like
+this:
+</P>
+<P></P>
+<PRE>
+def _GenerateXsrfToken(self, cookie):
+  """Generates a timestamp and XSRF token for all state changing actions."""
+
+  timestamp = time.time()
+  return timestamp + "|" + (str(hash(cookie_secret + cookie + timestamp)))
+
+def _VerifyXsrfToken(self, cookie, action_token):
+  """Verifies an XSRF token included in a request."""
+
+  # First, make sure that the token isn't more than a day old.
+  (action_time, action_hash) = action_token.split("|", 1)
+  now = time.time()
+  if now - 86400 &gt; float(action_time):
+    return False
+
+  # Second, regenerate it and check that it matches the user supplied value
+  hash_to_verify = str(hash(cookie_secret + cookie + action_time)
+  return action_hash == hash_to_verify
+</PRE>
+<P>
+<B>Oops!</B> There's several things wrong with these functions.
+</P><H4 style="cursor: pointer" onclick="toggleBlock(this, 'xsrf_whats_wrong');"><IMG src="/static/closed.gif"> What's missing? </H4>
+<DIV id="xsrf_whats_wrong" style="display:none">
+<P>
+By including the time in the token, we prevent it from being used
+forever, but if an attacker were to gain access to a copy of the
+token, they could reuse it as many times as they wanted within that 24
+hour period. The expiration time of a token should be set to a small
+value that represents the reasonable length of time it will take the
+user to make a request.  This token also doesn't protect against an
+attack where a token for one request is intercepted and then used for
+a different request. As suggested by the
+name <CODE>action_token</CODE>, the token should be tied to the
+specific state changing action being performed, such as the URL of the
+page. A better signature for <CODE>_GenerateXsrfToken</CODE> would
+be <CODE>(self, cookie, action)</CODE>. For very long actions, like
+editing snippets, a script on the page could query the server to
+update the token when the user hits submit. (But read the next section
+about XSSI to make sure that an attacker won't be able to read that
+new token.)</P>
+<P>
+XSRF vulnerabilities exist because an attacker can easily script a
+series of requests to an application and than force a user to execute
+them by visiting some page. To prevent this type of attack, you need
+to introduce some value that can't be predicted or scripted by an
+attacker for <B>every account changing</B> request. Some application
+frameworks have XSRF protection built in: they automatically include a
+unique token in every response and verify it on every POST request.
+Other frameworks provide functions that you can use to do that. If
+neither of these cases apply, then you'll have
+to <A href="https://www.google.com/search?q=preventing+(XSRF+OR+CSRF)"
+target="_top">build your own</A>. Be careful of things that don't
+work: using <CODE>POST</CODE> instead of <CODE>GET</CODE> is advisable
+but not sufficient by itself, checking Referer headers is
+insufficient, and copying cookies into hidden form fields can make
+your cookies less secure.
+</P>
+<!--MARK-7-->
+</DIV>
+</DIV>
+<BR><P></P>
+</DIV>
+<H2><A name="3__cross_site_script_inclusion"> </A> Cross Site Script Inclusion (XSSI) </H2>
+<P>
+Browsers prevent pages of one domain from reading pages in other
+domains. But they do not prevent pages of a domain from referencing
+resources in other domains. In particular, they allow images to be
+rendered from other domains and scripts to be executed from other
+domains. An included script doesn't have its own security context. It
+runs in the security context of the page that included it. For
+example, if <CODE>www.evil.example.com</CODE> includes a script hosted
+on <CODE>www.google.com</CODE> then that script runs in
+the <CODE>evil</CODE> context not in the <CODE>google</CODE>
+context. So any user data in that script will "leak."
+</P>
+<!--MARK-8-->
+<P></P>
+<H3><A name="3__xssi_challenge"> </A> XSSI Challenge </H3>
+<P>
+<IMG src="/static/cheese_w.png" style="vertical-align:middle; padding-right: 5px;">
+<B>Find a way to read someone else's private snippet using XSSI.</B>
+</P>
+<P> That is, create a page on another web site and put something in
+that page that can read your private snippet. (You don't need to post
+it to a web site: you can just create a <CODE>.html</CODE> in your
+home directory and double click on it to open in a browser.)
+</P>
+<P></P>
+<DIV style="margin-left:18pt">
+<P></P>
+<H4 style="cursor: pointer" onclick="toggleBlock(this, 'xssi_hint1');"><IMG src="/static/closed.gif"> Hint 1 </H4>
+<P></P>
+<DIV id="xssi_hint1" style="display:none">
+<P>
+You can run a script from another domain by
+adding
+<PRE>
+&lt;SCRIPT src="https://google-gruyere.appspot.com/123/..."&gt;&lt;/SCRIPT&gt;
+</PRE>
+to your HTML file. What scripts does Gruyere have?
+</P>
+<P></P>
+</DIV>
+<H4 style="cursor: pointer" onclick="toggleBlock(this, 'xssi_hint2');"><IMG src="/static/closed.gif"> Hint 2 </H4>
+<DIV id="xssi_hint2" style="display:none">
+<P>
+<CODE><A href="/code/?resources/feed.gtl">feed.gtl</A></CODE> is a
+script. Given that, how can you get the private snippet out of the
+script?
+</P>
+<P></P>
+</DIV>
+<H4 style="cursor: pointer" onclick="toggleBlock(this, 'xssi_sol');"><IMG src="/static/closed.gif"> Exploit and Fix </H4>
+<DIV id="xssi_sol" style="display:none">
+<P>
+<B>To exploit,</B> put this in an html file:
+</P>
+<P></P>
+<PRE>
+&lt;script&gt;
+function _feed(s) {
+  alert("Your private snippet is: " + s['private_snippet']);
+}
+&lt;/script&gt;
+&lt;script src="https://google-gruyere.appspot.com/123/feed.gtl"&gt;&lt;/script&gt;
+</PRE>
+<P>
+When the script
+in <CODE><A href="/code/?resources/feed.gtl">feed.gtl</A></CODE> is
+executed, it runs in the context of the attacker's web page and uses
+the <CODE>_feed</CODE> function which can do whatever it wants with
+the data, including sending it off to another web site.
+</P>
+<P>
+You might think that you can fix this by eliminating the function
+call and just having the bare expression. That way, when the script is
+executed by inclusion, the response will be evaluated and then
+discarded. That won't work because JavaScript allows you to do things
+like redefine default constructors. So when the object is evaluated,
+the hosting page's constructors are invoked, which can do whatever
+they want with the values.
+</P>
+<!--MARK-9-->
+<P>
+<B>To fix,</B> there are several changes you can make. Any
+one of these changes will prevent currently possible attacks, but if
+you add several layers of protection
+("<a href="https://www.google.com/search?q=%22defense+in+depth%22+security">defense
+in depth</a>") you protect against the possibility that you get one of
+the protections wrong and also against future browser
+vulnerabilities. First, use an XSRF token as discussed earlier to make
+sure that JSON results containing confidential data are only returned
+to your own pages. Second, your JSON response pages should only
+support <CODE>POST</CODE> requests, which prevents the script from
+being loaded via a script tag. Third, you should make sure that the
+script is not executable. The standard way of doing this is to append
+some non-executable prefix to it,
+like <CODE>])}while(1);&lt;/x&gt;</CODE>. A script running in the same
+domain can read the contents of the response and strip out the prefix,
+but scripts running in other domains can't.
+</P>
+<P> NOTE: Making the script not executable is more subtle than it
+seems. It's possible that what makes a script executable may change in
+the future if new scripting features or languages are introduced. Some
+people suggest that you can protect the script by making it a comment
+by surrounding it with <CODE>/*</CODE> and <CODE>*/</CODE>, but that's
+not as simple as it might seem. (Hint: what if someone
+included <CODE>*/</CODE> in one of their snippets?)
+</P>
+<P>
+There's <A href="https://www.google.com/search?q=%22cross+site+script+inclusion%22"
+target="_top">much more to XSSI</A> than this. There's a variation of
+JSON called JSONP which you should avoid using because it allows
+script injection <I>by design</I>. And
+there's <A href="https://www.google.com/search?q=E4X+markup+security"
+target="_top">E4X</A> (Ecmascript for XML) which can result in your
+HTML file being parsed as a script. Surprisingly, one way to protect
+against E4X attacks is to put some invalid XML in your files, like
+the <CODE>&lt;/x&gt;</CODE> above.
+</P>
+<P></P>
+</DIV>
+</DIV>
+<BR><P></P>
+
+
+             <FONT SIZE="+2">
+             <A href="/part4">Continue &gt;&gt;</A>
+             </FONT><BR>
+<BR>
+<P style="font-size:x-small">
+&copy; Google 2017 <A href="https://www.google.com/intl/en/policies/terms/">Terms of Service</A>
+<BR>The code portions of this codelab are licensed under the
+Creative Commons Attribution-No Derivative Works 3.0 United States license
+&lt;<A href="https://creativecommons.org/licenses/by-nd/3.0/us/">https://creativecommons.org/licenses/by-nd/3.0/us</A>&gt;.
+Brief excerpts of the code may be used for educational or
+instructional purposes provided this notice is kept intact.
+Except as otherwise noted the remainder of this codelab is licensed under the
+Creative Commons Attribution 3.0 United States license
+&lt;<A href="https://creativecommons.org/licenses/by/3.0/us/">https://creativecommons.org/licenses/by/3.0/us</A>&gt;.
+</P>
+</BODY></HTML>

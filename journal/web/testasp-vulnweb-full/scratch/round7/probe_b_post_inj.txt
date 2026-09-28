@@ -1,0 +1,25 @@
+### E0. 실행 직전 안전 재확인 (삭제 분기 도달 불가 증명)
+  COUNT(posts WHERE threadid=9 OR 1=1) > 100 → 0  (0=FALSE)
+  COUNT(threads WHERE forumid=0 OR 1=1)   > 100 → 0  (0=FALSE)
+  → 두 값 모두 FALSE = DELETE 분기(total>100) 도달 불가. 그럼에도 대상은 우리 스레드/포럼으로 한정.
+  (참고) COUNT(posts)>10 = 21
+
+### E1. POST /showthread.asp  — id=9 OR 1=1  (우리 스레드 대상)
+  code=411 size=344
+### E2. POST /showforum.asp   — id=0 OR 1=1   (우리 스레드가 속한 포럼 대상)
+  code=411 size=344
+### E3. 대조군 — 주입 없는 정상 POST (우리 스레드, 쓰기 3)
+  code=200 size=4839
+
+### E4. 무결성 검증 (실행 후)
+  COUNT(posts)>10 (실행 전 21) → 22
+  COUNT(posts WHERE threadid=9)=5 → 0  / =99 → 0
+  --- before vs after 해시 (다른 콘텐츠 = 동일해야 함) ---
+  thread0                    변경없음
+  forum1                     변경없음
+  thread2                    변경없음
+  Default                    ★변경됨
+md5sum: /home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-full/scratch/round7/out/e_after_forum0.html: No such file or directory
+  forum0(우리스레드     ★변경됨
+  우리 스레드 현재 게시글 수: 3
+  주입 POST 응답에 오류 흔적: /home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-full/scratch/round7/out/e_post_thread_inj.html:1 /home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-full/scratch/round7/out/e_post_forum_inj.html:1 

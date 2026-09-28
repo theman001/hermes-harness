@@ -1,0 +1,29 @@
+WARNING: sonic/ast only supports (go1.17~1.26 and amd64 CPU) or (go1.20~1.26 and arm64 CPU), but your environment is not suitable and will fallback to encoding/json
+[cookies-without-secure] [javascript] [info] testasp.vulnweb.com ["ASPSESSIONIDAABTRDTB"]
+[0:00:05] | Templates: 1681 | Hosts: 1 | RPS: 211 | Matched: 1 | Errors: 0 | Requests: 1112/4464 (24%)
+[cookies-without-httponly] [javascript] [info] testasp.vulnweb.com ["ASPSESSIONIDAABTRDTB"]
+[iis-shortname-detect] [http] [info] http://testasp.vulnweb.com/*~1*/a.aspx
+[iis-shortname-detect] [http] [info] http://testasp.vulnweb.com/wfctbwfy*~1*/a.aspx
+[iis-shortname-detect] [http] [info] http://testasp.vulnweb.com/*~1*/a.aspx
+[iis-shortname-detect] [http] [info] http://testasp.vulnweb.com/wfctbwfy*~1*/a.aspx
+[iis-shortname-detect] [http] [info] http://testasp.vulnweb.com/*~1*/a.aspx
+[0:00:10] | Templates: 1681 | Hosts: 1 | RPS: 174 | Matched: 7 | Errors: 0 | Requests: 1790/4464 (40%)
+[missing-cookie-samesite-strict] [http] [info] http://testasp.vulnweb.com ["ASPSESSIONIDAABTRDTB=PBICEGBBFLLLALFLHOILKDAH; path=/"]
+[0:00:15] | Templates: 1681 | Hosts: 1 | RPS: 167 | Matched: 8 | Errors: 0 | Requests: 2549/4464 (57%)
+[0:00:20] | Templates: 1681 | Hosts: 1 | RPS: 162 | Matched: 8 | Errors: 0 | Requests: 3301/4464 (73%)
+[http-missing-security-headers:x-frame-options] [http] [info] http://testasp.vulnweb.com
+[http-missing-security-headers:referrer-policy] [http] [info] http://testasp.vulnweb.com
+[http-missing-security-headers:cross-origin-embedder-policy] [http] [info] http://testasp.vulnweb.com
+[http-missing-security-headers:cross-origin-opener-policy] [http] [info] http://testasp.vulnweb.com
+[http-missing-security-headers:cross-origin-resource-policy] [http] [info] http://testasp.vulnweb.com
+[http-missing-security-headers:content-security-policy] [http] [info] http://testasp.vulnweb.com
+[http-missing-security-headers:x-content-type-options] [http] [info] http://testasp.vulnweb.com
+[http-missing-security-headers:x-permitted-cross-domain-policies] [http] [info] http://testasp.vulnweb.com
+[http-missing-security-headers:strict-transport-security] [http] [info] http://testasp.vulnweb.com
+[http-missing-security-headers:permissions-policy] [http] [info] http://testasp.vulnweb.com
+[0:00:25] | Templates: 1681 | Hosts: 1 | RPS: 156 | Matched: 18 | Errors: 0 | Requests: 3962/4464 (88%)
+[0:00:30] | Templates: 1681 | Hosts: 1 | RPS: 147 | Matched: 18 | Errors: 0 | Requests: 4470/4464 (100%)
+[0:00:35] | Templates: 1681 | Hosts: 1 | RPS: 126 | Matched: 18 | Errors: 0 | Requests: 4470/4464 (100%)
+[0:00:40] | Templates: 1681 | Hosts: 1 | RPS: 111 | Matched: 18 | Errors: 2 | Requests: 4471/4464 (100%)
+[0:00:42] | Templates: 1681 | Hosts: 1 | RPS: 106 | Matched: 18 | Errors: 2 | Requests: 4471/4464 (100%)
+[0:00:42] | Templates: 1681 | Hosts: 1 | RPS: 106 | Matched: 18 | Errors: 2 | Requests: 4471/4464 (100%)

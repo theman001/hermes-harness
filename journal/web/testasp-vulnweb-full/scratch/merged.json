@@ -1,0 +1,947 @@
+[
+ {
+  "tool": "ffuf#1 raft(no-ext,proxy)",
+  "url": "http://testasp.vulnweb.com/images",
+  "status": 301,
+  "length": 157,
+  "words": 9,
+  "src": "ffuf_dirs.json"
+ },
+ {
+  "tool": "ffuf#1 raft(no-ext,proxy)",
+  "url": "http://testasp.vulnweb.com/cgi-bin",
+  "status": 301,
+  "length": 158,
+  "words": 9,
+  "src": "ffuf_dirs.json"
+ },
+ {
+  "tool": "ffuf#1 raft(no-ext,proxy)",
+  "url": "http://testasp.vulnweb.com/templates",
+  "status": 301,
+  "length": 160,
+  "words": 9,
+  "src": "ffuf_dirs.json"
+ },
+ {
+  "tool": "ffuf#1 raft(no-ext,proxy)",
+  "url": "http://testasp.vulnweb.com/aspnet_client",
+  "status": 301,
+  "length": 164,
+  "words": 9,
+  "src": "ffuf_dirs.json"
+ },
+ {
+  "tool": "ffuf#1 raft(no-ext,proxy)",
+  "url": "http://testasp.vulnweb.com/Templates",
+  "status": 301,
+  "length": 160,
+  "words": 9,
+  "src": "ffuf_dirs.json"
+ },
+ {
+  "tool": "ffuf#1 raft(no-ext,proxy)",
+  "url": "http://testasp.vulnweb.com/_vti_cnf",
+  "status": 301,
+  "length": 159,
+  "words": 9,
+  "src": "ffuf_dirs.json"
+ },
+ {
+  "tool": "ffuf#1 raft(no-ext,proxy)",
+  "url": "http://testasp.vulnweb.com/html",
+  "status": 301,
+  "length": 155,
+  "words": 9,
+  "src": "ffuf_dirs.json"
+ },
+ {
+  "tool": "ffuf#1 raft(no-ext,proxy)",
+  "url": "http://testasp.vulnweb.com/Images",
+  "status": 301,
+  "length": 157,
+  "words": 9,
+  "src": "ffuf_dirs.json"
+ },
+ {
+  "tool": "ffuf#1 raft(no-ext,proxy)",
+  "url": "http://testasp.vulnweb.com/.",
+  "status": 200,
+  "length": 3540,
+  "words": 328,
+  "src": "ffuf_dirs.json"
+ },
+ {
+  "tool": "ffuf#1 raft(no-ext,proxy)",
+  "url": "http://testasp.vulnweb.com/t",
+  "status": 301,
+  "length": 152,
+  "words": 9,
+  "src": "ffuf_dirs.json"
+ },
+ {
+  "tool": "ffuf#1 raft(no-ext,proxy)",
+  "url": "http://testasp.vulnweb.com/avatars",
+  "status": 301,
+  "length": 158,
+  "words": 9,
+  "src": "ffuf_dirs.json"
+ },
+ {
+  "tool": "ffuf#1 raft(no-ext,proxy)",
+  "url": "http://testasp.vulnweb.com/jscripts",
+  "status": 301,
+  "length": 159,
+  "words": 9,
+  "src": "ffuf_dirs.json"
+ },
+ {
+  "tool": "ffuf#1 raft(no-ext,proxy)",
+  "url": "http://testasp.vulnweb.com/CGI-BIN",
+  "status": 301,
+  "length": 158,
+  "words": 9,
+  "src": "ffuf_dirs.json"
+ },
+ {
+  "tool": "ffuf#1 raft(no-ext,proxy)",
+  "url": "http://testasp.vulnweb.com/HTML",
+  "status": 301,
+  "length": 155,
+  "words": 9,
+  "src": "ffuf_dirs.json"
+ },
+ {
+  "tool": "ffuf#1 raft(no-ext,proxy)",
+  "url": "http://testasp.vulnweb.com/IMAGES",
+  "status": 301,
+  "length": 157,
+  "words": 9,
+  "src": "ffuf_dirs.json"
+ },
+ {
+  "tool": "ffuf#1 raft(no-ext,proxy)",
+  "url": "http://testasp.vulnweb.com/T",
+  "status": 301,
+  "length": 152,
+  "words": 9,
+  "src": "ffuf_dirs.json"
+ },
+ {
+  "tool": "ffuf#1 raft(no-ext,proxy)",
+  "url": "http://testasp.vulnweb.com/Html",
+  "status": 301,
+  "length": 155,
+  "words": 9,
+  "src": "ffuf_dirs.json"
+ },
+ {
+  "tool": "ffuf#1 raft(no-ext,proxy)",
+  "url": "http://testasp.vulnweb.com/TEMPLATES",
+  "status": 301,
+  "length": 160,
+  "words": 9,
+  "src": "ffuf_dirs.json"
+ },
+ {
+  "tool": "ffuf#1 raft(no-ext,proxy)",
+  "url": "http://testasp.vulnweb.com/Aspnet_client",
+  "status": 301,
+  "length": 164,
+  "words": 9,
+  "src": "ffuf_dirs.json"
+ },
+ {
+  "tool": "ffuf#1 raft(no-ext,proxy)",
+  "url": "http://testasp.vulnweb.com/Cgi-bin",
+  "status": 301,
+  "length": 158,
+  "words": 9,
+  "src": "ffuf_dirs.json"
+ },
+ {
+  "tool": "ffuf#1 raft(no-ext,proxy)",
+  "url": "http://testasp.vulnweb.com/JScripts",
+  "status": 301,
+  "length": 159,
+  "words": 9,
+  "src": "ffuf_dirs.json"
+ },
+ {
+  "tool": "ffuf#1 raft(no-ext,proxy)",
+  "url": "http://testasp.vulnweb.com/Avatars",
+  "status": 301,
+  "length": 158,
+  "words": 9,
+  "src": "ffuf_dirs.json"
+ },
+ {
+  "tool": "ffuf#1 raft(no-ext,proxy)",
+  "url": "http://testasp.vulnweb.com/aspnet_Client",
+  "status": 301,
+  "length": 164,
+  "words": 9,
+  "src": "ffuf_dirs.json"
+ },
+ {
+  "tool": "ffuf#2 raft+10ext(direct)",
+  "url": "http://testasp.vulnweb.com/images",
+  "status": 301,
+  "length": 157,
+  "words": 9,
+  "src": "ffuf_ext.json"
+ },
+ {
+  "tool": "ffuf#2 raft+10ext(direct)",
+  "url": "http://testasp.vulnweb.com/cgi-bin",
+  "status": 301,
+  "length": 158,
+  "words": 9,
+  "src": "ffuf_ext.json"
+ },
+ {
+  "tool": "ffuf#2 raft+10ext(direct)",
+  "url": "http://testasp.vulnweb.com/login.asp",
+  "status": 200,
+  "length": 3194,
+  "words": 429,
+  "src": "ffuf_ext.json"
+ },
+ {
+  "tool": "ffuf#2 raft+10ext(direct)",
+  "url": "http://testasp.vulnweb.com/templates",
+  "status": 301,
+  "length": 160,
+  "words": 9,
+  "src": "ffuf_ext.json"
+ },
+ {
+  "tool": "ffuf#2 raft+10ext(direct)",
+  "url": "http://testasp.vulnweb.com/search.asp",
+  "status": 200,
+  "length": 2809,
+  "words": 319,
+  "src": "ffuf_ext.json"
+ },
+ {
+  "tool": "ffuf#2 raft+10ext(direct)",
+  "url": "http://testasp.vulnweb.com/register.asp",
+  "status": 200,
+  "length": 3617,
+  "words": 561,
+  "src": "ffuf_ext.json"
+ },
+ {
+  "tool": "ffuf#2 raft+10ext(direct)",
+  "url": "http://testasp.vulnweb.com/logout.asp",
+  "status": 302,
+  "length": 132,
+  "words": 9,
+  "src": "ffuf_ext.json"
+ },
+ {
+  "tool": "ffuf#2 raft+10ext(direct)",
+  "url": "http://testasp.vulnweb.com/aspnet_client",
+  "status": 301,
+  "length": 164,
+  "words": 9,
+  "src": "ffuf_ext.json"
+ },
+ {
+  "tool": "ffuf#2 raft+10ext(direct)",
+  "url": "http://testasp.vulnweb.com/Templates",
+  "status": 301,
+  "length": 160,
+  "words": 9,
+  "src": "ffuf_ext.json"
+ },
+ {
+  "tool": "ffuf#2 raft+10ext(direct)",
+  "url": "http://testasp.vulnweb.com/db.asp",
+  "status": 200,
+  "length": 0,
+  "words": 1,
+  "src": "ffuf_ext.json"
+ },
+ {
+  "tool": "ffuf#2 raft+10ext(direct)",
+  "url": "http://testasp.vulnweb.com/_vti_cnf",
+  "status": 301,
+  "length": 159,
+  "words": 9,
+  "src": "ffuf_ext.json"
+ },
+ {
+  "tool": "ffuf#2 raft+10ext(direct)",
+  "url": "http://testasp.vulnweb.com/Search.asp",
+  "status": 200,
+  "length": 2809,
+  "words": 319,
+  "src": "ffuf_ext.json"
+ },
+ {
+  "tool": "ffuf#2 raft+10ext(direct)",
+  "url": "http://testasp.vulnweb.com/Login.asp",
+  "status": 200,
+  "length": 3194,
+  "words": 429,
+  "src": "ffuf_ext.json"
+ },
+ {
+  "tool": "ffuf#2 raft+10ext(direct)",
+  "url": "http://testasp.vulnweb.com/html",
+  "status": 301,
+  "length": 155,
+  "words": 9,
+  "src": "ffuf_ext.json"
+ },
+ {
+  "tool": "ffuf#2 raft+10ext(direct)",
+  "url": "http://testasp.vulnweb.com/default.asp",
+  "status": 200,
+  "length": 3540,
+  "words": 328,
+  "src": "ffuf_ext.json"
+ },
+ {
+  "tool": "ffuf#2 raft+10ext(direct)",
+  "url": "http://testasp.vulnweb.com/Images",
+  "status": 301,
+  "length": 157,
+  "words": 9,
+  "src": "ffuf_ext.json"
+ },
+ {
+  "tool": "ffuf#2 raft+10ext(direct)",
+  "url": "http://testasp.vulnweb.com/.",
+  "status": 200,
+  "length": 3540,
+  "words": 328,
+  "src": "ffuf_ext.json"
+ },
+ {
+  "tool": "ffuf#2 raft+10ext(direct)",
+  "url": "http://testasp.vulnweb.com/t",
+  "status": 301,
+  "length": 152,
+  "words": 9,
+  "src": "ffuf_ext.json"
+ },
+ {
+  "tool": "ffuf#2 raft+10ext(direct)",
+  "url": "http://testasp.vulnweb.com/avatars",
+  "status": 301,
+  "length": 158,
+  "words": 9,
+  "src": "ffuf_ext.json"
+ },
+ {
+  "tool": "ffuf#2 raft+10ext(direct)",
+  "url": "http://testasp.vulnweb.com/Default.asp",
+  "status": 200,
+  "length": 3540,
+  "words": 328,
+  "src": "ffuf_ext.json"
+ },
+ {
+  "tool": "ffuf#2 raft+10ext(direct)",
+  "url": "http://testasp.vulnweb.com/robots.txt",
+  "status": 200,
+  "length": 13,
+  "words": 2,
+  "src": "ffuf_ext.json"
+ },
+ {
+  "tool": "ffuf#2 raft+10ext(direct)",
+  "url": "http://testasp.vulnweb.com/Register.asp",
+  "status": 200,
+  "length": 3617,
+  "words": 561,
+  "src": "ffuf_ext.json"
+ },
+ {
+  "tool": "ffuf#2 raft+10ext(direct)",
+  "url": "http://testasp.vulnweb.com/showthread.asp",
+  "status": 302,
+  "length": 132,
+  "words": 9,
+  "src": "ffuf_ext.json"
+ },
+ {
+  "tool": "ffuf#2 raft+10ext(direct)",
+  "url": "http://testasp.vulnweb.com/jscripts",
+  "status": 301,
+  "length": 159,
+  "words": 9,
+  "src": "ffuf_ext.json"
+ },
+ {
+  "tool": "ffuf#2 raft+10ext(direct)",
+  "url": "http://testasp.vulnweb.com/Logout.asp",
+  "status": 302,
+  "length": 132,
+  "words": 9,
+  "src": "ffuf_ext.json"
+ },
+ {
+  "tool": "ffuf#2 raft+10ext(direct)",
+  "url": "http://testasp.vulnweb.com/CGI-BIN",
+  "status": 301,
+  "length": 158,
+  "words": 9,
+  "src": "ffuf_ext.json"
+ },
+ {
+  "tool": "ffuf#2 raft+10ext(direct)",
+  "url": "http://testasp.vulnweb.com/HTML",
+  "status": 301,
+  "length": 155,
+  "words": 9,
+  "src": "ffuf_ext.json"
+ },
+ {
+  "tool": "ffuf#2 raft+10ext(direct)",
+  "url": "http://testasp.vulnweb.com/DB.asp",
+  "status": 200,
+  "length": 0,
+  "words": 1,
+  "src": "ffuf_ext.json"
+ },
+ {
+  "tool": "ffuf#2 raft+10ext(direct)",
+  "url": "http://testasp.vulnweb.com/IMAGES",
+  "status": 301,
+  "length": 157,
+  "words": 9,
+  "src": "ffuf_ext.json"
+ },
+ {
+  "tool": "ffuf#2 raft+10ext(direct)",
+  "url": "http://testasp.vulnweb.com/T",
+  "status": 301,
+  "length": 152,
+  "words": 9,
+  "src": "ffuf_ext.json"
+ },
+ {
+  "tool": "ffuf#2 raft+10ext(direct)",
+  "url": "http://testasp.vulnweb.com/Html",
+  "status": 301,
+  "length": 155,
+  "words": 9,
+  "src": "ffuf_ext.json"
+ },
+ {
+  "tool": "ffuf#2 raft+10ext(direct)",
+  "url": "http://testasp.vulnweb.com/Robots.txt",
+  "status": 200,
+  "length": 13,
+  "words": 2,
+  "src": "ffuf_ext.json"
+ },
+ {
+  "tool": "ffuf#2 raft+10ext(direct)",
+  "url": "http://testasp.vulnweb.com/LogOut.asp",
+  "status": 302,
+  "length": 132,
+  "words": 9,
+  "src": "ffuf_ext.json"
+ },
+ {
+  "tool": "ffuf#2 raft+10ext(direct)",
+  "url": "http://testasp.vulnweb.com/LogIn.asp",
+  "status": 200,
+  "length": 3194,
+  "words": 429,
+  "src": "ffuf_ext.json"
+ },
+ {
+  "tool": "ffuf#2 raft+10ext(direct)",
+  "url": "http://testasp.vulnweb.com/TEMPLATES",
+  "status": 301,
+  "length": 160,
+  "words": 9,
+  "src": "ffuf_ext.json"
+ },
+ {
+  "tool": "ffuf#2 raft+10ext(direct)",
+  "url": "http://testasp.vulnweb.com/Aspnet_client",
+  "status": 301,
+  "length": 164,
+  "words": 9,
+  "src": "ffuf_ext.json"
+ },
+ {
+  "tool": "ffuf#2 raft+10ext(direct)",
+  "url": "http://testasp.vulnweb.com/Cgi-bin",
+  "status": 301,
+  "length": 158,
+  "words": 9,
+  "src": "ffuf_ext.json"
+ },
+ {
+  "tool": "ffuf#2 raft+10ext(direct)",
+  "url": "http://testasp.vulnweb.com/SEARCH.asp",
+  "status": 200,
+  "length": 2809,
+  "words": 319,
+  "src": "ffuf_ext.json"
+ },
+ {
+  "tool": "ffuf#2 raft+10ext(direct)",
+  "url": "http://testasp.vulnweb.com/JScripts",
+  "status": 301,
+  "length": 159,
+  "words": 9,
+  "src": "ffuf_ext.json"
+ },
+ {
+  "tool": "ffuf#2 raft+10ext(direct)",
+  "url": "http://testasp.vulnweb.com/LOGIN.asp",
+  "status": 200,
+  "length": 3194,
+  "words": 429,
+  "src": "ffuf_ext.json"
+ },
+ {
+  "tool": "ffuf#2 raft+10ext(direct)",
+  "url": "http://testasp.vulnweb.com/Avatars",
+  "status": 301,
+  "length": 158,
+  "words": 9,
+  "src": "ffuf_ext.json"
+ },
+ {
+  "tool": "ffuf#2 raft+10ext(direct)",
+  "url": "http://testasp.vulnweb.com/aspnet_Client",
+  "status": 301,
+  "length": 164,
+  "words": 9,
+  "src": "ffuf_ext.json"
+ },
+ {
+  "tool": "ffuf#2 raft+10ext(direct)",
+  "url": "http://testasp.vulnweb.com/CGI-Bin",
+  "status": 301,
+  "length": 158,
+  "words": 9,
+  "src": "ffuf_ext.json"
+ },
+ {
+  "tool": "ffuf#2 raft+10ext(direct)",
+  "url": "http://testasp.vulnweb.com/ShowThread.asp",
+  "status": 302,
+  "length": 132,
+  "words": 9,
+  "src": "ffuf_ext.json"
+ },
+ {
+  "tool": "ffuf#2 raft+10ext(direct)",
+  "url": "http://testasp.vulnweb.com/ASPNET_CLIENT",
+  "status": 301,
+  "length": 164,
+  "words": 9,
+  "src": "ffuf_ext.json"
+ },
+ {
+  "tool": "ffuf#2 raft+10ext(direct)",
+  "url": "http://testasp.vulnweb.com/Cgi-Bin",
+  "status": 301,
+  "length": 158,
+  "words": 9,
+  "src": "ffuf_ext.json"
+ },
+ {
+  "tool": "ffuf#2 raft+10ext(direct)",
+  "url": "http://testasp.vulnweb.com/DEFAULT.asp",
+  "status": 200,
+  "length": 3540,
+  "words": 328,
+  "src": "ffuf_ext.json"
+ },
+ {
+  "tool": "ffuf#2 raft+10ext(direct)",
+  "url": "http://testasp.vulnweb.com/Db.asp",
+  "status": 200,
+  "length": 0,
+  "words": 1,
+  "src": "ffuf_ext.json"
+ },
+ {
+  "tool": "ffuf#2 raft+10ext(direct)",
+  "url": "http://testasp.vulnweb.com/ShowForum.asp",
+  "status": 302,
+  "length": 132,
+  "words": 9,
+  "src": "ffuf_ext.json"
+ },
+ {
+  "tool": "ffuf#3 quickhits+2ext/images(probe)",
+  "url": "http://testasp.vulnweb.com/images/Trace.axd",
+  "status": 403,
+  "length": 2062,
+  "words": 463,
+  "src": "probe.json"
+ },
+ {
+  "tool": "ffuf#3 quickhits+9ext/cgi-bin(oldrun)",
+  "url": "http://testasp.vulnweb.com/cgi-bin/test.txt",
+  "status": 200,
+  "length": 3,
+  "words": 1,
+  "src": ".json"
+ },
+ {
+  "tool": "ffuf#3 quickhits+9ext/cgi-bin(oldrun)",
+  "url": "http://testasp.vulnweb.com/cgi-bin/Trace.axd",
+  "status": 403,
+  "length": 2069,
+  "words": 463,
+  "src": ".json"
+ },
+ {
+  "tool": "gobuster common+asp,txt,bak,inc(proxy)",
+  "url": "http://testasp.vulnweb.com/DB.asp",
+  "status": 200,
+  "length": 0,
+  "words": null,
+  "src": "gobuster.txt",
+  "location": null
+ },
+ {
+  "tool": "gobuster common+asp,txt,bak,inc(proxy)",
+  "url": "http://testasp.vulnweb.com/Default.asp",
+  "status": 200,
+  "length": 3540,
+  "words": null,
+  "src": "gobuster.txt",
+  "location": null
+ },
+ {
+  "tool": "gobuster common+asp,txt,bak,inc(proxy)",
+  "url": "http://testasp.vulnweb.com/HTML",
+  "status": 301,
+  "length": 155,
+  "words": null,
+  "src": "gobuster.txt",
+  "location": "http://testasp.vulnweb.com/HTML/"
+ },
+ {
+  "tool": "gobuster common+asp,txt,bak,inc(proxy)",
+  "url": "http://testasp.vulnweb.com/Images",
+  "status": 301,
+  "length": 157,
+  "words": null,
+  "src": "gobuster.txt",
+  "location": "http://testasp.vulnweb.com/Images/"
+ },
+ {
+  "tool": "gobuster common+asp,txt,bak,inc(proxy)",
+  "url": "http://testasp.vulnweb.com/Login.asp",
+  "status": 200,
+  "length": 3194,
+  "words": null,
+  "src": "gobuster.txt",
+  "location": null
+ },
+ {
+  "tool": "gobuster common+asp,txt,bak,inc(proxy)",
+  "url": "http://testasp.vulnweb.com/Search.asp",
+  "status": 200,
+  "length": 2809,
+  "words": null,
+  "src": "gobuster.txt",
+  "location": null
+ },
+ {
+  "tool": "gobuster common+asp,txt,bak,inc(proxy)",
+  "url": "http://testasp.vulnweb.com/T",
+  "status": 301,
+  "length": 152,
+  "words": null,
+  "src": "gobuster.txt",
+  "location": "http://testasp.vulnweb.com/T/"
+ },
+ {
+  "tool": "gobuster common+asp,txt,bak,inc(proxy)",
+  "url": "http://testasp.vulnweb.com/_vti_cnf",
+  "status": 301,
+  "length": 159,
+  "words": null,
+  "src": "gobuster.txt",
+  "location": "http://testasp.vulnweb.com/_vti_cnf/"
+ },
+ {
+  "tool": "gobuster common+asp,txt,bak,inc(proxy)",
+  "url": "http://testasp.vulnweb.com/aspnet_client",
+  "status": 301,
+  "length": 164,
+  "words": null,
+  "src": "gobuster.txt",
+  "location": "http://testasp.vulnweb.com/aspnet_client/"
+ },
+ {
+  "tool": "gobuster common+asp,txt,bak,inc(proxy)",
+  "url": "http://testasp.vulnweb.com/avatars",
+  "status": 301,
+  "length": 158,
+  "words": null,
+  "src": "gobuster.txt",
+  "location": "http://testasp.vulnweb.com/avatars/"
+ },
+ {
+  "tool": "gobuster common+asp,txt,bak,inc(proxy)",
+  "url": "http://testasp.vulnweb.com/cgi-bin",
+  "status": 301,
+  "length": 158,
+  "words": null,
+  "src": "gobuster.txt",
+  "location": "http://testasp.vulnweb.com/cgi-bin/"
+ },
+ {
+  "tool": "gobuster common+asp,txt,bak,inc(proxy)",
+  "url": "http://testasp.vulnweb.com/cgi-bin/",
+  "status": 403,
+  "length": 1233,
+  "words": null,
+  "src": "gobuster.txt",
+  "location": null
+ },
+ {
+  "tool": "gobuster common+asp,txt,bak,inc(proxy)",
+  "url": "http://testasp.vulnweb.com/db.asp",
+  "status": 200,
+  "length": 0,
+  "words": null,
+  "src": "gobuster.txt",
+  "location": null
+ },
+ {
+  "tool": "gobuster common+asp,txt,bak,inc(proxy)",
+  "url": "http://testasp.vulnweb.com/default.asp",
+  "status": 200,
+  "length": 3540,
+  "words": null,
+  "src": "gobuster.txt",
+  "location": null
+ },
+ {
+  "tool": "gobuster common+asp,txt,bak,inc(proxy)",
+  "url": "http://testasp.vulnweb.com/html",
+  "status": 301,
+  "length": 155,
+  "words": null,
+  "src": "gobuster.txt",
+  "location": "http://testasp.vulnweb.com/html/"
+ },
+ {
+  "tool": "gobuster common+asp,txt,bak,inc(proxy)",
+  "url": "http://testasp.vulnweb.com/images",
+  "status": 301,
+  "length": 157,
+  "words": null,
+  "src": "gobuster.txt",
+  "location": "http://testasp.vulnweb.com/images/"
+ },
+ {
+  "tool": "gobuster common+asp,txt,bak,inc(proxy)",
+  "url": "http://testasp.vulnweb.com/jscripts",
+  "status": 301,
+  "length": 159,
+  "words": null,
+  "src": "gobuster.txt",
+  "location": "http://testasp.vulnweb.com/jscripts/"
+ },
+ {
+  "tool": "gobuster common+asp,txt,bak,inc(proxy)",
+  "url": "http://testasp.vulnweb.com/login.asp",
+  "status": 200,
+  "length": 3194,
+  "words": null,
+  "src": "gobuster.txt",
+  "location": null
+ },
+ {
+  "tool": "gobuster common+asp,txt,bak,inc(proxy)",
+  "url": "http://testasp.vulnweb.com/logout.asp",
+  "status": 302,
+  "length": 132,
+  "words": null,
+  "src": "gobuster.txt",
+  "location": "Default.asp"
+ },
+ {
+  "tool": "gobuster common+asp,txt,bak,inc(proxy)",
+  "url": "http://testasp.vulnweb.com/register.asp",
+  "status": 200,
+  "length": 3617,
+  "words": null,
+  "src": "gobuster.txt",
+  "location": null
+ },
+ {
+  "tool": "gobuster common+asp,txt,bak,inc(proxy)",
+  "url": "http://testasp.vulnweb.com/robots.txt",
+  "status": 200,
+  "length": 13,
+  "words": null,
+  "src": "gobuster.txt",
+  "location": null
+ },
+ {
+  "tool": "gobuster common+asp,txt,bak,inc(proxy)",
+  "url": "http://testasp.vulnweb.com/search.asp",
+  "status": 200,
+  "length": 2809,
+  "words": null,
+  "src": "gobuster.txt",
+  "location": null
+ },
+ {
+  "tool": "gobuster common+asp,txt,bak,inc(proxy)",
+  "url": "http://testasp.vulnweb.com/showthread.asp",
+  "status": 302,
+  "length": 132,
+  "words": null,
+  "src": "gobuster.txt",
+  "location": "Default.asp"
+ },
+ {
+  "tool": "gobuster common+asp,txt,bak,inc(proxy)",
+  "url": "http://testasp.vulnweb.com/t",
+  "status": 301,
+  "length": 152,
+  "words": null,
+  "src": "gobuster.txt",
+  "location": "http://testasp.vulnweb.com/t/"
+ },
+ {
+  "tool": "gobuster common+asp,txt,bak,inc(proxy)",
+  "url": "http://testasp.vulnweb.com/templates",
+  "status": 301,
+  "length": 160,
+  "words": null,
+  "src": "gobuster.txt",
+  "location": "http://testasp.vulnweb.com/templates/"
+ },
+ {
+  "tool": "ffuf#4 quickhits+9ext/T(direct)",
+  "url": "http://testasp.vulnweb.com/T/Trace.axd",
+  "status": 403,
+  "length": 2062,
+  "words": 463,
+  "src": "T.json"
+ },
+ {
+  "tool": "ffuf#4 quickhits+9ext/_vti_cnf(direct)",
+  "url": "http://testasp.vulnweb.com/_vti_cnf/DB.asp",
+  "status": 200,
+  "length": 338,
+  "words": 9,
+  "src": "_vti_cnf.json"
+ },
+ {
+  "tool": "ffuf#4 quickhits+9ext/_vti_cnf(direct)",
+  "url": "http://testasp.vulnweb.com/_vti_cnf/db.asp",
+  "status": 200,
+  "length": 338,
+  "words": 9,
+  "src": "_vti_cnf.json"
+ },
+ {
+  "tool": "ffuf#4 quickhits+9ext/_vti_cnf(direct)",
+  "url": "http://testasp.vulnweb.com/_vti_cnf/login.asp",
+  "status": 200,
+  "length": 772,
+  "words": 23,
+  "src": "_vti_cnf.json"
+ },
+ {
+  "tool": "ffuf#4 quickhits+9ext/_vti_cnf(direct)",
+  "url": "http://testasp.vulnweb.com/_vti_cnf/search.asp",
+  "status": 200,
+  "length": 926,
+  "words": 29,
+  "src": "_vti_cnf.json"
+ },
+ {
+  "tool": "ffuf#4 quickhits+9ext/_vti_cnf(direct)",
+  "url": "http://testasp.vulnweb.com/_vti_cnf/Trace.axd",
+  "status": 403,
+  "length": 2062,
+  "words": 463,
+  "src": "_vti_cnf.json"
+ },
+ {
+  "tool": "ffuf#4 quickhits+9ext/aspnet_client(direct)",
+  "url": "http://testasp.vulnweb.com/aspnet_client/Trace.axd",
+  "status": 403,
+  "length": 2062,
+  "words": 463,
+  "src": "aspnet_client.json"
+ },
+ {
+  "tool": "ffuf#4 quickhits+9ext/avatars(direct)",
+  "url": "http://testasp.vulnweb.com/avatars/Trace.axd",
+  "status": 403,
+  "length": 2062,
+  "words": 463,
+  "src": "avatars.json"
+ },
+ {
+  "tool": "ffuf#4 quickhits+9ext/cgi-bin(direct)",
+  "url": "http://testasp.vulnweb.com/cgi-bin/test.txt",
+  "status": 200,
+  "length": 3,
+  "words": 1,
+  "src": "cgi-bin.json"
+ },
+ {
+  "tool": "ffuf#4 quickhits+9ext/cgi-bin(direct)",
+  "url": "http://testasp.vulnweb.com/cgi-bin/Trace.axd",
+  "status": 403,
+  "length": 2069,
+  "words": 463,
+  "src": "cgi-bin.json"
+ },
+ {
+  "tool": "ffuf#4 quickhits+9ext/html(direct)",
+  "url": "http://testasp.vulnweb.com/html/Trace.axd",
+  "status": 403,
+  "length": 2062,
+  "words": 463,
+  "src": "html.json"
+ },
+ {
+  "tool": "ffuf#4 quickhits+9ext/images(direct)",
+  "url": "http://testasp.vulnweb.com/images/Trace.axd",
+  "status": 403,
+  "length": 2062,
+  "words": 463,
+  "src": "images.json"
+ },
+ {
+  "tool": "ffuf#4 quickhits+9ext/jscripts(direct)",
+  "url": "http://testasp.vulnweb.com/jscripts/tiny_mce/",
+  "status": 403,
+  "length": 1233,
+  "words": 73,
+  "src": "jscripts.json"
+ },
+ {
+  "tool": "ffuf#4 quickhits+9ext/jscripts(direct)",
+  "url": "http://testasp.vulnweb.com/jscripts/Trace.axd",
+  "status": 403,
+  "length": 2062,
+  "words": 463,
+  "src": "jscripts.json"
+ },
+ {
+  "tool": "ffuf#4 quickhits+9ext/templates(direct)",
+  "url": "http://testasp.vulnweb.com/templates/Trace.axd",
+  "status": 403,
+  "length": 2062,
+  "words": 463,
+  "src": "templates.json"
+ }
+]

@@ -1,0 +1,42 @@
+### 1. users 정확한 행 수 / 실제 등록 흔적
+  users 행 수 = 131
+  TRUE   email 컬럼에 '@' 포함 행 존재
+  FALSE  uname 에 공백/특수문자 포함 행이 다수(>=100)
+  FALSE  upass 가 uname 과 같은 행 수 >= 10
+
+### 2. users 컬럼명 전량 (sys.columns 순서대로)
+  column_id=1 → 'uname'
+  column_id=2 → 'upass'
+  column_id=3 → 'email'
+  column_id=4 → 'realname'
+  column_id=5 → 'avatar'
+  column_id=6 → None
+
+### 3. 애플리케이션 실계정 존재 여부 / 비밀번호 형식
+  ★ 존재: uname='admin'  upass 길이=4  전부-헥스=False
+  없음: 'administrator'
+  없음: 'acunetix'
+  없음: 'test'
+  없음: 'guest'
+  없음: 'user'
+  없음: 'tom'
+  없음: 'bob'
+  없음: 'root'
+
+### 4. 실계정 비밀번호 후보 검증 (평문/해시 대조 — 값은 저장하지 않음)
+  (일치 없음)
+
+### 5. DB 목록 + 접근 권한
+  DB_NAME(1) = 'master'   HAS_DBACCESS=True
+  DB_NAME(2) = 'tempdb'   HAS_DBACCESS=True
+  DB_NAME(3) = 'model'   HAS_DBACCESS=False
+  DB_NAME(4) = 'msdb'   HAS_DBACCESS=True
+  DB_NAME(5) = 'acublog'   HAS_DBACCESS=True
+  DB_NAME(6) = 'acuforum'   HAS_DBACCESS=True
+  DB_NAME(7) = 'acuservice'   HAS_DBACCESS=True
+
+### 6. SQL Server 버전
+  ProductVersion = 12.0.6179.1
+  Edition        = Express Edition (64-bit)
+
+### 완료 — 총 요청 947건 → out/db_facts2.json

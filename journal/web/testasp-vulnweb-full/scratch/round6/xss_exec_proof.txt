@@ -1,0 +1,22 @@
+{
+  "browser": "Chrome/152.0.7977.8",
+  "dialogs": [
+    {
+      "url": "http://testasp.vulnweb.com/showthread.asp?id=0",
+      "frameId": "E5C603C3435641290A11024D66A96BE1",
+      "message": "1",
+      "type": "alert",
+      "hasBrowserHandler": true,
+      "defaultPrompt": ""
+    }
+  ],
+  "dialog_count": 1,
+  "url_after": "http://testasp.vulnweb.com/showthread.asp?id=0",
+  "cookie_via_js": "ASPSESSIONIDAABTRDTB=JKOPEGBBOGJKENDIFHIAMKLJ",
+  "cookie_readable": true,
+  "img_present": true,
+  "img_onerror_attr": "alert(1)",
+  "png": "out/xss_proof.png",
+  "png_bytes": 61772,
+  "console": []
+}

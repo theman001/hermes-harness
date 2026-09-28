@@ -1,0 +1,18 @@
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;configuration&gt;
+    &lt;system.web&gt;
+        &lt;authentication mode=&quot;Forms&quot; /&gt;
+    &lt;/system.web&gt;
+    &lt;system.webServer&gt;
+        &lt;staticContent&gt;
+            &lt;mimeMap fileExtension=&quot;.csproj&quot; mimeType=&quot;text/xml&quot; /&gt;
+        &lt;/staticContent&gt;
+        &lt;security&gt;
+            &lt;requestFiltering&gt;
+                &lt;fileExtensions&gt;
+                    &lt;remove fileExtension=&quot;.csproj&quot; /&gt;
+                &lt;/fileExtensions&gt;
+            &lt;/requestFiltering&gt;
+        &lt;/security&gt;
+    &lt;/system.webServer&gt;
+&lt;/configuration&gt;

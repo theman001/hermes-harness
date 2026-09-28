@@ -1,0 +1,15 @@
+/..%2fsecret.txt
+--- headers ---
+HTTP/1.1 200 Connection established
+--- body ---
+HTTP/2 200 
+content-type: text/plain
+cache-control: public, max-age=7200
+x-xss-protection: 0
+x-cloud-trace-context: 438afe8ae0e591f369cf7ed240297713
+date: Mon, 28 Sep 2026 09:15:02 GMT
+server: Google Frontend
+content-length: 8
+alt-svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+
+Cookie!

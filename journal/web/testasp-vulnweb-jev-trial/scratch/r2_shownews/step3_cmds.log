@@ -1,0 +1,7 @@
+=== 2026-09-28T08:08:35Z Step3: relation probes (small, targeted; _vti_cnf existence oracle + LFI) ===
+http://testasp.vulnweb.com/_vti_cnf/templatize.asp             HTTP 200 size 930
+http://testasp.vulnweb.com/_vti_cnf/DB.asp                     HTTP 200 size 338
+http://testasp.vulnweb.com/_vti_cnf/logout.asp                 HTTP 200 size 338
+http://testasp.vulnweb.com/_vti_cnf/loginput.asp               HTTP 404 size 1245
+http://testasp.vulnweb.com/_vti_cnf/news.asp                   HTTP 404 size 1245
+http://testasp.vulnweb.com/_vti_cnf/Templates/MainTemplate.dwt.asp HTTP 404 size 1245

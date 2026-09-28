@@ -1,0 +1,16 @@
+
+_feed((
+
+
+[
+"Brie"
+
+,"<img src=x-nonexistent.png onerror="document.title='XSS-EXECUTED';var d=document.createElement('div');d.id='xss-proof';d.textContent='COOKIE='+document.cookie;document.body.appendChild(d)">"
+
+,"Brie is the queen of the cheeses<span style=color:red>!!!</span>"
+
+]
+
+
+
+))

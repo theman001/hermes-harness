@@ -1,0 +1,8 @@
+=== 2026-09-28T08:08:45Z Step3b: existence checks (meta 404 != absent) + template + inventory ===
+http://testasp.vulnweb.com/_vti_cnf/Default.asp                  HTTP 200 size 926
+http://testasp.vulnweb.com/Templates/MainTemplate.dwt.asp        HTTP 200 size 2488
+http://testasp.vulnweb.com/loginput.asp                          HTTP 200 size 0
+http://testasp.vulnweb.com/Templatize.asp?item=loginput.asp      HTTP 200 size 3538
+http://testasp.vulnweb.com/news.asp                              HTTP 404 size 1245
+http://testasp.vulnweb.com/db.asp                                HTTP 200 size 0
+http://testasp.vulnweb.com/Templatize.asp                        HTTP 500 size 1208

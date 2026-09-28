@@ -1,0 +1,10 @@
+&lt;!--#INCLUDE FILE=&quot;logInput.asp&quot;--&gt;
+&lt;SCRIPT RUNAT=SERVER LANGUAGE=VBSCRIPT&gt;
+Function GetConnection()  
+	dim conn
+	set conn  = Server.CreateObject(&quot;ADODB.Connection&quot;)
+	conn.Open &quot;Provider=SQLNCLI11;Server=(local)\SQL;Database=acuforum;Uid=acunetix;Pwd=acunetixtrustno1;&quot;
+	
+	set GetConnection = conn
+End Function
+&lt;/script&gt;

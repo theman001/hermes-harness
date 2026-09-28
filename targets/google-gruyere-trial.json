@@ -1,0 +1,30 @@
+{
+  "_comment": "testasp.vulnweb.com 계열(classic ASP)과 완전히 다른 신규 대상 — Google 공식 'Gruyere' 취약 웹앱 코드랩(Python 기반). OWASP Juice Shop 공개 데모(demo.owasp-juice.shop, juice-shop.herokuapp.com)는 둘 다 503으로 다운돼있어(2026-09-28 확인) 대체함. Gruyere는 첫 방문 시 고유 세션 ID(GID)를 발급해 /<gid>/ 경로로 리다이렉트하는 개인별 샌드박스 구조 — recon 0단계에서 이 리다이렉트를 그대로 따라가면 됨. Google이 보안 학습용으로 명시적으로 공개 배포(https://google-gruyere.appspot.com/, codelab: https://google-gruyere.appspot.com/gruyere-instructions).",
+  "project_id": "google-gruyere-trial",
+  "category": "web",
+  "mode": "own_system",
+  "target": {
+    "program_name": "Google Gruyere — official Google web app security codelab (intentionally vulnerable, per-session sandboxed instance)",
+    "platform": "none",
+    "scope": {
+      "in_scope_domains": [
+        "google-gruyere.appspot.com"
+      ],
+      "out_of_scope_domains": []
+    },
+    "rules_url": "https://google-gruyere.appspot.com/gruyere-instructions",
+    "reward_table_url": "",
+    "automation_policy": {
+      "prohibits_automation": false,
+      "prohibits_third_party_ai_sharing": false,
+      "notes": "Google이 보안 교육용으로 명시적으로 공개 배포한 취약 웹앱 코드랩 — 각 방문자가 고유 GID 샌드박스를 받으므로 다른 방문자 데이터를 건드릴 위험 자체가 구조적으로 낮음."
+    },
+    "vpn": {
+      "required": false,
+      "profile_name": null
+    }
+  },
+  "max_rounds_per_phase": 20,
+  "status": "done",
+  "_status_note": "2026-09-28 phase 2 종료 → project 종료(done). Round 10까지 사용(phase 2에서 5라운드, 누적 10라운드, 상한 20). 비파괴 신규 표면이 소진되어 사용자가 '1번(종료)' 선택. 워치독 종료 신호 없이 사람이 직접 마무리를 지시한 경우라 종료 사유는 자동으로 '④ 사유 불명 — 수동/외부 중단으로 추정'으로 기록됨. 누적 실증 19건: phase 1(무인증 dump.gtl 전계정 평문 비번 / 경로이탈 읽기 / 쿠키 서명 위조 인증 우회 / 매스어사인먼트 EoP / 저장형 XSS 2종 / 반사형 XSS / 예외 노출) + phase 2(업로드 파일명 경로이탈 임의쓰기[승인 후 실행] / 업로드 .html 서빙 저장형 XSS+관리자 쿠키 탈취 / 업로드 .gtl 템플릿 주입 비인증 전DB 덤프 / GTL include 경로이탈 임의파일 읽기[확장자 화이트리스트 우회] / 무인증 feed.gtl?uid 타사용자 정보 / 무인증 saveprofile 임의계정 변경·권한상승[CSRF 흡수] / 쿠키 구분자 필드 주입으로 서버가 스스로 관리자 쿠키 발급[승인 후 실행] / XSS 살균기 우회 3종). 실행하지 않은 승인 대상: /quitserver, /reset, 타 계정 대상 is_admin=True, secret.txt 덮어쓰기(전 GID 공용), 실제 관리자 동작. **phase 1 종료 사유 정정**: phase 1의 attack_exhausted=true는 실제 소진이 아니라 web-페이지-구조.md/web-서버-구조.md 를 3라운드 연속 갱신하지 않아 생긴 워치독 오판이었음(phase 2에서는 매 라운드 두 파일을 갱신해 재발하지 않음). 다음은 Claude Code가 HANDOFF.md와 산출물로 보고서 작성. 지식 일반화 초안은 draft-generalized-knowledge 로 제출됨."
+}

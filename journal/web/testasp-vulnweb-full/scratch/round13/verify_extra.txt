@@ -1,0 +1,19 @@
+### 무결성 재확인 (기존 데이터 불변)
+  스레드9 게시글 수 =2 ?           False
+  포럼0 스레드 'RT7-' 존재 ?       False
+  게시글 총수 30 미만 ?            True
+  삭제 흔적: 스레드 총수 1 이상 ?  True
+
+### 주입 행 속성 (읽기 전용)
+  rt12x upass='p' (우리가 지정) ?  True
+  rt12x avatar<>'' (주입 결과) ?   True
+  rt12ctrl avatar='' (대조군) ?    True
+  rt12* 행 수 = 3 ?                True
+
+### admin 자격증명 (쓰기→읽기 체인으로 얻은 값 검증)
+  admin upass = 'none'  (길이 4)
+  길이=4 ?                         True
+  소문자만 ?                       True
+  교차확인: rt12x avatar == admin upass ? True
+
+총 요청 46건 (전부 GET SELECT — 쓰기 없음)

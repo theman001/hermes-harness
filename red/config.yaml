@@ -1,0 +1,144 @@
+# Hermes 프로필 설정 — red (A, 공격 전담 단일 프로필)
+# 근거: etc/레드블루-에이전트-실행가능성-검토.md
+#
+# 주의: Hermes 공식 config.yaml 스키마 전체가 문서화돼 있지 않음(hermes-agent 리포지토리에서
+# 확인 가능한 범위 내 최선 추정) — 아래 키 이름/구조는 실사용 전 `hermes tools`, `hermes
+# config --dump` 류의 실제 출력이나 공식 문서로 재확인 필요(체크리스트 0번 (a)(b)(g)).
+#
+# 배치 관련 값(HERMES_HARNESS_ROOT, HTTP_PROXY, HTTPS_PROXY)은 이 파일이 아니라 .env에
+# 배치 시 1회 설정한다 — .env.example 참고.
+
+model:
+  # 2026-09-23 하네스 실측(Hermes 실제 설치 후 `hermes doctor`/기본 config.yaml로 확인)으로
+  # 정정 — 원래 `provider: openai_compatible`/`model_id: "..."`였는데 둘 다 실재하지 않는
+  # 키/값이었음(`hermes doctor`가 즉시 "openai_compatible is not a recognised provider"로
+  # 잡아냄). 실제 스키마: 커스텀 OpenAI 호환 엔드포인트는 `provider: "deepseek"` + `base_url`
+  # + `api_key`, 모델 이름 필드는 `model_id`가 아니라 `default`(`model`도 동의어).
+  #
+  # base_url은 현재 colab ssh --proxy-mode 터널이 항상 로컬 8000 포트로 뜬다고 가정한
+  # 고정값(2단계 검토로 정정 — phase_start.py의 step3_update_model_endpoint는 실제로는
+  # model 이름만 갱신하고 base_url은 안 건드림). 터널 기동 방식이 실측되면(README.md
+  # "아직 안 된 것" 참고) 그때 이 필드도 phase마다 실제 포트로 갱신하도록 확장할 것.
+  provider: "deepseek"
+  base_url: "https://api.deepseek.com/v1"
+  # phase_start.py가 대상 모델 이름까지 확인 후 덮어씀 — 최초값은 이번 프로젝트가 검증한 모델
+  default: "deepseek-flash"
+  api_key: "${DEEPSEEK_API_KEY}"  # 터널 자체가 접근 통제, 모델 서버 인증 없음
+
+terminal:
+  backend: local
+  # local/docker 중 local로 확정(2026-09-22 2단계) — Radxa Rock5 배포 시에도 컨테이너 없이
+  # 직접 실행하는 게 mitmproxy/HTTP_PROXY 환경변수 전달을 단순하게 유지함. docker로 바꿀
+  # 근거가 생기면(격리 필요 등) 재검토, 체크리스트 7번에서 실측 확인.
+  #
+  # 중요: 이 백엔드의 실행 디렉토리는 반드시 hermes-harness/ 여야 함(journal/targets/
+  # tech-docs/.phase-runtime 전부 여기 기준 상대경로) — `cd hermes-harness && hermes ...`로
+  # 실행해서 보장(README.md 참고). local 백엔드는 통상 실행 시점의 cwd를 그대로 물려받음.
+
+agent:
+  disabled_toolsets:
+    - tts
+    - homeassistant
+    - spotify
+    - discord
+    - discord_admin
+    - safe
+    - cronjob   # phase 경계 밖에서 발동해 일지/승인 흐름을 못 타는 문제로 제외
+  # 나머지(web/search/terminal/file/browser/vision/image_gen/skills/todo/memory/
+  # session_search/code_execution/delegation/clarify/messaging/debugging)는 전부 활성화 —
+  # disabled_toolsets에 안 올린 건 전부 켜진 것으로 간주(Hermes 기본 동작 가정, 체크리스트
+  # 0번(a)(b)에서 실제로 이렇게 동작하는지 확인).
+
+approvals:
+  mode: smart
+  # smart: 보조 LLM이 위험도를 판단해서 애매한 것만 사람에게 올리는 모드. 우리는 애매함
+  # 없이 아래 deny 목록으로 확실한 것만 걸러서 fail-closed로 가므로 manual보다 이걸 선택 —
+  # 단, 보조 LLM이 외부로 데이터를 새게 하면 안 되므로 auxiliary 섹션에서 우리 자신의
+  # 엔드포인트로 고정(아래).
+  deny:
+    - "rm -rf*"
+    - "DROP TABLE*"
+    - "DROP DATABASE*"
+    - "mkfs*"
+    - "proxy_rule.py add*"          # 방식 2(라이브 위변조) 발동 — 반드시 승인
+    - "assemble_handoff.py request-decision*"  # project 종료/계속 결정 — 반드시 승인
+  # 스코프 밖 exploit 승인(5필드 구조화 포맷)은 커맨드 패턴이 아니라 "액션 성격" 기반이라
+  # 이 deny 목록에 못 담음 — SOUL.md의 행동규칙(소프트 제약)으로 처리.
+  #
+  # 아래 4개는 2026-09-23 하네스 실측(Hermes 설치 후 소스 확인) 중 정정 — 원래
+  # `on_timeout: deny`라고 적어뒀던 건 실재하지 않는 키였음(config_defaults.py 확인).
+  # 실제 키는 `timeout`(숫자, 초)과 `cron_mode`/`single_query_mode`/`unattended_mode`
+  # (각각 `deny`|`approve`, 응답할 사람이 아예 없는 상황에서의 고정 정책) — 넷 다 이미
+  # Hermes 기본값과 같은 값이라 생략해도 동작은 같지만, 이 프로젝트 방침(불확실한 기본값에
+  # 기대지 않고 명시)에 따라 그대로 적어둠.
+  timeout: 300           # 무응답 시 fail-closed(차단)까지의 대기 시간(초)
+  cron_mode: deny         # cron으로 트리거된 세션 — 응답할 사람이 없음
+  single_query_mode: deny # `-q` 단일 쿼리 세션 — 마찬가지로 응답할 사람이 없음(중요:
+  # phase_start.py가 원래 계획했던 `hermes --profile red -q "..."` 무인 실행 방식은 이
+  # 모드에서 승인 왕복 자체가 구조적으로 불가능함이 확인됨 — deny/approve 고정값 중
+  # 하나만 선택 가능. Mattermost로 실시간 승인 왕복을 받으려면 `hermes gateway`처럼
+  # 세션이 끊기지 않고 계속 붙어있는 방식으로 바꿔야 함, 아직 미해결 — 체크리스트 신규 항목)
+  unattended_mode: deny   # webhook/msgraph_webhook/api_server 같은 완전 프로그래매틱
+  # 플랫폼 전용(응답할 사람 없음) — Mattermost는 여기 해당 안 됨, 전용 플러그인
+  # (plugins/platforms/mattermost/)이 실제 봇 계정으로 붙는 정상 게이트웨이 세션이라
+  # 이 카테고리와 무관하게 일반 대화 흐름의 승인 요청(텍스트 `/approve` 방식)을 받음.
+
+auxiliary:
+  approval:
+    # smart 승인모드가 위험도 판단에 쓰는 보조 LLM — 대상 정보가 외부 클라우드로 새지
+    # 않도록 우리 자신의 Colab 엔드포인트로 고정(체크리스트 0(g)).
+    base_url: "https://api.deepseek.com/v1"
+    model: "${AUXILIARY_APPROVAL_MODEL}"
+
+delegation:
+  max_concurrent_children: 10   # Hermes 기본값 그대로 — recon 라운드 병렬 위임 상한
+  # recon 라운드에서만 delegate_task 허용, exploit 라운드는 A 단독 순차 진행 — 이건 config
+  # 레벨 스위치가 없어서 SOUL.md 행동규칙(소프트 제약)으로 처리. Hermes 기본 제한(부모
+  # toolset 초과 불가, leaf에서 delegate_task/cronjob/memory/clarify/send_message 자동
+  # 차단, 재귀 깊이 기본 1)은 그대로 둠 — 우리가 필요한 만큼만 써서 추가 설정 불필요.
+
+memory:
+  memory_enabled: true
+  user_profile_enabled: false   # 버그바운티 공격 에이전트에 "사용자 프로필" 개념 자체가
+  # 불필요 — USER.md에 뭔가 쌓일 이유가 없음. memory_enabled는 켜두되, SOUL.md의 "메모리
+  # 사용 제약"이 실질적 내용 제한선.
+
+mcp_servers:
+  # 2026-09-23 실측으로 완전히 정정 — 원래 여기 있던 `mcp: servers: rag: {transport,
+  # command}` 블록은 **Hermes가 아예 읽지 않는 가짜 스키마**였음(`hermes --profile red
+  # mcp list` → "No MCP servers configured." — config.yaml에 뭐라고 적어놨든 무관하게
+  # 항상 빈 목록). 실제 등록 방법은 `hermes mcp add <name> --command <cmd> --env
+  # KEY=VALUE --args <script>`(주의: `--args`가 "must be the last option"이라
+  # `--env`는 반드시 `--args`보다 앞에 와야 함, 순서가 바뀌면 `--env`가 스크립트 인자로
+  # 먹혀서 환경변수가 통째로 안 실림 — 실제로 이 실수로 한 번 실패 재현함). 그 명령이
+  # 실제로 config.yaml에 써주는 스키마가 아래 — 최상위 `mcp_servers`(언더스코어, `mcp:`
+  # 중첩 아님), `command`는 배열이 아니라 문자열 하나, `args`는 별도 리스트, `env`는
+  # 별도 딕셔너리. 이전엔 이 RAG 도구가 A 세션에 단 한 번도 안 잡혔던 근본 원인이 바로
+  # 이 잘못된 스키마였음(그전에 고쳤던 venv 절대경로/mcp<2 버전 고정은 전부 필요했던
+  # 수정이지만, 애초에 이 블록 자체를 Hermes가 안 읽었으니 그 수정들도 무의미했었음).
+  rag:
+    command: "${HERMES_HARNESS_ROOT}/.venv/bin/python"
+    args:
+      - "${HERMES_HARNESS_ROOT}/services/rag_mcp_server/server.py"
+    env:
+      HERMES_HARNESS_ROOT: "${HERMES_HARNESS_ROOT}"
+    enabled: true
+  # Jev 판단모델(2026-09-28 추가) — etc/레드블루-에이전트-실행가능성-검토.md
+  # "결정 완료(2026-09-28)" 참고. 승인/차단 권한 없는 참고용 보조 도구(가산적 설계) —
+  # TYPESAFE_API_KEY 미설정/호출 실패해도 A는 그냥 자기 판단으로 계속 진행하면 됨.
+  jev:
+    command: "${HERMES_HARNESS_ROOT}/.venv/bin/python"
+    args:
+      - "${HERMES_HARNESS_ROOT}/services/jev_client/server.py"
+    env:
+      HERMES_HARNESS_ROOT: "${HERMES_HARNESS_ROOT}"
+      TYPESAFE_API_KEY: "${TYPESAFE_API_KEY}"
+    enabled: true
+
+skills:
+  write_approval: true
+  # 권장(구조 검토 중 발견): 4개 커스텀 Skill(write-journal-entry 등)은 미리 심어두는
+  # 것이라 이 설정과 무관하게 항상 씀 — write_approval은 A가 "새 skill을 스스로 만들거나
+  # 이 4개를 수정하려는" 시도만 막는 것. 지금까지 설계한 안전장치를 A가 자기 skill을
+  # 고쳐서 우회하는 경로를 차단.
+  guard_agent_created: true

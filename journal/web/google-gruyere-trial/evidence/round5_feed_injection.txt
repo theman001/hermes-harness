@@ -1,0 +1,12 @@
+
+_feed((
+
+
+[
+"x"] , document.title='FEED-XSS' , ["y"
+
+]
+
+
+
+))

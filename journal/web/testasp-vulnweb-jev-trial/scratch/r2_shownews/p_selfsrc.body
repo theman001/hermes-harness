@@ -1,0 +1,16 @@
+&lt;%
+  Dim oFileSys, oFile
+  'On Error Resume Next
+  
+  Set oFileSys = Server.CreateObject(&quot;Scripting.FileSystemObject&quot;)  
+  FName = Server.MapPath(&quot;.&quot;) &amp; &quot;\&quot; &amp; Request.QueryString(&quot;item&quot;) 
+ 
+  Set oFile = oFileSys.OpenTextFile (FName, 1, False, 0) 
+  
+  If (IsObject(oFile)) Then
+    'On Error Resume Next
+    Response.Write Server.HTMLEncode(oFile.ReadAll)
+    oFile.Close
+  End If
+%&gt;
+

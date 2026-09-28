@@ -1,0 +1,235 @@
+{
+  "tiny_mce.js": {
+    "bytes": 132342,
+    "lines": 11,
+    "version_candidates": [
+      "0",
+      "2",
+      "2005-10-30",
+      "tinyMCE.majorVersion"
+    ],
+    "banner": "/**\r\\n * $RCSfile: tiny_mce.js,v $\r\\n * $Revision: 1.301 $\r\\n * $Date: 2005/10/30 16:06:56 $\r\\n *\r\\n * @author Moxiecode\r\\n * @copyright Copyright © 2004, Moxiecode Systems AB, All rights reserved.\r\\n */\r\\n function TinyMCE(){this.majorVersion=\"2\";this.minorVersion=\"0RC4\";this.releaseDate=\"2005-10-3",
+    "http_urls": [
+      "http://tinymce.moxiecode.cp/mce_temp_url",
+      "http://www.mozilla.org/editor/midasdemo/securityprefs.html",
+      "http://www.w3.org/1999/xhtml"
+    ],
+    "http_url_count": 3,
+    "abs_paths": [
+      "/blank.htm",
+      "/css/editor_content.css",
+      "/css/editor_popup.css",
+      "/css/editor_ui.css",
+      "/images/opacity.png"
+    ],
+    "abs_path_count": 5,
+    "plugin_dirs": [],
+    "lang_files": [],
+    "lang_file_count": 0,
+    "themes": [],
+    "skins": [],
+    "dangerous_api_counts": {
+      "document.write": 3,
+      "innerHTML": 53,
+      "outerHTML": 11,
+      "eval(": 47,
+      "new Function": 0,
+      "setTimeout(str)": 9,
+      "execScript": 0,
+      "ActiveXObject": 0,
+      "document.cookie": 0,
+      "window.location": 0,
+      "location.href": 5,
+      "XMLHttpRequest": 0,
+      "createElement(script)": 0,
+      "insertAdjacentHTML": 1,
+      "atob/unescape": 0
+    },
+    "asp_php_refs": [
+      "tiny_mce_gzip.php"
+    ],
+    "dangerous_line_numbers": {
+      "document.write": [
+        9
+      ],
+      "eval(": [
+        9,
+        11
+      ],
+      "innerHTML": [
+        9,
+        11
+      ]
+    },
+    "dangerous_snippets": {
+      "document.write": [
+        "L9: function TinyMCE(){this.majorVersion=\"2\";this.minorVersion=\"0RC4\";this.releaseDate=\"2005-10-30\";this.instances=new Array();this.stickyClassesLookup=new Array();this.windowArgs=new Array();this.loadedF"
+      ],
+      "eval(": [
+        "L9: function TinyMCE(){this.majorVersion=\"2\";this.minorVersion=\"0RC4\";this.releaseDate=\"2005-10-30\";this.instances=new Array();this.stickyClassesLookup=new Array();this.windowArgs=new Array();this.loadedF",
+        "L11: <textarea id=\"tinymce_debug\" style=\"width: 100%; height: 300px\" wrap=\"nowrap\"></textarea>';document.body.appendChild(debugDiv);elm=document.getElementById(\"tinymce_debug\");}var args=this.debug.argumen"
+      ]
+    }
+  },
+  "tiny_mce_src.js": {
+    "bytes": 180379,
+    "lines": 5817,
+    "version_candidates": [
+      "0",
+      "2",
+      "2005-10-30"
+    ],
+    "banner": "/**\r\\n * $RCSfile: tiny_mce_src.js,v $\r\\n * $Revision: 1.249 $\r\\n * $Date: 2005/10/30 16:06:57 $\r\\n *\r\\n * @author Moxiecode\r\\n * @copyright Copyright © 2004, Moxiecode Systems AB, All rights reserved.\r\\n */\r\\n\r\\nfunction TinyMCE() {\r\\n\tthis.majorVersion = \"2\";\r\\n\tthis.minorVersion = \"0RC4\";\r\\n\tthis",
+    "http_urls": [
+      "http://tinymce.moxiecode.cp/mce_temp_url",
+      "http://www.mozilla.org/editor/midasdemo/securityprefs.html",
+      "http://www.w3.org/1999/xhtml"
+    ],
+    "http_url_count": 3,
+    "abs_paths": [
+      "/blank.htm",
+      "/css/editor_content.css",
+      "/css/editor_popup.css",
+      "/css/editor_ui.css",
+      "/images/opacity.png"
+    ],
+    "abs_path_count": 5,
+    "plugin_dirs": [],
+    "lang_files": [],
+    "lang_file_count": 0,
+    "themes": [],
+    "skins": [],
+    "dangerous_api_counts": {
+      "document.write": 3,
+      "innerHTML": 63,
+      "outerHTML": 11,
+      "eval(": 47,
+      "new Function": 0,
+      "setTimeout(str)": 9,
+      "execScript": 0,
+      "ActiveXObject": 0,
+      "document.cookie": 0,
+      "window.location": 0,
+      "location.href": 5,
+      "XMLHttpRequest": 0,
+      "createElement(script)": 0,
+      "insertAdjacentHTML": 1,
+      "atob/unescape": 0
+    },
+    "asp_php_refs": [
+      "tiny_mce_gzip.php"
+    ],
+    "dangerous_line_numbers": {
+      "document.write": [
+        276,
+        287,
+        3172
+      ],
+      "innerHTML": [
+        336,
+        370,
+        379,
+        444,
+        732,
+        796,
+        1071,
+        1073,
+        1440,
+        2090,
+        2110,
+        2153,
+        2345,
+        2380,
+        2381,
+        2981,
+        2982,
+        3072,
+        3355,
+        3358,
+        3394,
+        3397,
+        3473,
+        3476,
+        3485,
+        3495,
+        3540,
+        3545,
+        3554,
+        3920,
+        4025,
+        4221,
+        4313,
+        4427,
+        4433,
+        4437,
+        4450,
+        4452,
+        4483,
+        4489
+      ],
+      "eval(": [
+        386,
+        591,
+        756,
+        1573,
+        1581,
+        1620,
+        1687,
+        1768,
+        2452,
+        2478,
+        2491,
+        2532,
+        2535,
+        2538,
+        3054,
+        3055,
+        3060,
+        3061,
+        3202,
+        3342,
+        3693,
+        3777,
+        3778,
+        3784,
+        3794,
+        3795,
+        3802,
+        3803,
+        3819,
+        3831,
+        3847,
+        4615,
+        5087,
+        5156,
+        5161,
+        5226,
+        5229,
+        5232,
+        5238,
+        5586
+      ]
+    },
+    "dangerous_snippets": {
+      "document.write": [
+        "L276: document.write('<sc'+'ript language=\"javascript\" type=\"text/javascript\" src=\"' + url + '\"></script>');",
+        "L287: document.write('<link href=\"' + url + '\" rel=\"stylesheet\" type=\"text/css\" />');",
+        "L3172: win.document.write(html);"
+      ],
+      "eval(": [
+        "L386: var content = eval(tinyMCE.settings['save_callback'] + \"(inst.formTargetElementId,htm,inst.getBody());\");",
+        "L591: eval('try { doc.designMode = \"On\"; } catch(e) {}');",
+        "L756: eval('try {tinyMCE.setInnerHTML(inst.getBody(), tinyMCE._cleanupHTML(inst, inst.contentDocument, this.settings, inst.getBody());} catch(e) {}');",
+        "L1573: eval('elm.style.' + style + ' = val;');",
+        "L1581: var val = eval('elm.style.' + style) == '' ? tinyMCE.getAttrib(elm, attrib) : eval('elm.style.' + style);",
+        "L1620: eval('elm.style.' + style + ' = \"\";');",
+        "L1687: attribValue = eval(\"element_node.\" + attribName);",
+        "L1768: attribValue = eval(tinyMCE.cleanup_urlconverter_callback + \"(attribValue, element_node, tinyMCE.cleanup_on_save);\");",
+        "L2452: href = eval(tinyMCE.settings['urlconverter_callback'] + \"(href, linkElement);\");",
+        "L2478: href = eval(tinyMCE.settings['urlconverter_callback'] + \"(href, elementArray[i]);\");",
+        "L2491: href = eval(tinyMCE.settings['urlconverter_callback'] + \"(href, this.linkElement);\");",
+        "L2532: src = eval(tinyMCE.settings['urlconverter_callback'] + \"(src, tinyMCE.imgElement);\");"
+      ]
+    }
+  }
+}

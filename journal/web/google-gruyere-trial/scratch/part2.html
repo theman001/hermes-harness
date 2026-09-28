@@ -1,0 +1,890 @@
+<HTML><HEAD><META http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<TITLE>Web Application Exploits and Defenses</TITLE>
+<LINK type="text/css" rel="stylesheet" href="../static/codelab.css">
+<!--MARK-Z-->
+<SCRIPT>
+function toggleBlock(heading, whichID) {
+  var image = heading.childNodes[0];
+  var block = document.getElementById(whichID);
+  if (block) {
+    if (getDisplay(block) == 'block') {
+      block.style.display = 'none';
+      image.src = 'static/closed.gif';
+    } else {    // "none" or ""
+      block.style.display = 'block';
+      image.src = 'static/open.gif';
+    }
+  }
+}
+
+function getDisplay(block) {
+  var value = block.style.display;
+  if (!value) {
+    if (document.defaultView) {
+      var computedStyle = document.defaultView.getComputedStyle(block, "");
+      value = computedStyle.getPropertyValue('display');
+    } else if (block.currentStyle) {
+      value = block.currentStyle.display;
+    }
+  }
+  return value;
+}
+</SCRIPT>
+</HEAD>
+<BODY bgcolor="#ffffff">
+
+<DIV class="banner"></DIV>
+<H1><FONT size="+2"><IMG src="/static/gruyere-78.png" style="vertical-align:middle">
+Web Application Exploits and Defenses  (Part 2)</FONT> </H1>
+<P>
+A Codelab by Bruce Leban, Mugdha Bendre, and Parisa Tabriz
+</P>
+<DIV class="printable">
+<DIV class="column1">
+Table of Contents
+<UL>
+<LI class="L1" style="padding-top:0pt"> <A href="/#0__hackers">Beat the hackers</A></LI>
+<LI class="L1" style="padding-top:0pt"> <A href="/#0__gruyere">Gruyere</A></LI>
+<LI class="L1"> <A href="/part1#1__setup">Set-up</A>
+  <UL>
+  <LI class="L2"> <A href="/part1#1__reset_button">Reset Button</A></LI>
+  <LI class="L2"> <A href="/part1#1__about_the_code">About the Code</A></LI>
+  <LI class="L2"> <A href="/part1#1__features_and_technologies">Features and Technologies</A></LI>
+  </UL></LI>
+<LI class="L1"> <A href="/part1#1__using_gruyere">Using Gruyere</A></LI>
+<LI class="L1"> <A href="/part2#2__cross_site_scripting">Cross-Site Scripting (XSS)</A>
+  <UL>
+  <LI class="L2"> <A href="/part2#2__xss_challenge">XSS Challenges</A></LI>
+  <LI class="L2"> <A href="/part2#2__file_upload_xss">File Upload XSS</A></LI>
+  <LI class="L2"> <A href="/part2#2__reflected_xss">Reflected XSS</A></LI>
+  <LI class="L2"> <A href="/part2#2__stored_xss">Stored XSS</A></LI>
+  <LI class="L2"> <A href="/part2#2__stored_xss_via_html_attribute">Stored XSS via HTML Attribute</A></LI>
+  <LI class="L2"> <A href="/part2#2__stored_xss_via_ajax">Stored XSS via AJAX</A></LI>
+  <LI class="L2"> <A href="/part2#2__reflected_xss_via_ajax">Reflected XSS via AJAX</A></LI>
+  <LI class="L2"> <A href="/part2#2__more_about_xss">More about XSS</A></LI>
+  </UL></LI>
+<LI class="L1"> <A href="/part3#3__client_state_manipulation">Client-State Manipulation</A>
+  <UL>
+  <LI class="L2"> <A href="/part3#3__elevation_of_privilege"> Elevation of Privilege </A></LI>
+  <LI class="L2"> <A href="/part3#3__cookie_manipulation"> Cookie Manipulation </A></LI>
+  </UL></LI>
+<LI class="L1"> <A href="/part3#3__cross_site_request_forgery">Cross-Site Request Forgery (XSRF)</A>
+  <UL>
+  <LI class="L2"> <A href="/part3#3__xsrf_challenge">XSRF Challenge</A></LI>
+  <LI class="L2"> <A href="/part3#3__more_about_preventing_xsrf">More about preventing XSRF</A></LI>
+  </UL></LI>
+<LI class="L1"> <A href="/part3#3__cross_site_script_inclusion">Cross Site Script Inclusion (XSSI)</A>
+  <UL>
+  <LI class="L2"> <A href="/part3#3__xssi_challenge">XSSI Challenge</A></LI>
+  </UL></LI>
+<LI class="L1"> <A href="/part4#4__path_traversal">Path Traversal</A>
+  <UL>
+  <LI class="L2"> <A href="/part4#4__information_disclosure_path_traversal">Information disclosure via path traversal </A></LI>
+  <LI class="L2"> <A href="/part4#4__data_tampering_path_traversal">Data tampering via path traversal </A></LI>
+  </UL></LI>
+<LI class="L1"> <A href="/part4#4__denial_of_service">Denial of Service</A>
+  <UL>
+  <LI class="L2"> <A href="/part4#4__dos_quit_server">DoS - Quit the Server</A></LI>
+  <LI class="L2"> <A href="/part4#4__dos_overload_server">DoS - Overloading the Server</A></LI>
+  <LI class="L2"> <A href="/part4#4__more_dos">More on Denial of Service</A></LI>
+  </UL></LI>
+<LI class="L1"> <A href="/part4#4__code_execution">Code Execution</A>
+  <UL>
+  <LI class="L2"> <A href="/part4#4__code_execution_challenge">Code Execution Challenge</A></LI>
+  <LI class="L2"> <A href="/part4#4__more_code_execution">More on Remote Code Execution</A></LI>
+  </UL></LI>
+<LI class="L1"> <A href="/part5#5__configuration_vulnerabilities">Configuration Vulnerabilities</A>
+  <UL>
+  <LI class="L2"> <A href="/part5#5__information_disclosure_config_1">Information disclosure #1</A></LI>
+  <LI class="L2"> <A href="/part5#5__information_disclosure_config_2">Information disclosure #2</A></LI>
+  <LI class="L2"> <A href="/part5#5__information_disclosure_bug_3">Information disclosure #3 </A></LI>
+  </UL></LI>
+<LI class="L1"> <A href="/part5#5__ajax_vulnerabilities">AJAX vulnerabilities</A>
+  <UL>
+  <LI class="L2"> <A href="/part5#5__dos_via_ajax">DoS via AJAX</A></LI>
+  <LI class="L2"> <A href="/part5#5__phishing_via_ajax">Phishing via AJAX</A></LI>
+  </UL></LI>
+<LI class="L1"> <A href="/part5#5__other_vulnerabilities"> Other Vulnerabilities </A> </H2>
+  <UL>
+  <LI class="L2"> <A href="/part5#5__buffer_and_integer_overflow">Buffer Overflow and Integer Overflow</A></LI>
+  <LI class="L2"> <A href="/part5#5__sql_injection"> SQL Injection </A></LI>
+  </UL></LI>
+<LI class="L1"> <A href="/part5#5__after_the_codelab">After the Codelab</A></LI>
+</UL>
+</DIV>
+<DIV class="column2">
+<P></P>
+<P></P>
+<P>
+<NOAUTOLINK>
+</NOAUTOLINK></P>
+
+<H2><A name="2__cross_site_scripting"> </A> Cross-Site Scripting
+(XSS) </H2>
+<P>
+Cross-site scripting (XSS) is a vulnerability that permits an attacker
+to inject code (typically HTML or JavaScript) into contents of a
+website not under the attacker's control. When a victim views such a
+page, the injected code executes in the victim's browser. Thus, the
+attacker has bypassed the
+browser's <A href="https://www.google.com/search?q=same+origin+policy">same
+origin policy</A> and can steal victim's private information
+associated with the website in question.
+</P>
+<P>
+In a <b>reflected XSS</b> attack, the attack is in the request itself
+(frequently the URL) and the vulnerability occurs when the server
+inserts the attack in the response verbatim or incorrectly escaped or
+sanitized. The victim triggers the attack by browsing to a malicious
+URL created by the attacker. In a <b>stored XSS</b> attack, the attacker
+stores the attack in the application (e.g., in a snippet) and the
+victim triggers the attack by browsing to a page on the server that
+renders the attack, by not properly escaping or sanitizing the stored
+data.
+</P>
+<P></P>
+<DIV style="margin-left:18pt">
+<H4 style="cursor: pointer" onclick="toggleBlock(this, 'xss_desc');"><IMG src="/static/closed.gif"> More details </H4>
+<DIV id="xss_desc" style="display:none">
+<P></P>
+<P> To understand how this could happen: suppose the
+URL <CODE>https://www.google.com/search?q=flowers</CODE> returns a page
+containing the HTML fragment
+</P>
+<P></P>
+<PRE>
+&lt;p&gt;Your search for 'flowers'
+returned the following results:&lt;/p&gt;
+</PRE>
+<P>
+that is, the value of the query parameter <CODE>q</CODE> is inserted
+verbatim into the page returned by
+Google. If <CODE>www.google.com</CODE> did not do any validation or
+escaping of <CODE>q</CODE> (it does), an attacker could craft a link
+that looks like this:<BR>
+<PRE>
+https://www.google.com/search?q=flowers+%3Cscript%3Eevil_script()%3C/script%3E
+</PRE>
+and trick a victim into clicking on this link. When a victim loads
+this link, the following page gets rendered in the victim's browser:
+</P>
+<P></P>
+<PRE>
+&lt;p&gt;Your search for 'flowers&lt;script&gt;evil_script()&lt;/script&gt;'
+returned the following results:&lt;/p&gt;
+</PRE>
+<P>
+And the browser executes <CODE>evil_script()</CODE>. And since
+the page comes
+from <CODE>www.google.com</CODE>, <CODE>evil_script()</CODE> is
+executed in the context of <CODE>www.google.com</CODE> and has access
+to all the victim's browser state and cookies for that domain.
+</P>
+<P> Note that the victim does not even need to explicitly click on the
+malicious link. Suppose the attacker
+owns <CODE>www.evil.example.com</CODE>, and creates a page with an
+<CODE>&lt;iframe&gt;</CODE> pointing to the malicious link; if the
+victim visits <CODE>www.evil.example.com</CODE>, the attack will
+silently be activated.
+</P>
+</DIV>
+</DIV>
+<P></P>
+<H3><A name="2__xss_challenge"> </A> XSS Challenges </H3>
+<P>
+Typically, if you can get JavaScript to execute on a page when it's
+viewed by another user, you have an XSS vulnerability. A simple
+JavaScript function to use when hacking is the <CODE>alert()</CODE>
+function, which creates a pop-up box with whatever string you pass as
+an argument.
+</P>
+<P>You might think that inserting an alert message isn't terribly
+dangerous, but if you can inject that, you can inject other scripts
+that are more malicious. It is not necessary to be able to inject any
+particular special character in order to attack. If you can
+inject <CODE>alert(1)</CODE> then you can inject arbitrary script
+using <CODE>eval(String.fromCharCode(...))</CODE>.
+</P>
+<P> Your challenge is to find XSS vulnerabilities in Gruyere. You
+should look for vulnerabilities both in URLs and in stored data. Since
+XSS vulnerabilities usually involve applications not properly handling
+untrusted user data, a common method of attack is to enter random text
+in input fields and look at how it gets rendered in the response
+page's HTML source. But before we do that, let's try something simpler.
+</P>
+<P></P>
+<H3><A name="2__file_upload_xss"> </A> File Upload XSS </H3>
+<P>
+<IMG src="/static/cheese_b.png" style="vertical-align:middle; padding-right: 5px;">
+<B>Can you upload a file that allows you to execute arbitrary script
+on the <CODE>google-gruyere.appspot.com</CODE> domain?</B>
+<DIV style="margin-left:18pt">
+<H4 style="cursor: pointer" onclick="toggleBlock(this, 'upload_xss_hint1');"><IMG src="/static/closed.gif"> Hint </H4>
+<DIV id="upload_xss_hint1" style="display:none">
+<P>
+You can upload HTML files and HTML files can contain script.
+</P>
+</DIV>
+<H4 style="cursor: pointer" onclick="toggleBlock(this, 'upload_xss_sol');"><IMG src="/static/closed.gif"> Exploit and Fix </H4>
+<DIV id="upload_xss_sol" style="display:none">
+<P><B>To exploit,</B> upload a <CODE>.html</CODE> file containing a script like this:
+<PRE>
+&lt;script&gt;
+alert(document.cookie);
+&lt;/script&gt;
+</PRE>
+</P><P>
+<B>To fix,</B> host the content on a separate domain so the script
+won't have access to any content from your domain. That is, instead of
+hosting user content on <CODE>example.com/<I>username</I></CODE> we
+would host it at <CODE><I>username</I>.usercontent.example.com</CODE>
+or <CODE><I>username</I>.example-usercontent.com</CODE>. (Including
+something like "<CODE>usercontent</CODE>" in the domain name avoids
+attackers registering usernames that look innocent
+like <CODE>wwww</CODE> and using them for phishing attacks.)
+<P>
+</DIV>
+</DIV>
+<H3><A name="2__reflected_xss"> </A> Reflected XSS </H3>
+<P>
+There's an interesting problem here. Some browsers have built-in
+protection against reflected XSS attacks. There are also browser
+extensions like NoScript that provide some protection.  If you're
+using one of those browsers or extensions, you may need to use a
+different browser or temporarily disable the extension to execute
+these attacks.
+</P>
+<P>At the time this codelab was written, the two browsers which had
+this protection were IE and Chrome. To work around this, Gruyere
+automatically includes a <TT>X-XSS-Protection: 0</TT> HTTP header in
+every response which is recognized by IE and will be recognized by
+future versions of Chrome. (It's available in the developer channel
+now.) If you're using Chrome, you can try starting it with
+the <TT>--disable-xss-auditor</TT> flag by entering one of these
+commands:
+<UL><LI>Windows: <TT>"C:\Documents and Settings\USERNAME\Local
+Settings\Application
+Data\Google\Chrome\Application\chrome.exe" --disable-xss-auditor</TT>
+<LI>Mac: <TT>/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome
+--disable-xss-auditor</TT>
+<LI>GNU/Linux: <TT>/opt/google/chrome/google-chrome --disable-xss-auditor</TT>
+</UL>
+If you're using Firefox with the NoScript extension,
+add <TT>google-gruyere.appspot.com</TT> to the allow list. If you still
+can't get the XSS attacks to work, try a different browser.
+</P>
+<P>You may think that you don't need to worry about XSS if the browser
+protects against it. The truth is that the browser protection can't be
+perfect because it doesn't really know your application and therefore
+there may be ways for a clever hacker to circumvent that
+protection. The real protection is to not have an XSS vulnerability in
+your application in the first place.
+</P>
+<IMG src="/static/cheese_b.png" style="vertical-align:middle; padding-right: 5px;">
+<B>Find a reflected XSS attack. What we want is a URL
+that when clicked on will execute a script.</B>
+<P></P>
+<DIV style="margin-left:18pt">
+<H4 style="cursor: pointer" onclick="toggleBlock(this, 'xss_url_hint1');"><IMG src="/static/closed.gif"> Hint 1 </H4>
+<DIV id="xss_url_hint1" style="display:none">
+<P>
+What does this URL do?
+</P>
+<P></P>
+<PRE>
+https://google-gruyere.appspot.com/123/invalid
+</PRE>
+<P></P>
+</DIV>
+<P></P>
+<H4 style="cursor: pointer" onclick="toggleBlock(this, 'xss_url_hint2');"><IMG src="/static/closed.gif"> Hint 2 </H4>
+<DIV id="xss_url_hint2" style="display:none">
+<P>
+The most dangerous characters in a URL are <CODE>&lt;</CODE>
+and <CODE>&gt;</CODE>. If you can get an application to directly
+insert what you want in a page and can get those characters through,
+then you can probably get a script through. Try these:
+</P>
+<P></P>
+<PRE>
+https://google-gruyere.appspot.com/123/%3e%3c
+https://google-gruyere.appspot.com/123/%253e%253c
+https://google-gruyere.appspot.com/123/%c0%be%c0%bc
+https://google-gruyere.appspot.com/123/%26gt;%26lt;
+https://google-gruyere.appspot.com/123/%26amp;gt;%26amp;lt;
+https://google-gruyere.appspot.com/123/\074\x3c\u003c\x3C\u003C\X3C\U003C
+https://google-gruyere.appspot.com/123/+ADw-+AD4-
+</PRE>
+<P>
+This tries <CODE>&gt;</CODE> and <CODE>&lt;</CODE> in many different
+ways that might be able to make it through the URL and get rendered
+incorrectly using: verbatim (URL %-encoding), double %-encoding, bad
+UTF-8 encoding, HTML &amp;-encoding, double &amp;-encoding, and
+several different variations on C-style encoding. View the resulting
+source and see if any of those work. (Note: literally
+typing <CODE>&gt;&lt;</CODE> in the URL is identical
+to <CODE>%3e%3c</CODE> because the browser automatically %-encodes
+those character. If you are trying to want a literal <CODE>&gt;</CODE>
+or <CODE>&lt;</CODE> then you will need to use a tool like curl to
+send those characters in URL.)
+</P>
+<P></P>
+</DIV>
+<P></P>
+<H4 style="cursor: pointer" onclick="toggleBlock(this, 'xss_url_sol');"><IMG src="/static/closed.gif"> Exploit and Fix </H4>
+<DIV id="xss_url_sol" style="display:none">
+<P>
+<B>To exploit,</B> create a URL like the following and get a
+victim to click on it:
+</P>
+<P></P>
+<PRE>
+https://google-gruyere.appspot.com/123/&lt;script&gt;alert(1)&lt;/script&gt;
+</PRE>
+<P>
+<B>To fix,</B> you need to escape user input that is displayed in
+error messages. Error messages are displayed
+using <CODE><A href="/code/?resources/error.gtl">error.gtl</A></CODE>,
+but are not escaped in the template. The part of the template that
+renders the message is <CODE>{{message}}</CODE> and it's missing the
+modifier that tells it to escape user input. Add
+the <CODE>:text</CODE> modifier to escape the user input:
+</P><PRE>
+&lt;div class="message"&gt;{{_message:text}}&lt;/div&gt;
+</PRE>
+<P>
+This flaw would have been best mitigated by a design that escapes all
+output by default and only displays raw HTML when explicitly tagged to
+do so. There are
+also <A href="https://www.google.com/search?q=XSS+auto+escaping"
+target="_top">autoescaping</A> features available in many template
+systems.
+</P>
+<!--MARK-2-->
+<P></P>
+</DIV>
+</DIV>
+<P></P>
+<H3><A name="2__stored_xss"> </A> Stored XSS </H3>
+<P>
+<IMG src="/static/cheese_b.png" style="vertical-align:middle;
+padding-right: 5px;"> <B>Now find a stored XSS. What we want
+to do is put a script in a place where Gruyere will serve it back to
+another user.</B>
+</P>
+The most obvious place that Gruyere serves back
+user-provided data is in a snippet (ignoring uploaded files which we've already discussed.)<P></P>
+<DIV style="margin-left:18pt">
+<H4 style="cursor: pointer" onclick="toggleBlock(this, 'xss_stored_hint1');"><IMG src="/static/closed.gif"> Hint 1 </H4>
+<DIV id="xss_stored_hint1" style="display:none">
+<P>
+Put this in a snippet and see what you get:
+</P>
+<P></P>
+<PRE>
+&lt;script&gt;alert(1)&lt;/script&gt;
+</PRE>
+<P>
+There are many different ways that script can be embedded in a
+document.
+</P>
+<P></P>
+</DIV>
+<P></P>
+<H4 style="cursor: pointer" onclick="toggleBlock(this, 'xss_stored_hint2');"><IMG src="/static/closed.gif"> Hint 2 </H4>
+<DIV id="xss_stored_hint2" style="display:none">
+<P>
+Hackers don't limit themselves to valid HTML syntax. Try some invalid
+HTML and see what you get. You may need to experiment a bit in order
+to find something that will work. There are multiple ways to do this.
+</P>
+<P></P>
+</DIV>
+<P></P>
+<H4 style="cursor: pointer" onclick="toggleBlock(this, 'xss_stored_sol');"><IMG src="/static/closed.gif"> Exploit and Fix </H4>
+<DIV id="xss_stored_sol" style="display:none">
+<P>
+<B>To exploit,</B> enter any of these as your snippet (there
+are certainly more methods):
+</P>
+<P></P>
+<PRE>
+(1) &lt;a onmouseover="alert(1)" href="#"&gt;read this!&lt;/a&gt;
+
+(2) &lt;p &lt;script&gt;alert(1)&lt;/script&gt;hello
+
+(3) &lt;/td &lt;script&gt;alert(1)&lt;/script&gt;hello
+</PRE>
+<P>
+Notice that there are multiple failures in sanitizing the
+HTML. Snippet 1 worked because <CODE>onmouseover</CODE> was
+inadvertently omitted from the list of disallowed attributes
+in <CODE><A href="/code/?sanitize.py">sanitize.py</A></CODE>. Snippets
+2 and 3 work because browsers tend to be forgiving with HTML syntax
+and the handling of both start and end tags is buggy.
+</P>
+<P>
+<B>To fix,</B> we need to investigate and fix the sanitizing performed
+on the snippets. Snippets are sanitized in <CODE>_SanitizeTag</CODE>
+in the <CODE><A href="/code/?sanitize.py">sanitize.py</A></CODE>
+file. Let's block snippet 1 by adding <CODE>"onmouseover"</CODE> to
+the list of <CODE>disallowed_attributes</CODE>.
+</P>
+<P>
+<B>Oops!</B> This doesn't completely solve the problem. Looking at
+the code that was just fixed, can you find a way to bypass the fix?
+</P>
+<H4 style="cursor: pointer" onclick="toggleBlock(this, 'xss_stored_not_fixed_hint');"><IMG src="/static/closed.gif"> Hint </H4>
+<DIV id="xss_stored_not_fixed_hint" style="display:none">
+<P>
+Take a close look at the code in <CODE>_SanitizeTag</CODE> that
+determines whether or not an HTML attribute is allowed or not.
+</P>
+</DIV>
+<H4 style="cursor: pointer" onclick="toggleBlock(this, 'xss_stored_not_fixed');"><IMG src="/static/closed.gif"> Exploit and Fix </H4>
+<DIV id="xss_stored_not_fixed" style="display:none">
+<P>
+The fix was insufficient because the code that checks for disallowed
+attributes is case sensitive and HTML is not. So this still works:
+</P>
+<P></P>
+<PRE>
+(1') &lt;a ONMOUSEOVER="alert(1)" href="#"&gt;read this!&lt;/a&gt;
+</PRE>
+<P>
+Correctly sanitizing HTML is a tricky
+problem. The <CODE>_SanitizeTag</CODE> function has a number of
+critical design flaws:
+</P>
+<P></P>
+<UL>
+<LI> It does not validate the well-formedness of the input HTML. As we
+see, badly formed HTML passes through the sanitizer unchanged. Since
+browsers typically apply very lenient parsing, it is very hard to
+predict the browser's interpretation of the given HTML unless we
+exercise strict control on its format.
+</LI>
+<LI> It uses blacklisting of attributes, which is a bad technique. One
+of our exploits got past the blacklist simply by using an uppercase
+version of the attribute. There could be other
+attributes <A href="https://www.w3.org/TR/html40/index/attributes.html"
+target="_top">missing from this list</A> that are dangerous. It is
+always better to whitelist known good values.
+</LI>
+<LI> The sanitizer does not do any further sanitization of attribute
+values. This is dangerous since URI attributes like <CODE>href</CODE>
+and <CODE>src</CODE> and the <CODE>style</CODE> attribute can all be
+used to inject JavaScript.
+</LI>
+</UL>
+<P>
+The right approach to HTML sanitization is to:
+</P><UL>
+<LI> Parse the input into an intermediate DOM structure, then rebuild
+the body as well-formed output.
+</LI>
+<LI> Use strict whitelists for allowed tags and attributes.
+</LI>
+<LI> Apply strict sanitization of URL and CSS attributes if they are
+permitted.
+</LI>
+</UL>
+<P>Whenever possible it is preferable to use an already available known
+and proven <A href="https://www.google.com/search?q=sanitize+html"
+target="_top">HTML sanitizer</A>.
+</P>
+<!--MARK-3-->
+<P></P>
+</DIV>
+</DIV>
+</DIV>
+<P></P>
+<H3><A name="2__stored_xss_via_html_attribute"> </A> Stored XSS via
+HTML Attribute </H3>
+<P>
+<IMG src="/static/cheese_b.png" style="vertical-align:middle;
+padding-right: 5px;"> <B>You can also do XSS by injecting a value into an
+HTML attribute. Inject a script by setting the color value in a
+profile.</B>
+</P><DIV style="margin-left:18pt">
+<P></P>
+<H4 style="cursor: pointer" onclick="toggleBlock(this, 'xss_color_hint');"><IMG src="/static/closed.gif"> Hint 1 </H4>
+<DIV id="xss_color_hint" style="display:none">
+<P>
+The color is rendered as <CODE>style='color:<I>color</I>'</CODE>.
+Try including a single quote character in your color name.
+</P>
+<P></P>
+</DIV>
+<H4 style="cursor: pointer" onclick="toggleBlock(this, 'xss_color_hint2');"><IMG src="/static/closed.gif"> Hint 2 </H4>
+<DIV id="xss_color_hint2" style="display:none">
+<P>
+You can insert an HTML attribute that executes a script.
+</P>
+<P></P>
+</DIV>
+<H4 style="cursor: pointer" onclick="toggleBlock(this, 'xss_color_sol');"><IMG src="/static/closed.gif"> Exploit and Fixes </H4>
+<DIV id="xss_color_sol" style="display:none">
+<P>
+<B>To exploit,</B> use the following for your color
+preference:
+</P>
+<P></P>
+<PRE>
+red' onload='alert(1)' onmouseover='alert(2)
+</PRE>
+<P>
+You may need to move the mouse over the snippet to trigger the
+attack. This attack works because the first quote ends
+the <CODE>style</CODE> attribute and the second quote starts the
+onload attribute.
+</P>
+<P> But this attack shouldn't work at all. Take a look
+at <CODE><A href="/code/?resources/home.gtl">home.gtl</A></CODE> where
+it renders the color. It says <CODE>style='{{color:text}}'</CODE> and
+as we saw earlier, the <CODE>:text</CODE> part tells it to escape
+text. So why doesn't this get escaped?
+In <CODE><A href="/code/?gtl.py">gtl.py</A></CODE>, it
+calls <CODE>cgi.escape(str(value))</CODE> which takes an optional
+second parameter that indicates that the value is being used in an
+HTML attribute. So you can replace this
+with <CODE>cgi.escape(str(value),True)</CODE>. Except that doesn't fix
+it! The problem is that <CODE>cgi.escape</CODE> assumes your HTML
+attributes are enclosed in double quotes and this file is using single
+quotes. (This should teach you to always carefully read the
+documentation for libraries you use and to always test that they do
+what you want.)
+</P>
+<P> You'll note that this attack uses both <CODE>onload</CODE>
+and <CODE>onmouseover</CODE>. That's because even though W3C specifies
+that onload events is only supported on <CODE>body</CODE>
+and <CODE>frameset</CODE> elements, some browsers support them on
+other elements. So if the victim is using one of those browsers, the
+attack always succeeds. Otherwise, it succeeds when the user moves the
+mouse. It's not uncommon for attackers to use multiple attack vectors
+at the same time.
+</P>
+<P>
+<B>To fix,</B> we need to use a correct text escaper, that escapes
+single and double quotes too. Add the following function
+to <CODE><A href="/code/?gtl.py">gtl.py</A></CODE> and call it instead
+of <CODE>cgi.escape</CODE> for the <CODE>text</CODE> escaper.
+</P>
+<P></P>
+<PRE>
+def _EscapeTextToHtml(var):
+  """Escape HTML metacharacters.
+
+  This function escapes characters that are dangerous to insert into
+  HTML. It prevents XSS via quotes or script injected in attribute values.
+
+  It is safer than cgi.escape, which escapes only &lt;, &gt;, &amp; by default.
+  cgi.escape can be told to escape double quotes, but it will never
+  escape single quotes.
+  """
+  meta_chars = {
+      '&quot;': '&amp;quot;',
+      '\&#39;': '&amp;#39;',  # Not &amp;apos;
+      '&amp;': '&amp;amp;',
+      '&lt;': '&amp;lt;',
+      '&gt;': '&amp;gt;',
+      }
+  escaped_var = ""
+  for i in var:
+    if i in meta_chars:
+      escaped_var = escaped_var + meta_chars[i]
+    else:
+      escaped_var = escaped_var + i
+  return escaped_var
+</PRE>
+<P>
+<B>Oops!</B> This doesn't completely solve the problem.  Even with the
+above fix in place, the color value is still vulnerable.
+<H4 style="cursor: pointer" onclick="toggleBlock(this, 'another_style_xss_hint1');"><IMG src="/static/closed.gif"> Hint 1 </H4>
+<DIV id="another_style_xss_hint1" style="display:none">
+<P>
+Some browsers allow you to include script in stylesheets.
+</P>
+</DIV>
+<H4 style="cursor: pointer" onclick="toggleBlock(this, 'another_style_xss_hint2');"><IMG src="/static/closed.gif"> Hint 2 </H4>
+<DIV id="another_style_xss_hint2" style="display:none">
+<P>
+The easiest browser to exploit in this way is Internet Explorer which
+supports dynamic CSS properties.
+</P>
+</DIV>
+
+<H4 style="cursor: pointer" onclick="toggleBlock(this, 'another_style_xss_sol');"><IMG src="/static/closed.gif"> Another Exploit and Fix </H4>
+<DIV id="another_style_xss_sol" style="display:none">
+<P>
+Internet Explorer's dynamic CSS properites (aka CSS expressions) make
+this attack particularly easy.
+</P>
+<B>To exploit,</B> use the following for your color
+preference:
+<PRE>
+expression(alert(1))
+</PRE>
+<P>
+While other browsers don't support CSS expressions, there are other
+dangerous CSS properties, such as Mozilla's <CODE>-moz-binding</CODE>.
+</P>
+<P>
+<B>To fix,</B> we need to sanitize the color as a color.
+The best thing to do would be to add a new output sanitizing form to
+gtl, i.e., we would write <CODE>{{foo:color}}</CODE> which makes
+sure <CODE>foo</CODE> is safe to use as a color. This function can be
+used to sanitize:
+</P>
+<PRE>
+SAFE_COLOR_RE = re.compile(r"^#?[a-zA-Z0-9]*$")
+
+def _SanitizeColor(color):
+  """Sanitizes a color, returning 'invalid' if it's invalid.
+
+  A valid value is either the name of a color or # followed by the
+  hex code for a color (like #FEFFFF). Returning an invalid value
+  value allows a style sheet to specify a default value by writing
+  'color:default; color:{{foo:color}}'.
+  """
+
+  if SAFE_COLOR_RE.match(color):
+    return color
+  return 'invalid'
+</PRE>
+<P>
+Colors aren't the only values we might want to allow users to
+provide. You should do similar sanitizing for user-provided fonts,
+sizes, urls, etc.  It's helpful to do input validation, so that when a
+user enters an invalid value, you'll reject it at that time. But only
+doing input validation would be a mistake: if you find an error in
+your validation code or a new browser exposes a new attack vector,
+you'd have to go back and scrub all previously entered values. Or, you
+could add the output validation which you should have been doing in
+the first place.
+</DIV>
+</P></DIV>
+</DIV>
+<P></P>
+<H3><A name="2__stored_xss_via_ajax"> </A> Stored XSS via AJAX </H3>
+<P>
+<IMG src="/static/cheese_b.png" style="vertical-align:middle;
+padding-right: 5px;"> <B>Find an XSS attack that uses a bug in
+Gruyere's AJAX code.</B> The attack should be triggered when you click
+the refresh link on the page.
+</P>
+<P></P>
+<DIV style="margin-left:18pt">
+<P></P>
+<H4 style="cursor: pointer" onclick="toggleBlock(this, 'xss_ajax_hint');"><IMG src="/static/closed.gif"> Hint 1 </H4>
+<DIV id="xss_ajax_hint" style="display:none">
+<P>
+Run <CODE>curl</CODE>
+on <CODE>https://google-gruyere.appspot.com/123/feed.gtl</CODE> and look at
+the result. (Or browse to it in your browser and view source.)  You'll
+see that it includes each user's first snippet into the response. This
+entire response is then evaluated on the client side which then
+inserts the snippets into the document. Can you put something in your
+snippet that will be parsed differently than expected?
+</P>
+<P></P>
+</DIV>
+<P></P>
+<H4 style="cursor: pointer" onclick="toggleBlock(this, 'xss_ajax_hint2');"><IMG src="/static/closed.gif"> Hint 2 </H4>
+<DIV id="xss_ajax_hint2" style="display:none">
+<P>
+Try putting some quotes (<CODE>&quot;</CODE>) in your snippet.
+</P>
+<P></P>
+</DIV>
+<H4 style="cursor: pointer" onclick="toggleBlock(this, 'xss_ajax_sol');"><IMG src="/static/closed.gif"> Exploit and Fixes </H4>
+<DIV id="xss_ajax_sol" style="display:none">
+<P>
+<B>To exploit,</B> Put this in your snippet:
+</P>
+<P></P>
+<PRE>
+all &lt;span style=display:none&gt;"
++ (alert(1),"")
++ "&lt;/span&gt;your base
+</PRE>
+<P>
+The JSON should look like
+<PRE>_feed(({..., "Mallory": "snippet", ...}))</PRE>
+but instead looks like this:
+<PRE>_feed({..., "Mallory": <U>"all &lt;span style=display:none&gt;"</U>
++ <U>(alert(1),"")</U>
++ <U>"&lt;/span&gt;your base"</U>, ...})</PRE>
+Each underlined part is
+a separate expression. Note that this exploit is written to be
+invisible both in the original page rendering (because of
+the <CODE>&lt;span style=display:none&gt;</CODE>) and after refresh (because it inserts only an empty string). All that will appear on the screen
+is <A href="https://www.google.com/search?q=all+your+base+are+belong+to+us"
+target="_top">all your base</A>. There are bugs on both the server
+and client sides which enable this attack.
+</P>
+<P>
+<B>To fix,</B> first, on the server side, the text is incorrectly
+escaped when it is rendered in the JSON response. The template
+says <CODE>{{snippet.0:html}}</CODE> but that's not enough. This text
+is going to be inserted into the innerHTML of a DOM node so the HTML
+does have to be sanitized. However, that sanitized text is then going
+to be inserted into JavaScript and single and double quotes have to be
+escaped. That is, adding support for <CODE>{{...:js}}</CODE> to GTL
+would not be sufficient; we would also need to support something
+like <CODE>{{...:html:js}}</CODE>.
+</P><P>To escape quotes, use <CODE>\x27</CODE> and <CODE>\x22</CODE>
+for single and double quote respectively. Replacing them
+with <CODE>&amp;#27;</CODE> and <CODE>&amp;quot;</CODE> is incorrect
+as those are not recognized in JavaScript strings and will break
+quotes around HTML attribute.
+</P>
+<P> Second, in the browser, Gruyere converts the JSON by using
+JavaScript's <CODE>eval</CODE>. In general, <CODE>eval</CODE> is very
+dangerous and should rarely be used. If it used, it must be used very
+carefully, which is hardly the case here. We should be using the JSON
+parser which ensures that the string does not include any unsafe
+content. The JSON parser is available
+at <A href="http://www.json.org/" target="_top">json.org</A>.
+</P>
+<P></P>
+</DIV>
+</DIV>
+<P></P>
+<H3><A name="2__reflected_xss_via_ajax"> </A> Reflected XSS via
+AJAX </H3>
+<P>
+<IMG src="/static/cheese_b.png" style="vertical-align:middle;
+padding-right: 5px;"><B>Find a URL that when clicked on will execute a
+script using one of Gruyere's AJAX features.</B>
+</P>
+<P></P>
+<DIV style="margin-left:18pt">
+<H4 style="cursor: pointer" onclick="toggleBlock(this, 'xss_ajax2_hint');"><IMG src="/static/closed.gif"> Hint 1 </H4>
+<DIV id="xss_ajax2_hint" style="display:none">
+<P>
+When Gruyere refreshes a user snippets page, it
+uses
+<PRE>https://google-gruyere.appspot.com/123/feed.gtl?uid=value</PRE>
+and the result is the script
+<PRE>_feed((["user", "snippet1", ... ]))</PRE>
+</P>
+<P></P>
+</DIV>
+<P></P>
+<H4 style="cursor: pointer" onclick="toggleBlock(this, 'xss_ajax2_hint2');"><IMG src="/static/closed.gif"> Hint 2 </H4>
+<DIV id="xss_ajax2_hint2" style="display:none">
+<P>
+This uses a different vulnerability, but the exploit is very similar
+to the previous reflected XSS exploit.
+</P>
+<P></P>
+</DIV>
+<H4 style="cursor: pointer" onclick="toggleBlock(this, 'xss_ajax2_sol');"><IMG src="/static/closed.gif"> Exploit and Fixes </H4>
+<DIV id="xss_ajax2_sol" style="display:none">
+<P>
+<B>To exploit,</B> create a URL like the following and get a victim to click on it:
+</P>
+<P></P>
+<PRE>
+https://google-gruyere.appspot.com/123/feed.gtl?uid=&lt;script&gt;alert(1)&lt;/script&gt;
+https://google-gruyere.appspot.com/123/feed.gtl?uid=%3Cscript%3Ealert(1)%3C/script%3E
+</PRE>
+<P>
+This renders as
+<PRE>_feed((["&lt;script&gt;alert(1)&lt;/script&gt;"]))</PRE>
+which surprisingly <I>does</I> execute the script. The bug is that
+Gruyere returns all gtl files as content type <CODE>text/html</CODE>
+and browsers are very tolerant of what HTML files they accept.
+</P>
+<P>
+<B>To fix,</B> you need to make sure that your JSON content can never
+be interpreted as HTML. Even though literal <CODE>&lt;</CODE>
+and <CODE>&gt;</CODE> are allowed in JavaScript strings, you need to
+make sure they don't appear literally where a browser can misinterpret
+them. Thus, you'd need to modify <CODE>{{...:js}}</CODE> to replace
+them with the JavaScript escapes <CODE>\x3c</CODE>
+and <CODE>\x3e</CODE>.  It is always safe to
+write <CODE>'\x3c\x3e'</CODE> in Javscript strings instead
+of <CODE>'&lt;&gt;'</CODE>.  (And, as noted above, using the HTML
+escapes <CODE>&amp;lt;</CODE> and <CODE>&amp;gt;</CODE> is incorrect.)
+</P>
+<P> You should also always set the content type of your responses,
+in this case serving JSON results
+as <CODE>application/javascript.</CODE> This alone doesn't solve the
+problem because browsers don't always respect the content type:
+browsers sometimes do "sniffing" to try to "fix" results from servers
+that don't provide the correct content type.
+</P>
+<P><B>But wait, there's more!</B> Gruyere doesn't set the content
+encoding either. And some browsers try to guess what the encoding type
+of a document is or an attacker may be able to embed content in a
+document that defines the content type. So, for example, if an
+attacker can trick the browser into thinking a document
+is <CODE><A href="https://www.google.com/search?q=utf-7">UTF-7</A></CODE>
+then it could embed a script tag as <CODE>+ADw-script+AD4-</CODE>
+since <CODE>+ADw-</CODE> and <CODE>+AD4-</CODE> are alternate
+encodings for <CODE>&lt;</CODE> and <CODE>&gt;</CODE>.  So always set
+both the content type <I>and</I> the content encoding of your
+responses, e.g., for HTML:</P>
+<PRE>
+Content-Type: text/html; charset=utf-8
+</PRE>
+</DIV>
+</DIV>
+<H3><A name="2__more_about_xss"> </A> More about XSS </H3>
+<P>
+In addition to the XSS attacks described above, there are quite a few
+more ways to attack Gruyere with XSS. Collect them all!
+</P>
+<P>
+XSS is a difficult beast. On one hand, a fix to an XSS vulnerability
+is usually trivial and involves applying the correct sanitizing
+function to user input when it's displayed in a certain context. On
+the other hand, if history is any indication, this is extremely
+difficult to get right. <A href="https://www.kb.cert.org/vuls/"
+target="_top">US-CERT</A> reports dozens of publicly disclosed XSS
+vulnerabilities involving multiple companies.
+</P>
+<P> Though there is no magic defense to getting rid of XSS
+vulnerabilities, here are some steps you should take to prevent these
+types of bugs from popping up in your products:
+</P>
+<P></P>
+<OL>
+<LI> First, make sure
+you <A href="https://www.google.com/search?q=understanding+cross-site+scripting"
+target="_top">understand the problem</A>.
+</LI>
+<LI> Wherever possible, do sanitizing via templates features instead
+of calling escaping functions in source code. This way, all of your
+escaping is done in one place and your product can benefit from
+security technologies designed for template systems that verify their
+correctness or actually do the escaping for you. Also, familiarize
+yourself with the other security features of your template system.
+</LI>
+<LI> Employ good testing practices with respect to XSS.
+</LI>
+<LI> Don't write your own template library :)
+</LI>
+</OL>
+<!--MARK-6-->
+<BR><P></P>
+
+
+             <FONT SIZE="+2">
+             <A href="/part3">Continue &gt;&gt;</A>
+             </FONT><BR>
+<BR>
+<P style="font-size:x-small">
+&copy; Google 2017 <A href="https://www.google.com/intl/en/policies/terms/">Terms of Service</A>
+<BR>The code portions of this codelab are licensed under the
+Creative Commons Attribution-No Derivative Works 3.0 United States license
+&lt;<A href="https://creativecommons.org/licenses/by-nd/3.0/us/">https://creativecommons.org/licenses/by-nd/3.0/us</A>&gt;.
+Brief excerpts of the code may be used for educational or
+instructional purposes provided this notice is kept intact.
+Except as otherwise noted the remainder of this codelab is licensed under the
+Creative Commons Attribution 3.0 United States license
+&lt;<A href="https://creativecommons.org/licenses/by/3.0/us/">https://creativecommons.org/licenses/by/3.0/us</A>&gt;.
+</P>
+</BODY></HTML>

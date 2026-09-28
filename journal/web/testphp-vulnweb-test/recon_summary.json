@@ -1,0 +1,69 @@
+{
+  "tech_stack": [
+    "classic-asp",
+    "vbscript",
+    "iis",
+    "mssql"
+  ],
+  "server": "Microsoft-IIS/8.5",
+  "waf_detected": false,
+  "assets": [
+    "testasp.vulnweb.com"
+  ],
+  "discovered_endpoints": [
+    "/",
+    "/Default.asp",
+    "/Images/",
+    "/Login.asp?RetURL=",
+    "/Logout.asp?RetURL=",
+    "/Register.asp?RetURL=",
+    "/Search.asp?tfSearch=",
+    "/Templates/",
+    "/Templates/MainTemplate.dwt.asp",
+    "/Templatize.asp?item=<relative-path>",
+    "/db.asp",
+    "/logInput.asp",
+    "/showforum.asp?id={0,1,2}",
+    "/showthread.asp?id={0,1,2,3,4}",
+    "/styles.css"
+  ],
+  "js_findings": [
+    "JS 파일 없음 — 클라이언트 스크립트가 전혀 없는 서버측 렌더링(classic ASP + Dreamweaver 정적 템플릿) 사이트라 정적 분석 대상 자체가 없음. 대신 Round 5 의 ASP 소스 유출로 서버측 코드 전량 확보"
+  ],
+  "notable_findings": [
+    "원 타겟 testphp.vulnweb.com(44.228.249.3)은 2026-09-23 현재 완전 다운(TCP 80/443 타임아웃, ICMP 100% loss, 독립 vantage 3곳 실패) — 사용자가 scope를 testasp.vulnweb.com으로 교체",
+    "사이트 자체 경고문이 'SQL Injections / directory traversal 에 의도적으로 취약 / ASP 로 제작 / 내용은 매일 초기화'라고 명시",
+    "[Round 3] SQLi 확정 3벡터(showforum id / showthread id / Search tfSearch, boolean-blind, MSSQL). UNION-based 는 컬럼수 1~15 전부 500으로 불가",
+    "[Round 3] 블라인드 추출: DB_NAME()='acuforum', 테이블=forums/posts/threads/users, SYSTEM_USER='acunetix', users 행수=1758",
+    "[Round 3] Search.asp reflected XSS — <script>alert(1)</script> 이스케이프 없이 반사",
+    "[Round 4] Templatize.asp?item= directory traversal 확정 — 평문 ../ 로 windows/win.ini, system32/drivers/etc/hosts, windows/system.ini, html/../web.config 읽기(인증 불요)",
+    "[Round 4] Login.asp SQLi 인증 우회 확정 — tfUName=admin'-- 로 302, 세션 메뉴에 'logout admin'--' 노출, 인증 후 답글 폼(frmPostMessage/tfText) 개방",
+    "[Round 4] Login.asp?RetURL= open redirect 확정 — 우회 로그인과 체이닝 시 302 Location: http://example.com/",
+    "[Round 5] 치명적: 루트 기준 상대경로로 ASP 소스 11개 파일 평문 유출(db.asp/logInput.asp/Login.asp/showforum.asp/showthread.asp/Search.asp/Templatize.asp/Register.asp/Logout.asp/Default.asp/web.config) — evidence/source_leak/",
+    "[Round 5] DB 접속 자격증명 노출: Provider=SQLNCLI11;Server=(local)\\SQL;Database=acuforum;Uid=acunetix;Pwd=acunetixtrustno1; (db.asp:31 하드코딩)",
+    "[Round 5] stored XSS 근거: 게시글 필터가 '<a href=' 문자열만 차단 → <script>/<img onerror>/<svg onload> 무필터 통과, 본문에 HTML 인코딩 없음",
+    "[Round 5] 위험 경로: 로그인+POST+주입 id 조합 시 앱 자체 로직(total>100)이 DELETE FROM threads/posts 를 실행 — POST 페이로드에서 id 주입 금지",
+    "[Round 5] logInput.asp 에 Scripting.FileSystemObject 기반 파일 쓰기 함수 WriteToFile 존재(호출부 주석처리), 경로 C:\\scripts\\logInput.txt 노출",
+    "모든 폼에 CSRF 토큰 없음, action=\"\"(자기 자신 POST)",
+    "browser toolset 이 이 환경에서 동작하지 않음(탭이 chrome-error:// 로 떨어지고 스크린샷 60s 타임아웃) — SSR 사이트라 curl 기반 정찰로 대체",
+    "공격 도구 미설치(nmap/ffuf/httpx/nuclei/sqlmap/nikto/gobuster 전무) — curl/python3 로 페이로드 직접 구성 필요",
+    "검증 스크립트 주의: curl -i 출력을 '\\r\\n\\r\\n' 로 파싱하면 텍스트모드 개행 변환 때문에 본문이 빈 문자열이 됨(-D/-o 분리 사용할 것)",
+    "[Round 7] 정정: 이전 phase 의 'UNION 불가' 결론은 잘못 — Search.asp 는 단일 쿼리라 `tfSearch=q')>0) UNION ALL SELECT <10컬럼>--` 형태(괄호/WHERE 정상 종료)로 UNION 이 성립하고, 결과가 페이지에 그대로 렌더된다(페이지 가시 추출). showforum/showthread 는 동일 id 가 컬럼수 다른 3~4개 쿼리에 재사용돼 UNION 컬럼수 정합 불가라 여전히 불가",
+    "[Round 7] UNION 으로 실제 유출: @@version=Microsoft SQL Server 2014 (SP3-GDR) 12.0.6179.1 X64 Express on Windows NT 6.3 (Build 9600), DB=acuforum, SUSER=acunetix, 테이블 threads/users/forums/posts, users 컬럼 uname,upass,email,realname,avatar(평문 비밀번호), users 1건 추출, 행수 users=453/posts=21/threads=8/forums=3",
+    "[Round 7] stacked query 확정: id=0;IF 1=1 WAITFOR DELAY '0:0:04'-- → 8.51s vs IF 1=2 → 0.59s(기준선 0.48s). showforum 은 쿼리 3회 실행으로 지연 3배(1s→3.37s/3s→9.52s/8s→24.35s) — 임의 T-SQL 문장 실행 가능",
+    "[Round 7] DB 권한: sysadmin/securityadmin/db_owner=false, db_datawriter/db_datareader=true, posts INSERT 권한=true → acuforum 전 테이블 읽기+쓰기 가능(쓰기 실증은 승인 대상이라 미실행). xp_cmdshell/Ole Automation 비활성 + sysadmin 아님 → OS 명령 실행(RCE) 불가",
+    "[Round 7] 교차 DB 읽기 확정: sys.databases=master,tempdb,model,msdb,acublog,acuforum,acuservice. acublog.users(1행, uname/upass/alevel)·news(3)·comments(63), acuservice.users(2행, id/username/password/name/joindate/ccnumber/ccverification/address) 까지 접근됨 — 값은 추출하지 않고 행수/컬럼명만 확인(범위 최소화)",
+    "[Round 7] XSS 확정(쓰기 불요): Login.asp:37 이 Session.Contents('uname')에 입력값을 검증 없이 저장하고 모든 페이지 메뉴가 HTML 인코딩 없이 출력 → tfUName=<img src=x onerror=...>' OR '1'='1'-- 로 로그인하면 전 페이지 메뉴에 raw 페이로드. 로그인 CSRF(자동 submit 폼)와 체이닝 가능",
+    "[Round 7] 음성: RetURL CRLF 헤더 인젝션 불가(ASP 가 Location 에 %0D%0A 로 인코딩), traversal 잔여 파일(C:\\scripts\\logInput.txt·.bak·global.asa·boot.ini·IIS applicationHost.config·inetpub\\wwwroot\\web.config) 전부 500, 미발견 엔드포인트 열거 20여종 전부 404, RAG 검색(rag_entries) 결과 0건(신규 DB 상태)",
+    "[Round 7] 남은 표면: /Register.asp 는 소스상 INSERT INTO users VALUES('..tfUName..') 직접 문자열 연결(SQLi 후보) — 검증에 계정 생성(쓰기) 필요. stored XSS(답글)는 이전 phase 승인 거부 이력 있음(attempted_exploits.json 참고)",
+    "[Round 8] 승인 후 실증: stacked query 로 users 1행 생성(id=0;IF NOT EXISTS(...) INSERT INTO users VALUES('acu-r7 proof','P@ss-r7','r7@example.com','r7','')--) → UNION 검증(COUNT=1/upass=P@ss-r7) + 정상 로그인 폼으로 302 성공 + 메뉴에 'logout acu-r7 proof' → 임의 DML 확정(같은 기법으로 기존 upass 변경 시 전 사용자 계정 탈취 가능). users 453→454",
+    "[Round 8] stored XSS 실증(phase 1에서 3회 거부 → phase 2 재승인): 답글 tfText=<img src=x onerror=alert(document.domain)> 1건 게시 → 재방문 HTML 에 인코딩 없이 그대로, 쿠키 없는 비인증 요청에서도 동일 렌더 → 모든 방문자 브라우저에서 실행. 응답에 CSP/보안 헤더 없음. posts 21→22",
+    "[Round 8] footprint: users 1행 + 게시글 1건만 생성(기존 행 UPDATE/DELETE 없음, POST+주입 id 경로 미접촉). 남은 미검증: /Register.asp INSERT 문자열 연결 SQLi, second-order(Session uname → posts.poster 이스케이프 없음) — 둘 다 추가 행 생성이 필요해 별도 승인 필요",
+    "[Round 10] /Register.asp SQLi 확정(INSERT 직접 연결): tfUName 재구성 + stacked WAITFOR 로 302 이며 4.35s, UNION 검증 avatar='INJECTED'(정상 경로는 항상 ''), 만든 계정으로 정상 로그인 302 성공",
+    "[Round 10] second-order 확정(임팩트 한정): Session('uname') 이 posts.poster 로 무이스케이프 전달 — 따옴표 포함 사용자명 세션으로 답글 POST 시 500(정상 계정은 200). 데이터 주입은 로그인 제약과 VALUES 구문이 상호 배타적이라 불가 → 게시 기능 파괴 수준. Login.asp 의 tfUName 에서도 stacked 성립(200 응답 4.37s)",
+    "[Round 10] PUT 업로드 불가(404, 파일 미생성, Allow 헤더에 PUT/DELETE 없음) → 웹셸/RCE 경로 없음(확정)",
+    "[Round 11] 교차 DB 쓰기 권한 확인(오라클만, 쓰기 없음): acublog.dbo.users UPDATE / acublog.dbo.comments INSERT / acuservice.dbo.users UPDATE 모두 true → in-scope SQLi 하나로 인접 앱 DB(ccnumber 컬럼 포함)까지 읽고 쓰기 가능. ALTER/CONTROL/bulkadmin/BULK OPERATIONS 는 false → 스키마 변경·권한 상승·파일 접근 불가",
+    "[Round 11] 운영 관찰: 사이트 일일 초기화가 실제로 동작(users 454→5, posts 22→6, Round 8 산출물 소멸) → 모든 증거는 캡처 시각 기준으로만 유효. RCE 부재는 5개 근거(sysadmin 아님/xp_cmdshell·Ole Automation 비활성/PUT 불가/BULK 권한 없음/DDL·CONTROL 없음)로 확정"
+  ],
+  "updated_at": "2026-09-28T06:20:00Z"
+}

@@ -1,0 +1,17 @@
+/DB.asp                      200 0
+/Default.asp                 200 3538
+/Login.asp                   200 3194
+/LogOut.asp                  302 132
+/Register.asp                200 3617
+/Search.asp                  200 2809
+/ShowForum.asp               302 132
+/ShowNews.asp                500 1208
+/ShowThread.asp              302 132
+/Styles.css                  200 3390
+/Templatize.asp              500 1208
+/logInput.asp                200 0
+/db.asp                      200 0
+/logout.asp                  302 132
+/showforum.asp               302 132
+/shownews.asp                500 1208
+/showthread.asp              302 132

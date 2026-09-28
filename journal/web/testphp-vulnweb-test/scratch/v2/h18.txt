@@ -1,0 +1,10 @@
+HTTP/1.1 302 Object moved
+Cache-Control: private
+Content-Type: text/html
+Location: http://testasp.vulnweb.com/Default.asp
+Server: Microsoft-IIS/8.5
+Set-Cookie: ASPSESSIONIDAABTRDTB=OLMLCGBBMILHBCODAOFGIHIK; path=/
+X-Powered-By: ASP.NET
+Date: Wed, 23 Sep 2026 04:24:21 GMT
+Content-Length: 159
+

@@ -1,0 +1,17 @@
+### F1 /_vti_cnf (metadata oracle, with extensions)
+DB.asp
+Default.asp
+Login.asp
+Search.asp
+db.asp
+default.asp
+login.asp
+logout.asp
+register.asp
+search.asp
+showthread.asp
+styles.css
+EXIT_F1=0
+### F5 /Templates (with extensions)
+EXIT_F5=0
+DONE_F1F5

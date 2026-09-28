@@ -1,0 +1,23 @@
+{
+  "project_id": "google-gruyere-trial",
+  "note": "신규 계정을 생성하지 않았다 — Gruyere 호스팅판은 소스(data.py DEFAULT_DATA)와 동일한 시드 계정을 인스턴스마다 심어두며, 코드랩 문서(/part1)도 이 계정들로 실습하도록 안내한다. 실측으로 brie/briebrie 로그인 성공을 확인했다(Set-Cookie: GRUYERE=74315992|brie||author).",
+  "in_scope_test_account": {
+    "uid": "brie",
+    "pw": "briebrie",
+    "role": "is_author=True, is_admin=False",
+    "source": "server-seeded default demo account (생성하지 않음)",
+    "login_curl": "curl -s -c gruyere.cookies -b gruyere.cookies \"https://google-gruyere.appspot.com/<gid>/login?uid=brie&pw=briebrie\""
+  },
+  "other_seeded_accounts_observed_via_unauth_disclosure": [
+    {"uid": "administrator", "pw": "secret", "role": "is_admin=True", "note": "무인증 /<gid>/dump.gtl 로 노출 확인됨. 사용 전 별도 승인 필요."},
+    {"uid": "cheddar", "pw": "orange", "role": "is_author=True", "note": "노출 확인됨. 사용 전 별도 승인 필요."},
+    {"uid": "sardo", "pw": "odras", "role": "is_author=True", "note": "노출 확인됨. 사용 전 별도 승인 필요."}
+  ],
+  "sandbox": {
+    "gid": "399820027374159079597995648128134925001",
+    "base_url": "https://google-gruyere.appspot.com/399820027374159079597995648128134925001",
+    "cookie_jar": "journal/web/google-gruyere-trial/scratch/gruyere.cookies",
+    "note": "GID 는 scratch/gid.txt 에도 저장. GID 가 바뀌면 완전히 다른 인스턴스이며 기존 업로드/스니펫이 보이지 않는다."
+  },
+  "updated_at": "2026-09-28T09:13:18Z"
+}

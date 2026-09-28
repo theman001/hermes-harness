@@ -1,0 +1,61 @@
+&lt;%@LANGUAGE=&quot;VBSCRIPT&quot; CODEPAGE=&quot;1252&quot;%&gt;
+&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;http://www.w3.org/TR/html4/loose.dtd&quot;&gt;
+&lt;html&gt;&lt;!-- InstanceBegin template=&quot;/Templates/MainTemplate.dwt.asp&quot; codeOutsideHTMLIsLocked=&quot;false&quot; --&gt;
+&lt;head&gt;
+&lt;!-- InstanceBeginEditable name=&quot;doctitle&quot; --&gt;
+&lt;title&gt;Untitled Document&lt;/title&gt;
+&lt;!-- InstanceEndEditable --&gt;
+&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=iso-8859-1&quot;&gt;
+&lt;!-- InstanceBeginEditable name=&quot;head&quot; --&gt;&lt;!-- InstanceEndEditable --&gt;
+&lt;link href=&quot;styles.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt; 
+&lt;table width=&quot;100%&quot;  border=&quot;0&quot; cellpadding=&quot;10&quot; cellspacing=&quot;0&quot;&gt; 
+  &lt;tr bgcolor=&quot;#008F00&quot;&gt; 
+    &lt;td width=&quot;306px&quot;&gt;&lt;a href=&quot;https://www.acunetix.com/&quot;&gt;&lt;img src=&quot;Images/logo.gif&quot; width=&quot;306&quot; height=&quot;38&quot; border=&quot;0&quot; alt=&quot;Acunetix website security&quot;&gt;&lt;/a&gt;&lt;/td&gt; 
+    &lt;td align=&quot;right&quot; valign=&quot;middle&quot; bgcolor=&quot;#008F00&quot; class=&quot;disclaimer&quot;&gt;TEST and Demonstration site for &lt;a href=&quot;https://www.acunetix.com/vulnerability-scanner/&quot;&gt;Acunetix Web Vulnerability Scanner&lt;/a&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+    &lt;td colspan=&quot;2&quot;&gt;&lt;div class=&quot;menubar&quot;&gt;&lt;a href=&quot;Templatize.asp?item=html/about.html&quot; class=&quot;menu&quot;&gt;about&lt;/a&gt; - &lt;a href=&quot;Default.asp&quot; class=&quot;menu&quot;&gt;forums&lt;/a&gt; - &lt;a href=&quot;Search.asp&quot; class=&quot;menu&quot;&gt;search&lt;/a&gt; 
+    &lt;%
+		if Request.QueryString(&quot;RetURL&quot;)=&quot;&quot; then
+			curURL = Request.ServerVariables(&quot;URL&quot;) &amp; &quot;?&quot; &amp; Request.ServerVariables(&quot;QUERY_STRING&quot;)
+		else
+			curURL = Request.QueryString(&quot;RetURL&quot;)
+		end if
+		
+		if Session.Contents(&quot;uname&quot;) &lt;&gt; &quot;&quot; then			
+			Response.Write(&quot; - &lt;a href=&quot;&quot;./Logout.asp?RetURL=&quot; &amp; Server.URLEncode(curURL) &amp; &quot;&quot;&quot; class=&quot;&quot;menu&quot;&quot;&gt;logout &quot; &amp; Session.Contents(&quot;uname&quot;) &amp; &quot;&lt;/a&gt;&quot;)
+		else
+			Response.Write(&quot; - &lt;a href=&quot;&quot;./Login.asp?RetURL=&quot; &amp; Server.URLEncode(curURL) &amp; &quot;&quot;&quot; class=&quot;&quot;menu&quot;&quot;&gt;login&lt;/a&gt; - &lt;a href=&quot;&quot;./Register.asp?RetURL=&quot; &amp; Server.URLEncode(curURL) &amp; &quot;&quot;&quot; class=&quot;&quot;menu&quot;&quot;&gt;register&lt;/a&gt;&quot;)
+		end if
+	%&gt; 
+	- &lt;a href=&quot;https://www.acunetix.com/vulnerability-scanner/sql-injection/&quot; class=&quot;menu&quot;&gt;SQL scanner&lt;/a&gt; - &lt;a href=&quot;https://www.acunetix.com/websitesecurity/sql-injection/&quot; class=&quot;menu&quot;&gt;SQL vuln help&lt;/a&gt;
+    &lt;/div&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+    &lt;td colspan=&quot;2&quot;&gt;&lt;!-- InstanceBeginEditable name=&quot;MainContentLeft&quot; --&gt;
+		&lt;%
+			Dim oFileSys, oFile
+			
+			Set oFileSys = Server.CreateObject(&quot;Scripting.FileSystemObject&quot;)  
+			FName = Server.MapPath(&quot;.&quot;) &amp; &quot;\&quot; &amp; Request.QueryString(&quot;item&quot;) 
+		 
+			Set oFile = oFileSys.OpenTextFile (FName, 1, False, 0) 
+			
+			If (IsObject(oFile)) Then
+				Response.Write(oFile.ReadAll)
+				oFile.Close
+			End If
+		%&gt;
+		&lt;!-- InstanceEndEditable --&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr align=&quot;right&quot; bgcolor=&quot;#FFFFFF&quot;&gt; 
+    &lt;td colspan=&quot;2&quot; class=&quot;footer&quot;&gt;Copyright 2019 Acunetix Ltd.&lt;/td&gt; 
+  &lt;/tr&gt; 
+&lt;/table&gt; 
+&lt;div style=&quot;background-color:lightgray;width:80%;margin:auto;text-align:center;font-size:12px;padding:1px&quot;&gt;
+	&lt;p style=&quot;padding-left:20%;padding-right:20%&quot;&gt;&lt;b&gt;Warning&lt;/b&gt;: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other web-based attacks. It is built using ASP and it is here to help you test Acunetix. The entire content of the forum is erased daily. All the posts are real-life examples of how attackers are trying to break into insecure web applications. Please be careful and do not follow links that are posted by malicious parties.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;!-- InstanceEnd --&gt;&lt;/html&gt;

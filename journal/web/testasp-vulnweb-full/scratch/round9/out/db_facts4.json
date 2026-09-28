@@ -1,0 +1,63 @@
+{
+  "acuservice": {
+    "tables": 1,
+    "views": 0,
+    "procs": 0,
+    "table_names": [
+      "users"
+    ],
+    "users_columns": [
+      "id",
+      "username",
+      "password",
+      "name",
+      "joindate",
+      "ccnumber",
+      "ccverification",
+      "address"
+    ],
+    "users_rows": 2,
+    "password_column": "password",
+    "identifier_column": "username",
+    "identifier_samples": [
+      "blade",
+      "tibi"
+    ],
+    "password_format": {
+      "길이<=12 행 존재": false,
+      "길이>=32 행 존재": true,
+      "전부 16진 행 존재": true,
+      "평균길이>=16": true
+    },
+    "password_avg_len": 32
+  },
+  "acublog": {
+    "tables": 3,
+    "views": 0,
+    "procs": 0,
+    "table_names": [
+      "comments",
+      "news",
+      "users"
+    ],
+    "users_columns": [
+      "uname",
+      "upass",
+      "alevel"
+    ],
+    "users_rows": 1,
+    "password_column": "upass",
+    "identifier_column": "uname",
+    "identifier_samples": [
+      "admin"
+    ],
+    "password_format": {
+      "길이<=12 행 존재": false,
+      "길이>=32 행 존재": true,
+      "전부 16진 행 존재": true,
+      "평균길이>=16": true
+    },
+    "password_avg_len": 32
+  },
+  "requests": 1174
+}

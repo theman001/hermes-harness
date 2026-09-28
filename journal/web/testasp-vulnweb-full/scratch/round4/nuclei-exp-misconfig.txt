@@ -1,0 +1,18 @@
+[cookies-without-secure] [javascript] [info] testasp.vulnweb.com ["ASPSESSIONIDAABTRDTB"]
+[cookies-without-httponly] [javascript] [info] testasp.vulnweb.com ["ASPSESSIONIDAABTRDTB"]
+[iis-shortname-detect] [http] [info] http://testasp.vulnweb.com/*~1*/a.aspx
+[iis-shortname-detect] [http] [info] http://testasp.vulnweb.com/wfctbwfy*~1*/a.aspx
+[iis-shortname-detect] [http] [info] http://testasp.vulnweb.com/*~1*/a.aspx
+[iis-shortname-detect] [http] [info] http://testasp.vulnweb.com/wfctbwfy*~1*/a.aspx
+[iis-shortname-detect] [http] [info] http://testasp.vulnweb.com/*~1*/a.aspx
+[missing-cookie-samesite-strict] [http] [info] http://testasp.vulnweb.com ["ASPSESSIONIDAABTRDTB=PBICEGBBFLLLALFLHOILKDAH; path=/"]
+[http-missing-security-headers:x-frame-options] [http] [info] http://testasp.vulnweb.com
+[http-missing-security-headers:referrer-policy] [http] [info] http://testasp.vulnweb.com
+[http-missing-security-headers:cross-origin-embedder-policy] [http] [info] http://testasp.vulnweb.com
+[http-missing-security-headers:cross-origin-opener-policy] [http] [info] http://testasp.vulnweb.com
+[http-missing-security-headers:cross-origin-resource-policy] [http] [info] http://testasp.vulnweb.com
+[http-missing-security-headers:content-security-policy] [http] [info] http://testasp.vulnweb.com
+[http-missing-security-headers:x-content-type-options] [http] [info] http://testasp.vulnweb.com
+[http-missing-security-headers:x-permitted-cross-domain-policies] [http] [info] http://testasp.vulnweb.com
+[http-missing-security-headers:strict-transport-security] [http] [info] http://testasp.vulnweb.com
+[http-missing-security-headers:permissions-policy] [http] [info] http://testasp.vulnweb.com

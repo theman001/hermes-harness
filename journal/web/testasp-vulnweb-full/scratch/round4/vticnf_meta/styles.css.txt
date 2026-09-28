@@ -1,0 +1,8 @@
+vti_encoding:SR|utf8-nl
+vti_timelastmodified:TR|05 Oct 2007 10:01:19 -0000
+vti_extenderversion:SR|4.0.2.8912
+vti_cacheddtm:TX|05 Oct 2007 10:01:19 -0000
+vti_filesize:IR|3390
+vti_cachedlinkinfo:VX|
+vti_cachedsvcrellinks:VX|
+vti_backlinkinfo:VX|acuforum/login.asp acuforum/register.asp acuforum/search.asp acuforum/default.asp acuforum/showthread.asp acuforum/showforum.asp acuforum/templatize.asp

@@ -1,0 +1,13 @@
+DB.asp                 200        338              200        0
+Default.asp            200        926              200        3538
+Login.asp              200        772              200        3194
+LogOut.asp             200        338              302        132
+Register.asp           200        778              200        3617
+Search.asp             200        926              200        2809
+Styles.css             200        404              200        3390
+ShowForum.asp          200        861              302        132
+ShowThread.asp         200        882              302        132
+shownews.asp           200        338              500        1208
+Templatize.asp         200        930              500        1208
+logInput.asp           404        1245             200        0
+robots.txt             404        1245             200        13

@@ -1,0 +1,39 @@
+=== HTTP/1.0 /aspnet_client (reproduce 10.0.0.14) ===
+HTTP/1.1 301 Moved Permanently
+Content-Type: text/html; charset=UTF-8
+Location: http://testasp.vulnweb.com/aspnet_client/
+Server: Microsoft-IIS/8.5
+X-Powered-By: ASP.NET
+Date: Mon, 28 Sep 2026 07:20:46 GMT
+Connection: close
+Content-Length: 164
+
+<head><title>Document Moved</title></head>
+<body><h1>Object Moved</h1>This document may be found <a HREF="http://testasp.vulnweb.com/aspnet_client/">here</a></body>
+=== HTTP/1.0 / ===
+HTTP/1.1 200 OK
+Cache-Control: private
+Content-Type: text/html
+Server: Microsoft-IIS/8.5
+Set-Cookie: ASPSESSIONIDCCCTQDSA=LHKOLFKALHKBMNONAMENPEEI; path=/
+X-Powered-By: ASP.NET
+Date: Mon, 28 Sep 2026 07:20:46 GMT
+Connection: close
+Content-Length: 3538
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+=== HTTP/1.0 /aspnet_client/ ===
+HTTP/1.1 403 Forbidden
+Content-Type: text/html
+Server: Microsoft-IIS/8.5
+X-Powered-By: ASP.NET
+Date: Mon, 28 Sep 2026 07:20:46 GMT
+Connection: close
+Content-Length: 1233
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>

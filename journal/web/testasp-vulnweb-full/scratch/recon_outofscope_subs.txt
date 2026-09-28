@@ -1,0 +1,19 @@
+# subfinder -d vulnweb.com -silent  (passive sources only; NO requests sent to any of these hosts)
+# collected: 2026-09-23T07:17Z   total found: 14   OUT-OF-SCOPE (excluded): 13
+#==========================================================================================
+# IN-SCOPE (kept): testasp.vulnweb.com
+#==========================================================================================
+# OUT-OF-SCOPE — DO NOT SCAN / DO NOT SEND REQUESTS:
+antivirus1.vulnweb.com
+estphp.vulnweb.com
+odincovo.vulnweb.com
+rest.vulnweb.com
+testaspnet.vulnweb.com
+testhtml5.vulnweb.com
+testphp.vulnweb.com
+tetphp.vulnweb.com
+virus.vulnweb.com
+viruswall.vulnweb.com
+www.test.php.vulnweb.com
+www.virus.vulnweb.com
+www.vulnweb.com

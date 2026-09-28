@@ -1,0 +1,437 @@
+{
+ "jscripts_main.js": {
+  "bytes": 1245,
+  "lines": 30,
+  "version_fields": [],
+  "rcs": [],
+  "dangerous": {},
+  "urls": [
+   "http://www.w3.org/1999/xhtml",
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"
+  ],
+  "path_templates": [],
+  "server_endpoints": []
+ },
+ "langs_en.js": {
+  "bytes": 1650,
+  "lines": 42,
+  "version_fields": [],
+  "rcs": [],
+  "dangerous": {},
+  "urls": [],
+  "path_templates": [],
+  "server_endpoints": []
+ },
+ "main.js": {
+  "bytes": 1245,
+  "lines": 30,
+  "version_fields": [],
+  "rcs": [],
+  "dangerous": {},
+  "urls": [
+   "http://www.w3.org/1999/xhtml",
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"
+  ],
+  "path_templates": [],
+  "server_endpoints": []
+ },
+ "styles.css": {
+  "bytes": 3390,
+  "lines": 190,
+  "version_fields": [],
+  "rcs": [],
+  "dangerous": {},
+  "urls": [],
+  "path_templates": [],
+  "server_endpoints": []
+ },
+ "themes_simple_editor_content.css": {
+  "bytes": 616,
+  "lines": 28,
+  "version_fields": [],
+  "rcs": [],
+  "dangerous": {},
+  "urls": [],
+  "path_templates": [],
+  "server_endpoints": []
+ },
+ "themes_simple_editor_popup.css": {
+  "bytes": 821,
+  "lines": 41,
+  "version_fields": [],
+  "rcs": [],
+  "dangerous": {},
+  "urls": [],
+  "path_templates": [],
+  "server_endpoints": []
+ },
+ "themes_simple_editor_template.js": {
+  "bytes": 5727,
+  "lines": 20,
+  "version_fields": [],
+  "rcs": [],
+  "dangerous": {},
+  "urls": [],
+  "path_templates": [],
+  "server_endpoints": []
+ },
+ "themes_simple_editor_template_src.js": {
+  "bytes": 6010,
+  "lines": 71,
+  "version_fields": [],
+  "rcs": [],
+  "dangerous": {},
+  "urls": [],
+  "path_templates": [],
+  "server_endpoints": []
+ },
+ "themes_simple_editor_ui.css": {
+  "bytes": 1912,
+  "lines": 100,
+  "version_fields": [],
+  "rcs": [],
+  "dangerous": {},
+  "urls": [],
+  "path_templates": [],
+  "server_endpoints": []
+ },
+ "tiny_mce.js": {
+  "bytes": 132342,
+  "lines": 11,
+  "version_fields": [
+   "2",
+   "0RC4",
+   "2005-10-30"
+  ],
+  "rcs": [
+   [
+    "tiny_mce.js",
+    "",
+    ""
+   ],
+   [
+    "",
+    "1.301",
+    ""
+   ],
+   [
+    "",
+    "",
+    "2005/10/30 16:06:56 "
+   ]
+  ],
+  "dangerous": {
+   "document.write": {
+    "count": 3,
+    "lines": [
+     9
+    ]
+   },
+   "innerHTML": {
+    "count": 53,
+    "lines": [
+     9,
+     11
+    ]
+   },
+   "outerHTML": {
+    "count": 11,
+    "lines": [
+     9,
+     11
+    ]
+   },
+   "eval(": {
+    "count": 47,
+    "lines": [
+     9,
+     11
+    ]
+   },
+   "setTimeout(string)": {
+    "count": 9,
+    "lines": [
+     9,
+     11
+    ]
+   },
+   "location.href=": {
+    "count": 2,
+    "lines": [
+     9,
+     11
+    ]
+   },
+   "execCommand": {
+    "count": 68,
+    "lines": [
+     9,
+     11
+    ]
+   }
+  },
+  "urls": [
+   "http://tinymce.moxiecode.cp/mce_temp_url",
+   "http://www.mozilla.org/editor/midasdemo/securityprefs.html",
+   "http://www.w3.org/1999/xhtml"
+  ],
+  "path_templates": [
+   "/css/editor_content.css",
+   "/css/editor_popup.css",
+   "/css/editor_ui.css",
+   "/images/opacity.png",
+   "/langs/",
+   "/plugins/",
+   "/themes/"
+  ],
+  "server_endpoints": [
+   "tiny_mce_gzip.php"
+  ]
+ },
+ "tiny_mce_popup.js": {
+  "bytes": 6835,
+  "lines": 244,
+  "version_fields": [],
+  "rcs": [
+   [
+    "tiny_mce_popup.js",
+    "",
+    ""
+   ],
+   [
+    "",
+    "1.18",
+    ""
+   ],
+   [
+    "",
+    "",
+    "2005/10/29 19:13:20 "
+   ]
+  ],
+  "dangerous": {
+   "document.write": {
+    "count": 1,
+    "lines": [
+     61
+    ]
+   },
+   "innerHTML": {
+    "count": 5,
+    "lines": [
+     53,
+     54,
+     57,
+     70
+    ]
+   },
+   "eval(": {
+    "count": 4,
+    "lines": [
+     86,
+     94,
+     234,
+     237
+    ]
+   },
+   "top.window.opener": {
+    "count": 3,
+    "lines": [
+     16,
+     21
+    ]
+   },
+   "execCommand": {
+    "count": 5,
+    "lines": [
+     42,
+     203,
+     206,
+     210,
+     218
+    ]
+   }
+  },
+  "urls": [],
+  "path_templates": [],
+  "server_endpoints": []
+ },
+ "tiny_mce_src.js": {
+  "bytes": 180379,
+  "lines": 5817,
+  "version_fields": [
+   "2",
+   "0RC4",
+   "2005-10-30"
+  ],
+  "rcs": [
+   [
+    "tiny_mce_src.js",
+    "",
+    ""
+   ],
+   [
+    "",
+    "1.249",
+    ""
+   ],
+   [
+    "",
+    "",
+    "2005/10/30 16:06:57 "
+   ]
+  ],
+  "dangerous": {
+   "document.write": {
+    "count": 3,
+    "lines": [
+     276,
+     287,
+     3172
+    ]
+   },
+   "innerHTML": {
+    "count": 63,
+    "lines": [
+     336,
+     370,
+     379,
+     444,
+     732,
+     796,
+     1071,
+     1073,
+     1440,
+     2090,
+     2110,
+     2153,
+     2345,
+     2380,
+     2381,
+     2981,
+     2982,
+     3072,
+     3355,
+     3358,
+     3394,
+     3397,
+     3473,
+     3476,
+     3485
+    ]
+   },
+   "outerHTML": {
+    "count": 11,
+    "lines": [
+     639,
+     2050,
+     3481,
+     3490,
+     3540,
+     4848,
+     5329,
+     5395,
+     5693
+    ]
+   },
+   "eval(": {
+    "count": 47,
+    "lines": [
+     386,
+     591,
+     756,
+     1573,
+     1581,
+     1620,
+     1687,
+     1768,
+     2452,
+     2478,
+     2491,
+     2532,
+     2535,
+     2538,
+     3054,
+     3055,
+     3060,
+     3061,
+     3202,
+     3342,
+     3693,
+     3777,
+     3778,
+     3784,
+     3794
+    ]
+   },
+   "setTimeout(string)": {
+    "count": 9,
+    "lines": [
+     664,
+     669,
+     890,
+     1132,
+     1199,
+     5056,
+     5064,
+     5554,
+     5770
+    ]
+   },
+   "location.href=": {
+    "count": 2,
+    "lines": [
+     663,
+     5763
+    ]
+   },
+   "execCommand": {
+    "count": 68,
+    "lines": [
+     465,
+     535,
+     875,
+     920,
+     931,
+     941,
+     949,
+     958,
+     966,
+     974,
+     1003,
+     1037,
+     1100,
+     1105,
+     1122,
+     1126,
+     1188,
+     1191,
+     2440,
+     2469,
+     2471,
+     2500,
+     2504,
+     2517,
+     2521
+    ]
+   }
+  },
+  "urls": [
+   "http://tinymce.moxiecode.cp/mce_temp_url",
+   "http://www.mozilla.org/editor/midasdemo/securityprefs.html",
+   "http://www.w3.org/1999/xhtml"
+  ],
+  "path_templates": [
+   "/css/editor_content.css",
+   "/css/editor_popup.css",
+   "/css/editor_ui.css",
+   "/images/opacity.png",
+   "/langs/",
+   "/plugins/",
+   "/themes/"
+  ],
+  "server_endpoints": [
+   "tiny_mce_gzip.php"
+  ]
+ }
+}

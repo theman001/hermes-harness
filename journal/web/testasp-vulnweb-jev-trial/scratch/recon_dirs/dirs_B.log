@@ -1,0 +1,14 @@
+===== DIR jscripts =====
+tiny_mce
+EXIT_jscripts=0
+===== DIR Images =====
+_vti_cnf
+EXIT_Images=0
+===== DIR avatars =====
+EXIT_avatars=0
+===== DIR aspnet_client =====
+system_web
+EXIT_aspnet_client=0
+===== DIR cgi-bin =====
+test.txt
+EXIT_cgi-bin=0

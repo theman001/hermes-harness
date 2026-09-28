@@ -1,0 +1,13 @@
+=== 2026-09-28T08:07:38Z Step1: LFI read of shownews.asp (white-box) + controls ===
+--- control: html/about.html (known 200 4594) ---
+HTTP 200 size 4594
+--- test: shownews.asp ---
+HTTP 200 size 2991
+--- test: ShowNews.asp (case variant) ---
+HTTP 200 size 2991
+--- control2: ../../../../windows/win.ini ---
+HTTP 200 size 2763
+--- direct GET /shownews.asp ---
+HTTP 500 size 1208
+--- _vti_cnf/shownews.asp ---
+HTTP 200 size 338

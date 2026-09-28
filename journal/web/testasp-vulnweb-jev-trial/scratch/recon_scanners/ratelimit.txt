@@ -1,0 +1,3 @@
+requests: 40 elapsed_s: 13.46 avg_rps: 3.0
+status codes: {200: 40}
+latency min/avg/max: 0.298 / 0.336 / 0.380 s

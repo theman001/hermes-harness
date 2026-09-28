@@ -1,0 +1,104 @@
+{
+ "new": {
+  "/HTML/About.html": [
+   200,
+   1995,
+   "HTML"
+  ],
+  "/_vti_cnf/DB.asp": [
+   200,
+   338,
+   "FrontPage metadata for db.asp (info leak)"
+  ],
+  "/_vti_cnf/Default.asp": [
+   200,
+   926,
+   "FrontPage metadata for default.asp (info leak)"
+  ],
+  "/_vti_cnf/Login.asp": [
+   200,
+   772,
+   "FrontPage metadata for login.asp (info leak)"
+  ],
+  "/_vti_cnf/Search.asp": [
+   200,
+   926,
+   "FrontPage metadata for search.asp (info leak)"
+  ],
+  "/_vti_cnf/register.asp": [
+   200,
+   778,
+   "FrontPage metadata for register.asp (info leak)"
+  ],
+  "/_vti_cnf/logout.asp": [
+   200,
+   338,
+   "FrontPage metadata for logout.asp (info leak)"
+  ],
+  "/_vti_cnf/showthread.asp": [
+   200,
+   882,
+   "FrontPage metadata for showthread.asp (info leak)"
+  ],
+  "/_vti_cnf/showforum.asp": [
+   200,
+   861,
+   "FrontPage metadata for showforum.asp (info leak)"
+  ],
+  "/_vti_cnf/templatize.asp": [
+   200,
+   930,
+   "FrontPage metadata for templatize.asp (info leak)"
+  ],
+  "/_vti_cnf/shownews.asp": [
+   200,
+   338,
+   "FrontPage metadata for shownews.asp (info leak)"
+  ],
+  "/_vti_cnf/styles.css": [
+   200,
+   404,
+   "FrontPage metadata for styles.css (info leak)"
+  ],
+  "/Images/_vti_cnf/": [
+   403,
+   1233,
+   "FrontPage metadata dir inside /Images (exists, listing denied)"
+  ],
+  "/Images/_vti_cnf/logo.gif": [
+   200,
+   286,
+   "FrontPage metadata for Images/logo.gif (info leak)"
+  ],
+  "/aspnet_client/system_web/": [
+   403,
+   1233,
+   "ASP.NET client script dir (exists, listing denied)"
+  ],
+  "/aspnet_client/system_web/2_0_50727/": [
+   403,
+   1233,
+   "ASP.NET 2.0 client script dir (exists, listing denied)"
+  ],
+  "/cgi-bin/test.txt": [
+   200,
+   3,
+   "plain text file, body: \"aaa\""
+  ],
+  "/jscripts/tiny_mce/": [
+   403,
+   1233,
+   "TinyMCE editor dir (exists, listing denied)"
+  ],
+  "/jscripts/tiny_mce/tiny_mce.js": [
+   200,
+   132342,
+   "bundled TinyMCE 2.0RC4 (2005-10-30) editor"
+  ],
+  "/shownews.asp": [
+   500,
+   1208,
+   "ASP page exists, unhandled error without params"
+  ]
+ }
+}

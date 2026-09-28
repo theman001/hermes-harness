@@ -1,0 +1,17 @@
+{
+  "_comment": "testphp-vulnweb-test와 동일한 실제 대상(testasp.vulnweb.com)을 완전히 새 project_id로 처음부터 재실행 — 목적: SOUL.md의 Jev 필수화(2026-09-28) 전/후 비교. project_id를 testphp-vulnweb-test로 재사용하지 않은 이유: 기존 journal/recon_summary/attempted_exploits가 남아있으면 재개로 취급되어 recon을 처음부터 다시 안 함(is_resuming_project()가 journal 폴더 존재로 판정) — 순수 비교를 위해 완전히 새 폴더가 필요함.",
+  "project_id": "testasp-vulnweb-jev-trial",
+  "category": "web",
+  "mode": "own_system",
+  "target": {
+    "program_name": "testasp.vulnweb.com (Acunetix public test site) — testphp-vulnweb-test와 동일 대상, Jev 필수화 비교용 신규 project",
+    "platform": "none",
+    "scope": {"in_scope_domains": ["testasp.vulnweb.com"], "out_of_scope_domains": []},
+    "rules_url": "http://testasp.vulnweb.com/",
+    "reward_table_url": "",
+    "automation_policy": {"prohibits_automation": false, "prohibits_third_party_ai_sharing": false, "notes": "공개적으로 보안 도구 테스트 용도로 운영되는 의도적 취약 사이트 — 스캐닝/자동화 명시적으로 허용됨"},
+    "vpn": {"required": false, "profile_name": null}
+  },
+  "max_rounds_per_phase": 20,
+  "status": "done"
+}

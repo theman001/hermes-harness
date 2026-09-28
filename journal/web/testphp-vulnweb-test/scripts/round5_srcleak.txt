@@ -1,0 +1,100 @@
+============================================================================================
+### 소스/설정 파일 읽기 시도 (item = 응용 루트 기준 상대경로)
+  Default.asp                      -> HTTP/1.1 200 OK                len=  7018  inner=yes  🎯 SOURCE
+      첫 200자: '<%@LANGUAGE="VBSCRIPT" CODEPAGE="1252"%>\n<!--#INCLUDE FILE="db.asp"-->\n<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">\n<html><!-- InstanceBegin t'
+  showforum.asp                    -> HTTP/1.1 200 OK                len= 10440  inner=yes  🎯 SOURCE
+      첫 200자: '<%@LANGUAGE="VBSCRIPT" CODEPAGE="1252"%>\n<!--#INCLUDE FILE="db.asp"-->\n<%\nif Request.QueryString("id") = "" then\n\tResponse.Redirect("Default.asp")\nend if\nset conn = GetConnection()\nset rs   = Server.C'
+  showthread.asp                   -> HTTP/1.1 200 OK                len=  9595  inner=yes  🎯 SOURCE
+      첫 200자: '<%@LANGUAGE="VBSCRIPT" CODEPAGE="1252"%>\n<!--#INCLUDE FILE="db.asp"-->\n<%\nif Request.QueryString("id") = "" then\n\tResponse.Redirect("Default.asp")\nend if\nset conn = GetConnection()\nset rs   = Server.C'
+  Search.asp                       -> HTTP/1.1 200 OK                len=  7660  inner=yes  🎯 SOURCE
+      첫 200자: '<%@LANGUAGE="VBSCRIPT" CODEPAGE="1252"%>\n<!--#INCLUDE FILE="db.asp"-->\n<%\nset conn = GetConnection()\n%>\n<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose'
+  Login.asp                        -> HTTP/1.1 200 OK                len=  7021  inner=yes  🎯 SOURCE
+      첫 200자: '<%@LANGUAGE="VBSCRIPT" CODEPAGE="1252"%>\n<!--#INCLUDE FILE="db.asp"-->\n<%\nInvalidLogin = false\nif Request.ServerVariables("REQUEST_METHOD") = "POST" then \n\tif Request.Form("tfUName")<>"" AND Request.F'
+  Register.asp                     -> HTTP/1.1 200 OK                len=  7239  inner=yes  🎯 SOURCE
+      첫 200자: '<%@LANGUAGE="VBSCRIPT" CODEPAGE="1252"%>\n<!--#INCLUDE FILE="db.asp"-->\n<%\nif Request.ServerVariables("REQUEST_METHOD") = "POST" then \n\tif Request.Form("tfUName")<>"" AND Request.Form("tfUPass")<>"" th'
+  Logout.asp                       -> HTTP/1.1 200 OK                len=  2765  inner=yes  🎯 SOURCE
+      첫 200자: '<%@LANGUAGE="VBSCRIPT" CODEPAGE="1252"%>\n<%\nSession.Contents.Remove("uname")\nif Request.QueryString("RetURL")<>"" then\n\tResponse.Redirect(Request.QueryString("RetURL"))\nelse\n\tResponse.Redirect("Defaul'
+  Templatize.asp                   -> HTTP/1.1 200 OK                len=  5895  inner=yes  🎯 SOURCE
+      첫 200자: '<%@LANGUAGE="VBSCRIPT" CODEPAGE="1252"%>\n<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">\n<html><!-- InstanceBegin template="/Templates/MainTempla'
+  web.config                       -> HTTP/1.1 200 OK                len=  3083  inner=yes  🎯 SOURCE
+      첫 200자: '<?xml version="1.0" encoding="UTF-8"?>\n<configuration>\n    <system.web>\n        <authentication mode="Forms" />\n    </system.web>\n    <system.webServer>\n        <staticContent>\n            <mimeMap fi'
+  styles.css                       -> HTTP/1.1 200 OK                len=  5749  inner=yes  🎯 SOURCE
+      첫 200자: 'body {\n\tfont-family: Verdana, Geneva, Arial, Helvetica, sans-serif;\n\tfont-size: 12px;\n\tmargin: 0;\n}\n\ntd {\n\tfont-family: Verdana, Geneva, Arial, Helvetica, sans-serif;\n\tfont-size: 12px;\n}\n\nth {\n\tfont-f'
+  Templates/MainTemplate.dwt.asp   -> HTTP/1.1 200 OK                len=  5510  inner=yes  🎯 SOURCE
+      첫 200자: '<%@LANGUAGE="VBSCRIPT" CODEPAGE="1252"%>\n<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">\n<html>\n<head>\n<!-- TemplateBeginEditable name="doctitle"'
+  conn.asp                         -> HTTP/1.1 500 Internal Server E len=  1179  inner=no
+  db.asp                           -> HTTP/1.1 200 OK                len=  2861  inner=yes  🎯 SOURCE
+      첫 200자: '<!--#INCLUDE FILE="logInput.asp"-->\n<SCRIPT RUNAT=SERVER LANGUAGE=VBSCRIPT>\nFunction GetConnection()  \n\tdim conn\n\tset conn  = Server.CreateObject("ADODB.Connection")\n\tconn.Open "Provider=SQLNCLI11;Ser'
+  dbconnect.asp                    -> HTTP/1.1 500 Internal Server E len=  1179  inner=no
+  connection.asp                   -> HTTP/1.1 500 Internal Server E len=  1179  inner=no
+  common.asp                       -> HTTP/1.1 500 Internal Server E len=  1179  inner=no
+  includes.asp                     -> HTTP/1.1 500 Internal Server E len=  1179  inner=no
+  global.asa                       -> HTTP/1.1 500 Internal Server E len=  1179  inner=no
+  config.asp                       -> HTTP/1.1 500 Internal Server E len=  1179  inner=no
+  settings.asp                     -> HTTP/1.1 500 Internal Server E len=  1179  inner=no
+  ado.asp                          -> HTTP/1.1 500 Internal Server E len=  1179  inner=no
+
+============================================================================================
+### 읽힌 소스에서 민감 패턴 grep
+
+--- Default.asp ---
+  [include] 1건
+      <!--#INCLUDE FILE="db.asp"-->
+
+--- showforum.asp ---
+  [SQL 쿼리] 3건
+      SELECT
+      DELETE
+      INSERT
+  [include] 1건
+      <!--#INCLUDE FILE="db.asp"-->
+  [파일 시스템] 1건
+      CreateObject("ADODB.recordset")
+
+--- showthread.asp ---
+  [SQL 쿼리] 3건
+      SELECT
+      DELETE
+      INSERT
+  [include] 1건
+      <!--#INCLUDE FILE="db.asp"-->
+  [파일 시스템] 1건
+      CreateObject("ADODB.recordset")
+
+--- Search.asp ---
+  [include] 1건
+      <!--#INCLUDE FILE="db.asp"-->
+
+--- Login.asp ---
+  [SQL 쿼리] 1건
+      SELECT
+  [include] 1건
+      <!--#INCLUDE FILE="db.asp"-->
+  [파일 시스템] 1건
+      CreateObject("ADODB.recordset")
+
+--- Register.asp ---
+  [SQL 쿼리] 1건
+      INSERT
+  [include] 1건
+      <!--#INCLUDE FILE="db.asp"-->
+
+--- Logout.asp ---
+
+--- Templatize.asp ---
+
+--- web.config ---
+
+--- styles.css ---
+
+--- Templates/MainTemplate.dwt.asp ---
+
+--- db.asp ---
+  [DB 연결 문자열] 1건
+      Provider=
+  [include] 1건
+      <!--#INCLUDE FILE="logInput.asp"-->
+  [파일 시스템] 1건
+      CreateObject("ADODB.Connection")
+  [comment] 1건
+      Pwd

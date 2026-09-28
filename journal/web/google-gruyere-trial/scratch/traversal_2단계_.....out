@@ -1,0 +1,12 @@
+/../../secret.txt
+--- headers ---
+HTTP/1.1 200 Connection established
+--- body ---
+HTTP/2 302 
+cache-control: private
+location: https://google-gruyere.appspot.com/secret.txt
+content-length: 0
+date: Mon, 28 Sep 2026 09:15:01 GMT
+content-type: text/html; charset=UTF-8
+alt-svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+

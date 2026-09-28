@@ -1,0 +1,5 @@
++ curl -sS -i --max-time 20 -c cj_baseline.txt -D hdr_b1_get_login.txt -o body_b1_get_login.html http://testasp.vulnweb.com/Login.asp
++ curl -sS -i --max-time 20 -b cj_baseline.txt -c cj_baseline.txt -D hdr_b2_get_login_2nd.txt -o body_b2_get_login_2nd.html http://testasp.vulnweb.com/Login.asp
++ curl -sS -i --max-time 20 -c cj_c1.txt -D hdr_c1_bogus.txt -o body_c1_bogus.html -X POST --data-urlencode tfUName=nosuchuser_zzz --data-urlencode tfUPass=nosuchpass_zzz http://testasp.vulnweb.com/Login.asp
++ curl -sS -i --max-time 20 -c cj_c2.txt -D hdr_c2_empty.txt -o body_c2_empty.html -X POST -d 'tfUName=&tfUPass=' http://testasp.vulnweb.com/Login.asp
++ curl -sS -i --max-time 20 -c cj_c3.txt -D hdr_c3_passonly.txt -o body_c3_passonly.html -X POST -d 'tfUName=admin&tfUPass=' http://testasp.vulnweb.com/Login.asp

@@ -1,0 +1,36 @@
+==== PUT/POST WITH BODY (http.sys 411 was due to missing Content-Length) ====
+-- PUT with body --
+HTTP/1.1 404 Not Found
+Content-Type: text/html
+Server: Microsoft-IIS/8.5
+X-Powered-By: ASP.NET
+Date: Wed, 23 Sep 2026 07:23:46 GMT
+Content-Length: 1245
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+-- POST with body to / --
+HTTP/1.1 200 OK
+Cache-Control: private
+Content-Type: text/html
+Server: Microsoft-IIS/8.5
+Set-Cookie: ASPSESSIONIDAABTRDTB=LNMLEGBBFEKEMEGJCKBADEAM; path=/
+X-Powered-By: ASP.NET
+Date: Wed, 23 Sep 2026 07:23:46 GMT
+Content-Length: 3538
+
+-- raw PUT via netcat (verify not 'just curl') --
+HTTP/1.1 404 Not Found
+Content-Type: text/html
+Server: Microsoft-IIS/8.5
+X-Powered-By: ASP.NET
+Date: Wed, 23 Sep 2026 07:23:46 GMT
+Content-Length: 1245
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+-- did the PUT file actually get created? --
+GET /pwned-round4-test.txt -> 404 (size 1245)
+GET /rr4.txt -> 404 (size 1245)

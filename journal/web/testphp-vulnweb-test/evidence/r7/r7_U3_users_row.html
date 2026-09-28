@@ -1,0 +1,43 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/MainTemplate.dwt.asp" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>acuforum search</title>
+<!-- InstanceEndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+<link href="styles.css" rel="stylesheet" type="text/css">
+</head>
+<body> 
+<table width="100%"  border="0" cellpadding="10" cellspacing="0"> 
+  <tr bgcolor="#008F00"> 
+    <td width="306px"><a href="https://www.acunetix.com/"><img src="Images/logo.gif" width="306" height="38" border="0" alt="Acunetix website security"></a></td> 
+    <td align="right" valign="middle" bgcolor="#008F00" class="disclaimer">TEST and Demonstration site for <a href="https://www.acunetix.com/vulnerability-scanner/">Acunetix Web Vulnerability Scanner</a></td> 
+  </tr> 
+  <tr> 
+    <td colspan="2"><div class="menubar"><a href="Templatize.asp?item=html/about.html" class="menu">about</a> - <a href="Default.asp" class="menu">forums</a> - <a href="Search.asp" class="menu">search</a> 
+     - <a href="./Login.asp?RetURL=%2FSearch%2Easp%3FtfSearch%3Dq%2527%2529%253E0%2529%2520UNION%2520ALL%2520SELECT%25201%252C%2528SELECT%2520TOP%25201%2520uname%2520FROM%2520users%2529%252C%2528CAST%2528%2528SELECT%2520TOP%25201%2520upass%2520FROM%2520users%2529%2520AS%2520nvarchar%2528200%2529%2529%2529%252C%2528CAST%2528%2528SELECT%2520TOP%25201%2520email%2520FROM%2520users%2529%2520AS%2520nvarchar%2528200%2529%2529%2529%252C1%252C1%252CGETDATE%2528%2529%252C%2527A%2527%252C%2527TT%2527%252C%2527FN%2527%2D%2D" class="menu">login</a> - <a href="./Register.asp?RetURL=%2FSearch%2Easp%3FtfSearch%3Dq%2527%2529%253E0%2529%2520UNION%2520ALL%2520SELECT%25201%252C%2528SELECT%2520TOP%25201%2520uname%2520FROM%2520users%2529%252C%2528CAST%2528%2528SELECT%2520TOP%25201%2520upass%2520FROM%2520users%2529%2520AS%2520nvarchar%2528200%2529%2529%2529%252C%2528CAST%2528%2528SELECT%2520TOP%25201%2520email%2520FROM%2520users%2529%2520AS%2520nvarchar%2528200%2529%2529%2529%252C1%252C1%252CGETDATE%2528%2529%252C%2527A%2527%252C%2527TT%2527%252C%2527FN%2527%2D%2D" class="menu">register</a> 
+	- <a href="https://www.acunetix.com/vulnerability-scanner/sql-injection/" class="menu">SQL scanner</a> - <a href="https://www.acunetix.com/websitesecurity/sql-injection/" class="menu">SQL vuln help</a>
+    </div></td> 
+  </tr> 
+  <tr> 
+    <td colspan="2"><!-- InstanceBeginEditable name="MainContentLeft" -->
+      <form name="frmSearch" method="get" action="">
+        <div class="FramedForm">
+          <input name="tfSearch" type="text" class="search">
+          <input class="search" type="submit" value="search posts">
+        </div>
+      </form>      
+        <div class='path'>You searched for 'q')>0) UNION ALL SELECT 1,(SELECT TOP 1 uname FROM users),(CAST((SELECT TOP 1 upass FROM users) AS nvarchar(200))),(CAST((SELECT TOP 1 email FROM users) AS nvarchar(200))),1,1,GETDATE(),'A','TT','FN'--'</div><table width="100%" cellspacing="1" cellpadding="5" bgcolor="#E5E5E5"><tr><td valign='top' align='center' bgcolor='#FFFFFF' width='120'><img src='avatars/A'><br>posted by <b> netsparker(0x001DFE) </b> on 9/28/2026 5:56:01 AM</td><td valign='top' bgcolor='#FFFFFF'><div class='path'>Found in: <a href='showforum.asp?id=1'>FN</a>/<a href='showthread.asp?id=1'>TT</a></div><div class='posttitle'>Inv1@cti</div><div class='posttext'>invicti@example.com</div></td></tr></table>      
+      <!-- InstanceEndEditable --></td> 
+  </tr> 
+  <tr align="right" bgcolor="#FFFFFF"> 
+    <td colspan="2" class="footer">Copyright 2019 Acunetix Ltd.</td> 
+  </tr> 
+</table> 
+<div style="background-color:lightgray;width:80%;margin:auto;text-align:center;font-size:12px;padding:1px">
+	<p style="padding-left:20%;padding-right:20%"><b>Warning</b>: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other web-based attacks. It is built using ASP and it is here to help you test Acunetix. The entire content of the forum is erased daily. All the posts are real-life examples of how attackers are trying to break into insecure web applications. Please be careful and do not follow links that are posted by malicious parties.</p>
+</div>
+</body>
+<!-- InstanceEnd --></html>

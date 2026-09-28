@@ -1,0 +1,111 @@
+############ METHOD: OPTIONS ############
+HTTP/1.1 200 OK
+Allow: OPTIONS, TRACE, GET, HEAD, POST
+Server: Microsoft-IIS/8.5
+Public: OPTIONS, TRACE, GET, HEAD, POST
+X-Powered-By: ASP.NET
+Date: Wed, 23 Sep 2026 07:12:56 GMT
+Content-Length: 0
+
+--- curl_exit=0 ---
+
+############ METHOD: TRACE ############
+HTTP/1.1 501 Not Implemented
+Content-Type: text/html
+Server: Microsoft-IIS/8.5
+X-Powered-By: ASP.NET
+Date: Wed, 23 Sep 2026 07:12:57 GMT
+Content-Length: 1508
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<title>501 - Header values specify a method that is not implemented.</title>
+<style type="text/css">
+<!--
+body{margin:0;font-size:.7em;font-family:Verdana, Arial, Helvetica, sans-serif;background:#EEEEEE;}
+--- curl_exit=0 ---
+
+############ METHOD: TRACK ############
+HTTP/1.1 405 Method Not Allowed
+Allow: GET, HEAD, OPTIONS, TRACE
+Content-Type: text/html
+Server: Microsoft-IIS/8.5
+X-Powered-By: ASP.NET
+Date: Wed, 23 Sep 2026 07:12:57 GMT
+Content-Length: 1293
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<title>405 - HTTP verb used to access this page is not allowed.</title>
+<style type="text/css">
+<!--
+--- curl_exit=0 ---
+
+############ METHOD: PUT ############
+HTTP/1.1 411 Length Required
+Content-Type: text/html; charset=us-ascii
+Server: Microsoft-HTTPAPI/2.0
+Date: Wed, 23 Sep 2026 07:12:57 GMT
+Connection: close
+Content-Length: 344
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN""http://www.w3.org/TR/html4/strict.dtd">
+<HTML><HEAD><TITLE>Length Required</TITLE>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=us-ascii"></HEAD>
+<BODY><h2>Length Required</h2>
+<hr><p>HTTP Error 411. The request must be chunked or have a content length.</p>
+</BODY></HTML>
+--- curl_exit=0 ---
+
+############ METHOD: DELETE ############
+HTTP/1.1 405 Method Not Allowed
+Allow: GET, HEAD, OPTIONS, TRACE
+Content-Type: text/html
+Server: Microsoft-IIS/8.5
+X-Powered-By: ASP.NET
+Date: Wed, 23 Sep 2026 07:12:57 GMT
+Content-Length: 1293
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<title>405 - HTTP verb used to access this page is not allowed.</title>
+<style type="text/css">
+<!--
+--- curl_exit=0 ---
+
+############ METHOD: PATCH ############
+HTTP/1.1 405 Method Not Allowed
+Allow: GET, HEAD, OPTIONS, TRACE
+Content-Type: text/html
+Server: Microsoft-IIS/8.5
+X-Powered-By: ASP.NET
+Date: Wed, 23 Sep 2026 07:12:58 GMT
+Content-Length: 1293
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<title>405 - HTTP verb used to access this page is not allowed.</title>
+<style type="text/css">
+<!--
+--- curl_exit=0 ---
+
+############ METHOD: HEAD ############
+HTTP/1.1 200 OK
+Cache-Control: private
+Content-Length: 3538
+Content-Type: text/html
+Server: Microsoft-IIS/8.5
+Set-Cookie: ASPSESSIONIDAABTRDTB=PJHCEGBBJIACICKCDCBDIKNP; path=/
+X-Powered-By: ASP.NET
+Date: Wed, 23 Sep 2026 07:12:58 GMT
+
+--- curl_exit=0 ---
+

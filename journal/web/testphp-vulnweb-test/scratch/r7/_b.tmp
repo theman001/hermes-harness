@@ -1,0 +1,56 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/MainTemplate.dwt.asp" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>acuforum
+1
+</title>
+<!-- InstanceEndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+<link href="styles.css" rel="stylesheet" type="text/css">
+</head>
+<body> 
+<table width="100%"  border="0" cellpadding="10" cellspacing="0"> 
+  <tr bgcolor="#008F00"> 
+    <td width="306px"><a href="https://www.acunetix.com/"><img src="Images/logo.gif" width="306" height="38" border="0" alt="Acunetix website security"></a></td> 
+    <td align="right" valign="middle" bgcolor="#008F00" class="disclaimer">TEST and Demonstration site for <a href="https://www.acunetix.com/vulnerability-scanner/">Acunetix Web Vulnerability Scanner</a></td> 
+  </tr> 
+  <tr> 
+    <td colspan="2"><div class="menubar"><a href="Templatize.asp?item=html/about.html" class="menu">about</a> - <a href="Default.asp" class="menu">forums</a> - <a href="Search.asp" class="menu">search</a> 
+     - <a href="./Login.asp?RetURL=%2Fshowthread%2Easp%3Fid%3D0%253BIF%2520%2528SELECT%2520HAS%5FPERMS%5FBY%5FNAME%2528%2527posts%2527%252C%2527OBJECT%2527%252C%2527INSERT%2527%2529%2529%253D1%2520WAITFOR%2520DELAY%2520%25270%253A0%253A04%2527%2D%2D" class="menu">login</a> - <a href="./Register.asp?RetURL=%2Fshowthread%2Easp%3Fid%3D0%253BIF%2520%2528SELECT%2520HAS%5FPERMS%5FBY%5FNAME%2528%2527posts%2527%252C%2527OBJECT%2527%252C%2527INSERT%2527%2529%2529%253D1%2520WAITFOR%2520DELAY%2520%25270%253A0%253A04%2527%2D%2D" class="menu">register</a> 
+	- <a href="https://www.acunetix.com/vulnerability-scanner/sql-injection/" class="menu">SQL scanner</a> - <a href="https://www.acunetix.com/websitesecurity/sql-injection/" class="menu">SQL vuln help</a>
+    </div></td> 
+  </tr> 
+  <tr> 
+    <td colspan="2"><!-- InstanceBeginEditable name="MainContentLeft" -->
+		<div class="path">
+			<a href="showforum.asp?id=0">Acunetix Web Vulnerability Scanner</a>/1
+		</div>
+      <table width="100%" cellspacing="1" cellpadding="5" bgcolor="#E5E5E5">
+        <tr><td valign='top' align='center' bgcolor='#FFFFFF' width='120'><img src='avatars/noavatar.gif'><br>posted by <b>admin</b> on 11/9/2005 12:16:25 PM</td><td valign='top' bgcolor='#FFFFFF'><div class='posttitle'>1</div><div class='posttext'>1</div></td></tr><tr><td valign='top' align='center' bgcolor='#FFFFFF' width='120'><img src='avatars/noavatar.gif'><br>posted by <b>admin</b> on 11/9/2005 12:16:35 PM</td><td valign='top' bgcolor='#FFFFFF'><div class='posttitle'>1</div><div class='posttext'>1</div></td></tr><tr><td valign='top' align='center' bgcolor='#FFFFFF' width='120'><img src='avatars/noavatar.gif'><br>posted by <b>Williamtex</b> on 9/28/2026 5:15:43 AM</td><td valign='top' bgcolor='#FFFFFF'><div class='posttitle'>#subject - 185.121.232.228</div><div class='posttext'>Good day! 
+ 
+ Overhaul engine requires full troubleshooting with repairs worn out componentsOverhaul internal combustion engine vehicles is done with detailed troubleshooting everyone units 
+ 
+Kia engine repair in Moscow
+Kia Rio 3 engine replacement
+Kia engine overhaul
+ 
+https://remont-kia123.ru
+ 
+ 
+What experience have you had?</div></td></tr><tr><td valign='top' align='center' bgcolor='#FFFFFF' width='120'><img src='avatars/noavatar.gif'><br>posted by <b>pentest_17905729</b> on 9/28/2026 5:22:57 AM</td><td valign='top' bgcolor='#FFFFFF'><div class='posttitle'>Pentest XSS Test - 104.249.19.37</div><div class='posttext'><script>alert(document.cookie)</script> StoredXSS-Probe-1790572978</div></td></tr><tr><td valign='top' align='center' bgcolor='#FFFFFF' width='120'><img src='avatars/noavatar.gif'><br>posted by <b>pentest_17905729</b> on 9/28/2026 5:23:09 AM</td><td valign='top' bgcolor='#FFFFFF'><div class='posttitle'>SQLiProbe' - 104.249.19.37</div><div class='posttext'>content-sq1</div></td></tr><tr><td valign='top' align='center' bgcolor='#FFFFFF' width='120'><img src='avatars/noavatar.gif'><br>posted by <b>pentest_17905729</b> on 9/28/2026 5:23:09 AM</td><td valign='top' bgcolor='#FFFFFF'><div class='posttitle'>SQLiProbe' AND 1=1 --  - 104.249.19.37</div><div class='posttext'>content-sq2</div></td></tr><tr><td valign='top' align='center' bgcolor='#FFFFFF' width='120'><img src='avatars/noavatar.gif'><br>posted by <b>pentest_17905729</b> on 9/28/2026 5:23:10 AM</td><td valign='top' bgcolor='#FFFFFF'><div class='posttitle'>SQLiProbe' AND 1=2 --  - 104.249.19.37</div><div class='posttext'>content-sq3</div></td></tr><tr><td valign='top' align='center' bgcolor='#FFFFFF' width='120'><img src='avatars/noavatar.gif'><br>posted by <b>pentest_17905729</b> on 9/28/2026 5:23:10 AM</td><td valign='top' bgcolor='#FFFFFF'><div class='posttitle'>SQLiProbe2 - 104.249.19.37</div><div class='posttext'>content-sq4'</div></td></tr><tr><td valign='top' align='center' bgcolor='#FFFFFF' width='120'><img src='avatars/noavatar.gif'><br>posted by <b>pentest_17905729</b> on 9/28/2026 5:23:17 AM</td><td valign='top' bgcolor='#FFFFFF'><div class='posttitle'><script>alert('subjectxss')</script> - 104.249.19.37</div><div class='posttext'>subject-xss-probe</div></td></tr><tr><td valign='top' align='center' bgcolor='#FFFFFF' width='120'><img src='avatars/noavatar.gif'><br>posted by <b><script>alert(1)</script></b> on 9/28/2026 5:30:45 AM</td><td valign='top' bgcolor='#FFFFFF'><div class='posttitle'>SecondOrderUsernameXSS - 104.249.19.37</div><div class='posttext'>posted by xss username</div></td></tr><tr><td valign='top' align='center' bgcolor='#FFFFFF' width='120'><img src='avatars/probeavatar'><br>posted by <b>avtst1</b> on 9/28/2026 5:33:26 AM</td><td valign='top' bgcolor='#FFFFFF'><div class='posttitle'>avt-reflect-test - 104.249.19.37</div><div class='posttext'>avatar reflection check 1790573606</div></td></tr><tr><td valign='top' align='center' bgcolor='#FFFFFF' width='120'><img src='avatars/x' onerror='alert(document.cookie)'><br>posted by <b>avxss1</b> on 9/28/2026 5:33:48 AM</td><td valign='top' bgcolor='#FFFFFF'><div class='posttitle'>avatar-xss-probe - 104.249.19.37</div><div class='posttext'>avatar xss check</div></td></tr><tr><td valign='top' align='center' bgcolor='#FFFFFF' width='120'><img src='avatars/noavatar.gif'><br>posted by <b>pentester01</b> on 9/28/2026 5:35:50 AM</td><td valign='top' bgcolor='#FFFFFF'><div class='posttitle'>SXSS_1790573751 - 104.249.19.37</div><div class='posttext'><script>alert(document.cookie)</script></div></td></tr><tr><td valign='top' align='center' bgcolor='#FFFFFF' width='120'><img src='avatars/noavatar.gif'><br>posted by <b>pentester01</b> on 9/28/2026 5:37:10 AM</td><td valign='top' bgcolor='#FFFFFF'><div class='posttitle'>AHREF_1790573831 - 104.249.19.37</div><div class='posttext'><a href=http://evil.com>click</a></div></td></tr><tr><td valign='top' align='center' bgcolor='#FFFFFF' width='120'><img src='avatars/noavatar.gif'><br>posted by <b>pentester01</b> on 9/28/2026 5:39:43 AM</td><td valign='top' bgcolor='#FFFFFF'><div class='posttitle'>BACH_1790573984 - 104.249.19.37</div><div class='posttext'>horizontal attribution test</div></td></tr>
+      </table>
+      
+      <!-- InstanceEndEditable --></td> 
+  </tr> 
+  <tr align="right" bgcolor="#FFFFFF"> 
+    <td colspan="2" class="footer">Copyright 2019 Acunetix Ltd.</td> 
+  </tr> 
+</table> 
+<div style="background-color:lightgray;width:80%;margin:auto;text-align:center;font-size:12px;padding:1px">
+	<p style="padding-left:20%;padding-right:20%"><b>Warning</b>: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other web-based attacks. It is built using ASP and it is here to help you test Acunetix. The entire content of the forum is erased daily. All the posts are real-life examples of how attackers are trying to break into insecure web applications. Please be careful and do not follow links that are posted by malicious parties.</p>
+</div>
+</body>
+<!-- InstanceEnd --></html>

@@ -1,0 +1,23 @@
+# hermes-harness 전용 venv (2026-09-22 5차 재검토 — 프로젝트 루트 .venv/와 분리하기로
+# 결정: GPU 파이프라인(torch/transformers)과 논리적으로 확실히 분리, 의존성 충돌 위험 차단).
+#
+# 설치:
+#   cd hermes-harness && python3 -m venv .venv && source .venv/bin/activate
+#   pip install -r requirements.txt
+
+mitmproxy>=11.0          # services/mitmproxy_addon
+mcp<2                    # services/rag_mcp_server (FastMCP) — 2026-09-23 실측으로 확정:
+                          # mcp>=1.0으로 뒀더니 최신 v2.x가 깔렸는데, v2.x는
+                          # mcp.server.fastmcp.FastMCP가 mcp.server.mcpserver.MCPServer로
+                          # 이름이 바뀌어서 server.py의 import가 그냥 깨짐(RAG 도구가
+                          # A 세션에 전혀 안 잡히던 원인 중 하나였음, ImportError로 직접
+                          # 재현 확인). server.py가 v1.x API(@mcp.tool() 데코레이터 등)를
+                          # 쓰고 있어서 상한 고정이 재작성보다 훨씬 간단한 수정.
+
+# 임베딩 모델 라이브러리: RAG-스키마.md "남은 확인 사항" 미결(실제 CPU 성능 실측 필요).
+# 그 전까지 rag_store.py는 의존성 없는 폴백(_naive_embed)으로 동작 — 실측 후 후보가
+# 정해지면 여기 추가하고 rag_store.RagStore(embed_fn=...)로 주입.
+
+# sqlite3 는 stdlib, 별도 설치 불필요.
+# colab-cli는 프로젝트 루트 .venv(또는 시스템)에 이미 있으므로 여긴 안 넣음 —
+# services/colab_orchestrator는 `colab` CLI를 서브프로세스로 호출만 함.

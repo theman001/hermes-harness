@@ -1,0 +1,228 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/MainTemplate.dwt.asp" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+<link href="styles.css" rel="stylesheet" type="text/css">
+</head>
+<body> 
+<table width="100%"  border="0" cellpadding="10" cellspacing="0"> 
+  <tr bgcolor="#008F00"> 
+    <td width="306px"><a href="https://www.acunetix.com/"><img src="Images/logo.gif" width="306" height="38" border="0" alt="Acunetix website security"></a></td> 
+    <td align="right" valign="middle" bgcolor="#008F00" class="disclaimer">TEST and Demonstration site for <a href="https://www.acunetix.com/vulnerability-scanner/">Acunetix Web Vulnerability Scanner</a></td> 
+  </tr> 
+  <tr> 
+    <td colspan="2"><div class="menubar"><a href="Templatize.asp?item=html/about.html" class="menu">about</a> - <a href="Default.asp" class="menu">forums</a> - <a href="Search.asp" class="menu">search</a> 
+     - <a href="./Login.asp?RetURL=%2FTemplatize%2Easp%3Fitem%3DShowForum%2Easp" class="menu">login</a> - <a href="./Register.asp?RetURL=%2FTemplatize%2Easp%3Fitem%3DShowForum%2Easp" class="menu">register</a> 
+	- <a href="https://www.acunetix.com/vulnerability-scanner/sql-injection/" class="menu">SQL scanner</a> - <a href="https://www.acunetix.com/websitesecurity/sql-injection/" class="menu">SQL vuln help</a>
+    </div></td> 
+  </tr> 
+  <tr> 
+    <td colspan="2"><!-- InstanceBeginEditable name="MainContentLeft" -->
+		<%@LANGUAGE="VBSCRIPT" CODEPAGE="1252"%>
+<!--#INCLUDE FILE="db.asp"-->
+<%
+if Request.QueryString("id") = "" then
+	Response.Redirect("Default.asp")
+end if
+set conn = GetConnection()
+set rs   = Server.CreateObject("ADODB.recordset")
+rs.Open "SELECT name, descr FROM forums WHERE id=" & Request.QueryString("id"), conn
+ForumName = rs.Fields.Item("name")
+ForumDesc = rs.Fields.Item("descr")
+rs.Close()
+if Session.Contents("uname")<>"" then
+	if Request.ServerVariables("REQUEST_METHOD") = "POST" then 
+			if Request.Form("tfSubject")<>"" AND Request.Form("tfText")<>"" then
+			
+			If InStr(1, Request.Form("tfText"), "<a href=") > 0 then
+				Response.End
+			end if
+
+			If InStr(1, Request.Form("tfSubject"), "<a href=") > 0 then
+				Response.End
+			end if
+			
+			sql = "SELECT (MAX(id)+1) as nextId, COUNT(id) as total FROM threads WHERE forumid=" & Request.QueryString("id")
+			set rs 	= Server.CreateObject("ADODB.recordset")
+			rs.Open sql, conn
+						
+			if rs.fields.item("total")>100 then
+				rs.Close()
+				sqldel = "DELETE FROM threads WHERE forumid=" & Request.QueryString("id")								
+				conn.Execute sqldel
+				sqldel = "DELETE FROM posts WHERE forumid=" & Request.QueryString("id")
+				conn.Execute sqldel
+				nextId = 0				
+			else			
+				if isnull(rs.fields.item("nextId")) then
+					nextId = 0
+				else
+					nextId = rs.fields.item("nextId")
+				end if				
+				rs.Close()			
+			end if
+		
+			sql = "INSERT INTO threads (id, forumid, poster, title, postdate) VALUES ("
+			sql = sql & nextId & ","
+			sql = sql & Request.QueryString("id") & ","
+			sql = sql & "'" & Session.Contents("uname") & "',"
+			sql = sql & "'" & Replace(Request.Form("tfSubject"), "'", "''", 1, -1, 1) & "',"
+			sql = sql & "GETDATE())"
+
+			conn.Execute sql
+			
+			ThreadId = nextId
+		
+			sql = "INSERT INTO posts (id, threadid, forumid, poster, title, message, postdate) VALUES ("
+			sql = sql & "0,"
+			sql = sql & ThreadId & ","
+			sql = sql & Request.QueryString("id") & ","
+			sql = sql & "'" & Session.Contents("uname") & "',"
+			sql = sql & "'" & Replace(Request.Form("tfSubject"), "'", "''", 1, -1, 1) & " - " & Request.ServerVariables("REMOTE_ADDR") & "',"
+			sql = sql & "'" & Replace(Request.Form("tfText"), "'", "''", 1, -1, 1) & "', GETDATE())"
+			
+			conn.Execute sql
+		end if
+	end if
+end if
+%>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/MainTemplate.dwt.asp" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>acuforum <%Response.Write(ForumName)%></title>
+<!-- InstanceEndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable -->
+<link href="styles.css" rel="stylesheet" type="text/css">
+</head>
+<body> 
+<table width="100%"  border="0" cellpadding="10" cellspacing="0"> 
+  <tr bgcolor="#008F00"> 
+    <td width="306px"><a href="https://www.acunetix.com/"><img src="Images/logo.gif" width="306" height="38" border="0" alt="Acunetix website security"></a></td> 
+    <td align="right" valign="middle" bgcolor="#008F00" class="disclaimer">TEST and Demonstration site for <a href="https://www.acunetix.com/vulnerability-scanner/">Acunetix Web Vulnerability Scanner</a></td> 
+  </tr> 
+  <tr> 
+    <td colspan="2"><div class="menubar"><a href="Templatize.asp?item=html/about.html" class="menu">about</a> - <a href="Default.asp" class="menu">forums</a> - <a href="Search.asp" class="menu">search</a> 
+    <%
+		if Request.QueryString("RetURL")="" then
+			curURL = Request.ServerVariables("URL") & "?" & Request.ServerVariables("QUERY_STRING")
+		else
+			curURL = Request.QueryString("RetURL")
+		end if
+		
+		if Session.Contents("uname") <> "" then			
+			Response.Write(" - <a href=""./Logout.asp?RetURL=" & Server.URLEncode(curURL) & """ class=""menu"">logout " & Session.Contents("uname") & "</a>")
+		else
+			Response.Write(" - <a href=""./Login.asp?RetURL=" & Server.URLEncode(curURL) & """ class=""menu"">login</a> - <a href=""./Register.asp?RetURL=" & Server.URLEncode(curURL) & """ class=""menu"">register</a>")
+		end if
+	%> 
+	- <a href="https://www.acunetix.com/vulnerability-scanner/sql-injection/" class="menu">SQL scanner</a> - <a href="https://www.acunetix.com/websitesecurity/sql-injection/" class="menu">SQL vuln help</a>
+    </div></td> 
+  </tr> 
+  <tr> 
+    <td colspan="2"><!-- InstanceBeginEditable name="MainContentLeft" -->
+	<div class="path">
+			<%= ForumName%>
+		</div>
+	<table width="100%" border="0" cellspacing="0" cellpadding="5">
+      <tr>
+        <td class="tableheader">Thread</td>
+        <td class="tableheader">Posts</td>
+		<td class="tableheader">Posted by</td>
+        <td class="tableheader">Last Post</td>
+      </tr>   
+	<%
+		set conn = GetConnection()
+		
+		sql 	= "SELECT id, title, poster FROM threads WHERE forumid=" & Request.QueryString("id")
+		set rs 	= Server.CreateObject("ADODB.recordset")
+		rs.Open sql, conn
+		BgColor = "#FFFFFF"
+		do until rs.EOF
+			Response.Write("<tr bgcolor='" & BgColor & "'>")
+			Response.Write("<td>")
+			Response.Write("<div class='threadtitle'><a href='showthread.asp?id=" & rs.Fields.Item("id") & "'>" & rs.Fields.Item("title") & "</a></div>")
+			Response.Write("</td>")
+			set rs1 = Server.CreateObject("ADODB.recordset")
+			rs1.Open "SELECT COUNT(id) as pc, MAX(postdate) as lp FROM posts WHERE threadid=" & rs.Fields.Item("id") & " AND forumid=" & Request.QueryString("id"), conn
+			Response.Write("<td>" & rs1.Fields.Item("pc") & "</td>")
+			Response.Write("<td>" & rs.Fields.Item("poster") & "</td>")
+			Response.Write("<td>" & rs1.Fields.Item("lp") & "</td>")
+			rs1.Close()
+			if BgColor = "#e9ffe9" then
+				BgColor = "#FFFFFF"
+			else
+				BgColor = "#e9ffe9"
+			end if
+			%></tr><%
+			rs.MoveNext
+		loop
+		rs.Close()
+		conn.Close()
+	%>
+	</table>
+	<%
+	if Session.Contents("uname")<>"" then 
+	  %>
+      <!-- tinyMCE -->
+      <script language="javascript" type="text/javascript" src="./jscripts/tiny_mce/tiny_mce.js"></script>
+      <script language="javascript" type="text/javascript">
+	// Notice: The simple theme does not use all options some of them are limited to the advanced theme
+	tinyMCE.init({
+		mode : "textareas",
+		theme : "simple"
+	});
+		</script>
+      <!-- /tinyMCE -->
+      <form name="frmPostMessage" method="post" enctype="application/x-www-form-urlencoded">
+        <table align="center" width="500px" cellpadding="5" cellspacing="0" class="FramedForm">
+          <tr>
+            <td>Thread title<br>
+              <center>
+                <input name="tfSubject" type="text" class="postit" id="tfSubject">
+              </center></td>
+          </tr>
+          <tr>
+            <td>Thread message<br>
+              <center>
+                <textarea name="tfText" class="postit" id="tfText"></textarea>
+              </center></td>
+          </tr>
+          <tr>
+            <td align="right"><input type="submit" value="Post it"></td>
+          </tr>
+        </table>
+      </form>
+      <%
+	  end if
+	  %>
+	<!-- InstanceEndEditable --></td> 
+  </tr> 
+  <tr align="right" bgcolor="#FFFFFF"> 
+    <td colspan="2" class="footer">Copyright 2019 Acunetix Ltd.</td> 
+  </tr> 
+</table> 
+<div style="background-color:lightgray;width:80%;margin:auto;left:10%;position:fixed;bottom:2px;text-align:center;font-size:12px;padding:1px">
+	<p style="padding-left:20%;padding-right:20%"><b>Warning</b>: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other web-based attacks. It is built using ASP and it is here to help you test Acunetix. The entire content of the forum is erased daily. All the posts are real-life examples of how attackers are trying to break into insecure web applications. Please be careful and do not follow links that are posted by malicious parties.</p>
+</div>
+</body>
+<!-- InstanceEnd --></html>
+
+		<!-- InstanceEndEditable --></td> 
+  </tr> 
+  <tr align="right" bgcolor="#FFFFFF"> 
+    <td colspan="2" class="footer">Copyright 2019 Acunetix Ltd.</td> 
+  </tr> 
+</table> 
+<div style="background-color:lightgray;width:80%;margin:auto;text-align:center;font-size:12px;padding:1px">
+	<p style="padding-left:20%;padding-right:20%"><b>Warning</b>: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other web-based attacks. It is built using ASP and it is here to help you test Acunetix. The entire content of the forum is erased daily. All the posts are real-life examples of how attackers are trying to break into insecure web applications. Please be careful and do not follow links that are posted by malicious parties.</p>
+</div>
+</body>
+<!-- InstanceEnd --></html>

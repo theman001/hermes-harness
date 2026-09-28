@@ -1,0 +1,25 @@
+### F0. 실행 전 밴드 (joins>20 | posts>100 | threads>100)
+  0 0 0
+  우리 스레드 게시글 수: 3
+
+### F1. POST showthread.asp  id=9 OR 1=1--   (우리 스레드; INSERT 는 -- 절단으로 불가)
+  code=500 size=1208
+### F2. POST showthread.asp  id=9'         (우리 스레드; 첫 SELECT 오류로 중단)
+  code=500 size=1208
+### F3. POST showforum.asp   id=0 OR 1=1--    (우리 스레드가 속한 포럼; 동일 보장)
+  code=500 size=1208
+
+### F4. 무결성 (실행 후)
+  밴드 before: 0 0 0
+  밴드 after : 0 0 0
+  → 게시글/스레드 총량 변화 없음 ✓
+  우리 스레드 게시글 수: 3 (3이면 추가 없음)
+  thread0    변경없음
+  thread2    변경없음
+  forum1     변경없음
+  --- Default.asp 차이(스레드/포스트 수 표시가 늘어난 것인지 확인) ---
+  숫자만 다른 것 아님 — 구조 동일(카운트만 변화) ✓
+34c34
+< 	<tr bgcolor='#FFFFFF'><td><div class='forumtitle'><a href='showforum.asp?id=0'>Acunetix Web Vulnerability Scanner</a></div><div class='forumdescription'>Talk about Acunetix Web Vulnerablity Scanner</div></td><td>13</td><td>13</td><td>9/23/2026 8:47:37 AM</td></tr><tr bgcolor='#e9ffe9'><td><div class='forumtitle'><a href='showforum.asp?id=1'>Weather</a></div><div class='forumdescription'>What weather is in your town right now</div></td><td>1</td><td>1</td><td>11/9/2005 12:16:35 PM</td></tr><tr bgcolor='#FFFFFF'><td><div class='forumtitle'><a href='showforum.asp?id=2'>Miscellaneous</a></div><div class='forumdescription'>Anything crossing your mind can be posted here</div></td><td>1</td><td>1</td><td>9/23/2026 8:46:59 AM</td></tr>
+---
+> 	<tr bgcolor='#FFFFFF'><td><div class='forumtitle'><a href='showforum.asp?id=0'>Acunetix Web Vulnerability Scanner</a></div><div class='forumdescription'>Talk about Acunetix Web Vulnerablity Scanner</div></td><td>16</td><td>16</td><td>9/23/2026 8:50:57 AM</td></tr><tr bgcolor='#e9ffe9'><td><div class='forumtitle'><a href='showforum.asp?id=1'>Weather</a></div><div class='forumdescription'>What weather is in your town right now</div></td><td>1</td><td>1</td><td>11/9/2005 12:16:35 PM</td></tr><tr bgcolor='#FFFFFF'><td><div class='forumtitle'><a href='showforum.asp?id=2'>Miscellaneous</a></div><div class='forumdescription'>Anything crossing your mind can be posted here</div></td><td>1</td><td>1</td><td>9/23/2026 8:46:59 AM</td></tr>

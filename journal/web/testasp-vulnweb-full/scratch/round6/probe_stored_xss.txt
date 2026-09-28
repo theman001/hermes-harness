@@ -1,0 +1,23 @@
+### 0. BEFORE — showthread.asp?id=0 현재 상태
+code=200 size=3031
+posttext 개수: 1
+RT6 마커 존재: 0
+
+### 1. POST — 게시글 1건 작성 (tfSubject / tfText, id 는 숫자 리터럴만)
+code=200 size=3031 redirect=
+--- 응답 헤더 ---
+HTTP/1.1 200 OK
+
+### 2. AFTER — 같은 스레드 재조회
+code=200 size=3031
+posttext 개수: 1
+RT6 마커 개수: 0
+페이로드 원문(미이스케이프) 개수: 0
+HTML 이스케이프된 형태 개수: 0
+
+### 3. 미인증 상태에서도 보이는가 (저장형 = 모든 방문자에게 실행)
+anon code=200 size=3031
+anon 에서 페이로드 원문 개수: 0
+
+### 4. 저장된 게시글 문맥 (원문 발췌)
+RT6 마커를 찾지 못함

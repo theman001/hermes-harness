@@ -1,0 +1,2162 @@
+[
+ {
+  "path": "/_vti_cnf/Default.asp.cnf",
+  "url": "http://testasp.vulnweb.com/_vti_cnf/Default.asp.cnf",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/_vti_cnf_Default.asp.cnf"
+ },
+ {
+  "path": "/_vti_cnf/default.asp.cnf",
+  "url": "http://testasp.vulnweb.com/_vti_cnf/default.asp.cnf",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/_vti_cnf_default.asp.cnf"
+ },
+ {
+  "path": "/_vti_cnf/Search.asp.cnf",
+  "url": "http://testasp.vulnweb.com/_vti_cnf/Search.asp.cnf",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/_vti_cnf_Search.asp.cnf"
+ },
+ {
+  "path": "/_vti_cnf/search.asp.cnf",
+  "url": "http://testasp.vulnweb.com/_vti_cnf/search.asp.cnf",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/_vti_cnf_search.asp.cnf"
+ },
+ {
+  "path": "/_vti_cnf/Login.asp.cnf",
+  "url": "http://testasp.vulnweb.com/_vti_cnf/Login.asp.cnf",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/_vti_cnf_Login.asp.cnf"
+ },
+ {
+  "path": "/_vti_cnf/login.asp.cnf",
+  "url": "http://testasp.vulnweb.com/_vti_cnf/login.asp.cnf",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/_vti_cnf_login.asp.cnf"
+ },
+ {
+  "path": "/_vti_cnf/Register.asp.cnf",
+  "url": "http://testasp.vulnweb.com/_vti_cnf/Register.asp.cnf",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/_vti_cnf_Register.asp.cnf"
+ },
+ {
+  "path": "/_vti_cnf/register.asp.cnf",
+  "url": "http://testasp.vulnweb.com/_vti_cnf/register.asp.cnf",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/_vti_cnf_register.asp.cnf"
+ },
+ {
+  "path": "/_vti_cnf/showforum.asp.cnf",
+  "url": "http://testasp.vulnweb.com/_vti_cnf/showforum.asp.cnf",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/_vti_cnf_showforum.asp.cnf"
+ },
+ {
+  "path": "/_vti_cnf/showthread.asp.cnf",
+  "url": "http://testasp.vulnweb.com/_vti_cnf/showthread.asp.cnf",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/_vti_cnf_showthread.asp.cnf"
+ },
+ {
+  "path": "/_vti_cnf/Templatize.asp.cnf",
+  "url": "http://testasp.vulnweb.com/_vti_cnf/Templatize.asp.cnf",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/_vti_cnf_Templatize.asp.cnf"
+ },
+ {
+  "path": "/_vti_cnf/templatize.asp.cnf",
+  "url": "http://testasp.vulnweb.com/_vti_cnf/templatize.asp.cnf",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/_vti_cnf_templatize.asp.cnf"
+ },
+ {
+  "path": "/_vti_cnf/logout.asp.cnf",
+  "url": "http://testasp.vulnweb.com/_vti_cnf/logout.asp.cnf",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/_vti_cnf_logout.asp.cnf"
+ },
+ {
+  "path": "/_vti_cnf/Logout.asp.cnf",
+  "url": "http://testasp.vulnweb.com/_vti_cnf/Logout.asp.cnf",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/_vti_cnf_Logout.asp.cnf"
+ },
+ {
+  "path": "/_vti_cnf/DB.asp.cnf",
+  "url": "http://testasp.vulnweb.com/_vti_cnf/DB.asp.cnf",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/_vti_cnf_DB.asp.cnf"
+ },
+ {
+  "path": "/_vti_cnf/db.asp.cnf",
+  "url": "http://testasp.vulnweb.com/_vti_cnf/db.asp.cnf",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/_vti_cnf_db.asp.cnf"
+ },
+ {
+  "path": "/_vti_cnf/styles.css.cnf",
+  "url": "http://testasp.vulnweb.com/_vti_cnf/styles.css.cnf",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/_vti_cnf_styles.css.cnf"
+ },
+ {
+  "path": "/_vti_cnf/Images/logo.gif.cnf",
+  "url": "http://testasp.vulnweb.com/_vti_cnf/Images/logo.gif.cnf",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/_vti_cnf_Images_logo.gif.cnf"
+ },
+ {
+  "path": "/acuforum/_vti_cnf/Default.asp.cnf",
+  "url": "http://testasp.vulnweb.com/acuforum/_vti_cnf/Default.asp.cnf",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/acuforum__vti_cnf_Default.asp.cnf"
+ },
+ {
+  "path": "/acuforum/_vti_cnf/default.asp.cnf",
+  "url": "http://testasp.vulnweb.com/acuforum/_vti_cnf/default.asp.cnf",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/acuforum__vti_cnf_default.asp.cnf"
+ },
+ {
+  "path": "/acuforum/_vti_cnf/Search.asp.cnf",
+  "url": "http://testasp.vulnweb.com/acuforum/_vti_cnf/Search.asp.cnf",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/acuforum__vti_cnf_Search.asp.cnf"
+ },
+ {
+  "path": "/acuforum/_vti_cnf/search.asp.cnf",
+  "url": "http://testasp.vulnweb.com/acuforum/_vti_cnf/search.asp.cnf",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/acuforum__vti_cnf_search.asp.cnf"
+ },
+ {
+  "path": "/acuforum/_vti_cnf/Login.asp.cnf",
+  "url": "http://testasp.vulnweb.com/acuforum/_vti_cnf/Login.asp.cnf",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/acuforum__vti_cnf_Login.asp.cnf"
+ },
+ {
+  "path": "/acuforum/_vti_cnf/login.asp.cnf",
+  "url": "http://testasp.vulnweb.com/acuforum/_vti_cnf/login.asp.cnf",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/acuforum__vti_cnf_login.asp.cnf"
+ },
+ {
+  "path": "/acuforum/_vti_cnf/Register.asp.cnf",
+  "url": "http://testasp.vulnweb.com/acuforum/_vti_cnf/Register.asp.cnf",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/acuforum__vti_cnf_Register.asp.cnf"
+ },
+ {
+  "path": "/acuforum/_vti_cnf/register.asp.cnf",
+  "url": "http://testasp.vulnweb.com/acuforum/_vti_cnf/register.asp.cnf",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/acuforum__vti_cnf_register.asp.cnf"
+ },
+ {
+  "path": "/acuforum/_vti_cnf/showforum.asp.cnf",
+  "url": "http://testasp.vulnweb.com/acuforum/_vti_cnf/showforum.asp.cnf",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/acuforum__vti_cnf_showforum.asp.cnf"
+ },
+ {
+  "path": "/acuforum/_vti_cnf/showthread.asp.cnf",
+  "url": "http://testasp.vulnweb.com/acuforum/_vti_cnf/showthread.asp.cnf",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/acuforum__vti_cnf_showthread.asp.cnf"
+ },
+ {
+  "path": "/acuforum/_vti_cnf/Templatize.asp.cnf",
+  "url": "http://testasp.vulnweb.com/acuforum/_vti_cnf/Templatize.asp.cnf",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/acuforum__vti_cnf_Templatize.asp.cnf"
+ },
+ {
+  "path": "/acuforum/_vti_cnf/templatize.asp.cnf",
+  "url": "http://testasp.vulnweb.com/acuforum/_vti_cnf/templatize.asp.cnf",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/acuforum__vti_cnf_templatize.asp.cnf"
+ },
+ {
+  "path": "/acuforum/_vti_cnf/logout.asp.cnf",
+  "url": "http://testasp.vulnweb.com/acuforum/_vti_cnf/logout.asp.cnf",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/acuforum__vti_cnf_logout.asp.cnf"
+ },
+ {
+  "path": "/acuforum/_vti_cnf/Logout.asp.cnf",
+  "url": "http://testasp.vulnweb.com/acuforum/_vti_cnf/Logout.asp.cnf",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/acuforum__vti_cnf_Logout.asp.cnf"
+ },
+ {
+  "path": "/acuforum/_vti_cnf/DB.asp.cnf",
+  "url": "http://testasp.vulnweb.com/acuforum/_vti_cnf/DB.asp.cnf",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/acuforum__vti_cnf_DB.asp.cnf"
+ },
+ {
+  "path": "/acuforum/_vti_cnf/db.asp.cnf",
+  "url": "http://testasp.vulnweb.com/acuforum/_vti_cnf/db.asp.cnf",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/acuforum__vti_cnf_db.asp.cnf"
+ },
+ {
+  "path": "/acuforum/_vti_cnf/styles.css.cnf",
+  "url": "http://testasp.vulnweb.com/acuforum/_vti_cnf/styles.css.cnf",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/acuforum__vti_cnf_styles.css.cnf"
+ },
+ {
+  "path": "/acuforum/_vti_cnf/Images/logo.gif.cnf",
+  "url": "http://testasp.vulnweb.com/acuforum/_vti_cnf/Images/logo.gif.cnf",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/acuforum__vti_cnf_Images_logo.gif.cnf"
+ },
+ {
+  "path": "/Templates/_vti_cnf/",
+  "url": "http://testasp.vulnweb.com/Templates/_vti_cnf/",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/Templates__vti_cnf"
+ },
+ {
+  "path": "/templates/_vti_cnf/",
+  "url": "http://testasp.vulnweb.com/templates/_vti_cnf/",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/templates__vti_cnf"
+ },
+ {
+  "path": "/html/_vti_cnf/",
+  "url": "http://testasp.vulnweb.com/html/_vti_cnf/",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/html__vti_cnf"
+ },
+ {
+  "path": "/images/_vti_cnf/",
+  "url": "http://testasp.vulnweb.com/images/_vti_cnf/",
+  "status": "403",
+  "size": "1233",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/images__vti_cnf"
+ },
+ {
+  "path": "/Images/_vti_cnf/",
+  "url": "http://testasp.vulnweb.com/Images/_vti_cnf/",
+  "status": "403",
+  "size": "1233",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/Images__vti_cnf"
+ },
+ {
+  "path": "/t/_vti_cnf/",
+  "url": "http://testasp.vulnweb.com/t/_vti_cnf/",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/t__vti_cnf"
+ },
+ {
+  "path": "/scripts/_vti_cnf/",
+  "url": "http://testasp.vulnweb.com/scripts/_vti_cnf/",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/scripts__vti_cnf"
+ },
+ {
+  "path": "/_private/_vti_cnf/",
+  "url": "http://testasp.vulnweb.com/_private/_vti_cnf/",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/_private__vti_cnf"
+ },
+ {
+  "path": "/_vti_txt/_vti_cnf/",
+  "url": "http://testasp.vulnweb.com/_vti_txt/_vti_cnf/",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/_vti_txt__vti_cnf"
+ },
+ {
+  "path": "/_vti_pvt/_vti_cnf/",
+  "url": "http://testasp.vulnweb.com/_vti_pvt/_vti_cnf/",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/_vti_pvt__vti_cnf"
+ },
+ {
+  "path": "/_vti_bin/_vti_cnf/",
+  "url": "http://testasp.vulnweb.com/_vti_bin/_vti_cnf/",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/_vti_bin__vti_cnf"
+ },
+ {
+  "path": "/_vti_script/_vti_cnf/",
+  "url": "http://testasp.vulnweb.com/_vti_script/_vti_cnf/",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/_vti_script__vti_cnf"
+ },
+ {
+  "path": "/_vti_log/_vti_cnf/",
+  "url": "http://testasp.vulnweb.com/_vti_log/_vti_cnf/",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/_vti_log__vti_cnf"
+ },
+ {
+  "path": "/_vti_cnf/_vti_cnf/",
+  "url": "http://testasp.vulnweb.com/_vti_cnf/_vti_cnf/",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/_vti_cnf__vti_cnf"
+ },
+ {
+  "path": "/acuforum/_vti_cnf/",
+  "url": "http://testasp.vulnweb.com/acuforum/_vti_cnf/",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/acuforum__vti_cnf"
+ },
+ {
+  "path": "/about/_vti_cnf/",
+  "url": "http://testasp.vulnweb.com/about/_vti_cnf/",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/about__vti_cnf"
+ },
+ {
+  "path": "/inc/_vti_cnf/",
+  "url": "http://testasp.vulnweb.com/inc/_vti_cnf/",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/inc__vti_cnf"
+ },
+ {
+  "path": "/includes/_vti_cnf/",
+  "url": "http://testasp.vulnweb.com/includes/_vti_cnf/",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/includes__vti_cnf"
+ },
+ {
+  "path": "/forum/_vti_cnf/",
+  "url": "http://testasp.vulnweb.com/forum/_vti_cnf/",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/forum__vti_cnf"
+ },
+ {
+  "path": "/asp/_vti_cnf/",
+  "url": "http://testasp.vulnweb.com/asp/_vti_cnf/",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/asp__vti_cnf"
+ },
+ {
+  "path": "/data/_vti_cnf/",
+  "url": "http://testasp.vulnweb.com/data/_vti_cnf/",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/data__vti_cnf"
+ },
+ {
+  "path": "/acuforum/Templates/_vti_cnf/",
+  "url": "http://testasp.vulnweb.com/acuforum/Templates/_vti_cnf/",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/acuforum_Templates__vti_cnf"
+ },
+ {
+  "path": "/_vti_cnf/Templates/",
+  "url": "http://testasp.vulnweb.com/_vti_cnf/Templates/",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/_vti_cnf_Templates"
+ },
+ {
+  "path": "/acuforum/html/_vti_cnf/",
+  "url": "http://testasp.vulnweb.com/acuforum/html/_vti_cnf/",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/acuforum_html__vti_cnf"
+ },
+ {
+  "path": "/_vti_cnf/html/",
+  "url": "http://testasp.vulnweb.com/_vti_cnf/html/",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/_vti_cnf_html"
+ },
+ {
+  "path": "/acuforum/images/_vti_cnf/",
+  "url": "http://testasp.vulnweb.com/acuforum/images/_vti_cnf/",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/acuforum_images__vti_cnf"
+ },
+ {
+  "path": "/_vti_cnf/images/",
+  "url": "http://testasp.vulnweb.com/_vti_cnf/images/",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/_vti_cnf_images"
+ },
+ {
+  "path": "/acuforum/t/_vti_cnf/",
+  "url": "http://testasp.vulnweb.com/acuforum/t/_vti_cnf/",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/acuforum_t__vti_cnf"
+ },
+ {
+  "path": "/_vti_cnf/t/",
+  "url": "http://testasp.vulnweb.com/_vti_cnf/t/",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/_vti_cnf_t"
+ },
+ {
+  "path": "/acuforum/scripts/_vti_cnf/",
+  "url": "http://testasp.vulnweb.com/acuforum/scripts/_vti_cnf/",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/acuforum_scripts__vti_cnf"
+ },
+ {
+  "path": "/_vti_cnf/scripts/",
+  "url": "http://testasp.vulnweb.com/_vti_cnf/scripts/",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/_vti_cnf_scripts"
+ },
+ {
+  "path": "/acuforum/_private/_vti_cnf/",
+  "url": "http://testasp.vulnweb.com/acuforum/_private/_vti_cnf/",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/acuforum__private__vti_cnf"
+ },
+ {
+  "path": "/_vti_cnf/_private/",
+  "url": "http://testasp.vulnweb.com/_vti_cnf/_private/",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/_vti_cnf__private"
+ },
+ {
+  "path": "/acuforum/inc/_vti_cnf/",
+  "url": "http://testasp.vulnweb.com/acuforum/inc/_vti_cnf/",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/acuforum_inc__vti_cnf"
+ },
+ {
+  "path": "/_vti_cnf/inc/",
+  "url": "http://testasp.vulnweb.com/_vti_cnf/inc/",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/_vti_cnf_inc"
+ },
+ {
+  "path": "/acuforum/includes/_vti_cnf/",
+  "url": "http://testasp.vulnweb.com/acuforum/includes/_vti_cnf/",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/acuforum_includes__vti_cnf"
+ },
+ {
+  "path": "/_vti_cnf/includes/",
+  "url": "http://testasp.vulnweb.com/_vti_cnf/includes/",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/_vti_cnf_includes"
+ },
+ {
+  "path": "/Templates/MainTemplate.dwt.asp",
+  "url": "http://testasp.vulnweb.com/Templates/MainTemplate.dwt.asp",
+  "status": "200",
+  "size": "2488",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/Templates_MainTemplate.dwt.asp"
+ },
+ {
+  "path": "/Templates/_vti_cnf/MainTemplate.dwt.asp.cnf",
+  "url": "http://testasp.vulnweb.com/Templates/_vti_cnf/MainTemplate.dwt.asp.cnf",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/Templates__vti_cnf_MainTemplate.dwt.asp.cnf"
+ },
+ {
+  "path": "/acuforum/Templates/MainTemplate.dwt.asp",
+  "url": "http://testasp.vulnweb.com/acuforum/Templates/MainTemplate.dwt.asp",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/acuforum_Templates_MainTemplate.dwt.asp"
+ },
+ {
+  "path": "/Templates/template.dwt.asp",
+  "url": "http://testasp.vulnweb.com/Templates/template.dwt.asp",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/Templates_template.dwt.asp"
+ },
+ {
+  "path": "/Templates/_vti_cnf/template.dwt.asp.cnf",
+  "url": "http://testasp.vulnweb.com/Templates/_vti_cnf/template.dwt.asp.cnf",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/Templates__vti_cnf_template.dwt.asp.cnf"
+ },
+ {
+  "path": "/acuforum/Templates/template.dwt.asp",
+  "url": "http://testasp.vulnweb.com/acuforum/Templates/template.dwt.asp",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/acuforum_Templates_template.dwt.asp"
+ },
+ {
+  "path": "/Templates/Template.dwt.asp",
+  "url": "http://testasp.vulnweb.com/Templates/Template.dwt.asp",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/Templates_Template.dwt.asp"
+ },
+ {
+  "path": "/Templates/_vti_cnf/Template.dwt.asp.cnf",
+  "url": "http://testasp.vulnweb.com/Templates/_vti_cnf/Template.dwt.asp.cnf",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/Templates__vti_cnf_Template.dwt.asp.cnf"
+ },
+ {
+  "path": "/acuforum/Templates/Template.dwt.asp",
+  "url": "http://testasp.vulnweb.com/acuforum/Templates/Template.dwt.asp",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/acuforum_Templates_Template.dwt.asp"
+ },
+ {
+  "path": "/Templates/main.dwt.asp",
+  "url": "http://testasp.vulnweb.com/Templates/main.dwt.asp",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/Templates_main.dwt.asp"
+ },
+ {
+  "path": "/Templates/_vti_cnf/main.dwt.asp.cnf",
+  "url": "http://testasp.vulnweb.com/Templates/_vti_cnf/main.dwt.asp.cnf",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/Templates__vti_cnf_main.dwt.asp.cnf"
+ },
+ {
+  "path": "/acuforum/Templates/main.dwt.asp",
+  "url": "http://testasp.vulnweb.com/acuforum/Templates/main.dwt.asp",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/acuforum_Templates_main.dwt.asp"
+ },
+ {
+  "path": "/Templates/Main.dwt.asp",
+  "url": "http://testasp.vulnweb.com/Templates/Main.dwt.asp",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/Templates_Main.dwt.asp"
+ },
+ {
+  "path": "/Templates/_vti_cnf/Main.dwt.asp.cnf",
+  "url": "http://testasp.vulnweb.com/Templates/_vti_cnf/Main.dwt.asp.cnf",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/Templates__vti_cnf_Main.dwt.asp.cnf"
+ },
+ {
+  "path": "/acuforum/Templates/Main.dwt.asp",
+  "url": "http://testasp.vulnweb.com/acuforum/Templates/Main.dwt.asp",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/acuforum_Templates_Main.dwt.asp"
+ },
+ {
+  "path": "/Templates/Default.dwt.asp",
+  "url": "http://testasp.vulnweb.com/Templates/Default.dwt.asp",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/Templates_Default.dwt.asp"
+ },
+ {
+  "path": "/Templates/_vti_cnf/Default.dwt.asp.cnf",
+  "url": "http://testasp.vulnweb.com/Templates/_vti_cnf/Default.dwt.asp.cnf",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/Templates__vti_cnf_Default.dwt.asp.cnf"
+ },
+ {
+  "path": "/acuforum/Templates/Default.dwt.asp",
+  "url": "http://testasp.vulnweb.com/acuforum/Templates/Default.dwt.asp",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/acuforum_Templates_Default.dwt.asp"
+ },
+ {
+  "path": "/Templates/default.dwt.asp",
+  "url": "http://testasp.vulnweb.com/Templates/default.dwt.asp",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/Templates_default.dwt.asp"
+ },
+ {
+  "path": "/Templates/_vti_cnf/default.dwt.asp.cnf",
+  "url": "http://testasp.vulnweb.com/Templates/_vti_cnf/default.dwt.asp.cnf",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/Templates__vti_cnf_default.dwt.asp.cnf"
+ },
+ {
+  "path": "/acuforum/Templates/default.dwt.asp",
+  "url": "http://testasp.vulnweb.com/acuforum/Templates/default.dwt.asp",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/acuforum_Templates_default.dwt.asp"
+ },
+ {
+  "path": "/Templates/MainTemplatize.dwt.asp",
+  "url": "http://testasp.vulnweb.com/Templates/MainTemplatize.dwt.asp",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/Templates_MainTemplatize.dwt.asp"
+ },
+ {
+  "path": "/Templates/_vti_cnf/MainTemplatize.dwt.asp.cnf",
+  "url": "http://testasp.vulnweb.com/Templates/_vti_cnf/MainTemplatize.dwt.asp.cnf",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/Templates__vti_cnf_MainTemplatize.dwt.asp.cnf"
+ },
+ {
+  "path": "/acuforum/Templates/MainTemplatize.dwt.asp",
+  "url": "http://testasp.vulnweb.com/acuforum/Templates/MainTemplatize.dwt.asp",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/acuforum_Templates_MainTemplatize.dwt.asp"
+ },
+ {
+  "path": "/Templates/acuforum.dwt.asp",
+  "url": "http://testasp.vulnweb.com/Templates/acuforum.dwt.asp",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/Templates_acuforum.dwt.asp"
+ },
+ {
+  "path": "/Templates/_vti_cnf/acuforum.dwt.asp.cnf",
+  "url": "http://testasp.vulnweb.com/Templates/_vti_cnf/acuforum.dwt.asp.cnf",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/Templates__vti_cnf_acuforum.dwt.asp.cnf"
+ },
+ {
+  "path": "/acuforum/Templates/acuforum.dwt.asp",
+  "url": "http://testasp.vulnweb.com/acuforum/Templates/acuforum.dwt.asp",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/acuforum_Templates_acuforum.dwt.asp"
+ },
+ {
+  "path": "/Templates/MainTemplate.dwt",
+  "url": "http://testasp.vulnweb.com/Templates/MainTemplate.dwt",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/Templates_MainTemplate.dwt"
+ },
+ {
+  "path": "/Templates/_vti_cnf/MainTemplate.dwt.cnf",
+  "url": "http://testasp.vulnweb.com/Templates/_vti_cnf/MainTemplate.dwt.cnf",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/Templates__vti_cnf_MainTemplate.dwt.cnf"
+ },
+ {
+  "path": "/acuforum/Templates/MainTemplate.dwt",
+  "url": "http://testasp.vulnweb.com/acuforum/Templates/MainTemplate.dwt",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/acuforum_Templates_MainTemplate.dwt"
+ },
+ {
+  "path": "/Templates/MainTemplate.dwt.asp.bak",
+  "url": "http://testasp.vulnweb.com/Templates/MainTemplate.dwt.asp.bak",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/Templates_MainTemplate.dwt.asp.bak"
+ },
+ {
+  "path": "/Templates/_vti_cnf/MainTemplate.dwt.asp.bak.cnf",
+  "url": "http://testasp.vulnweb.com/Templates/_vti_cnf/MainTemplate.dwt.asp.bak.cnf",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/Templates__vti_cnf_MainTemplate.dwt.asp.bak.cnf"
+ },
+ {
+  "path": "/acuforum/Templates/MainTemplate.dwt.asp.bak",
+  "url": "http://testasp.vulnweb.com/acuforum/Templates/MainTemplate.dwt.asp.bak",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/acuforum_Templates_MainTemplate.dwt.asp.bak"
+ },
+ {
+  "path": "/Templates/MainTemplate.dwt.asp.old",
+  "url": "http://testasp.vulnweb.com/Templates/MainTemplate.dwt.asp.old",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/Templates_MainTemplate.dwt.asp.old"
+ },
+ {
+  "path": "/Templates/_vti_cnf/MainTemplate.dwt.asp.old.cnf",
+  "url": "http://testasp.vulnweb.com/Templates/_vti_cnf/MainTemplate.dwt.asp.old.cnf",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/Templates__vti_cnf_MainTemplate.dwt.asp.old.cnf"
+ },
+ {
+  "path": "/acuforum/Templates/MainTemplate.dwt.asp.old",
+  "url": "http://testasp.vulnweb.com/acuforum/Templates/MainTemplate.dwt.asp.old",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/acuforum_Templates_MainTemplate.dwt.asp.old"
+ },
+ {
+  "path": "/Templates/MainTemplate.dwt.asp~",
+  "url": "http://testasp.vulnweb.com/Templates/MainTemplate.dwt.asp~",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/Templates_MainTemplate.dwt.asp_"
+ },
+ {
+  "path": "/Templates/_vti_cnf/MainTemplate.dwt.asp~.cnf",
+  "url": "http://testasp.vulnweb.com/Templates/_vti_cnf/MainTemplate.dwt.asp~.cnf",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/Templates__vti_cnf_MainTemplate.dwt.asp_.cnf"
+ },
+ {
+  "path": "/acuforum/Templates/MainTemplate.dwt.asp~",
+  "url": "http://testasp.vulnweb.com/acuforum/Templates/MainTemplate.dwt.asp~",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/acuforum_Templates_MainTemplate.dwt.asp_"
+ },
+ {
+  "path": "/iisstart.htm",
+  "url": "http://testasp.vulnweb.com/iisstart.htm",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/iisstart.htm"
+ },
+ {
+  "path": "/iisstart.png",
+  "url": "http://testasp.vulnweb.com/iisstart.png",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/iisstart.png"
+ },
+ {
+  "path": "/iisstart.asp",
+  "url": "http://testasp.vulnweb.com/iisstart.asp",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/iisstart.asp"
+ },
+ {
+  "path": "/welcome.png",
+  "url": "http://testasp.vulnweb.com/welcome.png",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/welcome.png"
+ },
+ {
+  "path": "/welcome.gif",
+  "url": "http://testasp.vulnweb.com/welcome.gif",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/welcome.gif"
+ },
+ {
+  "path": "/trace.axd",
+  "url": "http://testasp.vulnweb.com/trace.axd",
+  "status": "403",
+  "size": "2062",
+  "ctype": "text/html; charset=utf-8",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/trace.axd"
+ },
+ {
+  "path": "/elmah.axd",
+  "url": "http://testasp.vulnweb.com/elmah.axd",
+  "status": "404",
+  "size": "1504",
+  "ctype": "text/html; charset=utf-8",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/elmah.axd"
+ },
+ {
+  "path": "/elmah.axd/detail",
+  "url": "http://testasp.vulnweb.com/elmah.axd/detail",
+  "status": "404",
+  "size": "1511",
+  "ctype": "text/html; charset=utf-8",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/elmah.axd_detail"
+ },
+ {
+  "path": "/glimpse.axd",
+  "url": "http://testasp.vulnweb.com/glimpse.axd",
+  "status": "404",
+  "size": "1506",
+  "ctype": "text/html; charset=utf-8",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/glimpse.axd"
+ },
+ {
+  "path": "/aspnet_client/",
+  "url": "http://testasp.vulnweb.com/aspnet_client/",
+  "status": "403",
+  "size": "1233",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/aspnet_client"
+ },
+ {
+  "path": "/aspnet_client/system_web/",
+  "url": "http://testasp.vulnweb.com/aspnet_client/system_web/",
+  "status": "403",
+  "size": "1233",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/aspnet_client_system_web"
+ },
+ {
+  "path": "/aspnet_client/system_web/4_0_30319/",
+  "url": "http://testasp.vulnweb.com/aspnet_client/system_web/4_0_30319/",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/aspnet_client_system_web_4_0_30319"
+ },
+ {
+  "path": "/aspnet_client/system_web/2_0_50727/",
+  "url": "http://testasp.vulnweb.com/aspnet_client/system_web/2_0_50727/",
+  "status": "403",
+  "size": "1233",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/aspnet_client_system_web_2_0_50727"
+ },
+ {
+  "path": "/aspnet_client/system_web/4_0_30319/crystalreportviewers13/",
+  "url": "http://testasp.vulnweb.com/aspnet_client/system_web/4_0_30319/crystalreportviewers13/",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/aspnet_client_system_web_4_0_30319_crystalreportviewers13"
+ },
+ {
+  "path": "/bin/",
+  "url": "http://testasp.vulnweb.com/bin/",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/bin"
+ },
+ {
+  "path": "/bin/Default.asp",
+  "url": "http://testasp.vulnweb.com/bin/Default.asp",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/bin_Default.asp"
+ },
+ {
+  "path": "/App_Data/",
+  "url": "http://testasp.vulnweb.com/App_Data/",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/App_Data"
+ },
+ {
+  "path": "/App_Code/",
+  "url": "http://testasp.vulnweb.com/App_Code/",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/App_Code"
+ },
+ {
+  "path": "/App_GlobalResources/",
+  "url": "http://testasp.vulnweb.com/App_GlobalResources/",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/App_GlobalResources"
+ },
+ {
+  "path": "/App_Themes/",
+  "url": "http://testasp.vulnweb.com/App_Themes/",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/App_Themes"
+ },
+ {
+  "path": "/web.config",
+  "url": "http://testasp.vulnweb.com/web.config",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/web.config"
+ },
+ {
+  "path": "/Web.config",
+  "url": "http://testasp.vulnweb.com/Web.config",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/Web.config"
+ },
+ {
+  "path": "/web.config.bak",
+  "url": "http://testasp.vulnweb.com/web.config.bak",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/web.config.bak"
+ },
+ {
+  "path": "/web.config.old",
+  "url": "http://testasp.vulnweb.com/web.config.old",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/web.config.old"
+ },
+ {
+  "path": "/web.config.txt",
+  "url": "http://testasp.vulnweb.com/web.config.txt",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/web.config.txt"
+ },
+ {
+  "path": "/web.config.orig",
+  "url": "http://testasp.vulnweb.com/web.config.orig",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/web.config.orig"
+ },
+ {
+  "path": "/global.asa",
+  "url": "http://testasp.vulnweb.com/global.asa",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/global.asa"
+ },
+ {
+  "path": "/Global.asa",
+  "url": "http://testasp.vulnweb.com/Global.asa",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/Global.asa"
+ },
+ {
+  "path": "/global.asa.bak",
+  "url": "http://testasp.vulnweb.com/global.asa.bak",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/global.asa.bak"
+ },
+ {
+  "path": "/global.asax",
+  "url": "http://testasp.vulnweb.com/global.asax",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/global.asax"
+ },
+ {
+  "path": "/global.asax.cs",
+  "url": "http://testasp.vulnweb.com/global.asax.cs",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/global.asax.cs"
+ },
+ {
+  "path": "/Default.asp.bak",
+  "url": "http://testasp.vulnweb.com/Default.asp.bak",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/Default.asp.bak"
+ },
+ {
+  "path": "/Default.asp.old",
+  "url": "http://testasp.vulnweb.com/Default.asp.old",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/Default.asp.old"
+ },
+ {
+  "path": "/Default.asp~",
+  "url": "http://testasp.vulnweb.com/Default.asp~",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/Default.asp_"
+ },
+ {
+  "path": "/Default.asp.orig",
+  "url": "http://testasp.vulnweb.com/Default.asp.orig",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/Default.asp.orig"
+ },
+ {
+  "path": "/Default.asp.txt",
+  "url": "http://testasp.vulnweb.com/Default.asp.txt",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/Default.asp.txt"
+ },
+ {
+  "path": "/Default.asp.save",
+  "url": "http://testasp.vulnweb.com/Default.asp.save",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/Default.asp.save"
+ },
+ {
+  "path": "/Default.asp.bak.txt",
+  "url": "http://testasp.vulnweb.com/Default.asp.bak.txt",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/Default.asp.bak.txt"
+ },
+ {
+  "path": "/Default.asp.#",
+  "url": "http://testasp.vulnweb.com/Default.asp.#",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/Default.asp._"
+ },
+ {
+  "path": "/Default.asp.swp",
+  "url": "http://testasp.vulnweb.com/Default.asp.swp",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/Default.asp.swp"
+ },
+ {
+  "path": "/index.asp",
+  "url": "http://testasp.vulnweb.com/index.asp",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/index.asp"
+ },
+ {
+  "path": "/index.html",
+  "url": "http://testasp.vulnweb.com/index.html",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/index.html"
+ },
+ {
+  "path": "/index.htm",
+  "url": "http://testasp.vulnweb.com/index.htm",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/index.htm"
+ },
+ {
+  "path": "/default.html",
+  "url": "http://testasp.vulnweb.com/default.html",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/default.html"
+ },
+ {
+  "path": "/default.htm",
+  "url": "http://testasp.vulnweb.com/default.htm",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/default.htm"
+ },
+ {
+  "path": "/acuforum/Default.asp",
+  "url": "http://testasp.vulnweb.com/acuforum/Default.asp",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/acuforum_Default.asp"
+ },
+ {
+  "path": "/acuforum/",
+  "url": "http://testasp.vulnweb.com/acuforum/",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/acuforum"
+ },
+ {
+  "path": "/acuforum/web.config",
+  "url": "http://testasp.vulnweb.com/acuforum/web.config",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/acuforum_web.config"
+ },
+ {
+  "path": "/acuforum/global.asa",
+  "url": "http://testasp.vulnweb.com/acuforum/global.asa",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/acuforum_global.asa"
+ },
+ {
+  "path": "/robots.txt",
+  "url": "http://testasp.vulnweb.com/robots.txt",
+  "status": "200",
+  "size": "13",
+  "ctype": "text/plain",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/robots.txt"
+ },
+ {
+  "path": "/sitemap.xml",
+  "url": "http://testasp.vulnweb.com/sitemap.xml",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/sitemap.xml"
+ },
+ {
+  "path": "/favicon.ico",
+  "url": "http://testasp.vulnweb.com/favicon.ico",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/favicon.ico"
+ },
+ {
+  "path": "/phpinfo.php",
+  "url": "http://testasp.vulnweb.com/phpinfo.php",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/phpinfo.php"
+ },
+ {
+  "path": "/_vti_pvt/",
+  "url": "http://testasp.vulnweb.com/_vti_pvt/",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/_vti_pvt"
+ },
+ {
+  "path": "/_vti_pvt/service.pwd",
+  "url": "http://testasp.vulnweb.com/_vti_pvt/service.pwd",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/_vti_pvt_service.pwd"
+ },
+ {
+  "path": "/_vti_pvt/authors.pwd",
+  "url": "http://testasp.vulnweb.com/_vti_pvt/authors.pwd",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/_vti_pvt_authors.pwd"
+ },
+ {
+  "path": "/_vti_pvt/administrators.pwd",
+  "url": "http://testasp.vulnweb.com/_vti_pvt/administrators.pwd",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/_vti_pvt_administrators.pwd"
+ },
+ {
+  "path": "/_vti_inf.html",
+  "url": "http://testasp.vulnweb.com/_vti_inf.html",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/_vti_inf.html"
+ },
+ {
+  "path": "/_vti_bin/",
+  "url": "http://testasp.vulnweb.com/_vti_bin/",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/_vti_bin"
+ },
+ {
+  "path": "/_vti_bin/shtml.exe",
+  "url": "http://testasp.vulnweb.com/_vti_bin/shtml.exe",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/_vti_bin_shtml.exe"
+ },
+ {
+  "path": "/_vti_bin/_vti_aut/author.dll",
+  "url": "http://testasp.vulnweb.com/_vti_bin/_vti_aut/author.dll",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/_vti_bin__vti_aut_author.dll"
+ },
+ {
+  "path": "/_vti_bin/_vti_adm/admin.dll",
+  "url": "http://testasp.vulnweb.com/_vti_bin/_vti_adm/admin.dll",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/_vti_bin__vti_adm_admin.dll"
+ },
+ {
+  "path": "/_vti_text/",
+  "url": "http://testasp.vulnweb.com/_vti_text/",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/_vti_text"
+ },
+ {
+  "path": "/_vti_script/",
+  "url": "http://testasp.vulnweb.com/_vti_script/",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/_vti_script"
+ },
+ {
+  "path": "/_vti_log/",
+  "url": "http://testasp.vulnweb.com/_vti_log/",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/_vti_log"
+ },
+ {
+  "path": "/_private/",
+  "url": "http://testasp.vulnweb.com/_private/",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/_private"
+ },
+ {
+  "path": "/MB/",
+  "url": "http://testasp.vulnweb.com/MB/",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/MB"
+ },
+ {
+  "path": "/_derived/",
+  "url": "http://testasp.vulnweb.com/_derived/",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/_derived"
+ },
+ {
+  "path": "/_overlay/",
+  "url": "http://testasp.vulnweb.com/_overlay/",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/_overlay"
+ },
+ {
+  "path": "/_borders/",
+  "url": "http://testasp.vulnweb.com/_borders/",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/_borders"
+ },
+ {
+  "path": "/_fpclass/",
+  "url": "http://testasp.vulnweb.com/_fpclass/",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/_fpclass"
+ },
+ {
+  "path": "/_vti_cnf/Templates/MainTemplate.dwt.asp.cnf",
+  "url": "http://testasp.vulnweb.com/_vti_cnf/Templates/MainTemplate.dwt.asp.cnf",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/_vti_cnf_Templates_MainTemplate.dwt.asp.cnf"
+ },
+ {
+  "path": "/crossdomain.xml",
+  "url": "http://testasp.vulnweb.com/crossdomain.xml",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/crossdomain.xml"
+ },
+ {
+  "path": "/clientaccesspolicy.xml",
+  "url": "http://testasp.vulnweb.com/clientaccesspolicy.xml",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/clientaccesspolicy.xml"
+ },
+ {
+  "path": "/.git/config",
+  "url": "http://testasp.vulnweb.com/.git/config",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/.git_config"
+ },
+ {
+  "path": "/.svn/entries",
+  "url": "http://testasp.vulnweb.com/.svn/entries",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/.svn_entries"
+ },
+ {
+  "path": "/.hg/",
+  "url": "http://testasp.vulnweb.com/.hg/",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/.hg"
+ },
+ {
+  "path": "/LICENSE.txt",
+  "url": "http://testasp.vulnweb.com/LICENSE.txt",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/LICENSE.txt"
+ },
+ {
+  "path": "/README.txt",
+  "url": "http://testasp.vulnweb.com/README.txt",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/README.txt"
+ },
+ {
+  "path": "/readme.txt",
+  "url": "http://testasp.vulnweb.com/readme.txt",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/readme.txt"
+ },
+ {
+  "path": "/CHANGELOG.txt",
+  "url": "http://testasp.vulnweb.com/CHANGELOG.txt",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/CHANGELOG.txt"
+ },
+ {
+  "path": "/TODO.txt",
+  "url": "http://testasp.vulnweb.com/TODO.txt",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/TODO.txt"
+ },
+ {
+  "path": "/notes.txt",
+  "url": "http://testasp.vulnweb.com/notes.txt",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/notes.txt"
+ },
+ {
+  "path": "/backup.zip",
+  "url": "http://testasp.vulnweb.com/backup.zip",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/backup.zip"
+ },
+ {
+  "path": "/backup.rar",
+  "url": "http://testasp.vulnweb.com/backup.rar",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/backup.rar"
+ },
+ {
+  "path": "/site.zip",
+  "url": "http://testasp.vulnweb.com/site.zip",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/site.zip"
+ },
+ {
+  "path": "/www.zip",
+  "url": "http://testasp.vulnweb.com/www.zip",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/www.zip"
+ },
+ {
+  "path": "/db.zip",
+  "url": "http://testasp.vulnweb.com/db.zip",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/db.zip"
+ },
+ {
+  "path": "/database.zip",
+  "url": "http://testasp.vulnweb.com/database.zip",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/database.zip"
+ },
+ {
+  "path": "/App_Data/database.mdb",
+  "url": "http://testasp.vulnweb.com/App_Data/database.mdb",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/App_Data_database.mdb"
+ },
+ {
+  "path": "/database.mdb",
+  "url": "http://testasp.vulnweb.com/database.mdb",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/database.mdb"
+ },
+ {
+  "path": "/acuforum/database.mdb",
+  "url": "http://testasp.vulnweb.com/acuforum/database.mdb",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/acuforum_database.mdb"
+ },
+ {
+  "path": "/db.mdb",
+  "url": "http://testasp.vulnweb.com/db.mdb",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/db.mdb"
+ },
+ {
+  "path": "/data.mdb",
+  "url": "http://testasp.vulnweb.com/data.mdb",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/data.mdb"
+ },
+ {
+  "path": "/acuforum.mdb",
+  "url": "http://testasp.vulnweb.com/acuforum.mdb",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/acuforum.mdb"
+ },
+ {
+  "path": "/acuforum/db.mdb",
+  "url": "http://testasp.vulnweb.com/acuforum/db.mdb",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/acuforum_db.mdb"
+ },
+ {
+  "path": "/acuforum/data.mdb",
+  "url": "http://testasp.vulnweb.com/acuforum/data.mdb",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/acuforum_data.mdb"
+ },
+ {
+  "path": "/App_Data/acuforum.mdb",
+  "url": "http://testasp.vulnweb.com/App_Data/acuforum.mdb",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/App_Data_acuforum.mdb"
+ },
+ {
+  "path": "/test.asp",
+  "url": "http://testasp.vulnweb.com/test.asp",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/test.asp"
+ },
+ {
+  "path": "/info.asp",
+  "url": "http://testasp.vulnweb.com/info.asp",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/info.asp"
+ },
+ {
+  "path": "/debug.asp",
+  "url": "http://testasp.vulnweb.com/debug.asp",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/debug.asp"
+ },
+ {
+  "path": "/errors.asp",
+  "url": "http://testasp.vulnweb.com/errors.asp",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/errors.asp"
+ },
+ {
+  "path": "/error.asp",
+  "url": "http://testasp.vulnweb.com/error.asp",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/error.asp"
+ },
+ {
+  "path": "/err.asp",
+  "url": "http://testasp.vulnweb.com/err.asp",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/err.asp"
+ },
+ {
+  "path": "/cdosys.asp",
+  "url": "http://testasp.vulnweb.com/cdosys.asp",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/cdosys.asp"
+ },
+ {
+  "path": "/upload.asp",
+  "url": "http://testasp.vulnweb.com/upload.asp",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/upload.asp"
+ },
+ {
+  "path": "/fileupload.asp",
+  "url": "http://testasp.vulnweb.com/fileupload.asp",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/fileupload.asp"
+ },
+ {
+  "path": "/image.asp",
+  "url": "http://testasp.vulnweb.com/image.asp",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/image.asp"
+ },
+ {
+  "path": "/Default.asp.",
+  "url": "http://testasp.vulnweb.com/Default.asp.",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/Default.asp."
+ },
+ {
+  "path": "/Default.asp ",
+  "url": "http://testasp.vulnweb.com/Default.asp ",
+  "status": "000",
+  "size": "0",
+  "ctype": "-",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/Default.asp_"
+ },
+ {
+  "path": "/Default.asp%20",
+  "url": "http://testasp.vulnweb.com/Default.asp%20",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/Default.asp_20"
+ },
+ {
+  "path": "/Default.asp%20.",
+  "url": "http://testasp.vulnweb.com/Default.asp%20.",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/Default.asp_20."
+ },
+ {
+  "path": "/Default.asp::$DATA",
+  "url": "http://testasp.vulnweb.com/Default.asp::$DATA",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/Default.asp___DATA"
+ },
+ {
+  "path": "/Default.asp/",
+  "url": "http://testasp.vulnweb.com/Default.asp/",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/Default.asp"
+ },
+ {
+  "path": "/Default.asp%00",
+  "url": "http://testasp.vulnweb.com/Default.asp%00",
+  "status": "400",
+  "size": "324",
+  "ctype": "text/html; charset=us-ascii",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/Default.asp_00"
+ },
+ {
+  "path": "/Default.asp%00.txt",
+  "url": "http://testasp.vulnweb.com/Default.asp%00.txt",
+  "status": "400",
+  "size": "324",
+  "ctype": "text/html; charset=us-ascii",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/Default.asp_00.txt"
+ },
+ {
+  "path": "/default.asp::%24DATA",
+  "url": "http://testasp.vulnweb.com/default.asp::%24DATA",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/default.asp___24DATA"
+ },
+ {
+  "path": "/acuforum/Default.asp.",
+  "url": "http://testasp.vulnweb.com/acuforum/Default.asp.",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/acuforum_Default.asp."
+ },
+ {
+  "path": "/acuforum/Default.asp::$DATA",
+  "url": "http://testasp.vulnweb.com/acuforum/Default.asp::$DATA",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/acuforum_Default.asp___DATA"
+ },
+ {
+  "path": "/acuforum/Default.asp/",
+  "url": "http://testasp.vulnweb.com/acuforum/Default.asp/",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/acuforum_Default.asp"
+ },
+ {
+  "path": "/acuforum/Default.asp%20",
+  "url": "http://testasp.vulnweb.com/acuforum/Default.asp%20",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/acuforum_Default.asp_20"
+ },
+ {
+  "path": "/_vti_cnf/Default.asp.cnf::$DATA",
+  "url": "http://testasp.vulnweb.com/_vti_cnf/Default.asp.cnf::$DATA",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/_vti_cnf_Default.asp.cnf___DATA"
+ },
+ {
+  "path": "/. /Default.asp",
+  "url": "http://testasp.vulnweb.com/. /Default.asp",
+  "status": "000",
+  "size": "0",
+  "ctype": "-",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/.__Default.asp"
+ },
+ {
+  "path": "/Default.asp.;",
+  "url": "http://testasp.vulnweb.com/Default.asp.;",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/Default.asp._"
+ },
+ {
+  "path": "/styles.css::$DATA",
+  "url": "http://testasp.vulnweb.com/styles.css::$DATA",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/styles.css___DATA"
+ },
+ {
+  "path": "/acuforum/styles.css::$DATA",
+  "url": "http://testasp.vulnweb.com/acuforum/styles.css::$DATA",
+  "status": "404",
+  "size": "1245",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/acuforum_styles.css___DATA"
+ },
+ {
+  "path": "%2e/Default.asp",
+  "url": "http://testasp.vulnweb.com%2e/Default.asp",
+  "status": "400",
+  "size": "334",
+  "ctype": "text/html; charset=us-ascii",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/_2e_Default.asp"
+ },
+ {
+  "path": "/acuforum/%2e%2e/Default.asp",
+  "url": "http://testasp.vulnweb.com/acuforum/%2e%2e/Default.asp",
+  "status": "200",
+  "size": "3538",
+  "ctype": "text/html",
+  "redirect": "",
+  "body": "/home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testasp-vulnweb-jev-trial/scratch/recon_vti/bodies/acuforum__2e_2e_Default.asp"
+ }
+]

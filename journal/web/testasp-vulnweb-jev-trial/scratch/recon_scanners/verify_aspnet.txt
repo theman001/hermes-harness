@@ -1,0 +1,32 @@
+=== /aspnet_client (Location leak) ===
+HTTP/1.1 301 Moved Permanently
+Content-Type: text/html; charset=UTF-8
+Location: http://testasp.vulnweb.com/aspnet_client/
+Server: Microsoft-IIS/8.5
+X-Powered-By: ASP.NET
+Date: Mon, 28 Sep 2026 07:20:42 GMT
+Content-Length: 164
+
+<head><title>Document Moved</title></head>
+<body><h1>Object Moved</h1>This document may be found <a HREF="http://testasp.vulnweb.com/aspnet_client/">here</a></body>
+=== /index.aspx headers ===
+HTTP/1.1 404 Not Found
+Cache-Control: private
+Content-Type: text/html; charset=utf-8
+Server: Microsoft-IIS/8.5
+X-AspNet-Version: 2.0.50727
+X-Powered-By: ASP.NET
+Date: Mon, 28 Sep 2026 07:20:42 GMT
+Content-Length: 1505
+
+<html>
+    <head>
+        <title>The resource cannot be found.</title>
+        <style>
+         body {font-family:"Verdana";font-weight:normal;font-size: .7em;color:black;} 
+         p {font-family:"Verdana";font-weight:normal;color:black;margin-top: -5px}
+         b {font-family:"Verdana";font-weight:bold;color:black;margin-top: -5px}
+         H1 { font-family:"Verdana";font-weight:normal;font-size:18pt;color:red }
+         H2 { font-family:"Verdana";font-weight:normal;font-size:14pt;color:maroon }
+         pre {font-family:"Lucida Console";font-size: .9em}
+         .marker {font-weight: bold; color: black;text-decoration: none;}

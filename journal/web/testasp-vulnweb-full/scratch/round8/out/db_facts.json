@@ -1,0 +1,72 @@
+{
+  "booleans": {
+    "IS_SRVROLEMEMBER('sysadmin')=1": false,
+    "IS_SRVROLEMEMBER('sysadmin','acunetix')=1": false,
+    "IS_SRVROLEMEMBER('serveradmin')=1": false,
+    "IS_SRVROLEMEMBER('securityadmin')=1": false,
+    "IS_MEMBER('db_owner')=1": false,
+    "HAS_PERMS_BY_NAME(NULL,NULL,'CONTROL SERVER')=1": false,
+    "HAS_PERMS_BY_NAME(NULL,NULL,'ALTER SETTINGS')=1": false,
+    "OBJECT_ID('sys.xp_cmdshell') IS NOT NULL (확장프로시저 존재)": true,
+    "xp_cmdshell 프로시저 호출권한(EXECUTE) 보유": false,
+    "컬럼 'uname' 존재": true,
+    "컬럼 'upass' 존재": true,
+    "컬럼 'id' 존재": false,
+    "컬럼 'userid' 존재": false,
+    "컬럼 'email' 존재": true,
+    "컬럼 'isadmin' 존재": false,
+    "컬럼 'is_admin' 존재": false,
+    "컬럼 'admin' 존재": false,
+    "컬럼 'ulevel' 존재": false,
+    "컬럼 'level' 존재": false,
+    "컬럼 'ustatus' 존재": false,
+    "컬럼 'fullname' 존재": false,
+    "컬럼 'uemail' 존재": false,
+    "컬럼 'upwd' 존재": false,
+    "컬럼 'pwd' 존재": false,
+    "컬럼 'pass' 존재": false,
+    "upass 길이 <= 12 (평문 가능성)": true,
+    "upass 길이 >= 32 (해시 가능성)": true,
+    "upass 가 uname 과 동일한 행 존재": true,
+    "upass 가 16진 문자열만 사용": true,
+    "upass 상위24자리에서 헥스 확인": true,
+    "TABLES 에 'users' 존재": true,
+    "sys.sql_logins 조회 가능": true
+  },
+  "integers": {
+    "sysadmin 로그인 수": 1,
+    "config[xp_cmdshell]": 0,
+    "config[show advanced options]": 0,
+    "config[Ole Automation]": 0,
+    "config[clr enabled]": 0,
+    "config[Ad Hoc Distributed Queries]": 0,
+    "config[Agent XPs]": 0,
+    "sys.configurations 행 수(조회권한 확인)": 69,
+    "users 행 수": 1000,
+    "users 컬럼 수": 5,
+    "게시판 테이블 수": 4,
+    "upass 평균길이(정수부)": 20,
+    "연결된 서버 수": 1,
+    "사용자 DB 수": 7
+  },
+  "strings": {
+    "DB_NAME()": "acuforum",
+    "SYSTEM_USER": "acunetix",
+    "SUSER_SNAME()": "acunetix",
+    "USER_NAME()": "acunetix",
+    "SERVERPROPERTY(ProductVersion)": "<?>",
+    "SERVERPROPERTY(Edition)": "<?>"
+  },
+  "notes": [
+    "uname 값은 열거 목록으로만 보존(자격증명 아님)",
+    "일치한 비밀번호 값은 저장하지 않음 — '후보 일치 사실'과 해시 방식만 기록"
+  ],
+  "unames": [
+    " || a==a",
+    " || a==b",
+    "\r\ncat /e*c/p*swd"
+  ],
+  "credential_hits": [],
+  "mssql_version_string": "Microsoft SQL Server 2014 (SP3-GDR) (KB5029184) - 12.0.6179.",
+  "requests": 1126
+}

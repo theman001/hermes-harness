@@ -1,0 +1,19 @@
+### 우리가 남긴 흔적이 아직 살아있는가 (읽기 전용 오라클)
+  게시글에 onerror=alert(1) 포함 (Round 6 저장형 XSS)           False
+  게시글 제목에 'RT6-STORED-XSS-PROOF' 포함                    False
+  게시글 제목에 'RT7-' 포함 (Round 7 테스트)                      False
+  스레드 제목에 'RT7-' 포함                                    False
+
+### 현재 규모
+  threads 총수 5 이하 ?   False
+  posts 총수 30 이하 ?    True
+  users 총수 200 초과 ?   True
+
+### 홈/포럼 페이지 실제 렌더 (게시글 마커 확인)
+  /Default.asp               200   3559B  posttext=0  img_onerror=False
+  /showforum.asp?id=0        200   4330B  posttext=0  img_onerror=False
+  /showthread.asp?id=0       200   3031B  posttext=1  img_onerror=False
+  /showthread.asp?id=1       200   3323B  posttext=2  img_onerror=False
+  /showthread.asp?id=2       200   3633B  posttext=3  img_onerror=False
+
+총 요청 7건 + GET 5건 (전부 읽기)

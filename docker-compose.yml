@@ -1,0 +1,36 @@
+# Hermes 하네스 — OMV8 Compose 플러그인용 배치 파일 (플레이스홀더 버전, git에 커밋되는 것).
+#
+# **실제 배포 시에는 이 파일을 그대로 쓰지 말 것** — 아래 CHANGE_ME_* 값들에 실제
+# MATTERMOST_TOKEN/DEEPSEEK_API_KEY/TYPESAFE_API_KEY 등을 채운 버전을 Claude Code에게
+# 요청해서 받고, 그 결과물을 OMV8 GUI에 붙여넣을 것 — 실제 값 버전은 git에 절대 올리지
+# 않는다(DOCKER_DEPENDENCIES.md 7~8번 결정).
+#
+# 빌드 컨텍스트가 이 리포 자신의 GitHub 주소를 가리킨다 — private 리포라 빌드 직전에
+# 잠깐 public으로 토글해야 함(DOCKER_DEPENDENCIES.md 7번, 자동화 안 함/수동 절차).
+#
+# HDD 마운트 계획: 아래 모든 volumes: 줄이 `/srv/hermes-data`로 시작한다 — HDD가
+# 붙으면 이 문자열을 전부 새 마운트 경로(예: `/srv/dev-disk-by-uuid-XXXX/hermes-data`)로
+# 찾아바꾸고 다시 Up하면 전체 데이터가 그대로 이전된다.
+
+services:
+  hermes-harness:
+    build:
+      context: https://github.com/CHANGE_ME_GITHUB_USER/hermes-harness.git#main
+      dockerfile: Dockerfile
+    image: hermes-harness:latest
+    container_name: hermes-harness
+    restart: unless-stopped
+    environment:
+      HERMES_DATA_ROOT: /srv/hermes-data
+      MATTERMOST_URL: "CHANGE_ME_MATTERMOST_URL"
+      MATTERMOST_TOKEN: "CHANGE_ME_MATTERMOST_TOKEN"
+      MATTERMOST_HOME_CHANNEL: "CHANGE_ME_MATTERMOST_HOME_CHANNEL"
+      MATTERMOST_ALLOWED_USERS: "CHANGE_ME_MATTERMOST_ALLOWED_USERS"
+      AUXILIARY_APPROVAL_BASE_URL: ""
+      AUXILIARY_APPROVAL_MODEL: ""
+      DEEPSEEK_API_KEY: "CHANGE_ME_DEEPSEEK_API_KEY"
+      TYPESAFE_API_KEY: "CHANGE_ME_TYPESAFE_API_KEY"
+    volumes:
+      - /srv/hermes-data/hermes-harness:/srv/hermes-data/hermes-harness
+      - /srv/hermes-data/hermes-profile:/srv/hermes-data/hermes-profile
+      - /srv/hermes-data/mitmproxy:/srv/hermes-data/mitmproxy

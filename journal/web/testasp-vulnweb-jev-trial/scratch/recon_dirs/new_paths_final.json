@@ -1,0 +1,207 @@
+[
+ {
+  "path": "/shownews.asp",
+  "status": 500,
+  "size": 1208
+ },
+ {
+  "path": "/styles.css",
+  "status": 200,
+  "size": 3390
+ },
+ {
+  "path": "/rpb.png",
+  "status": 200,
+  "size": 40
+ },
+ {
+  "path": "/Templatize.asp",
+  "status": 500,
+  "size": 1208
+ },
+ {
+  "path": "/cgi-bin/test.txt",
+  "status": 200,
+  "size": 3
+ },
+ {
+  "path": "/aspnet_client/system_web/",
+  "status": 403,
+  "size": 1233
+ },
+ {
+  "path": "/aspnet_client/system_web/2_0_50727/",
+  "status": 403,
+  "size": 1233
+ },
+ {
+  "path": "/t/xss.html",
+  "status": 200,
+  "size": 33
+ },
+ {
+  "path": "/t/xss.js",
+  "status": 200,
+  "size": 27
+ },
+ {
+  "path": "/t/dot.gif",
+  "status": 200,
+  "size": 43
+ },
+ {
+  "path": "/HTML/About.html",
+  "status": 200,
+  "size": 1995
+ },
+ {
+  "path": "/Templates/MainTemplate.dwt.asp",
+  "status": 200,
+  "size": 2488
+ },
+ {
+  "path": "/_vti_cnf/DB.asp",
+  "status": 200,
+  "size": 338
+ },
+ {
+  "path": "/_vti_cnf/Default.asp",
+  "status": 200,
+  "size": 926
+ },
+ {
+  "path": "/_vti_cnf/Login.asp",
+  "status": 200,
+  "size": 772
+ },
+ {
+  "path": "/_vti_cnf/Search.asp",
+  "status": 200,
+  "size": 926
+ },
+ {
+  "path": "/_vti_cnf/logout.asp",
+  "status": 200,
+  "size": 338
+ },
+ {
+  "path": "/_vti_cnf/register.asp",
+  "status": 200,
+  "size": 778
+ },
+ {
+  "path": "/_vti_cnf/showforum.asp",
+  "status": 200,
+  "size": 861
+ },
+ {
+  "path": "/_vti_cnf/shownews.asp",
+  "status": 200,
+  "size": 338
+ },
+ {
+  "path": "/_vti_cnf/showthread.asp",
+  "status": 200,
+  "size": 882
+ },
+ {
+  "path": "/_vti_cnf/templatize.asp",
+  "status": 200,
+  "size": 930
+ },
+ {
+  "path": "/_vti_cnf/styles.css",
+  "status": 200,
+  "size": 404
+ },
+ {
+  "path": "/Images/_vti_cnf/",
+  "status": 403,
+  "size": 1233
+ },
+ {
+  "path": "/Images/_vti_cnf/logo.gif",
+  "status": 200,
+  "size": 286
+ },
+ {
+  "path": "/jscripts/tiny_mce/",
+  "status": 403,
+  "size": 1233
+ },
+ {
+  "path": "/jscripts/tiny_mce/tiny_mce.js",
+  "status": 200,
+  "size": 132342
+ },
+ {
+  "path": "/jscripts/tiny_mce/blank.htm",
+  "status": 200,
+  "size": 213
+ },
+ {
+  "path": "/jscripts/tiny_mce/tiny_mce_popup.js",
+  "status": 200,
+  "size": 6835
+ },
+ {
+  "path": "/jscripts/tiny_mce/langs/",
+  "status": 403,
+  "size": 1233
+ },
+ {
+  "path": "/jscripts/tiny_mce/langs/en.js",
+  "status": 200,
+  "size": 1650
+ },
+ {
+  "path": "/jscripts/tiny_mce/themes/",
+  "status": 403,
+  "size": 1233
+ },
+ {
+  "path": "/jscripts/tiny_mce/themes/simple/",
+  "status": 403,
+  "size": 1233
+ },
+ {
+  "path": "/jscripts/tiny_mce/themes/simple/editor_template.js",
+  "status": 200,
+  "size": 5727
+ },
+ {
+  "path": "/jscripts/tiny_mce/themes/simple/images/",
+  "status": 403,
+  "size": 1233
+ },
+ {
+  "path": "/jscripts/tiny_mce/utils/",
+  "status": 403,
+  "size": 1233
+ },
+ {
+  "path": "/jscripts/tiny_mce/utils/form_utils.js",
+  "status": 200,
+  "size": 6029
+ },
+ {
+  "path": "/jscripts/tiny_mce/utils/mctabs.js",
+  "status": 200,
+  "size": 1836
+ },
+ {
+  "path": "/jscripts/tiny_mce/utils/validate.js",
+  "status": 200,
+  "size": 1719
+ },
+ {
+  "path": "/jscripts/tiny_mce/_vti_cnf/",
+  "status": 403,
+  "size": 1233
+ },
+ {
+  "path": "/jscripts/tiny_mce/_vti_cnf/tiny_mce.js",
+  "status": 200,
+  "size": 180
+ }
+]

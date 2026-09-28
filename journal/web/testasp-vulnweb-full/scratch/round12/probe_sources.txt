@@ -1,0 +1,53 @@
+### 1. ASP 소스 전량 확보 (LFI 원문)
+  Default.asp            200 7142
+  db.asp                 200 2908
+  logInput.asp           200 3538
+  Login.asp              200 7154
+  Logout.asp             200 2810
+  Register.asp           200 7367
+  Search.asp             200 7786
+  ShowForum.asp          200 10668
+  ShowThread.asp         200 9786
+  shownews.asp           200 2991
+  Templatize.asp         200 5993
+  MainTemplate.dwt.asp   500 1208
+
+### 2. _vti_cnf (FrontPage 메타데이터) — HTTP 직접 접근
+  /_vti_cnf/                     200 926
+  /_vti_cnf/Default.asp          200 926
+  /_vti_cnf/db.asp               200 338
+  /_vti_cnf/Register.asp         200 778
+  /html/_vti_cnf/                404 1245
+  /jscripts/_vti_cnf/            404 1245
+  /images/_vti_cnf/              403 1233
+  /avatars/_vti_cnf/             404 1245
+  /Templates/_vti_cnf/           404 1245
+  /_vti_cnf/styles.css           200 404
+
+### 3. _vti_cnf 내용(메타데이터가 노출하는 정보)
+vti_encoding:SR|utf8-nl
+vti_timelastmodified:TR|05 Oct 2007 10:01:19 -0000
+vti_extenderversion:SR|4.0.2.8912
+vti_cacheddtm:TX|05 Oct 2007 10:01:19 -0000
+vti_filesize:IR|3663
+vti_cachedlinkinfo:VX|Q|styles.css H|http://www.acunetix.com/ S|Images/logo.gif H|Templatize.asp H|Default.asp H|Search.asp
+vti_cachedsvcrellinks:VX|FQUS|acuforum/styles.css NHHS|http://www.acunetix.com/ FSUS|acuforum/Images/logo.gif FHUS|acuforum/Templatize.asp FHUS|acuforum/Default.asp FHUS|acuforum/Search.asp
+vti_cachedtitle:SR|acuforum forums
+vti_title:SR|acuforum forums
+vti_cachedbodystyle:SR|<body>
+vti_cachedhasbots:BR|false
+vti_cachedhastheme:BR|false
+vti_cachedhasborder:BR|false
+vti_metatags:VR|HTTP-EQUIV=Content-Type text/html;\\ charset=iso-8859-1
+vti_backlinkinfo:VX|acuforum/login.asp acuforum/register.asp acuforum/search.asp acuforum/default.asp acuforum/showthread.asp acuforum/showforum.asp acuforum/templatize.asp
+
+### 4. 디렉터리 리스팅 가능성 (IIS Directory Browsing)
+  /html/             403 1233
+  /jscripts/         403 1233
+  /images/           403 1233
+  /avatars/          403 1233
+  /Templates/        403 1233
+  /aspnet_client/    403 1233
+
+### 5. 대조군
+  control_db_asp          200 2908

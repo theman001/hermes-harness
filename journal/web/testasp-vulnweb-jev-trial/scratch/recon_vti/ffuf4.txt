@@ -1,0 +1,27 @@
+### _vti_cnf/FUZZ.asp  (unknown root .asp files exposed via FrontPage metadata)
+login.asp
+search.asp
+register.asp
+logout.asp
+db.asp
+Search.asp
+Login.asp
+default.asp
+.
+Default.asp
+Register.asp
+showthread.asp
+Logout.asp
+DB.asp
+LogOut.asp
+LogIn.asp
+SEARCH.asp
+shownews.asp
+LOGIN.asp
+ShowThread.asp
+DEFAULT.asp
+Db.asp
+ShowForum.asp
+### _vti_cnf/FUZZ (bare dirs)
+.
+### DONE4

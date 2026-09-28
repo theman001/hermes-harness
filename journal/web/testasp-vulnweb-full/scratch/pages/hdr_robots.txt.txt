@@ -1,0 +1,10 @@
+HTTP/1.1 200 OK
+Content-Type: text/plain
+Last-Modified: Mon, 06 May 2019 12:45:52 GMT
+Accept-Ranges: bytes
+ETag: "3629faa394d51:0"
+Server: Microsoft-IIS/8.5
+X-Powered-By: ASP.NET
+Date: Wed, 23 Sep 2026 07:12:47 GMT
+Content-Length: 13
+

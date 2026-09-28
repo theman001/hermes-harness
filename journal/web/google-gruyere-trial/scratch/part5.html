@@ -1,0 +1,560 @@
+<HTML><HEAD><META http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<TITLE>Web Application Exploits and Defenses</TITLE>
+<LINK type="text/css" rel="stylesheet" href="../static/codelab.css">
+<!--MARK-Z-->
+<SCRIPT>
+function toggleBlock(heading, whichID) {
+  var image = heading.childNodes[0];
+  var block = document.getElementById(whichID);
+  if (block) {
+    if (getDisplay(block) == 'block') {
+      block.style.display = 'none';
+      image.src = 'static/closed.gif';
+    } else {    // "none" or ""
+      block.style.display = 'block';
+      image.src = 'static/open.gif';
+    }
+  }
+}
+
+function getDisplay(block) {
+  var value = block.style.display;
+  if (!value) {
+    if (document.defaultView) {
+      var computedStyle = document.defaultView.getComputedStyle(block, "");
+      value = computedStyle.getPropertyValue('display');
+    } else if (block.currentStyle) {
+      value = block.currentStyle.display;
+    }
+  }
+  return value;
+}
+</SCRIPT>
+</HEAD>
+<BODY bgcolor="#ffffff">
+
+<DIV class="banner"></DIV>
+<H1><FONT size="+2"><IMG src="/static/gruyere-78.png" style="vertical-align:middle">
+Web Application Exploits and Defenses  (Part 5)</FONT> </H1>
+<P>
+A Codelab by Bruce Leban, Mugdha Bendre, and Parisa Tabriz
+</P>
+<DIV class="printable">
+<DIV class="column1">
+Table of Contents
+<UL>
+<LI class="L1" style="padding-top:0pt"> <A href="/#0__hackers">Beat the hackers</A></LI>
+<LI class="L1" style="padding-top:0pt"> <A href="/#0__gruyere">Gruyere</A></LI>
+<LI class="L1"> <A href="/part1#1__setup">Set-up</A>
+  <UL>
+  <LI class="L2"> <A href="/part1#1__reset_button">Reset Button</A></LI>
+  <LI class="L2"> <A href="/part1#1__about_the_code">About the Code</A></LI>
+  <LI class="L2"> <A href="/part1#1__features_and_technologies">Features and Technologies</A></LI>
+  </UL></LI>
+<LI class="L1"> <A href="/part1#1__using_gruyere">Using Gruyere</A></LI>
+<LI class="L1"> <A href="/part2#2__cross_site_scripting">Cross-Site Scripting (XSS)</A>
+  <UL>
+  <LI class="L2"> <A href="/part2#2__xss_challenge">XSS Challenges</A></LI>
+  <LI class="L2"> <A href="/part2#2__file_upload_xss">File Upload XSS</A></LI>
+  <LI class="L2"> <A href="/part2#2__reflected_xss">Reflected XSS</A></LI>
+  <LI class="L2"> <A href="/part2#2__stored_xss">Stored XSS</A></LI>
+  <LI class="L2"> <A href="/part2#2__stored_xss_via_html_attribute">Stored XSS via HTML Attribute</A></LI>
+  <LI class="L2"> <A href="/part2#2__stored_xss_via_ajax">Stored XSS via AJAX</A></LI>
+  <LI class="L2"> <A href="/part2#2__reflected_xss_via_ajax">Reflected XSS via AJAX</A></LI>
+  <LI class="L2"> <A href="/part2#2__more_about_xss">More about XSS</A></LI>
+  </UL></LI>
+<LI class="L1"> <A href="/part3#3__client_state_manipulation">Client-State Manipulation</A>
+  <UL>
+  <LI class="L2"> <A href="/part3#3__elevation_of_privilege"> Elevation of Privilege </A></LI>
+  <LI class="L2"> <A href="/part3#3__cookie_manipulation"> Cookie Manipulation </A></LI>
+  </UL></LI>
+<LI class="L1"> <A href="/part3#3__cross_site_request_forgery">Cross-Site Request Forgery (XSRF)</A>
+  <UL>
+  <LI class="L2"> <A href="/part3#3__xsrf_challenge">XSRF Challenge</A></LI>
+  <LI class="L2"> <A href="/part3#3__more_about_preventing_xsrf">More about preventing XSRF</A></LI>
+  </UL></LI>
+<LI class="L1"> <A href="/part3#3__cross_site_script_inclusion">Cross Site Script Inclusion (XSSI)</A>
+  <UL>
+  <LI class="L2"> <A href="/part3#3__xssi_challenge">XSSI Challenge</A></LI>
+  </UL></LI>
+<LI class="L1"> <A href="/part4#4__path_traversal">Path Traversal</A>
+  <UL>
+  <LI class="L2"> <A href="/part4#4__information_disclosure_path_traversal">Information disclosure via path traversal </A></LI>
+  <LI class="L2"> <A href="/part4#4__data_tampering_path_traversal">Data tampering via path traversal </A></LI>
+  </UL></LI>
+<LI class="L1"> <A href="/part4#4__denial_of_service">Denial of Service</A>
+  <UL>
+  <LI class="L2"> <A href="/part4#4__dos_quit_server">DoS - Quit the Server</A></LI>
+  <LI class="L2"> <A href="/part4#4__dos_overload_server">DoS - Overloading the Server</A></LI>
+  <LI class="L2"> <A href="/part4#4__more_dos">More on Denial of Service</A></LI>
+  </UL></LI>
+<LI class="L1"> <A href="/part4#4__code_execution">Code Execution</A>
+  <UL>
+  <LI class="L2"> <A href="/part4#4__code_execution_challenge">Code Execution Challenge</A></LI>
+  <LI class="L2"> <A href="/part4#4__more_code_execution">More on Remote Code Execution</A></LI>
+  </UL></LI>
+<LI class="L1"> <A href="/part5#5__configuration_vulnerabilities">Configuration Vulnerabilities</A>
+  <UL>
+  <LI class="L2"> <A href="/part5#5__information_disclosure_config_1">Information disclosure #1</A></LI>
+  <LI class="L2"> <A href="/part5#5__information_disclosure_config_2">Information disclosure #2</A></LI>
+  <LI class="L2"> <A href="/part5#5__information_disclosure_bug_3">Information disclosure #3 </A></LI>
+  </UL></LI>
+<LI class="L1"> <A href="/part5#5__ajax_vulnerabilities">AJAX vulnerabilities</A>
+  <UL>
+  <LI class="L2"> <A href="/part5#5__dos_via_ajax">DoS via AJAX</A></LI>
+  <LI class="L2"> <A href="/part5#5__phishing_via_ajax">Phishing via AJAX</A></LI>
+  </UL></LI>
+<LI class="L1"> <A href="/part5#5__other_vulnerabilities"> Other Vulnerabilities </A> </H2>
+  <UL>
+  <LI class="L2"> <A href="/part5#5__buffer_and_integer_overflow">Buffer Overflow and Integer Overflow</A></LI>
+  <LI class="L2"> <A href="/part5#5__sql_injection"> SQL Injection </A></LI>
+  </UL></LI>
+<LI class="L1"> <A href="/part5#5__after_the_codelab">After the Codelab</A></LI>
+</UL>
+</DIV>
+<DIV class="column2">
+<P></P>
+<P></P>
+<P>
+<NOAUTOLINK>
+</NOAUTOLINK></P>
+
+<H2><A name="5__configuration_vulnerabilities"> </A> Configuration
+Vulnerabilities </H2>
+<P>
+Applications are often installed with default settings that attackers
+can use to attack them. This is particularly an issue with third party
+software where an attacker has easy access to a copy of the same
+application or framework you are running. Hackers know the default
+account names and passwords. For example, looking at the contents
+of <CODE><A href="/code/?data.py">data.py</A></CODE> you know that
+there's a default administrator account named 'admin' with the
+password
+'secret'.
+</P>
+<P> Configuration vulnerabilities also include features that
+increase attack surface. A common example is a feature that is on by
+default but you are not using, so you didn't configure it and the
+default configuration is vulnerable. It also includes debug features
+like status pages or dumping stack traces on failures.
+</P>
+<P></P>
+<H3><A name="5__information_disclosure_config_1"> </A> Information disclosure #1 </H3>
+<P>
+<IMG src="/static/cheese_w.png" style="vertical-align:middle; padding-right: 5px;">
+<B>Read the contents of the database off of a
+running server by exploiting a configuration vulnerability.</B>
+</P>
+<P>You should look through the Gruyere code looking for default
+configurations or debug features that don't belong there.</P>
+<DIV style="margin-left:18pt">
+<H4 style="cursor: pointer" onclick="toggleBlock(this, 'disclosure_1_hint');"><IMG src="/static/closed.gif"> Hint 1 </H4>
+<DIV id="disclosure_1_hint" style="display:none">
+<P>
+Look at all the files installed with Gruyere. Are there any files
+that shouldn't be there?
+</P>
+<P></P>
+</DIV>
+<H4 style="cursor: pointer" onclick="toggleBlock(this, 'disclosure_1_hint2');"><IMG src="/static/closed.gif"> Hint 2 </H4>
+<DIV id="disclosure_1_hint2" style="display:none">
+<P>
+Look for a <CODE>.gtl</CODE> file that isn't referenced anywhere.
+</P>
+<P></P>
+</DIV>
+<H4 style="cursor: pointer" onclick="toggleBlock(this, 'disclosure_1_sol');"><IMG src="/static/closed.gif"> Exploit and Fixes </H4>
+<DIV id="disclosure_1_sol" style="display:none">
+<P>
+<B>To exploit,</B> you can use the debug dump
+page <CODE><A href="/code/?resoources/dump.gtl">dump.gtl</A></CODE>
+to display the contents of the database via the following URL:
+</P><PRE>
+https://google-gruyere.appspot.com/123/dump.gtl
+</PRE>
+<P>
+<B>To fix,</B> always make sure debug features are not
+installed. In this case, delete <CODE>dump.gtl</CODE>. This is an
+example of the kind of debug feature that might be left in an
+application by mistake. If a debug feature like this is necessary,
+then it needs to be carefully locked down: only admin users should
+have access and only requests from debug IP addresses should be
+accepted.
+</P><P> This exploit exposes the users' passwords. Passwords should
+never be stored in cleartext. Instead, you should
+use <A href="https://www.google.com/search?q=password+hashing">password
+hashing</A>. The idea is that to authenticate a user, you don't need
+to know their password, only be convinced that the user knows it. When
+the user sets their password, you store only a cryptographic hash of
+the password and a salt value. When the user re-enters their password
+later, you recompute the hash and if it matches you conclude the
+password is correct. If an attacker obtains the hash value, it's very
+difficult for them to reverse that to find the original
+password. (Which is a good thing, since
+despite <A href="https://www.google.com/search?q=choosing+a+good+password">lots
+of advice</A> to the contrary, users frequently use the same weak
+passwords for multiple sites.)
+</P></DIV>
+</DIV>
+<P></P>
+<H3><A name="5__information_disclosure_config_2"> </A> Information disclosure #2 </H3>
+<P>
+<IMG src="/static/cheese_w.png" style="vertical-align:middle; padding-right: 5px;">
+<B>Even after implementing the fix described above, an attacker can
+undo it and execute the attack! How can that be?</B>
+</P>
+<P></P>
+<DIV style="margin-left:18pt">
+<H4 style="cursor: pointer" onclick="toggleBlock(this, 'disclosure_2_hint');"><IMG src="/static/closed.gif"> Hint </H4>
+<DIV id="disclosure_2_hint" style="display:none">
+<P>
+You can upload a file of any type.
+</P>
+<P></P>
+</DIV>
+<P></P>
+<H4 style="cursor: pointer" onclick="toggleBlock(this, 'disclosure_2_sol');"><IMG src="/static/closed.gif"> Exploit and Fixes </H4>
+<DIV id="disclosure_2_sol" style="display:none">
+<P>
+<B>To exploit,</B> Gruyere allows the user to upload files of any
+type, including <CODE>.gtl</CODE> files. So the attacker can simply
+upload their own copy
+of <CODE><A href="/code/?resources/dump.gtl">dump.gtl</A></CODE> or a
+similar file and than access it. In fact, as noted earlier, hosting
+arbitrary content on the server is a major security risk whether it's
+HTML, JavaScript, Flash or something else. Allowing a file with an
+unknown file type may lead to a security hole in the future.
+</P>
+<P>
+<B>To fix,</B> we should do several things:
+</P><OL>
+<LI> Only files that are part of Gruyere should be treated as templates.
+</LI>
+<LI> Don't store user uploaded files in the same place as application files.
+</LI>
+<LI> Consider limiting the types of files that can be uploaded (via a
+whitelist).
+</LI>
+</OL>
+</DIV>
+</DIV>
+<H3><A name="5__information_disclosure_bug_3"> </A> Information disclosure #3 </H3>
+<P>
+<IMG src="/static/cheese_w.png" style="vertical-align:middle; padding-right: 5px;">
+<B>Even after implementing the fixes described above, a similar attack
+is still possible through a different attack vector. Can you find it?</B>
+</P>
+<P>
+This attack isn't a a configuration vulnerability, just bad code.
+</P>
+<DIV style="margin-left:18pt">
+<H4 style="cursor: pointer" onclick="toggleBlock(this, 'disclosure_3_hint1');"><IMG src="/static/closed.gif"> Hint 1 </H4>
+<DIV id="disclosure_3_hint1" style="display:none">
+<P>You can insert something in your private snippet which will display the contents of the database.</P>
+</DIV>
+<P></P>
+<H4 style="cursor: pointer" onclick="toggleBlock(this, 'disclosure_3_hint2');"><IMG src="/static/closed.gif"> Hint 2 </H4>
+<DIV id="disclosure_3_hint2" style="display:none">
+<P>This attack is closely related to the previous ones. There is a bug
+in the code that expands templates that you can exploit.</P>
+</DIV>
+<P></P>
+<H4 style="cursor: pointer" onclick="toggleBlock(this, 'disclosure_3_sol');"><IMG src="/static/closed.gif"> Exploit and Fixes </H4>
+<DIV id="disclosure_3_sol" style="display:none">
+<P>
+There is a defect in Gruyere's template expansion code that reparses
+expanded variables. Specifically, when expanding a block it expands
+variables in the block. Then it parses the block as a template and
+expands variables again,
+</P>
+<B>To exploit,</B> add this to your private snippet:
+<PRE>
+{{_db:pprint}}
+</PRE>
+</P>
+<P>
+<B>To fix,</B> modify the template code so it never reparses inserted
+variable values. The defect in the code is due to the fact
+that <CODE>ExpandTemplate</CODE> calls <CODE>_ExpandBlocks</CODE>
+followed by <CODE>_ExpandVariables</CODE>,
+but <CODE>_ExpandBlocks</CODE> calls <CODE>ExpandTemplate</CODE> on
+nested blocks. So if a variable is expanded inside a nested block and
+contains something that looks like a variable template, it will get
+expanded a second time. That sounds complicated because it is
+complicated. Parsing blocks and variables separately is a fundamental
+flaw in the design of the expander, so the fix is non-trivial.
+</P>
+<P>
+This exploit is possible because the template language allows
+arbitrary database access. It would be safer if the templates were
+only allowed to access data specifically provided to them. For
+example, a template could have an associated database query and only
+the data matched by that query would be passed to the template. This
+would limit the scope of a bug like this to data that the user was
+already allowed to access.
+</P>
+</DIV>
+</DIV>
+<BR><BR>
+</P><H2><A name="5__ajax_vulnerabilities"> </A> AJAX
+vulnerabilities </H2> Bad AJAX code allows attackers to modify parts
+of your application in ways that you might not expect. In traditional
+client development, there is a clear separation between the
+application and the data it displays. That's not true in web
+applications as the next two attacks will make clear.
+<P></P>
+<H3><A name="5__dos_via_ajax"> </A> DoS via AJAX </H3>
+<P>
+<IMG src="/static/cheese_b.png" style="vertical-align:middle;
+padding-right: 5px;"> <B>Find an attack that prevents users from seeing
+their private snippets on the home page.</B> (The attack should be
+triggered after clicking the refresh link and without using XSS.)
+</P>
+<P></P>
+<DIV style="margin-left:18pt">
+<P></P>
+<H4 style="cursor: pointer" onclick="toggleBlock(this, 'dom_hint');"><IMG src="/static/closed.gif"> Hint 1 </H4>
+<DIV id="dom_hint" style="display:none">
+<P>
+Can you figure out how to change the value of the private snippet in
+the AJAX response?
+</P>
+<P></P>
+</DIV>
+<H4 style="cursor: pointer" onclick="toggleBlock(this, 'dom_hint2');"><IMG src="/static/closed.gif"> Hint 2 </H4>
+<DIV id="dom_hint2" style="display:none">
+<P>
+What happens if a JSON object has a duplicate key value?
+</P>
+<P></P>
+</DIV>
+<H4 style="cursor: pointer" onclick="toggleBlock(this, 'dom_sol');"><IMG src="/static/closed.gif"> Exploit and Fix </H4>
+<DIV id="dom_sol" style="display:none">
+<P>
+<B>To exploit,</B> create a user
+named <CODE>private_snippet</CODE> and create at least one
+snippet. The JSON response will then be <CODE>{'private_snippet' :
+&lt;user's private snippet&gt;, ..., 'private_snippet' :
+&lt;attacker's snippet&gt;}</CODE> and the attacker's snippet replaces
+the user's.
+</P>
+<P>
+<B>To fix,</B> the AJAX code needs to make sure that the
+data only goes where it's supposed to go. The flaw here is that the
+JSON structure is not robust. A better structure would
+be <CODE>[&lt;private_snippet&gt;, {&lt;user&gt; :
+&lt;snippet&gt;,...}]</CODE>.
+</P>
+<P></P>
+</DIV>
+</DIV>
+<P></P>
+<H3><A name="5__phishing_via_ajax"> </A> Phishing via AJAX </H3>
+<P>
+While the previous attack may seem like a minor inconvenience,
+careless DOM manipulation can lead to much more serious problems.
+</P>
+<P>
+<IMG src="/static/cheese_b.png" style="vertical-align:middle;
+padding-right: 5px;"> <B>Find a way to change the sign in link in the
+upper right corner to point to <CODE>https://evil.example.com</CODE>.</B>
+</P>
+<P> (The attack should be triggered after clicking the refresh
+link and without using XSS or a script.)
+</P>
+<P></P>
+<DIV style="margin-left:18pt">
+<H4 style="cursor: pointer" onclick="toggleBlock(this, 'phishing_hint');"><IMG src="/static/closed.gif"> Hint 1 </H4>
+<DIV id="phishing_hint" style="display:none">
+<P>
+Look at what the script does to replace the snippets on the page. Can
+you get it to replace the sign in link?
+</P>
+<P></P>
+</DIV>
+<H4 style="cursor: pointer" onclick="toggleBlock(this, 'phishing_hint2');"><IMG src="/static/closed.gif"> Hint 2 </H4>
+<DIV id="phishing_hint2" style="display:none">
+<P>
+Look at the AJAX code to see how it replaces each snippet, and then
+look at the structure of the home page and see if you can see what
+else you might be able to replace. (You can't just replace the sign in
+link. You'll have to replace a bit more.)
+</P>
+<P></P>
+</DIV>
+<H4 style="cursor: pointer" onclick="toggleBlock(this, 'phishing_sol');"><IMG src="/static/closed.gif"> Exploit and Fix </H4>
+<DIV id="phishing_sol" style="display:none">
+<P>
+<B>To exploit,</B> create a user
+named <CODE>menu-right</CODE> and publish a snippet that looks exactly
+like the right side of the menu bar.
+</P>
+<P></P>
+<PRE>
+&lt;a href='https://evil.example.com/login'&gt;Sign in&lt;/a&gt;
+| &lt;a href='https://evil.example.com/newaccount.gtl'&gt;Sign up&lt;/a&gt;
+</PRE>
+<P>
+If the user is already logged in, the menu bar will look wrong. But
+that's ok, since there's a good chance the user will just think they
+somehow accidentally got logged out of the web site and log in again.
+</P>
+<P>
+<B>To fix,</B> the process of modifying the DOM needs to be
+made more robust. When user values are used in as DOM element
+identifiers, you should ensure that there can't be a conflict as there
+is here, for example, applying a prefix to user values
+like <CODE>id="user_<USER>"</USER></CODE>. Even better, use your own
+identifiers rather than user values.
+</P>
+<P> This spoofing attack is easily detected when the user clicks
+Sign in and ends up at <CODE>evil.example.com</CODE>. A clever attacker could
+do something harder to detect, like replacing the Sign in link with a
+script that renders the sign in form on the current page with the form
+submission going to their server.
+</P>
+<P></P>
+</DIV>
+</DIV>
+<BR><P></P>
+<P></P>
+<H2><A name="5__other_vulnerabilities"> </A> Other Vulnerabilities </H2>
+<H3><A name="5__buffer_and_integer_overflow"> </A> Buffer Overflow and Integer Overflow </H3>
+<DIV><P>A <A href="https://www.google.com/search?q=buffer+overflow"
+target="_top">buffer overflow</A> vulnerability exists when an
+application does not properly guard its buffers and allow user data to
+write past the end of a buffer. This excess data can modify other
+variables, including pointers and function return addresses, leading
+to arbitrary code execution. Historically, buffer overflow
+vulnerabilities have been responsible for some of the most widespread
+internet attacks
+including <a href="https://www.google.com/search?q=sql+slammer">SQL
+Slammer<a>, <a href="https://www.google.com/search?q=blaster+worm">Blaster</a>
+and <a href="https://www.google.com/search?q=code+red+worm">Code
+Red</a> computer worms. The PS2, Xbox and Wii have all been hacked
+using buffer overflow exploits.
+</P>
+<P>While not as well
+known, <A href="https://www.google.com/search?q=integer+overflow+vulnerability"
+target="_top">integer overflow</A> vulnerabilities can be just as
+dangerous.  Any time an integer computation silently returns an
+incorrect result, the application will operate incorrectly. In the
+best case, the application fails. In the worst case, there is a
+security bug. For example, if an application checks
+that <CODE>length&nbsp;+&nbsp;1&nbsp;&lt;&nbsp;limit</CODE> then this
+will succeed if <CODE>length</CODE> is the largest positive integer
+value, which can then expose a buffer overflow vulnerability.
+</P>
+<P>This codelab doesn't cover overflow vulnerabilities because
+Gruyere is written in Python, and therefore not vulnerable to
+typical buffer and integer overflow problems. Python won't allow you
+to read or write outside the bounds of an array and integers can't
+overflow. While C and C++ programs are most commonly known to expose
+these vulnerabilities, other languages are not immune. For example,
+while Java was designed to prevent buffer overflows, it silently
+ignores integer overflow.
+</P>
+<P>
+Like all applications, Gruyere is vulnerable to platform vulnerabilities. That
+is, if there are security bugs in the platforms that Gruyere is built on top
+of, then those bugs would also apply to Gruyere. Gruyere's platform
+includes: the Python runtime system and libraries, AppEngine, the operating
+system that Gruyere runs on and the client side software (including the web
+browser) that users use to run Gruyere. While platform vulnerabilities are
+important, they are outside the scope of this codelab as you generally can't fix
+platform vulnerabilities by making changes to your application. Fixing platform
+vulnerabilities yourself is also not practical for many people, but you can
+mitigate your risks by making sure that you are diligent in applying security
+updates as they are released by platform vendors.
+</P>
+</DIV>
+<!--MARK-D-->
+<H3><A name="5__sql_injection"> </A> SQL Injection </H3>
+<DIV><P>Just as XSS vulnerabilities allow attackers to inject script into
+web pages, <a href="https://www.google.com/search?q=sql+injection">SQL
+injection</a> vulnerabilities allow attackers to inject arbitrary
+scripts into SQL queries. When a SQL query is executed it can either
+read or write data, so an attacker can use SQL injection to read your
+entire database as well as overwrite it, as described in the classic
+<a href="https://xkcd.com/327/">Bobby Tables</a> XKCD comic. If you use
+SQL, the most important advice is to avoid building queries by string
+concatenation: use API calls instead. This codelab doesn't cover SQL
+injection because Gruyere doesn't use SQL.
+</P>
+</DIV>
+<BR><BR>
+<H2><A name="5__after_the_codelab"> </A> After the Codelab </H2>
+<P>
+We hope that you found this codelab instructive. If you want more
+practice, there are many more security bugs in Gruyere than the ones
+described above.  You should attack your own application using what
+you've learned and write unit tests to verify that these bugs are not
+present and won't get introduced in the future. You should also
+consider using <A href="https://www.google.com/search?q=fuzz+testing"
+target="_top">fuzz testing</A> tools. For more information about
+security at Google, please visit
+our <A href="https://security.googleblog.com/"
+target="_top">blog</A> or
+our <A href="https://www.google.com/about/appsecurity/"
+target="_top">corporate security page</A>.
+</P>
+<P>
+If you'd like to share this codelab with others, please consider
+tweeting or buzzing about it or posting one of these badges on your
+blog or personal page:
+<!--MARK-E-->
+</P>
+<div>
+<table style="border-collapse:collapse;border:solid 1 black" cellpadding="5">
+<tr><td style="border:solid 1 black;text-align:center;vertical-align:middle">
+
+<a href="https://google-gruyere.appspot.com/">
+<img src="../static/gruyere-badge.png"
+style="padding:4pt" border="0" alt="Learn how to make web apps more
+secure. Do the Gruyere codelab."></a>
+
+</td><td style="border:solid 1 black;vertical-align:middle">
+
+<pre style="margin:0">
+&lt;a href="https://google-gruyere.appspot.com/"&gt;
+&lt;img src="//google-gruyere.appspot.com/static/gruyere-badge.png"
+style="padding:4pt" border="0" alt="Learn how to make web apps more
+secure. Do the Gruyere codelab."&gt;&lt;/a&gt;
+</pre>
+<div align="center" style="margin:0">(Line breaks above should be copied verbatim.)</div>
+
+</td></tr><tr><td style="border:solid 1 black;text-align:center;vertical-align:middle">
+
+<a href="https://google-gruyere.appspot.com/">
+<img src="../static/gruyere-40.png" 
+style="padding:4pt" border="0" title="Learn how to make web apps more
+secure. Do the Gruyere codelab." alt="Learn how to make web apps more
+secure. Do the Gruyere codelab."></a>
+
+</td><td style="border:solid 1 black;vertical-align:middle">
+
+<pre style="margin:0">
+&lt;a href="https://google-gruyere.appspot.com/"&gt;
+&lt;img src="//google-gruyere.appspot.com/static/gruyere-40.png"
+style="padding:4pt" border="0" title="Learn how to make web apps more
+secure. Do the Gruyere codelab." alt="Learn how to make web apps more 
+secure. Do the Gruyere codelab."&gt;&lt;/a&gt;
+</pre>
+<div align="center"  style="margin:0">(Line breaks above should be copied verbatim.)</div>
+</td></tr></table></div>
+<!--MARK-F-->
+
+<!--NEXTLINK-->
+<BR>
+<P style="font-size:x-small">
+&copy; Google 2017 <A href="https://www.google.com/intl/en/policies/terms/">Terms of Service</A>
+<BR>The code portions of this codelab are licensed under the
+Creative Commons Attribution-No Derivative Works 3.0 United States license
+&lt;<A href="https://creativecommons.org/licenses/by-nd/3.0/us/">https://creativecommons.org/licenses/by-nd/3.0/us</A>&gt;.
+Brief excerpts of the code may be used for educational or
+instructional purposes provided this notice is kept intact.
+Except as otherwise noted the remainder of this codelab is licensed under the
+Creative Commons Attribution 3.0 United States license
+&lt;<A href="https://creativecommons.org/licenses/by/3.0/us/">https://creativecommons.org/licenses/by/3.0/us</A>&gt;.
+</P>
+</BODY></HTML>

@@ -1,0 +1,10 @@
+HTTP/1.1 302 Object moved
+Cache-Control: private
+Content-Type: text/html
+Location: Default.asp
+Server: Microsoft-IIS/8.5
+Set-Cookie: ASPSESSIONIDCCCTQDSA=CIJEMFKAMFBKHGMDIHLMFHLP; path=/
+X-Powered-By: ASP.NET
+Date: Mon, 28 Sep 2026 08:07:54 GMT
+Content-Length: 132
+

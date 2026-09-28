@@ -1,0 +1,11 @@
+### authenticated-form presence (bypass session vs anon) ###
+-- Default.asp
+   loggedin : logout_menu=1 tfSubject_form=0 textarea=0 bytes=3470
+   anon     : logout_menu=0 tfSubject_form=0 textarea=0 bytes=3538
+-- showforum.asp
+   loggedin : logout_menu=1 tfSubject_form=1 textarea=2 bytes=4147
+   anon     : logout_menu=0 tfSubject_form=0 textarea=0 bytes=3077
+
+### unescaped reflection check (session uname echoed raw) ###
+logout admin'-- 
+logout admin'-- 

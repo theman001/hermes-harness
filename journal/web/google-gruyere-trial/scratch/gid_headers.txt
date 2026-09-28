@@ -1,0 +1,14 @@
+HTTP/1.1 200 Connection established
+
+HTTP/2 302 
+cache-control: no-cache
+location: https://google-gruyere.appspot.com/399820027374159079597995648128134925001/
+pragma: no-cache
+content-type: text/html
+x-xss-protection: 0
+x-cloud-trace-context: 04e779adb4ebffc79e1c0539c73999c8
+date: Mon, 28 Sep 2026 09:11:05 GMT
+server: Google Frontend
+content-length: 205
+alt-svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+

@@ -1,0 +1,48 @@
+### 0. 오라클 기준선
+  TRUE: True  FALSE: False
+
+============================================================
+### DB = acuservice   (HAS_DBACCESS=True)
+============================================================
+-- 테이블/뷰/프로시저 수
+   tables=1 views=0 procs=0
+-- 테이블 이름 전량 (③)
+   [1] users
+-- users 컬럼
+   ['id', 'username', 'password', 'name', 'joindate', 'ccnumber', 'ccverification', 'address']
+   행 수 = 2
+   추정: 식별자컬럼='username' 비밀번호컬럼='password'
+-- username 값 표본 (최대 5, 교차 앱 실데이터 — 승인①)
+   [1] 'blade'
+   [2] 'tibi'
+-- password 저장형식 (값 미기록)
+   FALSE  길이<=12 행 존재
+   TRUE   길이>=32 행 존재
+   TRUE   전부 16진 행 존재
+   TRUE   평균길이>=16
+   평균 길이(정수부) = 32
+
+============================================================
+### DB = acublog   (HAS_DBACCESS=True)
+============================================================
+-- 테이블/뷰/프로시저 수
+   tables=3 views=0 procs=0
+-- 테이블 이름 전량 (③)
+   [1] comments
+   [2] news
+   [3] users
+-- users 컬럼
+   ['uname', 'upass', 'alevel']
+   행 수 = 1
+   추정: 식별자컬럼='uname' 비밀번호컬럼='upass'
+-- uname 값 표본 (최대 5, 교차 앱 실데이터 — 승인①)
+   [1] 'admin'
+-- upass 저장형식 (값 미기록)
+   FALSE  길이<=12 행 존재
+   TRUE   길이>=32 행 존재
+   TRUE   전부 16진 행 존재
+   TRUE   평균길이>=16
+   평균 길이(정수부) = 32
+
+### 요약
+  총 요청 1174건 → out/db_facts4.json

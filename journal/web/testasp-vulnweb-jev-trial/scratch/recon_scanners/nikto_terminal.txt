@@ -1,0 +1,28 @@
+- Nikto v2.6.1
+---------------------------------------------------------------------------
++ Target IP:          44.238.29.244
++ Target Hostname:    testasp.vulnweb.com
++ Target Port:        80
++ Platform:           Windows
++ Start Time:         2026-09-28 16:16:37 (GMT9)
+---------------------------------------------------------------------------
++ Server: Microsoft-IIS/8.5
++ [000287] /: Retrieved x-powered-by header: ASP.NET.
++ No CGI Directories found (use '-C all' to force check all possible dirs). CGI tests skipped.
++ [999990] OPTIONS: Allowed HTTP Methods: OPTIONS, TRACE, GET, HEAD, POST .
++ [999985] OPTIONS: Public HTTP Methods: OPTIONS, TRACE, GET, HEAD, POST .
++ [000287] /index.aspx: Retrieved x-aspnet-version header: 2.0.50727.
++ [600376] Microsoft-IIS/8.5 may be outdated (current is at least 10.0; IIS 6.0 support is available until 2014).
++ [750537] /: Default IIS server content. See: https://www.iis.net/
++ [999979] /aspnet_client: RFC-1918 IP address found in the 'location' header. The IP is "10.0.0.14". See: https://portswigger.net/kb/issues/00600300_private-ip-addresses-disclosed
++ [999988] /aspnet_client: The web server may reveal its internal or real IP in the Location header via a request to with HTTP/1.0. The value is "10.0.0.14". See: https://nvd.nist.gov/vuln/detail/CVE-2000-0649
++ [013587] /: Suggested security header missing: permissions-policy. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Permissions-Policy
++ [013587] /: Suggested security header missing: x-content-type-options. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options
++ [013587] /: Suggested security header missing: referrer-policy. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy
++ [013587] /: Suggested security header missing: strict-transport-security. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security
++ [013587] /: Suggested security header missing: content-security-policy. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
++ ERROR: Host maximum execution time of 240 seconds reached
++ Scan terminated: 0 errors and 13 items reported on the remote host
++ End Time:           2026-09-28 16:20:38 (GMT9) (241 seconds)
+---------------------------------------------------------------------------
++ 1 host(s) tested

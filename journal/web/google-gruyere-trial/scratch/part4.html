@@ -1,0 +1,556 @@
+<HTML><HEAD><META http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<TITLE>Web Application Exploits and Defenses</TITLE>
+<LINK type="text/css" rel="stylesheet" href="../static/codelab.css">
+<!--MARK-Z-->
+<SCRIPT>
+function toggleBlock(heading, whichID) {
+  var image = heading.childNodes[0];
+  var block = document.getElementById(whichID);
+  if (block) {
+    if (getDisplay(block) == 'block') {
+      block.style.display = 'none';
+      image.src = 'static/closed.gif';
+    } else {    // "none" or ""
+      block.style.display = 'block';
+      image.src = 'static/open.gif';
+    }
+  }
+}
+
+function getDisplay(block) {
+  var value = block.style.display;
+  if (!value) {
+    if (document.defaultView) {
+      var computedStyle = document.defaultView.getComputedStyle(block, "");
+      value = computedStyle.getPropertyValue('display');
+    } else if (block.currentStyle) {
+      value = block.currentStyle.display;
+    }
+  }
+  return value;
+}
+</SCRIPT>
+</HEAD>
+<BODY bgcolor="#ffffff">
+
+<DIV class="banner"></DIV>
+<H1><FONT size="+2"><IMG src="/static/gruyere-78.png" style="vertical-align:middle">
+Web Application Exploits and Defenses  (Part 4)</FONT> </H1>
+<P>
+A Codelab by Bruce Leban, Mugdha Bendre, and Parisa Tabriz
+</P>
+<DIV class="printable">
+<DIV class="column1">
+Table of Contents
+<UL>
+<LI class="L1" style="padding-top:0pt"> <A href="/#0__hackers">Beat the hackers</A></LI>
+<LI class="L1" style="padding-top:0pt"> <A href="/#0__gruyere">Gruyere</A></LI>
+<LI class="L1"> <A href="/part1#1__setup">Set-up</A>
+  <UL>
+  <LI class="L2"> <A href="/part1#1__reset_button">Reset Button</A></LI>
+  <LI class="L2"> <A href="/part1#1__about_the_code">About the Code</A></LI>
+  <LI class="L2"> <A href="/part1#1__features_and_technologies">Features and Technologies</A></LI>
+  </UL></LI>
+<LI class="L1"> <A href="/part1#1__using_gruyere">Using Gruyere</A></LI>
+<LI class="L1"> <A href="/part2#2__cross_site_scripting">Cross-Site Scripting (XSS)</A>
+  <UL>
+  <LI class="L2"> <A href="/part2#2__xss_challenge">XSS Challenges</A></LI>
+  <LI class="L2"> <A href="/part2#2__file_upload_xss">File Upload XSS</A></LI>
+  <LI class="L2"> <A href="/part2#2__reflected_xss">Reflected XSS</A></LI>
+  <LI class="L2"> <A href="/part2#2__stored_xss">Stored XSS</A></LI>
+  <LI class="L2"> <A href="/part2#2__stored_xss_via_html_attribute">Stored XSS via HTML Attribute</A></LI>
+  <LI class="L2"> <A href="/part2#2__stored_xss_via_ajax">Stored XSS via AJAX</A></LI>
+  <LI class="L2"> <A href="/part2#2__reflected_xss_via_ajax">Reflected XSS via AJAX</A></LI>
+  <LI class="L2"> <A href="/part2#2__more_about_xss">More about XSS</A></LI>
+  </UL></LI>
+<LI class="L1"> <A href="/part3#3__client_state_manipulation">Client-State Manipulation</A>
+  <UL>
+  <LI class="L2"> <A href="/part3#3__elevation_of_privilege"> Elevation of Privilege </A></LI>
+  <LI class="L2"> <A href="/part3#3__cookie_manipulation"> Cookie Manipulation </A></LI>
+  </UL></LI>
+<LI class="L1"> <A href="/part3#3__cross_site_request_forgery">Cross-Site Request Forgery (XSRF)</A>
+  <UL>
+  <LI class="L2"> <A href="/part3#3__xsrf_challenge">XSRF Challenge</A></LI>
+  <LI class="L2"> <A href="/part3#3__more_about_preventing_xsrf">More about preventing XSRF</A></LI>
+  </UL></LI>
+<LI class="L1"> <A href="/part3#3__cross_site_script_inclusion">Cross Site Script Inclusion (XSSI)</A>
+  <UL>
+  <LI class="L2"> <A href="/part3#3__xssi_challenge">XSSI Challenge</A></LI>
+  </UL></LI>
+<LI class="L1"> <A href="/part4#4__path_traversal">Path Traversal</A>
+  <UL>
+  <LI class="L2"> <A href="/part4#4__information_disclosure_path_traversal">Information disclosure via path traversal </A></LI>
+  <LI class="L2"> <A href="/part4#4__data_tampering_path_traversal">Data tampering via path traversal </A></LI>
+  </UL></LI>
+<LI class="L1"> <A href="/part4#4__denial_of_service">Denial of Service</A>
+  <UL>
+  <LI class="L2"> <A href="/part4#4__dos_quit_server">DoS - Quit the Server</A></LI>
+  <LI class="L2"> <A href="/part4#4__dos_overload_server">DoS - Overloading the Server</A></LI>
+  <LI class="L2"> <A href="/part4#4__more_dos">More on Denial of Service</A></LI>
+  </UL></LI>
+<LI class="L1"> <A href="/part4#4__code_execution">Code Execution</A>
+  <UL>
+  <LI class="L2"> <A href="/part4#4__code_execution_challenge">Code Execution Challenge</A></LI>
+  <LI class="L2"> <A href="/part4#4__more_code_execution">More on Remote Code Execution</A></LI>
+  </UL></LI>
+<LI class="L1"> <A href="/part5#5__configuration_vulnerabilities">Configuration Vulnerabilities</A>
+  <UL>
+  <LI class="L2"> <A href="/part5#5__information_disclosure_config_1">Information disclosure #1</A></LI>
+  <LI class="L2"> <A href="/part5#5__information_disclosure_config_2">Information disclosure #2</A></LI>
+  <LI class="L2"> <A href="/part5#5__information_disclosure_bug_3">Information disclosure #3 </A></LI>
+  </UL></LI>
+<LI class="L1"> <A href="/part5#5__ajax_vulnerabilities">AJAX vulnerabilities</A>
+  <UL>
+  <LI class="L2"> <A href="/part5#5__dos_via_ajax">DoS via AJAX</A></LI>
+  <LI class="L2"> <A href="/part5#5__phishing_via_ajax">Phishing via AJAX</A></LI>
+  </UL></LI>
+<LI class="L1"> <A href="/part5#5__other_vulnerabilities"> Other Vulnerabilities </A> </H2>
+  <UL>
+  <LI class="L2"> <A href="/part5#5__buffer_and_integer_overflow">Buffer Overflow and Integer Overflow</A></LI>
+  <LI class="L2"> <A href="/part5#5__sql_injection"> SQL Injection </A></LI>
+  </UL></LI>
+<LI class="L1"> <A href="/part5#5__after_the_codelab">After the Codelab</A></LI>
+</UL>
+</DIV>
+<DIV class="column2">
+<P></P>
+<P></P>
+<P>
+<NOAUTOLINK>
+</NOAUTOLINK></P>
+
+<H2><A name="4__path_traversal"> </A> Path Traversal </H2>
+<P>
+Most web applications serve static resources like images and CSS
+files. Frequently, applications simply serve all the files in a
+folder. If the application isn't careful, the user can use a path
+traversal attack to read files from other folders that they shouldn't
+have access to. For example, in both Windows and
+Linux, <CODE>..</CODE> represents the parent directory, so if you can
+inject <CODE>../</CODE> in a path you can "escape" to the parent
+directory.
+</P>
+<P> If an attacker knows the structure of your file system, then they
+can craft a URL that will traverse out of the installation directory
+to <CODE>/etc</CODE>. For example, if Picasa was vulnerable to path
+traversal (it isn't) and the Picasa servers use a Unix-like system,
+then the following would retrieve the password file:
+</P>
+<P></P>
+<PRE>
+https://www.picasa.com/../../../../../../../etc/passwd
+</PRE>
+<P></P>
+<P></P>
+<H3><A name="4__information_disclosure_path_traversal"> </A> Information
+disclosure via path traversal </H3>
+<P>
+<IMG src="/static/cheese_bw.png" style="vertical-align:middle;
+padding-right: 5px;"> <B>Find a way to read <CODE>secret.txt</CODE> from
+a running Gruyere server.</B>
+</P>
+<P> Amazingly, this attack is not even necessary in many cases:
+people often install applications and never change the defaults. So
+the first thing an attacker would try is the default value.
+</P>
+<DIV style="margin-left:18pt">
+<H4 style="cursor: pointer" onclick="toggleBlock(this, 'read_secret_txt_hint');"><IMG src="/static/closed.gif"> Hint 1 </H4>
+<DIV id="read_secret_txt_hint" style="display:none">
+<P>
+This isn't a black box attack because you need to know that
+the <CODE>secret.txt</CODE> file exists, where it's stored, and where
+Gruyere stores its resource files. You don't need to look at any
+source code.
+</P>
+<P></P>
+</DIV>
+<P></P>
+<H4 style="cursor: pointer" onclick="toggleBlock(this, 'read_secret_txt_hint2');"><IMG src="/static/closed.gif"> Hint 2 </H4>
+<DIV id="read_secret_txt_hint2" style="display:none">
+<P>
+How does the server know which URLs represent resource files? You can
+use curl or a web proxy to craft request URLs that some browsers may
+not allow.
+</P>
+<P></P>
+</DIV>
+<P></P>
+<H4 style="cursor: pointer" onclick="toggleBlock(this, 'read_secret_txt_sol');"><IMG src="/static/closed.gif"> Exploit and Fix </H4>
+<DIV id="read_secret_txt_sol" style="display:none">
+<P>
+<B>To exploit,</B> you can steal <CODE>secret.txt</CODE> via
+this URL:
+</P>
+<P></P>
+<PRE>
+https://google-gruyere.appspot.com/123/../secret.txt
+</PRE>
+<P>
+Some browsers, like Firefox and Chrome, optimize out <CODE>../</CODE>
+in URLs. This doesn't provide any security protection because an
+attacker will use <CODE>%2f</CODE> to represent <CODE>/</CODE> in the URL;
+or a tool like curl, a web proxy or a browser that
+doesn't do that optimization. But if you test your application with
+one of these browsers to see if you're vulnerable, you might think you
+were protected when you're not.
+</P>
+<P>
+<B>To fix,</B> we need to prevent access to files outside
+the resources directory.  Validating file paths is a bit tricky as
+there are various ways to hide path elements like "../" or "~" that
+allow escaping out of the resources folder. The best protection is to
+only serve specific resource files. You can either hardcode a list or
+when your application starts, you can crawl the resource directory and
+build a list of files. Then only accept requests for those files. You
+can even do some optimization here like caching small files in memory
+which will make your application faster. If you are going to try to
+file path validation, you need to do it on the final path, not on the
+URL, as there are numerous ways to represent the same characters in
+URLs. <I>Note: Changing file permissions will NOT work. Gruyere has
+to be able to read this file.</I>
+</P>
+<P></P>
+</DIV>
+</DIV>
+<P></P>
+<H3><A name="4__data_tampering_path_traversal"> </A> Data
+tampering via path traversal </H3>
+<P>
+<IMG src="/static/cheese_bw.png" style="vertical-align:middle;
+padding-right: 5px;"> <B>Find a way to replace <CODE>secret.txt</CODE> on
+a running Gruyere server.</B>
+</P>
+<P></P>
+<DIV style="margin-left:18pt">
+<H4 style="cursor: pointer" onclick="toggleBlock(this, 'write_secret_txt_hint');"><IMG src="/static/closed.gif"> Hint 1 </H4>
+<DIV id="write_secret_txt_hint" style="display:none">
+<P>
+Again, this isn't a black box attack because you need to know about
+the directory structure that Gruyere uses, specifically where
+uploaded files are stored.
+</P>
+<P></P>
+</DIV>
+<P></P>
+<H4 style="cursor: pointer" onclick="toggleBlock(this, 'write_secret_txt_hint2');"><IMG src="/static/closed.gif"> Hint 2 </H4>
+<DIV id="write_secret_txt_hint2" style="display:none">
+<P>
+If I log in as user <CODE>brie</CODE> and upload a file, where does
+the server store it? Can you trick the server into uploading a file
+to <CODE>../../secret.txt</CODE>?
+</P>
+<P></P>
+</DIV>
+<P></P>
+<H4 style="cursor: pointer" onclick="toggleBlock(this, 'write_secret_txt_sol');"><IMG src="/static/closed.gif"> Exploit and Fix </H4>
+<DIV id="write_secret_txt_sol" style="display:none">
+<P>
+<B>To exploit,</B> create a new user named <CODE>..</CODE>
+and upload your new <CODE>secret.txt</CODE>. You could also create a
+user named <CODE>brie/../..</CODE>.
+</P>
+<P>
+<B>To fix,</B> you should escape dangerous characters in the username
+(replacing them with safe characters) before using it. It was earlier
+suggested that we should restrict the characters allowed in a username,
+but it probably didn't occur to you that <CODE>"."</CODE> was a
+dangerous character.  It's worth noting that there's a vulnerability
+unique to Windows servers with this implementation. On Windows,
+filenames are not case sensitive but Gruyere usernames are. So one
+user can attack another user's files by creating a similar username
+that differs only in case, e.g., <CODE>BRIE</CODE> instead
+of <CODE>brie</CODE>. So we need to not just escape unsafe characters
+but convert the username to a canonical form that is different for
+different usernames. Or we could avoid all these issues by assigning
+each user a unique identifier instead.
+</P>
+<P>
+<B>Oops!</B> This doesn't completely solve the problem. Even with the
+above fix in place, there is another way to perform this attack. Can
+you find it?
+<H4 style="cursor: pointer" onclick="toggleBlock(this, 'another_write_secret_hint');"><IMG src="/static/closed.gif"> Hint </H4>
+<DIV id="another_write_secret_hint" style="display:none">
+<P>
+Are there any limits on the filename when you do an upload?  You may
+need to use a special tool like <CODE>curl</CODE> or a web proxy to
+perform this attack.
+</P>
+<P></P>
+</DIV>
+</P>
+<H4 style="cursor: pointer" onclick="toggleBlock(this, 'write_secret_txt_sol2');"><IMG src="/static/closed.gif"> Another Exploit and Fix </H4>
+<DIV id="write_secret_txt_sol2" style="display:none">
+<P> Surprisingly, you can upload a file
+named <CODE>../secret.txt</CODE>. Gruyere provides no protection
+against this attack. Most browsers won't let you upload that file but,
+again, you can do it with curl or other tools. You need the same kind
+of protection when writing files as you do on read.
+</P>
+<P> As a general rule, you should never store user data in the
+same place as your application files but that alone won't protect
+against these attacks since if the user can inject <CODE>../</CODE>
+into the file path, they can traverse all the way to the root of the
+file system and then back down to the normal install location of your
+application (or even the Python interpreter itself).
+</P></DIV></DIV>
+</DIV>
+<BR><P></P>
+<H2><A name="4__denial_of_service"> </A> Denial of Service </H2>
+<P>
+A denial of service (DoS) attack is an attempt to make a server unable
+to service ordinary requests. A common form of DoS attack is sending
+more requests to a server than it can handle. The server spends all
+its time servicing the attacker's requests that it has very little
+time to service legitimate requests. Protecting an application against
+these kinds of DoS attacks is outside the scope of this codelab. And
+attacking Gruyere in this way would be interpreted as an attack on
+App&nbsp;Engine.
+</P><P> Hackers can also prevent a server from servicing requests by
+taking advantage of server bugs, such as sending requests that crash a
+server, make it run out of memory, or otherwise cause it fail serving
+legitimate requests in some way. In the next few challenges, you'll
+take advantage of bugs in Gruyere to perform DoS attacks.
+</P>
+<H3><A name="4__dos_quit_server"> </A> DoS - Quit the Server </H3>
+The simplest form of denial of service is shutting down a service.
+<P>
+<IMG src="/static/cheese_bw.png" style="vertical-align:middle;
+padding-right: 5px;"> <B>Find a way to make the server quit.</B>
+</P>
+<P></P>
+<DIV style="margin-left:18pt">
+<H4 style="cursor: pointer" onclick="toggleBlock(this, 'dos_quit_hint');"><IMG src="/static/closed.gif"> Hint </H4>
+<DIV id="dos_quit_hint" style="display:none">
+<P>
+How does an administrator make the server quit? The server management
+page is <CODE><A href="/code/?resources/manage.gtl">manage.gtl</A></CODE>.
+</P>
+<P></P>
+</DIV>
+<P></P>
+<H4 style="cursor: pointer" onclick="toggleBlock(this, 'dos_quit_soln');"><IMG src="/static/closed.gif"> Exploit and Fix </H4>
+<DIV id="dos_quit_soln" style="display:none">
+<P>
+<B>To exploit,</B> make a request
+to <CODE>https://google-gruyere.appspot.com/123/quitserver</CODE>. You
+should need to be logged in as an administrator to do this, but you
+don't.
+</P><P>
+This is another example of a common bug. The server protects
+against non-administrators accessing certain URLs but the list
+includes <CODE>/quit</CODE> instead of the actual
+URL <CODE>/quitserver</CODE>.
+</P>
+<P>
+<B>To fix,</B> add <CODE>/quitserver</CODE> to the URLS only
+accessible to administrators:
+</P><PRE>
+_PROTECTED_URLS = [
+    "/quitserver",
+    "/reset"
+]
+</PRE>
+<P>
+<!--MARK-A-->
+<B>Oops!</B> This doesn't completely solve the problem.
+The <CODE>reset</CODE> URL is in the protected list. Can you figure
+out how to access it?
+</P>
+<H4 style="cursor: pointer" onclick="toggleBlock(this, 'dos_bonus_hint');"><IMG src="/static/closed.gif"> Hint </H4>
+<DIV id="dos_bonus_hint" style="display:none">
+<P>
+Look carefully at the code that handles URLs and checks for protected ones.
+</P></DIV>
+<P></P>
+<H4 style="cursor: pointer" onclick="toggleBlock(this, 'dos_bonus_soln');"><IMG src="/static/closed.gif"> Another Exploit and Fix </H4>
+<DIV id="dos_bonus_soln" style="display:none">
+<P>
+<B>To exploit,</B>
+use <CODE>https://google-gruyere.appspot.com/123/RESET</CODE>. The check for
+protected urls is case sensitive. After doing that check, it
+capitalizes the string to look up the implementation. This is a
+classic check/use bug where the condition being checked does not match
+the actual use. This vulnerability is worse than the previous one
+because it exposes all the protected urls.
+</P><P>
+<B>To fix,</B> put the security check inside the dangerous
+functions rather than outside them. That ensures that no matter how we
+get there, the security check can't be skipped.
+</P></DIV>
+</DIV>
+</DIV>
+<P>
+<H3><A name="4__dos_overload_server"></A> DoS - Overloading the Server </H3>
+<P>
+<IMG src="/static/cheese_b.png" style="vertical-align:middle;
+padding-right: 5px;"> <B>Find a way to overload the server when it processes a request.</B>
+</P>
+<P></P>
+<DIV style="margin-left:18pt">
+<H4 style="cursor: pointer" onclick="toggleBlock(this, 'dos_overload_hint1');"><IMG src="/static/closed.gif"> Hint 1 </H4>
+<DIV id="dos_overload_hint1" style="display:none">
+<P>
+You can upload a template that does this.
+</P></DIV>
+<H4 style="cursor: pointer" onclick="toggleBlock(this, 'dos_overload_hint2');"><IMG src="/static/closed.gif"> Hint 2 </H4>
+<DIV id="dos_overload_hint2" style="display:none">
+<P>
+Every page includes
+the <CODE><A href="/code/?resources/menubar.gtl">menubar.gtl</A></CODE>
+template. Can you figure out how to make that template overload the
+server?
+</P></DIV>
+<H4 style="cursor: pointer" onclick="toggleBlock(this, 'dos_overload_soln');"><IMG src="/static/closed.gif"> Exploit and Fix </H4>
+<DIV id="dos_overload_soln" style="display:none">
+<P>
+<B>To exploit,</B> create a file named <CODE>menubar.gtl</CODE>
+containing:
+<PRE>
+[[include:menubar.gtl]]DoS[[/include:menubar.gtl]]
+</PRE>
+and upload it to the <CODE>resources</CODE> directory using a path traversal attack, e.g., creating a user named <CODE>../resources</CODE>.
+</P>
+<P>
+<B>To fix,</B> implement the protections against path traversal and uploading templates discussed earlier.
+
+</P>
+</DIV>
+
+<B>NOTE:</B> After performing the previous exploit, you'll need to
+push the <A href="/part1#1__reset_button">reset button</A>.
+
+</P>
+</DIV>
+<H3><A name="4__more_dos"> </A> More on Denial of
+Service </H3>
+<P>
+Unlike a well defined vulnerability like XSS or XSRF, denial of
+service describes a wide class of attacks. This might mean bringing
+your service down or flooding your inbox so you can't receive
+legitimate mail. Some things to consider:
+</P>
+<P></P>
+<UL>
+<LI><P> If you were evil and greedy, how quickly could you take down your
+application or starve all of its resources? For example, is it
+possible for a user to upload their hard drive to your application?
+Entering the attacker's mindset can help identify DoS points in your
+application. Additionally, think about where the computationally and
+memory intensive tasks are in your application and put safeguards in
+place. Do sanity checks on input values.
+</P>
+<LI><P>Put monitoring in place so you can detect when you are under
+attack and enforce per user quotas and rate limiting to ensure that a
+small subset of users cannot starve the rest. Abusive patterns could
+include increased memory usage, higher latency, or more requests or
+connections than usual.
+</P>
+</UL>
+<!--MARK-B-->
+<BR><P></P>
+
+<H2><A name="4__code_execution"> </A> Code Execution </H2>
+<P>
+If an attacker can execute arbitrary code remotely on your server,
+it's usually game over. They may be able to take control over the
+running program or potentially break out the process to open a new
+shell on the computer. From here, it's usually not hard to compromise
+the entire machine the server is running on.
+</P>
+<P> Similar to information disclosure and denial of service, there
+is no recipe or specific defense to prevent remote code execution. The
+program must perform validation of all user input before handling it
+and where possible, implement functions with least privilege
+rights. This topic can't be done justice in just a short paragraph,
+but know that this is likely the scariest results a security bug can
+have and trumps any of the above attacks.
+</P>
+<P></P>
+<H3><A name="4__code_execution_challenge"> </A> Code Execution Challenge </H3>
+<P>
+<IMG src="/static/cheese_w.png" style="vertical-align:middle;
+padding-right: 5px;"> <B>Find a code execution exploit.</B>
+</P>
+<P></P>
+<DIV style="margin-left:18pt">
+<H4 style="cursor: pointer" onclick="toggleBlock(this, 'code_upload_hint');"><IMG src="/static/closed.gif"> Hint </H4>
+<DIV id="code_upload_hint" style="display:none">
+<P>
+You need to use two previous exploits.
+</P></DIV>
+<P></P>
+<H4 style="cursor: pointer" onclick="toggleBlock(this, 'code_upload_soln');"><IMG src="/static/closed.gif"> Exploit and Fix </H4>
+<DIV id="code_upload_soln" style="display:none">
+<P>
+<B>To exploit,</B> make a copy
+of <CODE><A href="/code/?gtl.py">gtl.py</A></CODE>
+(or <CODE><A href="/code/?sanitize.py">sanitize.py</A></CODE>) and
+add some exploit code. Now you can either upload a file
+named <CODE>../gtl.py</CODE> or create a user named <CODE>..</CODE>
+and upload <CODE>gtl.py</CODE>. Then, make the server quit by browsing
+to <CODE>https://google-gruyere.appspot.com/123/quitserver</CODE>. When the
+server restarts, your code will run.
+</P>
+<P> This attack was possible because Gruyere has permission to both
+read and write files in the Gruyere directory. Applications should
+run with the minimal privileges possible.
+</P>
+<P> Why would you attack <CODE>gtl.py</CODE>
+or <CODE>sanitize.py</CODE> rather than <CODE>gruyere.py</CODE>?
+When an attacker has a choice, they would usually choose to attack the
+infrastructure rather than the application itself. The infrastructure
+is less likely to be updated and less likely to be noticed. When was
+the last time you checked that no one had
+replaced <CODE>python.exe</CODE> with a trojan?
+</P>
+<P>
+<B>To fix,</B> fix the two previous exploits.
+</P>
+<P></P>
+</DIV>
+</DIV>
+<P></P>
+<H3><A name="4__more_code_execution"> </A> More on Remote
+Code Execution </H3>
+<P>
+Even though there is no single or simple defense to remote code
+execution, here is a short list of some preventative measures:
+</P>
+<UL>
+<LI><P><B>Least Privilege:</B> Always run your application with
+the <A href="https://www.google.com/search?q=least+privileges"
+target="_top">least privileges</A> it needs.
+</P>
+<LI><P><B>Application Level Checks:</B> Avoid passing user input
+directly into commands that evaluate arbitrary code,
+like <CODE>eval()</CODE> or <CODE>system()</CODE>. Instead, use the
+user input as a switch to choose from a set of developer controlled
+commands.
+</P>
+<LI><P><B>Bounds Checks:</B> Implement proper bounds checks for
+non-safe languages like
+C++. Avoid <A href="https://www.google.com/search?q=unsafe+string+functions"
+target="_top">unsafe string functions</A>. Keep in mind that even safe
+languages like Python and Java use native libraries.
+</P>
+</UL>
+<!--MARK-C-->
+<BR><P></P>
+
+
+             <FONT SIZE="+2">
+             <A href="/part5">Continue &gt;&gt;</A>
+             </FONT><BR>
+<BR>
+<P style="font-size:x-small">
+&copy; Google 2017 <A href="https://www.google.com/intl/en/policies/terms/">Terms of Service</A>
+<BR>The code portions of this codelab are licensed under the
+Creative Commons Attribution-No Derivative Works 3.0 United States license
+&lt;<A href="https://creativecommons.org/licenses/by-nd/3.0/us/">https://creativecommons.org/licenses/by-nd/3.0/us</A>&gt;.
+Brief excerpts of the code may be used for educational or
+instructional purposes provided this notice is kept intact.
+Except as otherwise noted the remainder of this codelab is licensed under the
+Creative Commons Attribution 3.0 United States license
+&lt;<A href="https://creativecommons.org/licenses/by/3.0/us/">https://creativecommons.org/licenses/by/3.0/us</A>&gt;.
+</P>
+</BODY></HTML>

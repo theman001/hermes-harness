@@ -1,0 +1,296 @@
+
+====================================================================================================
+URL: http://testasp.vulnweb.com/_vti_cnf/Default.asp
+  HTTP/1.1 200 OK
+  Content-Type: text/html
+  X-Powered-By: ASP.NET
+  Content-Length: 926
+----------------------------------------------------------------------------------------------------
+vti_encoding:SR|utf8-nl
+vti_timelastmodified:TR|05 Oct 2007 10:01:19 -0000
+vti_extenderversion:SR|4.0.2.8912
+vti_cacheddtm:TX|05 Oct 2007 10:01:19 -0000
+vti_filesize:IR|3663
+vti_cachedlinkinfo:VX|Q|styles.css H|http://www.acunetix.com/ S|Images/logo.gif H|Templatize.asp H|Default.asp H|Search.asp
+vti_cachedsvcrellinks:VX|FQUS|acuforum/styles.css NHHS|http://www.acunetix.com/ FSUS|acuforum/Images/logo.gif FHUS|acuforum/Templatize.asp FHUS|acuforum/Default.asp FHUS|acuforum/Search.asp
+vti_cachedtitle:SR|acuforum forums
+vti_title:SR|acuforum forums
+vti_cachedbodystyle:SR|<body>
+vti_cachedhasbots:BR|false
+vti_cachedhastheme:BR|false
+vti_cachedhasborder:BR|false
+vti_metatags:VR|HTTP-EQUIV=Content-Type text/html;\\ charset=iso-8859-1
+vti_backlinkinfo:VX|acuforum/login.asp acuforum/register.asp acuforum/search.asp acuforum/default.asp acuforum/showthread.asp acuforum/showforum.asp acuforum/templatize.asp
+
+
+====================================================================================================
+URL: http://testasp.vulnweb.com/_vti_cnf/Search.asp
+  HTTP/1.1 200 OK
+  Content-Type: text/html
+  X-Powered-By: ASP.NET
+  Content-Length: 926
+----------------------------------------------------------------------------------------------------
+vti_encoding:SR|utf8-nl
+vti_timelastmodified:TR|05 Oct 2007 10:01:19 -0000
+vti_extenderversion:SR|4.0.2.8912
+vti_cacheddtm:TX|05 Oct 2007 10:01:19 -0000
+vti_filesize:IR|4303
+vti_cachedlinkinfo:VX|Q|styles.css H|http://www.acunetix.com/ S|Images/logo.gif H|Templatize.asp H|Default.asp H|Search.asp
+vti_cachedsvcrellinks:VX|FQUS|acuforum/styles.css NHHS|http://www.acunetix.com/ FSUS|acuforum/Images/logo.gif FHUS|acuforum/Templatize.asp FHUS|acuforum/Default.asp FHUS|acuforum/Search.asp
+vti_cachedtitle:SR|acuforum search
+vti_title:SR|acuforum search
+vti_cachedbodystyle:SR|<body>
+vti_cachedhasbots:BR|false
+vti_cachedhastheme:BR|false
+vti_cachedhasborder:BR|false
+vti_metatags:VR|HTTP-EQUIV=Content-Type text/html;\\ charset=iso-8859-1
+vti_backlinkinfo:VX|acuforum/login.asp acuforum/register.asp acuforum/search.asp acuforum/default.asp acuforum/showthread.asp acuforum/showforum.asp acuforum/templatize.asp
+
+
+====================================================================================================
+URL: http://testasp.vulnweb.com/_vti_cnf/Login.asp
+  HTTP/1.1 200 OK
+  Content-Type: text/html
+  X-Powered-By: ASP.NET
+  Content-Length: 772
+----------------------------------------------------------------------------------------------------
+vti_encoding:SR|utf8-nl
+vti_timelastmodified:TR|05 Oct 2007 10:01:19 -0000
+vti_extenderversion:SR|4.0.2.8912
+vti_cacheddtm:TX|05 Oct 2007 10:01:19 -0000
+vti_filesize:IR|3681
+vti_cachedlinkinfo:VX|Q|styles.css H|http://www.acunetix.com/ S|Images/logo.gif H|Templatize.asp H|Default.asp H|Search.asp
+vti_cachedsvcrellinks:VX|FQUS|acuforum/styles.css NHHS|http://www.acunetix.com/ FSUS|acuforum/Images/logo.gif FHUS|acuforum/Templatize.asp FHUS|acuforum/Default.asp FHUS|acuforum/Search.asp
+vti_cachedtitle:SR|acuforum login
+vti_title:SR|acuforum login
+vti_cachedbodystyle:SR|<body>
+vti_cachedhasbots:BR|false
+vti_cachedhastheme:BR|false
+vti_cachedhasborder:BR|false
+vti_metatags:VR|HTTP-EQUIV=Content-Type text/html;\\ charset=iso-8859-1
+vti_backlinkinfo:VX|
+
+
+====================================================================================================
+URL: http://testasp.vulnweb.com/_vti_cnf/Register.asp
+  HTTP/1.1 200 OK
+  Content-Type: text/html
+  X-Powered-By: ASP.NET
+  Content-Length: 778
+----------------------------------------------------------------------------------------------------
+vti_encoding:SR|utf8-nl
+vti_timelastmodified:TR|05 Oct 2007 10:01:19 -0000
+vti_extenderversion:SR|4.0.2.8912
+vti_cacheddtm:TX|05 Oct 2007 10:01:19 -0000
+vti_filesize:IR|3888
+vti_cachedlinkinfo:VX|Q|styles.css H|http://www.acunetix.com/ S|Images/logo.gif H|Templatize.asp H|Default.asp H|Search.asp
+vti_cachedsvcrellinks:VX|FQUS|acuforum/styles.css NHHS|http://www.acunetix.com/ FSUS|acuforum/Images/logo.gif FHUS|acuforum/Templatize.asp FHUS|acuforum/Default.asp FHUS|acuforum/Search.asp
+vti_cachedtitle:SR|acuforum register
+vti_title:SR|acuforum register
+vti_cachedbodystyle:SR|<body>
+vti_cachedhasbots:BR|false
+vti_cachedhastheme:BR|false
+vti_cachedhasborder:BR|false
+vti_metatags:VR|HTTP-EQUIV=Content-Type text/html;\\ charset=iso-8859-1
+vti_backlinkinfo:VX|
+
+
+====================================================================================================
+URL: http://testasp.vulnweb.com/_vti_cnf/showforum.asp
+  HTTP/1.1 200 OK
+  Content-Type: text/html
+  X-Powered-By: ASP.NET
+  Content-Length: 861
+----------------------------------------------------------------------------------------------------
+vti_encoding:SR|utf8-nl
+vti_timelastmodified:TR|05 Oct 2007 10:01:19 -0000
+vti_extenderversion:SR|4.0.2.8912
+vti_cacheddtm:TX|05 Oct 2007 10:01:19 -0000
+vti_filesize:IR|6897
+vti_cachedlinkinfo:VX|Q|styles.css H|http://www.acunetix.com/ S|Images/logo.gif H|Templatize.asp H|Default.asp H|Search.asp S|./jscripts/tiny_mce/tiny_mce.js
+vti_cachedsvcrellinks:VX|FQUS|acuforum/styles.css NHHS|http://www.acunetix.com/ FSUS|acuforum/Images/logo.gif FHUS|acuforum/Templatize.asp FHUS|acuforum/Default.asp FHUS|acuforum/Search.asp FSUS|acuforum/jscripts/tiny_mce/tiny_mce.js
+vti_cachedtitle:SR|acuforum
+vti_title:SR|acuforum
+vti_cachedbodystyle:SR|<body>
+vti_cachedhasbots:BR|false
+vti_cachedhastheme:BR|false
+vti_cachedhasborder:BR|false
+vti_metatags:VR|HTTP-EQUIV=Content-Type text/html;\\ charset=iso-8859-1
+vti_backlinkinfo:VX|acuforum/showthread.asp
+
+
+====================================================================================================
+URL: http://testasp.vulnweb.com/_vti_cnf/showthread.asp
+  HTTP/1.1 200 OK
+  Content-Type: text/html
+  X-Powered-By: ASP.NET
+  Content-Length: 882
+----------------------------------------------------------------------------------------------------
+vti_encoding:SR|utf8-nl
+vti_timelastmodified:TR|05 Oct 2007 10:01:19 -0000
+vti_extenderversion:SR|4.0.2.8912
+vti_cacheddtm:TX|05 Oct 2007 10:01:19 -0000
+vti_filesize:IR|6250
+vti_cachedlinkinfo:VX|Q|styles.css H|http://www.acunetix.com/ S|Images/logo.gif H|Templatize.asp H|Default.asp H|Search.asp H|showforum.asp S|./jscripts/tiny_mce/tiny_mce.js
+vti_cachedsvcrellinks:VX|FQUS|acuforum/styles.css NHHS|http://www.acunetix.com/ FSUS|acuforum/Images/logo.gif FHUS|acuforum/Templatize.asp FHUS|acuforum/Default.asp FHUS|acuforum/Search.asp FHUS|acuforum/showforum.asp FSUS|acuforum/jscripts/tiny_mce/tiny_mce.js
+vti_cachedtitle:SR|acuforum
+vti_title:SR|acuforum
+vti_cachedbodystyle:SR|<body>
+vti_cachedhasbots:BR|false
+vti_cachedhastheme:BR|false
+vti_cachedhasborder:BR|false
+vti_metatags:VR|HTTP-EQUIV=Content-Type text/html;\\ charset=iso-8859-1
+vti_backlinkinfo:VX|
+
+
+====================================================================================================
+URL: http://testasp.vulnweb.com/_vti_cnf/Templatize.asp
+  HTTP/1.1 200 OK
+  Content-Type: text/html
+  X-Powered-By: ASP.NET
+  Content-Length: 930
+----------------------------------------------------------------------------------------------------
+vti_encoding:SR|utf8-nl
+vti_timelastmodified:TR|05 Oct 2007 10:01:19 -0000
+vti_extenderversion:SR|4.0.2.8912
+vti_cacheddtm:TX|05 Oct 2007 10:01:19 -0000
+vti_filesize:IR|2510
+vti_cachedlinkinfo:VX|Q|styles.css H|http://www.acunetix.com/ S|Images/logo.gif H|Templatize.asp H|Default.asp H|Search.asp
+vti_cachedsvcrellinks:VX|FQUS|acuforum/styles.css NHHS|http://www.acunetix.com/ FSUS|acuforum/Images/logo.gif FHUS|acuforum/Templatize.asp FHUS|acuforum/Default.asp FHUS|acuforum/Search.asp
+vti_cachedtitle:SR|Untitled Document
+vti_title:SR|Untitled Document
+vti_cachedbodystyle:SR|<body>
+vti_cachedhasbots:BR|false
+vti_cachedhastheme:BR|false
+vti_cachedhasborder:BR|false
+vti_metatags:VR|HTTP-EQUIV=Content-Type text/html;\\ charset=iso-8859-1
+vti_backlinkinfo:VX|acuforum/login.asp acuforum/register.asp acuforum/search.asp acuforum/default.asp acuforum/showthread.asp acuforum/showforum.asp acuforum/templatize.asp
+
+
+====================================================================================================
+URL: http://testasp.vulnweb.com/_vti_cnf/logout.asp
+  HTTP/1.1 200 OK
+  Content-Type: text/html
+  X-Powered-By: ASP.NET
+  Content-Length: 338
+----------------------------------------------------------------------------------------------------
+vti_encoding:SR|utf8-nl
+vti_timelastmodified:TR|05 Oct 2007 10:01:19 -0000
+vti_extenderversion:SR|4.0.2.8912
+vti_cacheddtm:TX|05 Oct 2007 10:01:19 -0000
+vti_filesize:IR|225
+vti_cachedlinkinfo:VX|
+vti_cachedsvcrellinks:VX|
+vti_cachedhasbots:BR|false
+vti_cachedhastheme:BR|false
+vti_cachedhasborder:BR|false
+vti_backlinkinfo:VX|
+
+
+====================================================================================================
+URL: http://testasp.vulnweb.com/_vti_cnf/DB.asp
+  HTTP/1.1 200 OK
+  Content-Type: text/html
+  X-Powered-By: ASP.NET
+  Content-Length: 338
+----------------------------------------------------------------------------------------------------
+vti_encoding:SR|utf8-nl
+vti_timelastmodified:TR|05 Oct 2007 10:01:19 -0000
+vti_extenderversion:SR|4.0.2.8912
+vti_cacheddtm:TX|05 Oct 2007 10:01:19 -0000
+vti_filesize:IR|284
+vti_cachedlinkinfo:VX|
+vti_cachedsvcrellinks:VX|
+vti_cachedhasbots:BR|false
+vti_cachedhastheme:BR|false
+vti_cachedhasborder:BR|false
+vti_backlinkinfo:VX|
+
+
+====================================================================================================
+URL: http://testasp.vulnweb.com/_vti_cnf/styles.css
+  HTTP/1.1 200 OK
+  Content-Type: text/css
+  Last-Modified: Thu, 29 May 2008 12:11:34 GMT
+  ETag: "38ed282385c1c81:0"
+  X-Powered-By: ASP.NET
+  Content-Length: 404
+----------------------------------------------------------------------------------------------------
+vti_encoding:SR|utf8-nl
+vti_timelastmodified:TR|05 Oct 2007 10:01:19 -0000
+vti_extenderversion:SR|4.0.2.8912
+vti_cacheddtm:TX|05 Oct 2007 10:01:19 -0000
+vti_filesize:IR|3390
+vti_cachedlinkinfo:VX|
+vti_cachedsvcrellinks:VX|
+vti_backlinkinfo:VX|acuforum/login.asp acuforum/register.asp acuforum/search.asp acuforum/default.asp acuforum/showthread.asp acuforum/showforum.asp acuforum/templatize.asp
+
+
+
+########## AGGREGATED LEAK TERMS ##########
+
+vti_cachedsvcrellinks:
+   vti_cachedsvcrellinks:VX|FQUS|acuforum/styles.css NHHS|http://www.acunetix.com/ FSUS|acuforum/Images/logo.gif FHUS|acuforum/Templatize.asp FHUS|acuforum/Default.asp FHUS|acuforum/Search.asp
+   vti_cachedsvcrellinks:VX|FQUS|acuforum/styles.css NHHS|http://www.acunetix.com/ FSUS|acuforum/Images/logo.gif FHUS|acuforum/Templatize.asp FHUS|acuforum/Default.asp FHUS|acuforum/Search.asp
+   vti_cachedsvcrellinks:VX|FQUS|acuforum/styles.css NHHS|http://www.acunetix.com/ FSUS|acuforum/Images/logo.gif FHUS|acuforum/Templatize.asp FHUS|acuforum/Default.asp FHUS|acuforum/Search.asp
+   vti_cachedsvcrellinks:VX|FQUS|acuforum/styles.css NHHS|http://www.acunetix.com/ FSUS|acuforum/Images/logo.gif FHUS|acuforum/Templatize.asp FHUS|acuforum/Default.asp FHUS|acuforum/Search.asp
+   vti_cachedsvcrellinks:VX|FQUS|acuforum/styles.css NHHS|http://www.acunetix.com/ FSUS|acuforum/Images/logo.gif FHUS|acuforum/Templatize.asp FHUS|acuforum/Default.asp FHUS|acuforum/Search.asp FSUS|acuforum/jscripts/tiny_mce/tiny_mce.js
+   vti_cachedsvcrellinks:VX|FQUS|acuforum/styles.css NHHS|http://www.acunetix.com/ FSUS|acuforum/Images/logo.gif FHUS|acuforum/Templatize.asp FHUS|acuforum/Default.asp FHUS|acuforum/Search.asp FHUS|acuforum/showforum.asp FSUS|acuforum/jscripts/tiny_mce/tiny_mce.js
+   vti_cachedsvcrellinks:VX|FQUS|acuforum/styles.css NHHS|http://www.acunetix.com/ FSUS|acuforum/Images/logo.gif FHUS|acuforum/Templatize.asp FHUS|acuforum/Default.asp FHUS|acuforum/Search.asp
+   vti_cachedsvcrellinks:VX|
+   vti_cachedsvcrellinks:VX|
+   vti_cachedsvcrellinks:VX|
+
+vti_backlinkinfo:
+   vti_backlinkinfo:VX|acuforum/login.asp acuforum/register.asp acuforum/search.asp acuforum/default.asp acuforum/showthread.asp acuforum/showforum.asp acuforum/templatize.asp
+   vti_backlinkinfo:VX|acuforum/login.asp acuforum/register.asp acuforum/search.asp acuforum/default.asp acuforum/showthread.asp acuforum/showforum.asp acuforum/templatize.asp
+   vti_backlinkinfo:VX|
+   vti_backlinkinfo:VX|
+   vti_backlinkinfo:VX|acuforum/showthread.asp
+   vti_backlinkinfo:VX|
+   vti_backlinkinfo:VX|acuforum/login.asp acuforum/register.asp acuforum/search.asp acuforum/default.asp acuforum/showthread.asp acuforum/showforum.asp acuforum/templatize.asp
+   vti_backlinkinfo:VX|
+   vti_backlinkinfo:VX|
+   vti_backlinkinfo:VX|acuforum/login.asp acuforum/register.asp acuforum/search.asp acuforum/default.asp acuforum/showthread.asp acuforum/showforum.asp acuforum/templatize.asp
+
+vti_cachedlinkinfo:
+   vti_cachedlinkinfo:VX|Q|styles.css H|http://www.acunetix.com/ S|Images/logo.gif H|Templatize.asp H|Default.asp H|Search.asp
+   vti_cachedlinkinfo:VX|Q|styles.css H|http://www.acunetix.com/ S|Images/logo.gif H|Templatize.asp H|Default.asp H|Search.asp
+   vti_cachedlinkinfo:VX|Q|styles.css H|http://www.acunetix.com/ S|Images/logo.gif H|Templatize.asp H|Default.asp H|Search.asp
+   vti_cachedlinkinfo:VX|Q|styles.css H|http://www.acunetix.com/ S|Images/logo.gif H|Templatize.asp H|Default.asp H|Search.asp
+   vti_cachedlinkinfo:VX|Q|styles.css H|http://www.acunetix.com/ S|Images/logo.gif H|Templatize.asp H|Default.asp H|Search.asp S|./jscripts/tiny_mce/tiny_mce.js
+   vti_cachedlinkinfo:VX|Q|styles.css H|http://www.acunetix.com/ S|Images/logo.gif H|Templatize.asp H|Default.asp H|Search.asp H|showforum.asp S|./jscripts/tiny_mce/tiny_mce.js
+   vti_cachedlinkinfo:VX|Q|styles.css H|http://www.acunetix.com/ S|Images/logo.gif H|Templatize.asp H|Default.asp H|Search.asp
+   vti_cachedlinkinfo:VX|
+   vti_cachedlinkinfo:VX|
+   vti_cachedlinkinfo:VX|
+
+vti_timelastmodified:
+   vti_timelastmodified:TR|05 Oct 2007 10:01:19 -0000
+   vti_timelastmodified:TR|05 Oct 2007 10:01:19 -0000
+   vti_timelastmodified:TR|05 Oct 2007 10:01:19 -0000
+   vti_timelastmodified:TR|05 Oct 2007 10:01:19 -0000
+   vti_timelastmodified:TR|05 Oct 2007 10:01:19 -0000
+   vti_timelastmodified:TR|05 Oct 2007 10:01:19 -0000
+   vti_timelastmodified:TR|05 Oct 2007 10:01:19 -0000
+   vti_timelastmodified:TR|05 Oct 2007 10:01:19 -0000
+   vti_timelastmodified:TR|05 Oct 2007 10:01:19 -0000
+   vti_timelastmodified:TR|05 Oct 2007 10:01:19 -0000
+
+vti_metatags:
+   vti_metatags:VR|HTTP-EQUIV=Content-Type text/html;\\ charset=iso-8859-1
+   vti_metatags:VR|HTTP-EQUIV=Content-Type text/html;\\ charset=iso-8859-1
+   vti_metatags:VR|HTTP-EQUIV=Content-Type text/html;\\ charset=iso-8859-1
+   vti_metatags:VR|HTTP-EQUIV=Content-Type text/html;\\ charset=iso-8859-1
+   vti_metatags:VR|HTTP-EQUIV=Content-Type text/html;\\ charset=iso-8859-1
+   vti_metatags:VR|HTTP-EQUIV=Content-Type text/html;\\ charset=iso-8859-1
+   vti_metatags:VR|HTTP-EQUIV=Content-Type text/html;\\ charset=iso-8859-1
+
+vti_title:
+   vti_title:SR|acuforum forums
+   vti_title:SR|acuforum search
+   vti_title:SR|acuforum login
+   vti_title:SR|acuforum register
+   vti_title:SR|acuforum
+   vti_title:SR|acuforum
+   vti_title:SR|Untitled Document

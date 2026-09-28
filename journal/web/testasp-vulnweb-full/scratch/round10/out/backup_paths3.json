@@ -1,0 +1,198 @@
+{
+  "lfi": [
+    {
+      "label": "원문 그대로(확장자 없음)",
+      "path": "C:\\Backup_testasp_testaspnet_1apr2021\\Databases\\Backup_from_Management_Studio\\acublog_1apr2021",
+      "item": "../../Backup_testasp_testaspnet_1apr2021/Databases/Backup_from_Management_Studio/acublog_1apr2021",
+      "code": 500,
+      "size": 1208,
+      "reachable": false
+    },
+    {
+      "label": "확장자 추정 .bak",
+      "path": "C:\\Backup_testasp_testaspnet_1apr2021\\Databases\\Backup_from_Management_Studio\\acublog_1apr2021.bak",
+      "item": "../../Backup_testasp_testaspnet_1apr2021/Databases/Backup_from_Management_Studio/acublog_1apr2021.bak",
+      "code": 500,
+      "size": 1208,
+      "reachable": false
+    },
+    {
+      "label": "확장자 추정 .trn",
+      "path": "C:\\Backup_testasp_testaspnet_1apr2021\\Databases\\Backup_from_Management_Studio\\acublog_1apr2021.trn",
+      "item": "../../Backup_testasp_testaspnet_1apr2021/Databases/Backup_from_Management_Studio/acublog_1apr2021.trn",
+      "code": 500,
+      "size": 1208,
+      "reachable": false
+    },
+    {
+      "label": "확장자 추정 .zip",
+      "path": "C:\\Backup_testasp_testaspnet_1apr2021\\Databases\\Backup_from_Management_Studio\\acublog_1apr2021.zip",
+      "item": "../../Backup_testasp_testaspnet_1apr2021/Databases/Backup_from_Management_Studio/acublog_1apr2021.zip",
+      "code": 500,
+      "size": 1208,
+      "reachable": false
+    },
+    {
+      "label": "확장자 추정 .7z",
+      "path": "C:\\Backup_testasp_testaspnet_1apr2021\\Databases\\Backup_from_Management_Studio\\acublog_1apr2021.7z",
+      "item": "../../Backup_testasp_testaspnet_1apr2021/Databases/Backup_from_Management_Studio/acublog_1apr2021.7z",
+      "code": 500,
+      "size": 1208,
+      "reachable": false
+    },
+    {
+      "label": "확장자 추정 .rar",
+      "path": "C:\\Backup_testasp_testaspnet_1apr2021\\Databases\\Backup_from_Management_Studio\\acublog_1apr2021.rar",
+      "item": "../../Backup_testasp_testaspnet_1apr2021/Databases/Backup_from_Management_Studio/acublog_1apr2021.rar",
+      "code": 500,
+      "size": 1208,
+      "reachable": false
+    },
+    {
+      "label": "확장자 추정 .sql",
+      "path": "C:\\Backup_testasp_testaspnet_1apr2021\\Databases\\Backup_from_Management_Studio\\acublog_1apr2021.sql",
+      "item": "../../Backup_testasp_testaspnet_1apr2021/Databases/Backup_from_Management_Studio/acublog_1apr2021.sql",
+      "code": 500,
+      "size": 1208,
+      "reachable": false
+    },
+    {
+      "label": "확장자 추정 .txt",
+      "path": "C:\\Backup_testasp_testaspnet_1apr2021\\Databases\\Backup_from_Management_Studio\\acublog_1apr2021.txt",
+      "item": "../../Backup_testasp_testaspnet_1apr2021/Databases/Backup_from_Management_Studio/acublog_1apr2021.txt",
+      "code": 500,
+      "size": 1208,
+      "reachable": false
+    },
+    {
+      "label": "acuforum_1apr2021",
+      "path": "C:\\Backup_testasp_testaspnet_1apr2021\\Databases\\Backup_from_Management_Studio\\acuforum_1apr2021",
+      "item": "../../Backup_testasp_testaspnet_1apr2021/Databases/Backup_from_Management_Studio/acuforum_1apr2021",
+      "code": 500,
+      "size": 1208,
+      "reachable": false
+    },
+    {
+      "label": "acuforum_1apr2021.bak",
+      "path": "C:\\Backup_testasp_testaspnet_1apr2021\\Databases\\Backup_from_Management_Studio\\acuforum_1apr2021.bak",
+      "item": "../../Backup_testasp_testaspnet_1apr2021/Databases/Backup_from_Management_Studio/acuforum_1apr2021.bak",
+      "code": 500,
+      "size": 1208,
+      "reachable": false
+    },
+    {
+      "label": "acuservice_1apr2021",
+      "path": "C:\\Backup_testasp_testaspnet_1apr2021\\Databases\\Backup_from_Management_Studio\\acuservice_1apr2021",
+      "item": "../../Backup_testasp_testaspnet_1apr2021/Databases/Backup_from_Management_Studio/acuservice_1apr2021",
+      "code": 500,
+      "size": 1208,
+      "reachable": false
+    },
+    {
+      "label": "acuservice_1apr2021.bak",
+      "path": "C:\\Backup_testasp_testaspnet_1apr2021\\Databases\\Backup_from_Management_Studio\\acuservice_1apr2021.bak",
+      "item": "../../Backup_testasp_testaspnet_1apr2021/Databases/Backup_from_Management_Studio/acuservice_1apr2021.bak",
+      "code": 500,
+      "size": 1208,
+      "reachable": false
+    },
+    {
+      "label": "acuforum_1apr2021",
+      "path": "C:\\Backup_testasp_testaspnet_1apr2021\\Databases\\Backup_from_Management_Studio\\acuforum_1apr2021",
+      "item": "../../Backup_testasp_testaspnet_1apr2021/Databases/Backup_from_Management_Studio/acuforum_1apr2021",
+      "code": 500,
+      "size": 1208,
+      "reachable": false
+    },
+    {
+      "label": "acuforum_1apr2021.bak",
+      "path": "C:\\Backup_testasp_testaspnet_1apr2021\\Databases\\Backup_from_Management_Studio\\acuforum_1apr2021.bak",
+      "item": "../../Backup_testasp_testaspnet_1apr2021/Databases/Backup_from_Management_Studio/acuforum_1apr2021.bak",
+      "code": 500,
+      "size": 1208,
+      "reachable": false
+    },
+    {
+      "label": "acuservice_1apr2021",
+      "path": "C:\\Backup_testasp_testaspnet_1apr2021\\Databases\\Backup_from_Management_Studio\\acuservice_1apr2021",
+      "item": "../../Backup_testasp_testaspnet_1apr2021/Databases/Backup_from_Management_Studio/acuservice_1apr2021",
+      "code": 500,
+      "size": 1208,
+      "reachable": false
+    },
+    {
+      "label": "acuservice_1apr2021.bak",
+      "path": "C:\\Backup_testasp_testaspnet_1apr2021\\Databases\\Backup_from_Management_Studio\\acuservice_1apr2021.bak",
+      "item": "../../Backup_testasp_testaspnet_1apr2021/Databases/Backup_from_Management_Studio/acuservice_1apr2021.bak",
+      "code": 500,
+      "size": 1208,
+      "reachable": false
+    },
+    {
+      "label": "상위 Databases 디렉터리",
+      "path": "C:\\Backup_testasp_testaspnet_1apr2021\\Databases",
+      "item": "../../Backup_testasp_testaspnet_1apr2021/Databases",
+      "code": 500,
+      "size": 1208,
+      "reachable": false
+    },
+    {
+      "label": "백업 디렉터리 자체",
+      "path": "C:\\Backup_testasp_testaspnet_1apr2021\\Databases\\Backup_from_Management_Studio",
+      "item": "../../Backup_testasp_testaspnet_1apr2021/Databases/Backup_from_Management_Studio",
+      "code": 500,
+      "size": 1208,
+      "reachable": false
+    },
+    {
+      "label": "DATA\\acuforum.mdf",
+      "path": "C:\\Program Files\\Microsoft SQL Server\\MSSQL12.SQL\\MSSQL\\DATA\\acuforum.mdf",
+      "item": "../../Program Files/Microsoft SQL Server/MSSQL12.SQL/MSSQL/DATA/acuforum.mdf",
+      "code": 500,
+      "size": 1208,
+      "reachable": false
+    },
+    {
+      "label": "DATA\\acuforum_log.LDF",
+      "path": "C:\\Program Files\\Microsoft SQL Server\\MSSQL12.SQL\\MSSQL\\DATA\\acuforum_log.LDF",
+      "item": "../../Program Files/Microsoft SQL Server/MSSQL12.SQL/MSSQL/DATA/acuforum_log.LDF",
+      "code": 500,
+      "size": 1208,
+      "reachable": false
+    },
+    {
+      "label": "DATA\\acublog.mdf",
+      "path": "C:\\Program Files\\Microsoft SQL Server\\MSSQL12.SQL\\MSSQL\\DATA\\acublog.mdf",
+      "item": "../../Program Files/Microsoft SQL Server/MSSQL12.SQL/MSSQL/DATA/acublog.mdf",
+      "code": 500,
+      "size": 1208,
+      "reachable": false
+    },
+    {
+      "label": "DATA\\acuservice.mdf",
+      "path": "C:\\Program Files\\Microsoft SQL Server\\MSSQL12.SQL\\MSSQL\\DATA\\acuservice.mdf",
+      "item": "../../Program Files/Microsoft SQL Server/MSSQL12.SQL/MSSQL/DATA/acuservice.mdf",
+      "code": 500,
+      "size": 1208,
+      "reachable": false
+    },
+    {
+      "label": "최상위 Backup_... 디렉터리",
+      "path": "C:\\Backup_testasp_testaspnet_1apr2021",
+      "item": "../../Backup_testasp_testaspnet_1apr2021",
+      "code": 500,
+      "size": 1208,
+      "reachable": false
+    }
+  ],
+  "control": {
+    "label": "대조군 win.ini (Round 7 에서 200 확인됨)",
+    "path": "C:\\Windows\\win.ini",
+    "item": "../../Windows/win.ini",
+    "code": 200,
+    "size": 2739,
+    "reachable": true
+  },
+  "reachable_count": 0,
+  "requests": 24
+}

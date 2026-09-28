@@ -1,0 +1,105 @@
+STATUS   SIZE    PATH                                         CT/REDIR
+---------------------------------------------------------------------------------------------------------
+200      3538    /Default.asp                                 text/html
+200      3390    /styles.css                                  text/css
+200      1995    /html/about.html                             text/html
+200      2488    /Templates/MainTemplate.dwt.asp              text/html
+200      0       /DB.asp                                      text/html
+404      1245    /Default.asp.                                text/html
+000      0       /Default.asp                                 - -> -
+404      1245    /styles.css.                                 text/html
+000      0       /styles.css                                  - -> -
+404      1245    /Default.asp%20                              text/html
+404      1245    /Default.asp%20.                             text/html
+404      1245    /Default.asp%2e                              text/html
+404      1245    /styles.css%20                               text/html
+404      1245    /Default.asp::$DATA                          text/html
+404      1245    /styles.css::$DATA                           text/html
+404      1245    /Templates/MainTemplate.dwt.asp::$DATA       text/html
+404      1245    /html/about.html::$DATA                      text/html
+404      1245    /Default.asp::$data                          text/html
+404      1245    /styles.css:.txt                             text/html
+404      1245    /styles.css::$index_allocation               text/html
+404      1245    /Default.asp/                                text/html
+404      1245    /styles.css/                                 text/html
+404      1245    /Templates/MainTemplate.dwt.asp/             text/html
+404      1245    /html/about.html/                            text/html
+400      324     /Default.asp%00                              text/html; charset=us-ascii
+400      324     /Default.asp%00.txt                          text/html; charset=us-ascii
+400      324     /Default.asp%00.jpg                          text/html; charset=us-ascii
+400      324     /styles.css%00                               text/html; charset=us-ascii
+400      324     /styles.css%00.gif                           text/html; charset=us-ascii
+404      1245    /Default.asp%2520                            text/html
+403      312     /%2e%2e/Default.asp                          text/html; charset=us-ascii
+200      3538    /acuforum/%2e%2e/Default.asp                 text/html
+200      3538    /html/%2e%2e/Default.asp                     text/html
+200      3538    /%2e/Default.asp                             text/html
+404      1245    /Default.asp%2f                              text/html
+404      1245    /Default.asp%5c                              text/html
+404      1245    /Default.asp\                                text/html
+403      312     /..\Default.asp                              text/html; charset=us-ascii
+404      1245    /Default.asp;.txt                            text/html
+404      1245    /Default.asp;.asp                            text/html
+404      1245    /Default.asp;                                text/html
+200      3538    /DEFAULT.ASP                                 text/html
+200      2809    /SeArCh.AsP                                  text/html
+200      3390    /STYLES.CSS                                  text/css
+404      1245    /Default.asp%23                              text/html
+404      1245    /Default.asp%3f                              text/html
+404      1245    /Default.asp%3b                              text/html
+
+########## HTTP METHODS ##########
+OPTIONS   /                      HTTP/1.1 200 OK   Allow: OPTIONS, TRACE, GET, HEAD, POST | Public: OPTIONS, TRACE, GET, HEAD, POST
+TRACE     /                      HTTP/1.1 501 Not Implemented   
+PUT       /                      HTTP/1.1 411 Length Required   
+DELETE    /                      HTTP/1.1 405 Method Not Allowed   Allow: GET, HEAD, OPTIONS, TRACE
+PATCH     /                      HTTP/1.1 405 Method Not Allowed   Allow: GET, HEAD, OPTIONS, TRACE
+PROPFIND  /                      HTTP/1.1 405 Method Not Allowed   Allow: GET, HEAD, OPTIONS, TRACE
+DEBUG     /                      HTTP/1.1 405 Method Not Allowed   Allow: GET, HEAD, OPTIONS, TRACE
+HEAD      /                      HTTP/1.1 200 OK   
+------------------------------------------------------------------------------------------
+OPTIONS   /Default.asp           HTTP/1.1 200 OK   Allow: OPTIONS, TRACE, GET, HEAD, POST | Public: OPTIONS, TRACE, GET, HEAD, POST
+TRACE     /Default.asp           HTTP/1.1 501 Not Implemented   
+PUT       /Default.asp           HTTP/1.1 411 Length Required   
+DELETE    /Default.asp           HTTP/1.1 405 Method Not Allowed   Allow: GET, HEAD, OPTIONS, TRACE
+PATCH     /Default.asp           HTTP/1.1 405 Method Not Allowed   Allow: GET, HEAD, OPTIONS, TRACE
+PROPFIND  /Default.asp           HTTP/1.1 405 Method Not Allowed   Allow: GET, HEAD, OPTIONS, TRACE
+DEBUG     /Default.asp           HTTP/1.1 405 Method Not Allowed   Allow: GET, HEAD, OPTIONS, TRACE
+HEAD      /Default.asp           HTTP/1.1 200 OK   
+------------------------------------------------------------------------------------------
+OPTIONS   /Templates/            HTTP/1.1 200 OK   Allow: OPTIONS, TRACE, GET, HEAD, POST | Public: OPTIONS, TRACE, GET, HEAD, POST
+TRACE     /Templates/            HTTP/1.1 501 Not Implemented   
+PUT       /Templates/            HTTP/1.1 411 Length Required   
+DELETE    /Templates/            HTTP/1.1 405 Method Not Allowed   Allow: GET, HEAD, OPTIONS, TRACE
+PATCH     /Templates/            HTTP/1.1 405 Method Not Allowed   Allow: GET, HEAD, OPTIONS, TRACE
+PROPFIND  /Templates/            HTTP/1.1 405 Method Not Allowed   Allow: GET, HEAD, OPTIONS, TRACE
+DEBUG     /Templates/            HTTP/1.1 405 Method Not Allowed   Allow: GET, HEAD, OPTIONS, TRACE
+HEAD      /Templates/            HTTP/1.1 403 Forbidden   
+------------------------------------------------------------------------------------------
+OPTIONS   /_vti_cnf/             HTTP/1.1 200 OK   Allow: OPTIONS, TRACE, GET, HEAD, POST | Public: OPTIONS, TRACE, GET, HEAD, POST
+TRACE     /_vti_cnf/             HTTP/1.1 501 Not Implemented   
+PUT       /_vti_cnf/             HTTP/1.1 411 Length Required   
+DELETE    /_vti_cnf/             HTTP/1.1 405 Method Not Allowed   Allow: GET, HEAD, OPTIONS, TRACE
+PATCH     /_vti_cnf/             HTTP/1.1 405 Method Not Allowed   Allow: GET, HEAD, OPTIONS, TRACE
+PROPFIND  /_vti_cnf/             HTTP/1.1 405 Method Not Allowed   Allow: GET, HEAD, OPTIONS, TRACE
+DEBUG     /_vti_cnf/             HTTP/1.1 405 Method Not Allowed   Allow: GET, HEAD, OPTIONS, TRACE
+HEAD      /_vti_cnf/             HTTP/1.1 200 OK   
+------------------------------------------------------------------------------------------
+OPTIONS   /html/about.html       HTTP/1.1 200 OK   Allow: OPTIONS, TRACE, GET, HEAD, POST | Public: OPTIONS, TRACE, GET, HEAD, POST
+TRACE     /html/about.html       HTTP/1.1 501 Not Implemented   
+PUT       /html/about.html       HTTP/1.1 411 Length Required   
+DELETE    /html/about.html       HTTP/1.1 405 Method Not Allowed   Allow: GET, HEAD, OPTIONS, TRACE
+PATCH     /html/about.html       HTTP/1.1 405 Method Not Allowed   Allow: GET, HEAD, OPTIONS, TRACE
+PROPFIND  /html/about.html       HTTP/1.1 405 Method Not Allowed   Allow: GET, HEAD, OPTIONS, TRACE
+DEBUG     /html/about.html       HTTP/1.1 405 Method Not Allowed   Allow: GET, HEAD, OPTIONS, TRACE
+HEAD      /html/about.html       HTTP/1.1 200 OK   
+------------------------------------------------------------------------------------------
+OPTIONS   /Search.asp            HTTP/1.1 200 OK   Allow: OPTIONS, TRACE, GET, HEAD, POST | Public: OPTIONS, TRACE, GET, HEAD, POST
+TRACE     /Search.asp            HTTP/1.1 501 Not Implemented   
+PUT       /Search.asp            HTTP/1.1 411 Length Required   
+DELETE    /Search.asp            HTTP/1.1 405 Method Not Allowed   Allow: GET, HEAD, OPTIONS, TRACE
+PATCH     /Search.asp            HTTP/1.1 405 Method Not Allowed   Allow: GET, HEAD, OPTIONS, TRACE
+PROPFIND  /Search.asp            HTTP/1.1 405 Method Not Allowed   Allow: GET, HEAD, OPTIONS, TRACE
+DEBUG     /Search.asp            HTTP/1.1 405 Method Not Allowed   Allow: GET, HEAD, OPTIONS, TRACE
+HEAD      /Search.asp            HTTP/1.1 200 OK   
+------------------------------------------------------------------------------------------

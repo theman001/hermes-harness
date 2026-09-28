@@ -1,0 +1,9 @@
+HTTP/1.1 200 OK
+Cache-Control: private
+Content-Type: text/html
+Server: Microsoft-IIS/8.5
+Set-Cookie: ASPSESSIONIDCCCTQDSA=PGJEMFKAGPEKCNOCOKHEBOOC; path=/
+X-Powered-By: ASP.NET
+Date: Mon, 28 Sep 2026 08:07:44 GMT
+Content-Length: 3215
+

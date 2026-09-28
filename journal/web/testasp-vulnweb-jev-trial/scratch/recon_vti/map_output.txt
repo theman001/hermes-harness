@@ -1,0 +1,118 @@
+
+########## APP PAGES (root) ##########
+STATUS   SIZE    PATH                                                 CT/REDIR
+--------------------------------------------------------------------------------------------------------------
+200      3538    /Default.asp                                         text/html
+200      2809    /Search.asp                                          text/html
+200      3194    /Login.asp                                           text/html
+200      3194    /login.asp                                           text/html
+200      3617    /Register.asp                                        text/html
+200      3617    /register.asp                                        text/html
+302      132     /showforum.asp                                       text/html -> http://testasp.vulnweb.com/Default.asp
+302      132     /showthread.asp                                      text/html -> http://testasp.vulnweb.com/Default.asp
+500      1208    /Templatize.asp                                      text/html
+302      132     /logout.asp                                          text/html -> http://testasp.vulnweb.com/Default.asp
+200      0       /DB.asp                                              text/html
+200      0       /db.asp                                              text/html
+200      3390    /styles.css                                          text/css
+200      4933    /Images/logo.gif                                     image/gif
+403      1233    /Images/                                             text/html
+403      1233    /images/                                             text/html
+403      1233    /html/                                               text/html
+200      1995    /html/about.html                                     text/html
+404      1245    /about.html                                          text/html
+
+########## DIR/403-vs-404 BASELINE ##########
+STATUS   SIZE    PATH                                                 CT/REDIR
+--------------------------------------------------------------------------------------------------------------
+404      1245    /zzz/                                                text/html
+404      1245    /_vti_cnf/zzz/                                       text/html
+404      1245    /zzz/_vti_cnf/                                       text/html
+404      1245    /nonexist_abc/_vti_cnf/                              text/html
+403      1233    /images/_vti_cnf/                                    text/html
+403      1233    /Images/_vti_cnf/                                    text/html
+404      1245    /html/_vti_cnf/                                      text/html
+404      1245    /Templates/_vti_cnf/                                 text/html
+404      1245    /t/_vti_cnf/                                         text/html
+404      1245    /scripts/_vti_cnf/                                   text/html
+404      1245    /acuforum/_vti_cnf/                                  text/html
+200      926     /_vti_cnf/                                           text/html
+404      1245    /_private/                                           text/html
+404      1245    /_derived/                                           text/html
+404      1245    /_overlay/                                           text/html
+404      1245    /_borders/                                           text/html
+404      1245    /_fpclass/                                           text/html
+404      1245    /_vti_bin/_vti_aut/                                  text/html
+404      1245    /_vti_pvt/                                           text/html
+403      1233    /aspnet_client/system_web/2_0_50727/                 text/html
+404      1245    /aspnet_client/system_web/4_0_30319/                 text/html
+403      1233    /Templates/                                          text/html
+301      160     /Templates                                           text/html; charset=UTF-8 -> http://testasp.vulnweb.com/Templates/
+
+########## TEMPLATES DIR ##########
+STATUS   SIZE    PATH                                                 CT/REDIR
+--------------------------------------------------------------------------------------------------------------
+200      2488    /Templates/MainTemplate.dwt.asp                      text/html
+200      2488    /Templates/mainTemplate.dwt.asp                      text/html
+200      2488    /Templates/Maintemplate.dwt.asp                      text/html
+200      2488    /Templates/MAINTEMPLATE.DWT.ASP                      text/html
+404      1245    /Templates/MainTemplate.dwt.asp.bak                  text/html
+404      1245    /Templates/Default.dwt.asp                           text/html
+404      1245    /Templates/default.dwt.asp                           text/html
+404      1245    /Templates/template.dwt.asp                          text/html
+404      1245    /Templates/acuforum.dwt.asp                          text/html
+404      1245    /Templates/menu.dwt.asp                              text/html
+404      1245    /Templates/header.dwt.asp                            text/html
+404      1245    /Templates/footer.dwt.asp                            text/html
+404      1245    /Templates/sidebar.dwt.asp                           text/html
+404      1245    /Templates/index.dwt.asp                             text/html
+404      1245    /Templates/about.dwt.asp                             text/html
+404      1245    /Templates/search.dwt.asp                            text/html
+404      1245    /Templates/login.dwt.asp                             text/html
+404      1245    /Templates/showforum.dwt.asp                         text/html
+404      1245    /Templates/showthread.dwt.asp                        text/html
+404      1245    /Templates/Templatize.dwt.asp                        text/html
+404      1245    /Templates/Main.dwt.asp                              text/html
+404      1245    /Templates/main.dwt.asp                              text/html
+000      0       /Templates/MainTemplate.dwt.asp                      - -> -
+404      1245    /Templates/MainTemplate.dwt                          text/html
+404      1245    /Templates/MainTemplate.asp                          text/html
+404      1245    /Templates/MainTemplate.dwt.asp/                     text/html
+404      1245    /Templates/MainTemplate.dwt.asp::$DATA               text/html
+
+########## MISC LEFTOVERS ##########
+STATUS   SIZE    PATH                                                 CT/REDIR
+--------------------------------------------------------------------------------------------------------------
+404      1245    /iisstart.htm                                        text/html
+404      1245    /iisstart.png                                        text/html
+404      1245    /welcome.png                                         text/html
+403      2062    /trace.axd                                           text/html; charset=utf-8
+404      1504    /elmah.axd                                           text/html; charset=utf-8
+404      1506    /glimpse.axd                                         text/html; charset=utf-8
+404      1245    /_vti_inf.html                                       text/html
+404      1245    /_vti_bin/shtml.exe                                  text/html
+404      1245    /web.config                                          text/html
+404      1245    /global.asa                                          text/html
+404      1245    /global.asax                                         text/html
+404      1245    /favicon.ico                                         text/html
+404      1245    /sitemap.xml                                         text/html
+404      1245    /crossdomain.xml                                     text/html
+404      1245    /clientaccesspolicy.xml                              text/html
+404      1245    /Default.asp.bak                                     text/html
+404      1245    /Default.asp.old                                     text/html
+404      1245    /Default.asp~                                        text/html
+404      1245    /Default.asp.txt                                     text/html
+404      1245    /Default.asp.orig                                    text/html
+404      1245    /Search.asp.bak                                      text/html
+404      1245    /Templatize.asp.bak                                  text/html
+404      1245    /Templatize.asp.old                                  text/html
+404      1245    /Templatize.asp.txt                                  text/html
+404      1245    /Templatize.asp.orig                                 text/html
+404      1245    /Templatize.asp~                                     text/html
+404      1245    /login.asp.bak                                       text/html
+404      1245    /index.asp                                           text/html
+404      1245    /index.html                                          text/html
+404      1245    /default.html                                        text/html
+404      1245    /readme.txt                                          text/html
+404      1245    /LICENSE.txt                                         text/html
+404      1245    /CHANGELOG.txt                                       text/html

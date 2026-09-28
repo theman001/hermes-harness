@@ -1,0 +1,16 @@
+### F2 /cgi-bin
+test.txt
+EXIT_F2=0
+### F3 /jscripts/tiny_mce
+Themes
+_vti_cnf
+blank.htm
+langs
+themes
+tiny_mce.js
+utils
+EXIT_F3=0
+### F4 /Images/_vti_cnf
+logo.gif
+EXIT_F4=0
+DONE_F2F4

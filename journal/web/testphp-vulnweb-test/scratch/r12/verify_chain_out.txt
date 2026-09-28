@@ -1,0 +1,44 @@
+== 0. 도달성 / 서버 헤더 ==
+  [PASS] Default.asp 200  (200)
+  Server: Server: Microsoft-IIS/8.5
+== 1. SQLi boolean-blind (showforum.asp id) ==
+  [PASS] id=1 → 200  (200)
+  [PASS] id=1 AND 1=2 → 500  (500)
+== 2. SQLi UNION 페이지 가시 추출 (Search.asp tfSearch) ==
+  [PASS] 주입 SELECT 값이 페이지에 렌더  (1)
+== 3. stacked query 차분 오라클 (showthread.asp id) ==
+  참조건=6.339860s / 거짓조건=0.323073s
+  [PASS] 참 조건이 3초 이상 지연  (yes)
+  [PASS] 거짓 조건은 지연 없음  (yes)
+== 4. directory traversal 임의 파일 읽기 (Templatize.asp item) ==
+  [PASS] win.ini 내용 유출  (1)
+  [PASS] web.config 유출  (1)
+== 5. 소스 유출 + 하드코딩 DB 자격증명 (traversal 경유) ==
+  [PASS] db.asp 소스 유출  (1)
+  자격증명 라인: Uid=acunetix;Pwd=acunetixtrustno1;
+== 6. Login.asp SQLi 인증 우회 ==
+  [PASS] 우회 로그인 → Default.asp  (1)
+  [PASS] 우회 세션 인증됨  (1)
+== 7. RetURL open redirect (Login.asp / Logout.asp) ==
+  [PASS] /Login.asp?RetURL= 외부 리다이렉트(우회 로그인 필요)  (1)
+  [PASS] /Logout.asp?RetURL= 외부 리다이렉트  (1)
+== 8. reflected XSS (Search.asp tfSearch) ==
+  [PASS] 스크립트 태그 그대로 반사  (1)
+== 9. 세션 쿠키 속성 ==
+  [PASS] HttpOnly 부재  (0)
+  [PASS] Secure 부재  (0)
+  [PASS] SameSite 부재  (0)
+== 10. 보안 헤더 부재 ==
+  [PASS] content-security-policy 부재  (0)
+  [PASS] x-frame-options 부재  (0)
+  [PASS] x-content-type-options 부재  (0)
+== 11. 교차 DB 읽기 (acuforum SQLi → 인접 앱 DB) ==
+  acublog.comments 행 수 응답에 포함: 1
+== 12. 음성(재시도 금지) 재확인 ==
+  [PASS] PUT 업로드 불가(404)  (404)
+  [PASS] TRACE 501  (501)
+  [PASS] IIS 8.3 단축명 404  (404)
+  [PASS] RetURL CRLF 인코딩(헤더 인젝션 불가)  (0)
+
+결과: PASS=24  FAIL=0
+→ 모든 검증 항목이 기대값과 일치 (재현성 확인)

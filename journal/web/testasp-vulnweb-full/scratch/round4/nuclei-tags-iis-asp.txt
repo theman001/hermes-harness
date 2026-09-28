@@ -1,0 +1,6 @@
+[iis-shortname-detect] [http] [info] http://testasp.vulnweb.com/*~1*/a.aspx
+[microsoft-iis-version] [http] [info] http://testasp.vulnweb.com ["Microsoft-IIS/8.5"]
+[iis-shortname-detect] [http] [info] http://testasp.vulnweb.com/w8ihs7pc*~1*/a.aspx
+[iis-shortname-detect] [http] [info] http://testasp.vulnweb.com/*~1*/a.aspx
+[iis-shortname-detect] [http] [info] http://testasp.vulnweb.com/w8ihs7pc*~1*/a.aspx
+[iis-shortname-detect] [http] [info] http://testasp.vulnweb.com/*~1*/a.aspx

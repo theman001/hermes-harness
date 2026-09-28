@@ -1,0 +1,13 @@
+{
+  "last_round_count": 5,
+  "page_structure": {
+    "hash": "8efb75a584353e5a281a639361db3111e442267e3161cb660e58b8b1f4ea8bba",
+    "stale_rounds": 2,
+    "seen": true
+  },
+  "server_structure": {
+    "hash": "b309e716302db43e3ad5b479c81142118f6a1b64c4b95462c3f932c5e9d134bd",
+    "stale_rounds": 1,
+    "seen": true
+  }
+}

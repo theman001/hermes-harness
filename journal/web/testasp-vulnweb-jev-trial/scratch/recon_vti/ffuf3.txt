@@ -1,0 +1,20 @@
+### _vti_cnf/<name> NO extension (real root files w/ FrontPage metadata)
+search.asp
+login.asp
+register.asp
+logout.asp
+styles.css
+db.asp
+Search.asp
+Login.asp
+default.asp
+.
+Default.asp
+Register.asp
+showthread.asp
+Styles.css
+Logout.asp
+DB.asp
+Caught keyboard interrupt (Ctrl-C)
+### Templates/ no-extension
+Caught keyboard interrupt (Ctrl-C)
