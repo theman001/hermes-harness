@@ -9,8 +9,22 @@
 # "ARM64 관련 알려진 리스크 요약" 순서대로 원인을 좁혀갈 것.
 
 FROM debian:bookworm-slim AS gotools
-RUN apt-get update && apt-get install -y --no-install-recommends golang-go git ca-certificates \
+RUN apt-get update && apt-get install -y --no-install-recommends git ca-certificates curl \
     && rm -rf /var/lib/apt/lists/*
+# **apt의 golang-go(1.19)는 여기서 쓰면 안 됨** — 실제 Rock5/OMV8 빌드(2026-09-28)에서
+# httpx 최신판의 go.mod가 `go 1.26.0`을 요구하는데 Go 1.19는 세 자리 버전 문자열 자체를
+# 파싱 못 해서 "invalid go version: must match format 1.23"로 즉시 실패함(DOCKER_
+# DEPENDENCIES.md 2번이 "apt 쓰면 아키텍처 실수 방지"라고 권했던 건 틀린 조언이었음 —
+# 아키텍처는 맞았지만 버전이 몇 년 뒤처져 있었음). go.dev 공식 최신 안정판을 직접 받는다
+# (아키텍처는 `dpkg --print-architecture`로 실제 조회해서 amd64/arm64 실수 방지, 버전은
+# go.dev/VERSION에서 매 빌드 시점 최신을 그때그때 받아서 하드코딩 안 함).
+RUN set -eux; \
+    GOARCH="$(dpkg --print-architecture)"; \
+    GOVER="$(curl -fsSL 'https://go.dev/VERSION?m=text' | head -1)"; \
+    curl -fsSL "https://go.dev/dl/${GOVER}.linux-${GOARCH}.tar.gz" -o /tmp/go.tar.gz; \
+    tar -C /usr/local -xzf /tmp/go.tar.gz; \
+    rm /tmp/go.tar.gz
+ENV PATH="/usr/local/go/bin:${PATH}"
 ENV GOPATH=/go
 # DOCKER_DEPENDENCIES.md 2번 — go install은 컨테이너의 네이티브 아키텍처로 빌드되므로
 # ARM64 이미지 안에서 돌리면 자동으로 ARM64 바이너리가 나옴. nuclei는 의존성이 커서
