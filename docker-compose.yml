@@ -15,7 +15,7 @@
 services:
   hermes-harness:
     build:
-      context: https://github.com/CHANGE_ME_GITHUB_USER/hermes-harness.git#main
+      context: https://github.com/theman001/hermes-harness.git#main
       dockerfile: Dockerfile
     image: hermes-harness:latest
     container_name: hermes-harness
