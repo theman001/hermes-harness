@@ -31,6 +31,22 @@ fi
 
 # 2. journal/targets/tech-docs/rag.db를 영속 경로로 심볼릭 링크 — 이후 하네스 코드가
 #    보는 경로($HERMES_HARNESS_ROOT/journal 등)는 그대로인데 실제 저장은 DATA_ROOT에 됨.
+#
+# **CONFIRMED 심각한 버그, 2026-09-29 수정**: `ln -sfn TARGET LINKNAME`은 LINKNAME이
+# 이미 존재하는 "실제 디렉터리"면 그 디렉터리를 심볼릭 링크로 교체하는 게 아니라
+# **그 디렉터리 안에** `LINKNAME/$(basename TARGET)` 심볼릭 링크를 새로 만들어버린다
+# (재현 확인: `ln -sfn /a/b /existing_dir` → `/existing_dir/b -> /a/b`가 생기고
+# `/existing_dir` 자체는 그대로 남음 — `-f`는 파일/심볼릭링크 교체에만 먹히고 `unlink()`가
+# 디렉터리엔 항상 EISDIR이라 안 먹힘, `-n`도 이 경우엔 도움 안 됨). `journal`/`targets`/
+# `tech-docs`는 `COPY . .`로 이미지에 **항상 실제 디렉터리로** 구워지므로, 이 세 줄은
+# 매번 조용히 실패 모드로 빠져서 **A가 실제로 읽고 쓴 경로는 이미지에 구워진 일회용
+# 디렉터리였고, `$DATA_ROOT`의 영속 볼륨은 한 번도 실제로 쓰인 적이 없었음** — 컨테이너를
+# `down`/`up`(재생성)하면 그 일회용 디렉터리가 통째로 사라지는 게 실제 증상으로 나타남
+# (사용자가 직접 발견: "재빌드 후 down/up 하면 agent가 만든 파일이 사라짐"). 파일(rag.db)
+# 대상은 `unlink()`가 정상 동작해서 문제없었음(재현 확인) — 디렉터리 세 개만 문제.
+# **수정**: 심볼릭 링크를 걸기 전에 기존 실제 디렉터리를 먼저 지운다(이 시점의 내용은
+# 위 1번에서 이미 영속 경로로 복사/시드 끝난 뒤라 안전하게 버려도 됨).
+rm -rf "$HARNESS_ROOT/journal" "$HARNESS_ROOT/targets" "$HARNESS_ROOT/tech-docs"
 ln -sfn "$DATA_ROOT/hermes-harness/journal" "$HARNESS_ROOT/journal"
 ln -sfn "$DATA_ROOT/hermes-harness/targets" "$HARNESS_ROOT/targets"
 ln -sfn "$DATA_ROOT/hermes-harness/tech-docs" "$HARNESS_ROOT/tech-docs"
