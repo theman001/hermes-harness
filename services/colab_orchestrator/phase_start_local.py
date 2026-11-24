@@ -46,7 +46,7 @@ import argparse
 
 import phase_start as ps
 
-DEFAULT_MODEL = "deepseek-flash"
+DEFAULT_MODEL = "deepseek-v4-pro"
 DEFAULT_BASE_URL = "https://api.deepseek.com/v1"
 
 

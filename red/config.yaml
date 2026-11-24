@@ -22,7 +22,7 @@ model:
   provider: "deepseek"
   base_url: "https://api.deepseek.com/v1"
   # phase_start.py가 대상 모델 이름까지 확인 후 덮어씀 — 최초값은 이번 프로젝트가 검증한 모델
-  default: "deepseek-flash"
+  default: "deepseek-v4-pro"
   api_key: "${DEEPSEEK_API_KEY}"  # 터널 자체가 접근 통제, 모델 서버 인증 없음
 
 terminal:

@@ -85,6 +85,17 @@ TYPESAFE_API_KEY=${TYPESAFE_API_KEY:-}
 EOF
 chmod 600 "$PROFILE_DIR/.env"
 
+# 4b. **CONFIRMED 버그, 2026-11-24 발견**: 위에서 .env에 적어준 컨테이너 환경변수들이
+#    셸 프로세스에는 그대로 남아있다가 마지막 `exec hermes gateway run`에 상속됨 —
+#    Hermes의 'default' 프로필이 이 프로세스 환경변수를 "unscoped" 방식으로 직접
+#    읽어서, red 전용으로 주려던 MATTERMOST_TOKEN 등을 default도 똑같이 보게 됨.
+#    그 결과 "두 프로필이 같은 MATTERMOST_TOKEN을 들고 있다"는 충돌로 하나(보통
+#    default)만 살고 red는 parked 상태가 되어, red/config.yaml의 model/reply_mode
+#    등 설정이 전혀 반영되지 않는 증상으로 나타났다(사용자가 실사용 중 발견).
+#    해결: .env에 다 적은 뒤, exec 전에 셸에서 지워서 red의 프로필 스코프에만 남게 한다.
+unset MATTERMOST_URL MATTERMOST_TOKEN MATTERMOST_HOME_CHANNEL MATTERMOST_ALLOWED_USERS \
+      AUXILIARY_APPROVAL_BASE_URL AUXILIARY_APPROVAL_MODEL DEEPSEEK_API_KEY TYPESAFE_API_KEY
+
 # 5. mitmproxy CA 인증서 디렉터리만 영속 경로로 링크 — **mitmproxy 자체는 여기서 안
 #    띄운다**(2026-09-28 정정: 처음엔 "게이트웨이 살아있는 동안 항상 떠 있게" 상시
 #    기동시켰는데, 그러면 8080 포트를 이게 먼저 잡아버려서 나중에 `phase_start_local.py`
